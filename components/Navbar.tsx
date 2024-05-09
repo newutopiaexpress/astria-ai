@@ -14,6 +14,8 @@ import { Button } from "./ui/button";
 import React from "react";
 import { Database } from "@/types/supabase";
 import ClientSideCredits from "./realtime/ClientSideCredits";
+import { UtopiaLogo } from "./ui/utopia-logo";
+import { UserIcon } from "./ui/user-icon";
 
 export const dynamic = "force-dynamic";
 
@@ -33,20 +35,20 @@ export default async function Navbar() {
   } = await supabase.from("credits").select("*").eq("user_id", user?.id ?? '').single()
 
   return (
-    <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between">
+    <div className="flex w-full px-4 lg:px-6 py-6 items-center text-center gap-8 justify-between">
       <div className="flex gap-2 h-full">
         <Link href="/">
-          <h2 className="font-bold">Headshots AI</h2>
+          <h2 className="font-bold ml-2"><UtopiaLogo/></h2>
         </Link>
       </div>
       {user && (
         <div className="hidden lg:flex flex-row gap-2">
           <Link href="/overview">
-            <Button variant={"ghost"}>Home</Button>
+            <Button variant={"ghost"}>Haircut</Button>
           </Link>
           {stripeIsConfigured && (
             <Link href="/get-credits">
-              <Button variant={"ghost"}>Get Credits</Button>
+              <Button variant={"outline"}>Get Credits</Button>
             </Link>
           )}
         </div>
@@ -54,7 +56,7 @@ export default async function Navbar() {
       <div className="flex gap-4 lg:ml-auto">
         {!user && (
           <Link href="/login">
-            <Button variant={"ghost"}>Login / Signup</Button>
+            <Button variant={"outline"}>Login / Signup</Button>
           </Link>
         )}
         {user && (
@@ -64,7 +66,9 @@ export default async function Navbar() {
             )}
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer">
-                <AvatarIcon height={24} width={24} className="text-primary" />
+                <div className="transition-all pt-2 pl-2 w-8 h-8 bg-transparent hover:bg-stone-100 border border-stone-200 rounded-full shadow-lg">
+                  <UserIcon/>
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel className="text-primary text-center overflow-hidden text-ellipsis">{user.email}</DropdownMenuLabel>
