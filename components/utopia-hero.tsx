@@ -6,7 +6,10 @@
 
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-
+import PricingSection from "./PricingSection";
+import { Separator } from "@radix-ui/react-dropdown-menu";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 /** Add fonts into your Next.js project:
 
@@ -23,57 +26,64 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function UtopiaHero() {
   return (
-    <section className="w-full md:py-12 md:px-12 bg-pink-500 rounded-2xl">
+    <section className="w-full md:py-12 md:px-12 bg-transparent border border-stone-300 rounded-2xl">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr] xl:grid-cols-[1.5fr_1fr]">
           <div className="space-y-4">
-            <p><Badge variant="default">for Girls</Badge> <span className="text-xs text-pink-400">The boy version is coming in the next weeks!</span></p>
-            <h1 className="drop-shadow-lg drop-shadow-slate-800/60 text-slate-100 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Try any hairstyle without haircut
+            <p><Badge variant="default">NEW</Badge> <span className="text-xs text-red-400">The most advanced SDXL fine tuning at the lowest price!</span></p>
+            <h1 className="pb-4 bg-gradient-to-br from-stone-900 to-stone-500 bg-clip-text text-left font-extrabold tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-5xl md:text-7xl md:leading-[4rem]">
+            Create any photo of anyone
             </h1>
-            <p className="max-w-[500px] text-pink-100 md:text-xl">
-            Upload some photo of yourself and try lots of different hairstyles and hair colors.
+            <p className="max-w-[500px] text-stone-700 md:text-xl">
+            Upload some portrait photo and create images of yourself in any situation, any style, and anywhere! 
             </p>
+            <div className="flex flex-row gap-4">
 
-            <h1 className="drop-shadow-lg drop-shadow-slate-800/60 text-slate-100 text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl lg:text-9xl">30</h1>
+              <div className="py-6 transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
+                <p className="text-xs tracking-widest">STARTER</p>
+                <h1 className="text-4xl font-extrabold">100</h1>
+                <p className="text-xs text-stone-400">generated images</p>
+                <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
+                <Link href="/login">
+                  <Button variant="default">Select</Button>
+                </Link>
+              </div>
+
+              <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
+                <p className="text-xs tracking-widest">ADVANCED</p>
+                <h1 className="text-4xl font-extrabold">300</h1>
+                <p className="text-xs text-stone-400">generated images</p>
+                <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
+                <Link href="/login">
+                  <Button variant="default">Select</Button>
+                </Link>
+              </div>
+
+              <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
+                <p className="text-xs tracking-widest">ADDICTED</p>
+                <h1 className="text-4xl font-extrabold">500</h1>
+                <p className="text-xs text-stone-400">generated images</p>
+                <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
+                <Link href="/login">
+                  <Button variant="default">Select</Button>
+                </Link>
+              </div>
+
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="">
             <Image
-              className="rounded-xl object-cover"
-              height="500"
+              className="cover"
+              height="600"
+              width="337"
               alt="hello"
-              src="/v1.jpg"
-              style={{
-                aspectRatio: "400/500",
-                objectFit: "cover",
-              }}
-              width="400"
+              src="/elf.png"
             />
-            <Image
-              className="rounded-xl object-cover"
-              height="512"
-              alt="hello"
-              src="/v2.jpg"
-              style={{
-                aspectRatio: "512/512",
-                objectFit: "cover",
-              }}
-              width="512"
-            />
-            <Image
-              className="rounded-xl object-cover"
-              height="500"
-              alt="hello"
-              src="/v4.jpg"
-              style={{
-                aspectRatio: "400/500",
-                objectFit: "cover",
-              }}
-              width="400"
-            />
+
           </div>
         </div>
       </div>
+      
     </section>
   )
 }
