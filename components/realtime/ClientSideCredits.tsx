@@ -16,7 +16,7 @@ export default function ClientSideCredits({
 }: ClientSideCreditsProps) {
 
   if (!creditsRow) return (
-    <p>Credits: 0</p>
+    <p className="pt-1 text-stone-500">Credits: 0</p>
   )
 
   const supabase = createClient<Database>(

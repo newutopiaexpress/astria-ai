@@ -47,25 +47,24 @@ export default function ClientSideModel({
   return (
     <div id="train-model-container" className="w-full h-full">
       <div className="flex flex-col w-full mt-2 gap-4">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-0">
+        <div className="flex flex-col  gap-4 lg:gap-0">
           {samples && (
-            <div className="flex w-full lg:w-2/5 flex-col gap-2">
-              <h2 className="text-xl opacity-25">Your photos</h2>
+          <div className="flex w-full flex-col gap-2">
               <div className="flex flex-row gap-4 flex-wrap">
                 {samples.map((sample) => (
                   <img
                     src={sample.uri}
-                    className="rounded-md w-32 h-24 object-cover"
+                    className="rounded-sm w-24 h-24 object-cover"
                   />
                 ))}
               </div>
-            </div>
+          </div>
           )}
-          <div className="flex flex-col w-full lg:w-3/5 rounded-md">
+          <div className="flex flex-col w-full  mx-auto rounded-md">
             {model.status === "finished" && (
               <div className="flex flex-1 flex-col gap-2">
-                <h1 className="text-xl opacity-25">Results</h1>
-                <div className="flex flex-row flex-wrap gap-4">
+                <h1 className="text-xl opacity-25 mt-9">Results</h1>
+                <div className="flex flex-row flex-wrap gap-6">
                   {serverImages?.map((image) => (
                     <div key={image.id}>
                       <img

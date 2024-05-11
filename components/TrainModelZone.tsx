@@ -195,13 +195,13 @@ export default function TrainModelZone() {
             name="name"
             render={({ field }) => (
               <FormItem className="w-full rounded-md">
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Describe the pictures you want to make</FormLabel>
                 <FormDescription className="text-stone-400">
-                  Give your model a name so you can easily identify it later.
+                  For the best result use similar format: "as Aragorn from the Lord of the Rings" or "with long blonde hair" 
                 </FormDescription>
                 <FormControl>
                   <Input
-                    placeholder="e.g. Natalie"
+                    placeholder="as a superhero villain"
                     {...field}
                     className="max-w-screen-lg"
                     autoComplete="off"
