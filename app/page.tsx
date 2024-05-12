@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 
 import { UtopiaHero } from "@/components/utopia-hero";
 
-
 export const dynamic = "force-dynamic";
 
 
@@ -21,10 +20,10 @@ export default async function Index() {
   }
 
   return (
-
-   
+ 
     <div>
        <UtopiaHero/>
     </div>
+    
   );
 }

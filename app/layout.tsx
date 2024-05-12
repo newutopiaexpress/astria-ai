@@ -1,10 +1,10 @@
 import Footer from "@/components/Footer";
-import { FooterV2 } from "@/components/FooterV2";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { FooterV2 } from "@/components/FooterV2";
 
 export const metadata = {
   title: "Headshots AI",
@@ -27,6 +27,9 @@ export default function RootLayout({ children }: any) {
         <main className="lg:w-3/4 mx-auto">
           {children}
         </main>
+        <div>
+          <FooterV2/>
+        </div>
         <Toaster />
         <Analytics />
       </body>

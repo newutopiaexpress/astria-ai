@@ -41,7 +41,7 @@ export function UtopiaHero() {
 
               <div className="py-6 transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
                 <p className="text-xs tracking-widest">STARTER</p>
-                <h1 className="text-4xl font-extrabold">100</h1>
+                <h1 className="text-4xl font-extrabold text-red-400">100</h1>
                 <p className="text-xs text-stone-400">generated images</p>
                 <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
                 <Link href="/login">
@@ -51,7 +51,7 @@ export function UtopiaHero() {
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
                 <p className="text-xs tracking-widest">ADVANCED</p>
-                <h1 className="text-4xl font-extrabold">300</h1>
+                <h1 className="text-4xl font-extrabold text-red-500">300</h1>
                 <p className="text-xs text-stone-400">generated images</p>
                 <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
                 <Link href="/login">
@@ -61,7 +61,7 @@ export function UtopiaHero() {
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
                 <p className="text-xs tracking-widest">ADDICTED</p>
-                <h1 className="text-4xl font-extrabold">500</h1>
+                <h1 className="text-4xl font-extrabold text-red-600">500</h1>
                 <p className="text-xs text-stone-400">generated images</p>
                 <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
                 <Link href="/login">

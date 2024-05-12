@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export function FooterV2() {
   return (
-    <div className=" text-slate-500">
-      <div className="h-12 flex flex-col  text-center md:flex-row md:items-center md:justify-between md:gap-4 lg:gap-0 ">
+    <div className="mt-12 text-slate-500">
+      <div className="flex flex-col  text-center md:flex-row md:items-center md:justify-between md:gap-4 lg:gap-0 ">
         <div className="flex items-center justify-center ">
           
           <p className="pl-4 lg:pl-6 text-xs font-normal text-stone-400 dark:text-stone-400">2024. Utopia Express</p>
@@ -23,29 +23,6 @@ export function FooterV2() {
               </Link>
           </div>
         </div>
-
-        <nav className="mx-auto uppercase flex items-center justify-center gap-6 lg:gap-12 font-normal text-stone-400 ">
-          <Link
-            className="text-xs hover:text-stone-600"
-            href="https://clone.utopia.express/login"
-          >
-            Clone for boys
-          </Link>
-          <Link
-            className="text-xs hover:text-stone-600"
-            href="https://clonegirls.utopia.express/login"
-          >
-            Clone for girls
-          </Link>
-          <Link
-            className="text-xs hover:text-stone-600"
-            href="#"
-          >
-            Services
-          </Link>
-
-
-        </nav>
 
         <div className="flex items-center justify-center space-x-4 md:space-x-8 pr-6">
           <Link className="fill-stone-500 hover:text-gray-900 dark:hover:text-gray-50" href="https://www.facebook.com/www.utopia.express/">
