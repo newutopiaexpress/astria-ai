@@ -53,7 +53,7 @@ export function UtopiaHero() {
                 <p className="text-xs tracking-widest">ADVANCED</p>
                 <h1 className="text-4xl font-extrabold text-red-500">300</h1>
                 <p className="text-xs text-stone-400">generated images</p>
-                <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
+                <h1 className="text-4xl">25<span className="text-3xl">€</span></h1>
                 <Link href="/login">
                   <Button variant="default">Select</Button>
                 </Link>
@@ -63,7 +63,7 @@ export function UtopiaHero() {
                 <p className="text-xs tracking-widest">ADDICTED</p>
                 <h1 className="text-4xl font-extrabold text-red-600">500</h1>
                 <p className="text-xs text-stone-400">generated images</p>
-                <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
+                <h1 className="text-4xl">39<span className="text-3xl">€</span></h1>
                 <Link href="/login">
                   <Button variant="default">Select</Button>
                 </Link>
