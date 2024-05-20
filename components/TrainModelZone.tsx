@@ -314,7 +314,7 @@ export default function TrainModelZone() {
             </div>
           )}
 
-          <Button type="submit" variant="default" className="h-12 w-full mx-auto text-sm" isLoading={isLoading}>
+          <Button type="submit" variant="submit" className="h-12 w-full mx-auto text-sm" isLoading={isLoading}>
             Create Images{" "}
             {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
           </Button>

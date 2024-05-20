@@ -27,9 +27,11 @@ export default function RootLayout({ children }: any) {
         <main className="md:w-5/6 lg:w-1/2 mx-auto">
           {children}
         </main>
-        <div>
+        
+        {/*<section>
           <FooterV2/>
-        </div>
+          </section>*/}
+
         <Toaster />
         <Analytics />
       </body>
