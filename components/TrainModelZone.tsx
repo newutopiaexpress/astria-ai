@@ -196,8 +196,8 @@ export default function TrainModelZone() {
             render={({ field }) => (
               <FormItem className="w-full rounded-md">
                 <FormLabel className="text-lg">Describe the images you want to make</FormLabel>
-                <FormDescription className="text-stone-500">
-                  For the best result use similar format: "as Aragorn from the Lord of the Rings" or "with long blonde hair" 
+                <FormDescription className="text-stone-500 pb-4">
+                  Use similar format: "<span className="font-bold">as Aragorn from the Lord of the Rings</span>" or "<span className="font-bold">as a model with long blonde hair</span>" 
                 </FormDescription>
                 <FormControl>
                   <Input
