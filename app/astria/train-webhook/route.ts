@@ -119,7 +119,7 @@ export async function POST(request: Request) {
         from: "tamas@utopia.express",
         to: user?.email ?? "",
         subject: "Your model was successfully trained!",
-        html: `<h2>We're writing to notify you that your model training was successful! 1 credit has been used from your account.</h2>`,
+        html: `<h2>Your training was successful! 1 credit has been used from your account.</h2>`,
       });
     }
 
