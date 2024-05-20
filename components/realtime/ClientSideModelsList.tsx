@@ -6,7 +6,8 @@ import { modelRowWithSamples } from "@/types/utils";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaImages } from "react-icons/fa";
+
+import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
 
 export const revalidate = 0;
@@ -71,14 +72,18 @@ export default function ClientSideModelsList({
         </div>
       )}
       {models && models.length === 0 && (
-        <div className="flex flex-col gap-4 items-center">
-          <FaImages size={64} className="text-gray-500" />
-          <h1 className="text-2xl">
-            Get started by training your first model.
+        <div className="flex flex-col gap-4 items-center py-12">
+
+          <h1 className="text-2xl text-center mx-auto">
+            <span className="text-center mx-auto w-32 h-32">
+              <UploadIcon/>
+            </span>
+            
+             Bring to life your first AI clone!
           </h1>
           <div>
             <Link href="/overview/models/train">
-              <Button size={"lg"}>Train model</Button>
+              <Button variant="default" size={"lg"}>Upload photos</Button>
             </Link>
           </div>
         </div>
