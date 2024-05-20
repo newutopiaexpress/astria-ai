@@ -16,6 +16,7 @@ import { Database } from "@/types/supabase";
 import ClientSideCredits from "./realtime/ClientSideCredits";
 import { UtopiaLogo } from "./ui/utopia-logo";
 import { UserIcon } from "./ui/user-icon";
+import { AiOutlineGoogle } from "react-icons/ai";
 
 export const dynamic = "force-dynamic";
 
@@ -56,7 +57,9 @@ export default async function Navbar() {
       <div className="flex gap-4 lg:ml-auto">
         {!user && (
           <Link href="/login">
-            <Button variant={"outline"}>Login / Signup</Button>
+            <Button variant={"ghost"}>Login / Signup
+              <AiOutlineGoogle size={20} />
+            </Button>
           </Link>
         )}
         {user && (
@@ -90,3 +93,7 @@ export default async function Navbar() {
     </div>
   );
 }
+
+
+
+

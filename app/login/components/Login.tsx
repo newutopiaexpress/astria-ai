@@ -49,10 +49,10 @@ export const Login = ({
     } catch (error) {
       setIsSubmitting(false);
       toast({
-        title: "Something went wrong",
+        title: "Oops!",
         variant: "destructive",
         description:
-          "Please try again, if the problem persists, contact us at hello@tryleap.ai",
+          "Please try again, if the problem persists, contact us at tamas@utopia.express",
         duration: 5000,
       });
     }
@@ -106,7 +106,7 @@ export const Login = ({
           <p className="text-xs opacity-60">
             Sign in or create an account to get started.
           </p>
-          {/* <Button
+           <Button
             onClick={signInWithGoogle}
             variant={"outline"}
             className="font-semibold"
@@ -114,7 +114,7 @@ export const Login = ({
             <AiOutlineGoogle size={20} />
             Continue with Google
           </Button>
-          <OR /> */}
+          
 
           <form
             onSubmit={handleSubmit(onSubmit)}

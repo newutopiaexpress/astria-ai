@@ -10,15 +10,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        google:"bg-slate-700 hover:bg-slate-600 shadow-lg hover:shadow-800/80 rounded-full text-stone-200",
         default:
           "bg-transparent hover:bg-stone-100 border border-stone-300 rounded-full text-xs text-red-400 shadow-lg shadow-red-900/10 hover:shadow-red-500/40",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-stone-100 rounded-full bg-transparent shadow-lg hover:bg-stone-100 ",
+          "border border-transparent rounded-full bg-transparent shadow-lg hover:bg-stone-100 ",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:rounded-full rounded-full opacity-20 hover:opacity-100 hover:bg-accent hover:text-accent-foreground",
+        ghost: "text-sm uppercase hover:rounded-full rounded-full opacity-20 hover:opacity-100 hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         back: "bg-stone-100 text-stone-400 hover:text-stone-500",
       },

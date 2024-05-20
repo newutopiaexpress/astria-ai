@@ -26,20 +26,20 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function UtopiaHero() {
   return (
-    <section className="w-full md:py-12 md:px-12 bg-transparent border border-stone-300 rounded-2xl">
+    <section className="w-full md:py-12 md:px-6 bg-transparent border border-stone-300 rounded-2xl">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-[1fr_1fr] xl:grid-cols-[1.5fr_1fr]">
+        <div className="grid gap-2 lg:grid-cols-[1fr_1fr] xl:grid-cols-[1.5fr_1fr]">
           <div className="space-y-4">
-            <p><Badge variant="default">NEW</Badge> <span className="text-xs text-red-400">The most advanced SDXL fine tuning at the lowest price!</span></p>
+            <p><Badge variant="default">Highest Quality</Badge> <span className="text-xs text-red-400">Fine tuned modells at the lowest price!</span></p>
             <h1 className="pb-4 bg-gradient-to-br from-stone-900 to-stone-500 bg-clip-text text-left font-extrabold tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-5xl md:text-7xl md:leading-[4rem]">
             Create any photo of anyone
             </h1>
             <p className="max-w-[500px] text-stone-700 md:text-xl">
             Upload some portrait photo and create images of yourself in any situation, any style, and anywhere! 
             </p>
-            <div className="flex flex-row gap-4">
+            <div className="grid grid-cols-3 py-6 gap-4 auto-cols-max">
 
-              <div className="py-6 transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
+              <div className="w-48 transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
                 <p className="text-xs tracking-widest">STARTER</p>
                 <h1 className="text-4xl font-extrabold text-red-400">100</h1>
                 <p className="text-xs text-stone-400">generated images</p>
@@ -49,7 +49,7 @@ export function UtopiaHero() {
                 </Link>
               </div>
 
-              <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
+              <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white bg-slate-100 text-center hover:shadow-xl">
                 <p className="text-xs tracking-widest">ADVANCED</p>
                 <h1 className="text-4xl font-extrabold text-red-500">300</h1>
                 <p className="text-xs text-stone-400">generated images</p>
@@ -74,7 +74,7 @@ export function UtopiaHero() {
           <div className="">
             <Image
               className="cover"
-              height="600"
+              height="540"
               width="337"
               alt="hello"
               src="/elf.png"

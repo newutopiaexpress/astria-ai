@@ -24,7 +24,7 @@ export default function RootLayout({ children }: any) {
             <Navbar />
           </Suspense>
         </section>
-        <main className="lg:w-3/4 mx-auto">
+        <main className="lg:w-5/6 mx-auto">
           {children}
         </main>
         <div>

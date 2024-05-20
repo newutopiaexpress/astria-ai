@@ -101,20 +101,18 @@ export const Login = ({
   return (
     <>
       <div className="flex items-center justify-center p-8">
-        <div className="flex flex-col gap-4 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 p-4 rounded-xl max-w-sm w-full">
-          <h1 className="text-xl">Welcome</h1>
-          <p className="text-xs opacity-60">
-            Sign in or create an account to get started.
-          </p>
-          {/* <Button
+        <div className="shadow-xl flex flex-col gap-4 bg-stone-200 dark:bg-neutral-900 border border-neutral-200 p-4 rounded-xl max-w-sm w-full">
+          <h1 className="text-xl pb-4">Welcome to Utopia!</h1>
+
+          <Button
             onClick={signInWithGoogle}
-            variant={"outline"}
+            variant={"google"}
             className="font-semibold"
           >
             <AiOutlineGoogle size={20} />
-            Continue with Google
+            <span className="pl-2">Continue with Google</span>
           </Button>
-          <OR /> */}
+          
 
           <form
             onSubmit={handleSubmit(onSubmit)}
