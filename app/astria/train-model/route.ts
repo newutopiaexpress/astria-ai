@@ -139,7 +139,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `@me ${type} as ${name}, masterpiece, highly detailed photography`,
+            text: `@me ${type} ${name}, masterpiece, highly detailed photography`,
             negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy, unrealistic `,
             callback: promptWebhookWithParams,
             num_images: 2,

@@ -195,8 +195,8 @@ export default function TrainModelZone() {
             name="name"
             render={({ field }) => (
               <FormItem className="w-full rounded-md">
-                <FormLabel>Describe the pictures you want to make</FormLabel>
-                <FormDescription className="text-stone-400">
+                <FormLabel className="text-lg">Describe the images you want to make</FormLabel>
+                <FormDescription className="text-stone-500">
                   For the best result use similar format: "as Aragorn from the Lord of the Rings" or "with long blonde hair" 
                 </FormDescription>
                 <FormControl>
@@ -314,8 +314,8 @@ export default function TrainModelZone() {
             </div>
           )}
 
-          <Button type="submit" className="h-12 w-full mx-auto text-sm" isLoading={isLoading}>
-            Create Model{" "}
+          <Button type="submit" variant="default" className="h-12 w-full mx-auto text-sm" isLoading={isLoading}>
+            Create Images{" "}
             {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
           </Button>
         </form>

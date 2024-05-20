@@ -23,13 +23,7 @@ export default async function Index() {
             <CloseIcon/>
           </Button>
         </Link>
-        <Card className="shadow-2xl bg-stone-100">
-          <CardHeader>
-            <CardTitle className="mt-6 text-4xl font-extrabold">Let's create a model!</CardTitle>
-            <CardDescription>
-              Choose a name, type, and upload some photos to get started.
-            </CardDescription>
-          </CardHeader>
+        <Card className="border-none shadow-none bg-transparent">
           <CardContent className="grid gap-6">
             <TrainModelZone />
           </CardContent>
