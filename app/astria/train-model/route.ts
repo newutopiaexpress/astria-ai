@@ -134,12 +134,12 @@ export async function POST(request: Request) {
         base_tune_id: 690204,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
-        token: "@me",
+        token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `@me ${type} ${name}, masterpiece, highly detailed photography`,
+            text: `ohwx ${type} ${name}, masterpiece, highly detailed photography`,
             negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy, unrealistic `,
             callback: promptWebhookWithParams,
             num_images: 2,
