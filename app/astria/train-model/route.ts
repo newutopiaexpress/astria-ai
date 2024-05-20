@@ -131,16 +131,16 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 838714,
+        base_tune_id: 690204,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
-        token: "ohwx",
+        token: "@me",
         image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} as ${name}, masterpiece, highly detailed`,
-            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
+            text: `@me ${type} as ${name}, masterpiece, highly detailed photography`,
+            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy, unrealistic `,
             callback: promptWebhookWithParams,
             num_images: 2,
           },
