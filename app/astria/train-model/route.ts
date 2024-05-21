@@ -131,7 +131,7 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 950531,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -139,8 +139,8 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} ${name}, masterpiece, highly detailed photography`,
-            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy, unrealistic `,
+            text: `ohwx ${type} as a painting of a bunch of different colors on a wall with a black background and a red, yellow, blue, and green design, Alberto Seveso, color, an airbrush painting, action painting, [1girl ample breasts:20] masterpiece, intricate, detailed, intricate, 8k, high detail, detailed, ultra detailed,`,
+            negative_prompt:`ng_deepnegative_v1_75t, deformed, blurry, bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra_limb, ugly, poorly drawn hands, two heads, child, children, kid, gross, mutilated, disgusting, horrible, scary, evil, old, conjoined, morphed, text, error, glitch, lowres, extra digits, watermark, signature, jpeg artifacts, low quality, unfinished, cropped, Siamese twins, robot eyes, loli, `,
             callback: promptWebhookWithParams,
             num_images: 2,
           },
