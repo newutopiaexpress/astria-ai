@@ -140,13 +140,13 @@ export async function POST(request: Request) {
         prompts_attributes: [
           {
             text: `professional portrait photo of {{ohwx ${type}}} detailed symmetric face, dark studio background, dramatic lighting, warm, cozy athmosphere, masterpiece photography`,
-            negative_prompt:``,
+            negative_prompt:`bad anatomy, red eyes, ugly, old, sad, wrinkles`,
             callback: promptWebhookWithParams,
             num_images: 3,
           },
           {
             text: `stunning half body portrait photo of {{ohwx ${type}}}, blurred background, soft lighting, sunny day, cozy athmosphere, masterpiece photography`,
-            negative_prompt:``,
+            negative_prompt:`bad anatomy, red eyes, ugly, old, sad, wrinkles`,
             callback: promptWebhookWithParams,
             num_images: 3,
           },
