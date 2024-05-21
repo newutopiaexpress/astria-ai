@@ -134,12 +134,11 @@ export async function POST(request: Request) {
         base_tune_id: 898062,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
-        token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} as ${name} --controlnets mlsd segroom --mask_prompt windows door --mask_invert`,
+            text: `${name} --controlnets mlsd segroom --mask_prompt windows door --mask_invert`,
             negative_prompt:``,
             callback: promptWebhookWithParams,
             num_images: 4,
