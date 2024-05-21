@@ -131,7 +131,7 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 898062,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -139,8 +139,8 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} as ${name}`,
-            negative_prompt:`old, wrinkles, doll, 3d, cross eyed`,
+            text: `ohwx ${type} as ${name} --controlnets mlsd segroom --mask_prompt windows door --mask_invert`,
+            negative_prompt:``,
             callback: promptWebhookWithParams,
             num_images: 4,
           },

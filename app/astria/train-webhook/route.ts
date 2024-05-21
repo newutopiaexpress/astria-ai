@@ -116,7 +116,7 @@ export async function POST(request: Request) {
     if (resendApiKey) {
       const resend = new Resend(resendApiKey);
       await resend.emails.send({
-        from: "tamas@utopia.express",
+        from: "noreply@utopia.express",
         to: user?.email ?? "",
         subject: "Your model was successfully trained!",
         html: `<h2>Your training was successful! 1 credit has been used from your account.</h2>`,
