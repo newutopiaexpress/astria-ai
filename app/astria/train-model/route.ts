@@ -151,8 +151,14 @@ export async function POST(request: Request) {
             num_images: 3,
           },
           {
-            text: `Glamour Portrait of {{ohwx ${type}}},  detailed face, dark background, dramatic lighting, suggestive but friendly look, dark, warm, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
+            text: `(full body shot) analog style, film, dust, grain, photo of a {{ohwx ${type}}} dressed in Gucci, wearing a yellow turtleneck and a blue peacoat, detailed face`,
             negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
+            callback: promptWebhookWithParams,
+            num_images: 3,
+          },
+          {
+            text: `portrait of {{ohwx ${type}}} with a suit, professional photography, high resolution, 4k`,
+            negative_prompt:`render, 2d, 3d, sketch, unrealistic eyes, painting, digital art, drawing, disfigured`,
             callback: promptWebhookWithParams,
             num_images: 3,
           },
