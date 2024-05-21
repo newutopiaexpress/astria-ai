@@ -140,6 +140,7 @@ export async function POST(request: Request) {
         prompts_attributes: [
           {
             text: `${name} --controlnets mlsd segroom --mask_prompt windows door --mask_invert`,
+            image_urls: images,
             negative_prompt:``,
             callback: promptWebhookWithParams,
             num_images: 4,
