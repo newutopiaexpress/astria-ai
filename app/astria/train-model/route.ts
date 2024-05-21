@@ -131,7 +131,7 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 317242,
+        base_tune_id: 690204,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -139,7 +139,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `RAW portrait photo, realistic photo of the beautiful ohwx ${type}, sexy pose, blurred background, ((full body)), (high detailed skin:1.5), high quality, film grain, Fujifilm XT3, hyper realistic, natural lighting, portrait photography, 85mm lens, dramatic lighting, photo realism, ultra-detailed, intimate portrait composition, Cinestill 800T, front light, (open mouth), smiling, (((masterpiece))) ((best quality)), ((21st century)), (((8k photography)), ((blushed)), ((pure delicate innocent face)), (smooth detailed face), (((hyper realistic))), ((black hair))) (blunt bangs), (symmetrical legs), symmetrical perfect body, sharp focus, (volumetric lighting), intricate details`,
+            text: `ohwx ${type} as ${name}`,
             negative_prompt:`old, wrinkles, doll, 3d, cross eyed`,
             callback: promptWebhookWithParams,
             num_images: 4,
