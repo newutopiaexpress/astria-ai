@@ -131,7 +131,7 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 838714,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -140,6 +140,12 @@ export async function POST(request: Request) {
         prompts_attributes: [
           {
             text: `Editorial portrait of {{ohwx ${type}}} detailed face, dark background, dramatic lighting, suggestive, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece photography`,
+            negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
+            callback: promptWebhookWithParams,
+            num_images: 3,
+          },
+          {
+            text: `Glamour Portrait of {{ohwx ${type}}},  detailed face, dark background, dramatic lighting, suggestive but friendly look, dark, warm, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
             negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
             callback: promptWebhookWithParams,
             num_images: 3,
