@@ -139,11 +139,16 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} ${name} --controlnets mlsd segroom --mask_prompt windows door --mask_invert`,
+            text: `professional portrait photo of {{ohwx ${type}}} detailed symmetric face, dark studio background, dramatic lighting, warm, cozy athmosphere, masterpiece photography`,
             negative_prompt:``,
-            input_image_url: images,
             callback: promptWebhookWithParams,
-            num_images: 4,
+            num_images: 3,
+          },
+          {
+            text: `stunning half body portrait photo of {{ohwx ${type}}}, blurred background, soft lighting, sunny day, cozy athmosphere, masterpiece photography`,
+            negative_prompt:``,
+            callback: promptWebhookWithParams,
+            num_images: 3,
           },
         ],
       },
