@@ -162,6 +162,12 @@ export async function POST(request: Request) {
             callback: promptWebhookWithParams,
             num_images: 3,
           },
+          {
+            text: `model photoshoot of {{ohwx ${type}}}, RAW photo, professional photo, white background, Amazing Details, Best Quality, Masterpiece`,
+            negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
+            callback: promptWebhookWithParams,
+            num_images: 3,
+          },
         ],
       },
     };
