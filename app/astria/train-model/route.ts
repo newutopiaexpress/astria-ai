@@ -139,7 +139,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} as ${name} --controlnets mlsd segroom --mask_prompt windows door --mask_invert`,
+            text: `${name} --controlnets mlsd segroom --mask_prompt windows door --mask_invert`,
             negative_prompt:``,
             callback: promptWebhookWithParams,
             num_images: 4,
