@@ -134,12 +134,12 @@ export async function POST(request: Request) {
         base_tune_id: 690204,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
-
+        token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `Industrial style building`,
+            text: `ohwx ${type} Industrial style building`,
             negative_prompt:`painted, sketch, deformed, easynegative`,
             input_image: images,
             controlnet:`mlsd`,
