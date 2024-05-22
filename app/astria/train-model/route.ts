@@ -142,7 +142,7 @@ export async function POST(request: Request) {
             text: `ohwx ${type} Industrial style building`,
             negative_prompt:`painted, sketch, deformed, easynegative`,
             input_image: images,
-            controlnet:`mlsd`,
+            
             callback: promptWebhookWithParams,
             num_images: 3,
             super_resolution: true,
