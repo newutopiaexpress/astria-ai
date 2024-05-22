@@ -139,14 +139,9 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `Editorial portrait of {{ohwx ${type}}} detailed face, dark background, dramatic lighting, suggestive, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece photography`,
+            text: `ohwx ${type} Industrial style apartments building --controlnets mlsd segroom --controlnet_weights 1 0.5`,
             negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
-            callback: promptWebhookWithParams,
-            num_images: 3,
-          },
-          {
-            text: `Editorial portrait of {{ohwx ${type}}} detailed face, dark background, dramatic lighting, suggestive, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece photography`,
-            negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
+            input_image: images,
             callback: promptWebhookWithParams,
             num_images: 3,
             super_resolution: true,
@@ -155,8 +150,6 @@ export async function POST(request: Request) {
             face_correct: true,
             steps:50,
           },
-
-
         ],
       },
     };
