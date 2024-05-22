@@ -27,7 +27,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
   };
 
   return (
-    <div className="rounded-md border shadow-xl bg-stone-100">
+    <div className="rounded-sm border-none shadow-none bg-transparent">
       <Table className="w-full">
         <TableHeader>
           <TableRow className="text-xs opacity-30">
@@ -42,7 +42,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
             <TableRow
               key={model.modelId}
               onClick={() => handleRedirect(model.id)}
-              className="cursor-pointer h-16 hover:bg-neutral-200/30"
+              className="cursor-pointer h-16 hover:bg-white/30 hover:shadow-lg hover:shadow-neutral-400/20"
             >
               <TableCell className="font-medium">{model.name}</TableCell>
               <TableCell>

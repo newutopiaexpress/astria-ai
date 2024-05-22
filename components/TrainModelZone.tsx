@@ -194,14 +194,11 @@ export default function TrainModelZone() {
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem className="w-full rounded-md">
-                <FormLabel className="text-lg">Describe the images you want to make</FormLabel>
-                <FormDescription className="text-stone-500 pb-4">
-                  Use similar format: "<span className="font-bold">as Aragorn from the Lord of the Rings</span>" or "<span className="font-bold">as a model with long blonde hair</span>" 
-                </FormDescription>
+              <FormItem className="md:w-5/6 mx-auto">
+                <FormLabel className="text-lg">Name your model:</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="as a superhero villain"
+                    placeholder="eq. Lucy"
                     {...field}
                     className="max-w-screen-lg"
                     autoComplete="off"
@@ -211,8 +208,8 @@ export default function TrainModelZone() {
               </FormItem>
             )}
           />
-          <div className="flex flex-col gap-4">
-            <FormLabel>Select your type</FormLabel>
+          <div className="md:w-5/6 mx-auto pt-4 flex flex-col gap-4">
+            <FormLabel className="text-lg">Select your type:</FormLabel>
             <FormDescription className="text-stone-400">
             </FormDescription>
             <RadioGroup
@@ -232,7 +229,7 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="man"
-                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-lg border-2 border-stone-400 bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400  [&:has([data-state=checked])]:border-primary"
                 >
                   <FaMale className="mb-3 h-6 w-6" />
                   Man
@@ -248,7 +245,7 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="woman"
-                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-lg border-2 border-stone-400 bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400  [&:has([data-state=checked])]:border-primary"
                 >
                   <FaFemale className="mb-3 h-6 w-6" />
                   Woman
@@ -263,7 +260,7 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="person"
-                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-lg border-2 border-stone-400 bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400  [&:has([data-state=checked])]:border-primary"
                 >
                   <FaRainbow className="mb-3 h-6 w-6" />
                   Unisex
@@ -271,15 +268,16 @@ export default function TrainModelZone() {
               </div>
             </RadioGroup>
           </div>
+
           <div
             {...getRootProps()}
-            className=" rounded-md justify-center align-middle cursor-pointer flex flex-col gap-4"
+            className="md:w-5/6 mx-auto pt-4 rounded-md justify-center align-middle cursor-pointer flex flex-col gap-4"
           >
-            <FormLabel>Your photos</FormLabel>
+            <FormLabel className="text-lg">Your photos</FormLabel>
             <FormDescription>
               Upload 4-10 images of yourself. 
             </FormDescription>
-            <div className="outline-dashed outline-2 outline-gray-100 hover:outline-blue-500 w-full h-full rounded-md p-4 flex justify-center align-middle">
+            <div className="outline-dashed outline-2 outline-green-400 hover:outline-blue-500 w-full h-full rounded-md p-4 flex justify-center align-middle">
               <input {...getInputProps()} />
               {isDragActive ? (
                 <p className="self-center">Drop the files here ...</p>
@@ -314,7 +312,7 @@ export default function TrainModelZone() {
             </div>
           )}
 
-          <Button type="submit" variant="submit" className="h-12 w-full mx-auto text-sm" isLoading={isLoading}>
+          <Button type="submit" variant="submit" className="mt-6 md:w-1/3 h-12 mx-auto text-sm" isLoading={isLoading}>
             Create Images{" "}
             {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
           </Button>

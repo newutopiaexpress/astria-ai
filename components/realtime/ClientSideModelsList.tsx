@@ -59,12 +59,12 @@ export default function ClientSideModelsList({
   return (
     <div id="train-model-container" className="min-w-full">
       {models && models.length > 0 && (
-        <div className="flex flex-col gap-4 p-2 border border-stone-200 rounded-2xl">
+        <div className="flex flex-col gap-4 rounded-2xl">
           <div className="flex flex-row gap-4 w-full justify-between items-center text-center">
-            <p className="ml-2 text-xs font-normal text-stone-400">Your models</p>
+            <p className="ml-2 text-lg font-normal text-stone-400">Your models</p>
             <Link href="/overview/models/train" className="w-fit">
               <Button className="rounded-full text-xs border-stone-100 bg-stone-100 text-stone-500">
-                Train model
+                Create new
               </Button>
             </Link>
           </div>
@@ -78,7 +78,6 @@ export default function ClientSideModelsList({
             <span className="text-center mx-auto w-32 h-32">
               <UploadIcon/>
             </span>
-            
              Bring to life your first AI clone!
           </h1>
           <div>
