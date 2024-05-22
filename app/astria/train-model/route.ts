@@ -136,6 +136,7 @@ export async function POST(request: Request) {
         branch: "fast",
         token: "ohwx",
         image_urls: images,
+        input_image: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
