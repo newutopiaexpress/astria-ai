@@ -141,7 +141,6 @@ export async function POST(request: Request) {
           {
             text: `ohwx ${type} in scandinavian style  --mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 1 0.5`,
             negative_prompt:`painted, sketch, deformed, easynegative`,
-            controlnet:`mlsd`,
             input_image: images,
             callback: promptWebhookWithParams,
             num_images: 3,
