@@ -144,17 +144,7 @@ export async function POST(request: Request) {
             callback: promptWebhookWithParams,
             num_images: 3,
           },
-          {
-            text: `Editorial portrait of {{ohwx ${type}}} detailed face, dark background, dramatic lighting, suggestive, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece photography`,
-            negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
-            callback: promptWebhookWithParams,
-            num_images: 3,
-            super_resolution: true,
-            inpaint_faces: true,
-            hires_fix: true,
-            face_correct: true,
-            steps:50,
-          },
+
 
           {/*{
             text: `Glamour Portrait of {{ohwx ${type}}},  detailed face, dark background, dramatic lighting, suggestive but friendly look, dark, warm, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
