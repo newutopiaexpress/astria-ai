@@ -139,10 +139,9 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} Industrial style building`,
+            text: ` Industrial style building  --mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 1 0.5`,
             negative_prompt:`painted, sketch, deformed, easynegative`,
             input_image: images,
-            
             callback: promptWebhookWithParams,
             num_images: 3,
             super_resolution: true,
