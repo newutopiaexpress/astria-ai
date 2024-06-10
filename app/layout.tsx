@@ -7,8 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
 
 export const metadata = {
-  title: "Headshots AI",
-  description: "Generate awesome headshots in minutes using AI",
+  title: "AI Photographer",
+  description: "Generate professional portraits with AI",
 };
 
 export default function RootLayout({ children }: any) {

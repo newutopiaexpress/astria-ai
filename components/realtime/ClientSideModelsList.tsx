@@ -57,7 +57,7 @@ export default function ClientSideModelsList({
   }, [supabase, models, setModels]);
 
   return (
-    <div id="train-model-container" className="min-w-full">
+    <div id="train-model-container">
       {models && models.length > 0 && (
         <div className="flex flex-col gap-4 rounded-2xl">
           <div className="flex flex-row gap-4 w-full justify-between items-center text-center">
