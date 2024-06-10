@@ -140,7 +140,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `Editorial portrait of ohwx ${type} detailed face, dark background, dramatic lighting, suggestive, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece photography`,
+            text: `Editorial portrait of ohwx ${type} detailed face, cozy, dark background, dramatic lighting, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece photography`,
             negative_prompt:`bad anatomy, unrealistic, deformed pupils, red eyes, ugly, old, sad`,
             callback: promptWebhookWithParams,
             num_images: 5,
@@ -155,8 +155,8 @@ export async function POST(request: Request) {
 
           },
           {
-            text: `RAW photo, portrait photo of ohwx ${type}, playing a guitar, model photoshoot, professional photo, white background, Amazing Details, Best Quality, Masterpiece`,
-            negative_prompt:`bad anatomy, red eyes, ugly, old, sad,  unrealistic`, 
+            text: `RAW photo, portrait photo of ohwx ${type}, model photoshoot, professional photo, white background, Amazing Details, Best Quality, Masterpiece`,
+            negative_prompt:`bad anatomy, red eyes, ugly, old, sad, unrealistic`, 
             callback: promptWebhookWithParams,
             num_images: 5,
             super_resolution: true,
@@ -211,7 +211,7 @@ export async function POST(request: Request) {
             face_swap: true,
           },
           {
-            text: `portrait of ohwx ${type} wearing a business suit, model photoshoot, professional photo, white background, Amazing Details, Best Quality, Masterpiece, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
+            text: `portrait of ohwx ${type} wearing a business suit, office background, model photoshoot, professional photo, white background, Amazing Details, Best Quality, Masterpiece, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
             negative_prompt:`bad anatomy, red eyes, ugly, old, sad`,
             callback: promptWebhookWithParams,
             num_images: 5,
@@ -225,7 +225,7 @@ export async function POST(request: Request) {
             face_swap: true,
           },
           {
-            text: `analog style modelshoot style medium portrait of ohwx ${type} wearing hoodie and pants in luxury villa living room, masterpiece, cinematic light, ultrarealistic+, photorealistic+, 8k, raw photo, realistic, sharp focus on eyes, (symmetrical eyes), (intact eyes), hyperrealistic, highest quality, best quality,highly detailed, masterpiece, best quality, extremely detailed cg unity 8k wallpaper, masterpiece, best quality, ultra-detailed, best shadow, detailed background, beautiful detailed face, beautiful detailed eyes, high contrast, best illumination, detailed face, beautiful, dulux, caustic, dynamic angle, beautiful detailed glow. dramatic lighting. highly detailed, insanely detailed hair, symmetrical, intricate details, professionally retouched, elegant, 8k high definition. strong bokeh. award winning photo`,
+            text: `analog style modelshoot style medium portrait of ohwx ${type}, masterpiece, cinematic light, ultrarealistic+, photorealistic+, 8k, raw photo, realistic, sharp focus on eyes, (symmetrical eyes), (intact eyes), hyperrealistic, highest quality, best quality,highly detailed, masterpiece, best quality, extremely detailed cg unity 8k wallpaper, masterpiece, best quality, ultra-detailed, best shadow, detailed background, beautiful detailed face, beautiful detailed eyes, high contrast, best illumination, detailed face, beautiful, dulux, caustic, dynamic angle, beautiful detailed glow. dramatic lighting. highly detailed, insanely detailed hair, symmetrical, intricate details, professionally retouched, elegant, 8k high definition. strong bokeh. award winning photo`,
             negative_prompt:`elongated body (deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime), text, cropped, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers,`,
             callback: promptWebhookWithParams,
             num_images: 5,
@@ -239,7 +239,7 @@ export async function POST(request: Request) {
             face_swap: true,
           },
           {
-            text: `analog style modelshoot style medium portrait of ohwx ${type} wearing hoodie and pants in luxury villa living room, masterpiece, cinematic light, ultrarealistic+, photorealistic+, 8k, raw photo, realistic, sharp focus on eyes, (symmetrical eyes), (intact eyes), hyperrealistic, highest quality, best quality,highly detailed, masterpiece, best quality, extremely detailed cg unity 8k wallpaper, masterpiece, best quality, ultra-detailed, best shadow, detailed background, beautiful detailed face, beautiful detailed eyes, high contrast, best illumination, detailed face, beautiful, dulux, caustic, dynamic angle, beautiful detailed glow. dramatic lighting. highly detailed, insanely detailed hair, symmetrical, intricate details, professionally retouched, elegant, 8k high definition. strong bokeh. award winning photo`,
+            text: `modelshoot style half body portrait of ohwx ${type} in luxury villa living room, masterpiece, cinematic light, ultrarealistic+, photorealistic+, 8k, raw photo, realistic, sharp focus on eyes, (symmetrical eyes), (intact eyes), hyperrealistic, highest quality, best quality,highly detailed, masterpiece, best quality, extremely detailed cg unity 8k wallpaper, masterpiece, best quality, ultra-detailed, best shadow, detailed background, beautiful detailed face, beautiful detailed eyes, high contrast, best illumination, detailed face, beautiful, dulux, caustic, dynamic angle, beautiful detailed glow. dramatic lighting. highly detailed, insanely detailed hair, symmetrical, intricate details, professionally retouched, elegant, 8k high definition. strong bokeh. award winning photo`,
             negative_prompt:`elongated body (deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime), text, cropped, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers,`,
             callback: promptWebhookWithParams,
             num_images: 5,
