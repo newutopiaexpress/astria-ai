@@ -133,7 +133,7 @@ export async function POST(request: Request) {
         // https://www.astria.ai/gallery/tunes/690204/prompts
         base_tune_id: 690204,
         name: type,
-        branch: "fast",
+        branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
         image_urls: images,
         input_image: images,
