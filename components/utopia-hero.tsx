@@ -26,13 +26,13 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function UtopiaHero() {
   return (
-    <section className="w-full px-0 md:px-6 bg-transparent">
-      <div className="container">
+    <section className="w-full px-0 md:px-6 bg-stone-900">
+      <div className="container shadow-2xl shadow-slate-400/10 rounded-2xl">
         <div className="grid gap-2 lg:grid-cols-[1fr_1fr] xl:grid-cols-[1.5fr_1fr]">
           <div className="content-center">
             <p><Badge variant="warning">Realism Warning!</Badge> <span className="text-xs text-slate-700 font-thin">Don't use it with other people's photos without their permission</span></p>
             <h1 className="pb-6 pt-2 bg-gradient-to-br from-stone-900 to-stone-500 bg-clip-text text-left font-extrabold tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-5xl md:text-7xl md:leading-[4rem]">
-            Bring to life a digital clone
+            The AI Photographer
             </h1>
             <p className="pb-6 max-w-[420px] text-stone-700 md:text-xl">
             Upload photos of any person and create breathtakingly lifelike images with the subject!  
@@ -47,11 +47,11 @@ export function UtopiaHero() {
 
           <div>
             <Image
-              className="cover"
-              height="600"
-              width="337"
+              className="cover fade-in-5"
+              height="1168"
+              width="901"
               alt="hello"
-              src="/elf.png"
+              src="/v0.png"
             />
 
           </div>

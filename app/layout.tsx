@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className="bg-fixed flex flex-col bg-gradient-to-tl from-red-100 to-slate-300">
+      <body className="bg-fixed flex flex-col bg-stone-900">
         <section>
           <Suspense
             fallback={
