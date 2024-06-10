@@ -7,9 +7,9 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import PricingSection from "./PricingSection";
-import { Separator } from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { AiOutlineGoogle } from "react-icons/ai";
 
 /** Add fonts into your Next.js project:
 
@@ -26,55 +26,29 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function UtopiaHero() {
   return (
-    <section className="w-full md:py-12 md:px-6 bg-transparent border border-stone-300 rounded-2xl">
-      <div className="container px-4 md:px-6">
+    <section className="w-full px-0 md:px-6 bg-transparent">
+      <div className="container">
         <div className="grid gap-2 lg:grid-cols-[1fr_1fr] xl:grid-cols-[1.5fr_1fr]">
-          <div className="space-y-4">
-            <p><Badge variant="default">Highest Quality</Badge> <span className="text-xs text-red-400">Fine tuned modells at the lowest price!</span></p>
-            <h1 className="pb-4 bg-gradient-to-br from-stone-900 to-stone-500 bg-clip-text text-left font-extrabold tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-5xl md:text-7xl md:leading-[4rem]">
-            Create any photo of anyone
+          <div className="content-center">
+            <p><Badge variant="warning">Realism Warning!</Badge> <span className="text-xs text-slate-700 font-thin">Don't use it with other people's photos without their permission</span></p>
+            <h1 className="pb-6 pt-2 bg-gradient-to-br from-stone-900 to-stone-500 bg-clip-text text-left font-extrabold tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-5xl md:text-7xl md:leading-[4rem]">
+            Bring to life a digital clone
             </h1>
-            <p className="max-w-[500px] text-stone-700 md:text-xl">
-            Upload some portrait photo and create images of yourself in any situation, any style, and anywhere! 
-            </p>
-            <div className="grid grid-cols-3 py-6 gap-4 auto-cols-max">
+            <p className="pb-6 max-w-[420px] text-stone-700 md:text-xl">
+            Upload photos of any person and create breathtakingly lifelike images with the subject!  
+            </p> 
+            <Link href="/login">
+              <Button variant={"google"}>Login with Google
+                <AiOutlineGoogle size={20} className="ml-2"/>
+              </Button>
+            </Link>
 
-              <div className="w-48 transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
-                <p className="text-xs tracking-widest">STARTER</p>
-                <h1 className="text-4xl font-extrabold text-red-400">100</h1>
-                <p className="text-xs text-stone-400">generated images</p>
-                <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
-                <Link href="/login">
-                  <Button variant="default">Select</Button>
-                </Link>
-              </div>
-
-              <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white bg-slate-100 text-center hover:shadow-xl">
-                <p className="text-xs tracking-widest">ADVANCED</p>
-                <h1 className="text-4xl font-extrabold text-red-500">300</h1>
-                <p className="text-xs text-stone-400">generated images</p>
-                <h1 className="text-4xl">25<span className="text-3xl">€</span></h1>
-                <Link href="/login">
-                  <Button variant="default">Select</Button>
-                </Link>
-              </div>
-
-              <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
-                <p className="text-xs tracking-widest">ADDICTED</p>
-                <h1 className="text-4xl font-extrabold text-red-600">500</h1>
-                <p className="text-xs text-stone-400">generated images</p>
-                <h1 className="text-4xl">39<span className="text-3xl">€</span></h1>
-                <Link href="/login">
-                  <Button variant="default">Select</Button>
-                </Link>
-              </div>
-
-            </div>
           </div>
-          <div className="">
+
+          <div>
             <Image
               className="cover"
-              height="540"
+              height="600"
               width="337"
               alt="hello"
               src="/elf.png"
@@ -83,7 +57,7 @@ export function UtopiaHero() {
           </div>
         </div>
       </div>
-      
+
     </section>
   )
 }

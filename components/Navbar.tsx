@@ -36,7 +36,7 @@ export default async function Navbar() {
   } = await supabase.from("credits").select("*").eq("user_id", user?.id ?? '').single()
 
   return (
-    <div className="flex w-full px-4 lg:px-6 py-6 items-center text-center gap-8 justify-between">
+    <div className="fixed flex w-full px-4 lg:px-6 py-6 items-center text-center gap-8 justify-between">
       <div className="flex gap-2 h-full">
         <Link href="/">
           <h2 className="font-bold ml-2"><UtopiaLogo/></h2>
