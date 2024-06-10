@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className="bg-fixed flex flex-col bg-stone-900">
+      <body className="bg-fixed flex flex-col bg-gradient-to-tl from-red-100 to-slate-300">
         <section>
           <Suspense
             fallback={
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: any) {
             <Navbar />
           </Suspense>
         </section>
-        <main className="md:w-2/3 mx-auto">
+        <main className="md:w-full md:px-6 mx-auto">
           {children}
         </main>
         

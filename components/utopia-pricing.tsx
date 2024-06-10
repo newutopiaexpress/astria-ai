@@ -28,24 +28,6 @@ export function UtopiaPricing() {
   return (
     <section className="w-full px-0 py-9 md:px-6 bg-transparent">
 
-      <div className="grid grid-cols-12 py-6 gap-4 auto-cols-max bg-transparent rounded-2xl shadow-xl p-6">
-
-        <div className="col-span-9 content-center">
-          <h1 className="pb-6 pt-2 bg-gradient-to-br from-stone-900 to-stone-500 bg-clip-text text-left font-thin tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-5xl md:text-7xl md:leading-[4rem]">
-                Create your first clone!
-          </h1>
-        </div>
-        <div className="col-span-3 content-center">
-          <Link href="/login">
-            <Button  variant={"google"} className="">Login / Signup
-              <AiOutlineGoogle size={40} />
-            </Button>
-          </Link>
-        </div>
-
-      </div>
-
-
       <div className="container mt-9 grid grid-cols-3 py-6 gap-12 auto-cols-max"> 
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">

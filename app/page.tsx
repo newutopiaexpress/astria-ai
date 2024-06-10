@@ -24,8 +24,9 @@ export default async function Index() {
  
     <div>
        <UtopiaHero/>
-       <UtopiaFeatures/>
        <UtopiaPricing/>
+       <UtopiaFeatures/>
+      
     </div>
 
     

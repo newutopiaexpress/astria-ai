@@ -12,7 +12,7 @@ const buttonVariants = cva(
       variant: {
         submit:
           "bg-stone-800 text-stone-200 rounded-full shadow-sm hover:bg-stone-600",
-        google:"text-lg bg-stone-700 hover:bg-stone-600 shadow-xl shadow-yellow-800/20 hover:shadow-lg rounded-full text-stone-200",
+        google:"transition-all text-md border border-stone-400 bg-stone-900 hover:bg-stone-100 shadow-xl shadow-rose-900/20 hover:shadow-lg rounded-full text-stone-300 hover:text-stone-800",
         loginbig:
           "bg-stone-800 text-stone-200 rounded-full shadow-sm hover:bg-stone-600",
         default:
