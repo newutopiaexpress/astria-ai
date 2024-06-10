@@ -51,13 +51,6 @@ export default async function Navbar() {
           )}
         </div>
       )}
-        <div className="hidden lg:flex flex-row gap-2">
-          {stripeIsConfigured && (
-            <Link href="/models/train">
-              <Button variant={"outline"}>Create new</Button>
-            </Link>
-          )}
-        </div>
 
       <div className="flex gap-4 lg:ml-auto">
         {!user && (
