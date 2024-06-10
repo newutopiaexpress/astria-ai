@@ -17,6 +17,9 @@ export default async function Index() {
   }
 
   return (
-    <StripePricingTable user={user} />
+    <div className="flex flex-col flex-1 w-full h-[calc(100vh-73px)] place-content-center">
+        <StripePricingTable user={user} />
+    </div>
+   
   );
 }
