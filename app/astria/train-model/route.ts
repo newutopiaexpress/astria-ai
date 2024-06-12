@@ -169,8 +169,8 @@ export async function POST(request: Request) {
             face_swap: true,
           },
           {
-            text: `half body editorial portrait of ohwx ${type}, detailed face, dark background, dramatic lighting, suggestive, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece, half body portrait`,
-            negative_prompt:`nude, nudity, bad anatomy, red eyes, ugly, old,  unrealistic, sad`,
+            text: `half body editorial portrait of ohwx ${type}, detailed face, dark background, dramatic lighting, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece, half body portrait`,
+            negative_prompt:`nude, nudity, bad anatomy, red eyes, ugly, old,  unrealistic, sad, close up, closeup`,
             callback: promptWebhookWithParams,
             num_images: 1,
             super_resolution: true,

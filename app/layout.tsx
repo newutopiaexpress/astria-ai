@@ -18,13 +18,13 @@ export default function RootLayout({ children }: any) {
         <section>
           <Suspense
             fallback={
-              <div className="flex w-full px-4 py-4 items-center text-center gap-8 justify-between h-[69px]" />
+              <div className=" px-4 pb-9 items-center text-center gap-8 justify-between h-[69px]" />
             }
           >
             <Navbar />
           </Suspense>
         </section>
-        <main className="md:w-full md:px-6 mx-auto">
+        <main className="w-full mx-auto">
           {children}
         </main>
         

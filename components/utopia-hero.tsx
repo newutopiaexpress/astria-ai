@@ -26,38 +26,40 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function UtopiaHero() {
   return (
-    <section className="w-full px-0 md:px-4 mt-16 bg-stone-900 shadow-2xl shadow-slate-400/10 rounded-2xl relative">
+    <section className="px-2 md:px-8 shadow-2xl shadow-slate-400/10 rounded-2xl">
 
-      <div className="container">
-        <div className="grid gap-1 lg:grid-cols-2 xl:grid-cols-2">
+      <div className=" bg-stone-900 rounded-2xl relative">
+        <div className="grid gap-0 lg:grid-cols-2 xl:grid-cols-2">
 
-          <div className="content-center col-span-1">
+          <div className="p-6 md:p-16 content-center col-span-1">
 
-            <div className=""> 
-              <WarningIcon/> <span className="text-xs text-stone-500 font-thin leading-tight">Don't use it without the permission of the subject!</span>
-            </div>
-            <h1 className="pb-6 pt-6 bg-gradient-to-br from-stone-500 to-stone-300 bg-clip-text text-left font-extrabold tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-5xl md:text-7xl md:leading-[4rem]">
+            
+            <h1 className="max-w-[480px] pb-6 bg-gradient-to-br from-stone-500 to-stone-200 bg-clip-text text-left font-extrabold tracking-tighter text-transparent drop-shadow-sm [text-wrap:balance] text-6xl leading-[3rem] md:text-7xl md:leading-[4rem]">
             The AI Photographer
             </h1>
-            <p className="pb-6 max-w-[420px] text-stone-400 md:text-xl">
-            Create professional, breathtakingly lifelike photos of you!  
+            <p className="pb-6 max-w-[400px] text-stone-400 md:text-xl">
+            Stunningly lifelike photos, as if taken by a professional photographer. 
             </p> 
+            <p>
+            <span className="text-stone-400 mr-2 text-xs">  
+              <span className="font-extrabold">1 Series</span> (40pcs) now just: <span className="text-md font-bold border border-rose-500 shadow-sm text-stone-100 p-2 rounded-full">9<span className="text-xs font-normal">€</span></span>
+            </span>
             <Link href="/login">
               <Button variant={"google"} size={"lg"}>Login with Google
                 <AiOutlineGoogle size={20} className="ml-2"/>
               </Button>
             </Link>
+            </p>
           </div>
 
-          <div className="col-span-1">
+          <div className="col-span-1 animate-fade-in animate-duration-[2s]">
             <Image
-              className="cover fade-in-5"
+              className="cover"
               height="1168"
               width="901"
               alt="hello"
               src="/v0.png"
             />
-
           </div>
 
         </div>

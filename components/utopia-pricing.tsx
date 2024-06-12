@@ -26,34 +26,32 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 export function UtopiaPricing() {
   return (
-    <section className="w-full px-0 py-9 md:px-6 bg-transparent">
+    <section className="px-2 md:px-8 ">
 
-      <div className="container mt-9 grid grid-cols-3 py-6 gap-12 auto-cols-max"> 
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 auto-cols-max"> 
+
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
-                <p className="text-xs tracking-widest">STARTER</p>
-                <h1 className="text-4xl font-extrabold text-red-400">100</h1>
-                <p className="text-xs text-stone-400">generated images</p>
-                <h1 className="text-4xl">9<span className="text-3xl">€</span></h1>
+                <h1 className="text-4xl font-extrabold text-red-400">1 Credit</h1>
+                <p className="text-md text-stone-400">40 Professional photo</p>
+                <h1 className="text-4xl">12<span className="text-3xl">€</span></h1>
                 <Link href="/login">
                   <Button variant="default">Select</Button>
                 </Link>
               </div>
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white bg-slate-100 text-center hover:shadow-xl">
-                <p className="text-xs tracking-widest">ADVANCED</p>
-                <h1 className="text-4xl font-extrabold text-red-500">300</h1>
-                <p className="text-xs text-stone-400">generated images</p>
-                <h1 className="text-4xl">25<span className="text-3xl">€</span></h1>
+                <h1 className="text-4xl font-extrabold text-red-500">3 Credits</h1>
+                <p className="text-md text-stone-400">3x40 Professional photo</p>
+                <h1 className="text-4xl">33<span className="text-3xl">€</span></h1>
                 <Link href="/login">
                   <Button variant="default">Select</Button>
                 </Link>
               </div>
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
-                <p className="text-xs tracking-widest">ADDICTED</p>
-                <h1 className="text-4xl font-extrabold text-red-600">500</h1>
-                <p className="text-xs text-stone-400">generated images</p>
+                <h1 className="text-4xl font-extrabold text-red-600">5 Credits</h1>
+                <p className="text-md text-stone-400">5x40 Professional photo</p>
                 <h1 className="text-4xl">39<span className="text-3xl">€</span></h1>
                 <Link href="/login">
                   <Button variant="default">Select</Button>

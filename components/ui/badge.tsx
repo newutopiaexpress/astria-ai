@@ -11,7 +11,7 @@ const badgeVariants = cva(
         warning:
           "border border-red-900 text-xs font-normal bg-transparent text-stone-500 shadow-sm hover:shadow-md",
         default:
-          "border-transparent bg-slate-100/40 text-green-400 ",
+          "border border-red-900 text-xs font-normal bg-transparent text-stone-500 shadow-sm hover:shadow-md",
         secondary:
           "border-transparent bg-transparent shadow-sm text-secondary-foreground hover:bg-secondary/80",
         destructive:
