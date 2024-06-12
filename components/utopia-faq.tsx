@@ -32,7 +32,7 @@ export function UtopiaFaq() {
 
     <section className="mx-auto md:w-2/3 lg:w-1/2 py-6">
 
-      <div className="py-6 px-4 md:px-6 text-center">
+      <div className="border-b border-stone-300 py-6 px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Discover your inner beauty</h2>
           <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
           This tool does not want to change you, but sees the beautiful in you, and creates an opportunity to get the most out of yourself.
