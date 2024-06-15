@@ -130,8 +130,8 @@ export async function POST(request: Request) {
       tune: {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
-        // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id:1034743,
+        // https://www.astria.ai/gallery/tunes/690204/prompts 1034743
+        base_tune_id: 690204,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -239,20 +239,6 @@ export async function POST(request: Request) {
             face_swap: true,
           },
           {
-            text: `Fashion magazine cover depict ohwx ${type}, professional model photoshoot, dynamic lighting, Detailed face, Masterpiece, highly detailed`,
-            negative_prompt:`nude, nudity, bad anatomy, unrealistic, ugly, old, sad`,
-            callback: promptWebhookWithParams,
-            num_images: 3,
-            super_resolution: true,
-            super_resolution_details: true,
-            inpaint_faces: true,
-            w:512,
-            h:640,
-            hires_fix: true,
-            face_correct: true,
-            face_swap: true,
-          },
-          {
             text: `wide shot half body portrait of beautiful ohwx ${type}, cinematic lighting, highly detailed face, professional photo, neutral studio background, masterpiece`,
             negative_prompt:`ugly, old, sad, nude, nudity, bad anatomy, unrealistic`,
             callback: promptWebhookWithParams,
@@ -266,20 +252,7 @@ export async function POST(request: Request) {
             face_correct: true,
             face_swap: true,
           },
-          {
-            text: `80's portrait of ohwx ${type}, blue background, official balmain editorial, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
-            negative_prompt:`ugly, old, sad, nude, nudity, bad anatomy, unrealistic`,
-            callback: promptWebhookWithParams,
-            num_images: 3,
-            super_resolution: true,
-            super_resolution_details: true,
-            inpaint_faces: true,
-            w:512,
-            h:640,
-            hires_fix: true,
-            face_correct: true,
-            face_swap: true,
-          },
+
 
         ],
       },

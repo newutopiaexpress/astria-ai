@@ -101,7 +101,7 @@ export const Login = ({
   return (
     <>
       <div className="flex items-center justify-center p-8">
-        <div className="flex flex-col gap-4 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 p-4 rounded-xl max-w-sm w-full">
+        <div className="flex flex-col gap-4 bg-transparent p-4  max-w-sm w-full">
           <h1 className="text-xl">Welcome</h1>
           <p className="text-xs opacity-60">
             Sign in or create an account to get started.

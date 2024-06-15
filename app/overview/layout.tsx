@@ -19,5 +19,5 @@ export default async function RootLayout({
     return <Login />;
   }
 
-  return <div className="md:w-2/3 md:mx-auto bg-transparent flex  flex-col px-4 py-9">{children}</div>;
+  return <div className="md:mx-auto bg-transparent flex  flex-col px-4 md:px-6 py-9">{children}</div>;
 }

@@ -60,13 +60,13 @@ export default function ClientSideModel({
               </div>
           </div>
           )}
-          <div className="flex flex-col w-full  mx-auto rounded-md">
+          <div className="flex flex-col w-full  mx-auto">
             {model.status === "finished" && (
               <div className="flex flex-1 flex-col gap-2">
                 <h1 className="text-xl opacity-25 mt-9">Results</h1>
-                <div className="flex flex-row flex-wrap gap-6">
+                <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
                   {serverImages?.map((image) => (
-                    <div key={image.id}>
+                    <div key={image.id} className="pb-9">
                       <img
                         src={image.uri}
                         className="mx-auto text-center rounded-sm w-96 object-cover"

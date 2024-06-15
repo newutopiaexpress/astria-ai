@@ -101,9 +101,8 @@ export const Login = ({
   return (
     <>
       <div className="flex items-center justify-center p-8">
-        <div className="shadow-xl shadow-red-400/30 flex flex-col gap-4 bg-stone-200 dark:bg-neutral-900 border border-neutral-200 p-4 rounded-xl max-w-sm w-full">
-          <h1 className="text-xl pb-4">Welcome to Utopia!</h1>
-
+        <div className="flex flex-col gap-4 bg-transparent  p-4 max-w-sm w-full">
+         
           <Button
             onClick={signInWithGoogle}
             variant={"google"}
@@ -149,7 +148,7 @@ export const Login = ({
             <Button
               isLoading={isSubmitting}
               disabled={isSubmitting}
-              variant="outline"
+              variant="default"
               className="w-full"
               type="submit"
             >
