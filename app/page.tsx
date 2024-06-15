@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { UtopiaHero } from "@/components/utopia-hero";
 import { UtopiaPricing } from "@/components/utopia-pricing";
 import { UtopiaFeatures } from "@/components/utopia-features";
-import { UtopiaSecond } from "@/components/utopia-second";
+import { UtopiaSecond2 } from "@/components/utopia-second2";
 import { UtopiaFaq } from "@/components/utopia-faq";
 
 export const dynamic = "force-dynamic";
@@ -26,7 +26,7 @@ export default async function Index() {
  
     <div>
       <UtopiaHero/>
-      <UtopiaSecond/>
+      <UtopiaSecond2/>
       <UtopiaFaq/>
     </div>
 

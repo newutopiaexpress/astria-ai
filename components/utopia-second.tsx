@@ -87,7 +87,7 @@ export function UtopiaSecond() {
             </div>
 
             <p className="md:w-1/2 md:mx-auto mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            This futuristic tool can see inner beauty, and able to reconstruct it in stunning photos. Just like a real photographer.
+            This futuristic tool can see your inner beauty, and able to reconstruct it in stunning photos. Just like a real photographer.
             </p>
         </div>
 

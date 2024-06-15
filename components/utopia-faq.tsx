@@ -48,7 +48,7 @@ export function UtopiaFaq() {
           <div className="md:col-span-6 md:text-left content-center">
             <h2 className="pt-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Control The First Impression</h2>
             <p className="md:max-w-[340px] md:float-left mt-4 mb-6 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            In this digital world, personal representation and the personal brand are valued. Improve your digital appearance and seize the first moment.
+            In this new era, personal representation and the personal brand are valued. Improve your digital appearance and seize the first moment.
             </p>
             <p className="pt-4">
               <Link href="/login">
@@ -91,6 +91,34 @@ export function UtopiaFaq() {
             />
           </div>
 
+      </div>
+
+      <div className="py-9 px-4 md:px-6 text-center md:w-2/3 md:mx-auto md:grid md:grid-cols-12 md:gap-9">
+          <div className="md:col-span-6 mt-6 max-w-96  mx-auto relative">
+            <div className="cursor-pointer pt-[11px] pl-[11px] z-40 absolute top-9 transition-all -right-5 text-center md:text-left text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">
+              <SparkleIcon/>
+            </div>
+            <Image
+                        className="cover rounded-full shadow-xl shadow-stone-800/30"
+                        height="1280"
+                        width="1006"
+                        alt="1006"
+                        src="/v12.png"
+            />
+          </div>
+          <div className="md:col-span-6 md:text-left content-center">
+            <h2 className="pt-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Enhance your digital presence</h2>
+            <p className="md:max-w-[340px] md:float-left mt-4 mb-6 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            In this new era, personal representation and the personal brand are valued. Improve your digital appearance and seize the first moment.
+            </p>
+            <p className="pt-4">
+              <Link href="/login">
+                <Button variant={"google"} size={"lg"} className="duration-1000">Get Started 
+                  <AiOutlineGoogle size={20} className="ml-2"/>
+                </Button>
+              </Link>
+            </p>
+          </div>
       </div>
 
     </section>

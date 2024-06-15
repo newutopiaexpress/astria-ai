@@ -44,108 +44,164 @@ export function UtopiaSecond2() {
   return (
     <section className="px-2 py-12 md:px-8">
 
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center">Upload & let the magic begin</h2>
+        <div className="border-b border-stone-300 pt-4 pb-9 px-4 md:px-6 text-center mb-12">
 
-      <div className="md:w-3/4 grid grid-cols-12 mx-auto gap-9 auto-cols-max"> 
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Upload and do the Magic</h2>
 
-              <div className="col-span-12 md:col-span-4 relative transition-all">
-                <div className="w-72  mb-6 mt-6 flex flex-row gap-1 mx-auto relative">
-                    <Image
-                        className="cover w-14 h-14 rounded-full ml-4 shadow-md border shadow-stone-800/20"
-                        height="128"
-                        width="128"
-                        alt="hello"
-                        src="/s1.png"
-                    />
-                    <Image
-                        className="cover w-14 h-14 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
-                        height="128"
-                        width="128"
-                        alt="hello"
-                        src="/s2.png"
-                    />
-                    <Image
-                        className="cover w-12 h-12 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
-                        height="128"
-                        width="128"
-                        alt="hello"
-                        src="/s3.png"
-                    />
-                    <Image
-                        className="cover w-12 h-12 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
-                        height="128"
-                        width="128"
-                        alt="hello"
-                        src="/s4.png"
-                    />
-                    
-                    <div className="w-12 h-12 z-40 transition-all ml-1">
-                    <div className="cursor-pointer pt-[11px] pl-[11px] z-40  transition-all  text-center text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">
-                        <PlusIcon/>
-                    </div>
-                    </div>
+            <div className="w-60  mb-6 mt-6 flex flex-row gap-1 mx-auto relative">
+            <Image
+                className="cover w-12 h-12 rounded-full ml-4 shadow-md border shadow-stone-800/20"
+                height="128"
+                width="128"
+                alt="hello"
+                src="/s1.png"
+            />
+            <Image
+                className="cover w-12 h-12 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
+                height="128"
+                width="128"
+                alt="hello"
+                src="/s2.png"
+            />
+            <Image
+                className="cover w-12 h-12 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
+                height="128"
+                width="128"
+                alt="hello"
+                src="/s3.png"
+            />
+            <Image
+                className="cover w-12 h-12 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
+                height="128"
+                width="128"
+                alt="hello"
+                src="/s4.png"
+            />
             
+            <div className="w-12 h-12 z-40 transition-all ml-1">
+                <div className="cursor-pointer pt-[11px] pl-[11px] z-40  transition-all  text-center text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">
+                <PlusIcon/>
                 </div>
-              </div>
+            </div>
+            
+            </div>
 
-              
-               <div className="col-span-12 md:col-span-8 grid grid-cols-7 gap-4 relative transition-all  6text-center ">
+            <p className="md:w-1/2 md:mx-auto mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            This futuristic tool can see your inner beauty, and able to reconstruct it in stunning photos. Just like a real photographer.
+            </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-9 auto-cols-max"> 
+
+
+                <div className="col-span-7 relative pt-9 pb-9 transition-all grid grid-cols-6 gap-4">
+
+                        <div className="z-40 absolute -top-2 left-0 w-full h-9 text-left">
+                            <span className="text-xs text-stone-600 font-normal">These are AI generated photos based on the characteristics of a real person.</span>
+                        </div>
+
+                        
+                        <Image
+                            className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
+                            height="1280"
+                            width="1024"
+                            alt="hello"
+                            src="/v6.jpg"
+                        />
+                        
+                        <Image
+                            className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
+                            height="1280"
+                            width="1024"
+                            alt="hello"
+                            src="/v7.jpg"
+                        />
+                        <Image
+                            className="shadow-md rounded-sm hover:scale-110 transition-transform ease-in-out"
+                            height="1280"
+                            width="1024"
+                            alt="hello"
+                            src="/v8.jpg"
+                        />
+                        <Image
+                            className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
+                            height="1280"
+                            width="1024"
+                            alt="hello"
+                            src="/v9.jpg"
+                        />
+                        <Image
+                            className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
+                            height="1280"
+                            width="1024"
+                            alt="hello"
+                            src="/v10.jpg"
+                        />
+                        <Image
+                            className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
+                            height="1280"
+                            width="1024"
+                            alt="hello"
+                            src="/v11.jpg"
+                        />
+                </div>
+
+                <div className="col-span-5 relative transition-all text-stone-800  content-center">
+
                     
-                    <Image
-                        className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
-                        height="1280"
-                        width="1024"
-                        alt="hello"
-                        src="/v6.jpg"
-                    />
-                    
-                    <Image
-                        className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
-                        height="1280"
-                        width="1024"
-                        alt="hello"
-                        src="/v7.jpg"
-                    />
-                    <Image
-                        className="shadow-md rounded-sm hover:scale-110 transition-transform ease-in-out"
-                        height="1280"
-                        width="1024"
-                        alt="hello"
-                        src="/v8.jpg"
-                    />
-                    <Image
-                        className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
-                        height="1280"
-                        width="1024"
-                        alt="hello"
-                        src="/v9.jpg"
-                    />
-                    <Image
-                        className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
-                        height="1280"
-                        width="1024"
-                        alt="hello"
-                        src="/v10.jpg"
-                    />
-                    <Image
-                        className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
-                        height="1280"
-                        width="1024"
-                        alt="hello"
-                        src="/v11.jpg"
-                    />
-                    <Image
-                        className="shadow-md rounded-sm hover:scale-110 transition ease-in-out"
-                        height="1280"
-                        width="1024"
-                        alt="hello"
-                        src="/v12.jpg"
-                    />
+                    <Table className="mt-2">
+                        <TableHeader className="bg-stone-100/0 rounded-t-xl">
+                            <TableRow className="hover:bg-transparent border-b border-stone-300">
+                            <TableHead className="w-[100px] text-stone-600 font-extrabold uppercase">
+                                <HoverCard>
+                                <HoverCardTrigger className="cursor-pointer">Series *</HoverCardTrigger>
+                                <HoverCardContent className="bg-stone-800 text-stone-100 border-b border-stone-400 shadow-xl">
+                                1 Series contain 40 generated photos in 5 different scene.
+                                </HoverCardContent>
+                                </HoverCard>
+                            </TableHead>
+                            <TableHead className="w-[180px] text-stone-600 font-extrabold uppercase">Generated Photos</TableHead>
+                            <TableHead className="w-[80px] text-stone-600 font-extrabold uppercase">Price</TableHead>
+                            <TableHead></TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            <TableRow className="hover:bg-stone-100/90 border-b border-neutral-300">
+                            <TableCell className="text-left">1 Series</TableCell>
+                            <TableCell className="text-left">40 photo</TableCell>
+                            <TableCell className="text-left">9€</TableCell>
+                            <TableCell className="text-left">
+                                <Link href="/login">
+                                    <Button variant="default" size="sm">Select</Button>
+                                </Link>
+                            </TableCell>
+                            </TableRow>
+                            <TableRow className="hover:bg-stone-100/90 border-b border-neutral-300">
+                            <TableCell className="text-left">3 Series</TableCell>
+                            <TableCell className="text-left">3x40 photo</TableCell>
+                            <TableCell className="text-left">33€</TableCell>
+                            <TableCell className="text-left">
+                                <Link href="/login">
+                                    <Button variant="default" size="sm">Select</Button>
+                                </Link>
+                            </TableCell>
+                            </TableRow>
+                            <TableRow className="hover:bg-stone-100/90 border-b border-neutral-300">
+                            <TableCell className="text-left">5 Series</TableCell>
+                            <TableCell className="text-left">3x40 photo</TableCell>
+                            <TableCell className="text-left">53€</TableCell>
+                            <TableCell className="text-left">
+                                <Link href="/login">
+                                    <Button variant="default" size="sm">Select</Button>
+                                </Link>
+                            </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
 
+                </div>
 
-              </div>
-
-      </div>
+        </div>
       
     </section>
   )
@@ -164,4 +220,6 @@ export function SparkleIcon() {
 </svg>
 )
 }
+
+
 
