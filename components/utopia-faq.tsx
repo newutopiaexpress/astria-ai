@@ -30,51 +30,67 @@ import {
 export function UtopiaFaq() {
   return (
 
-    <section className="mx-auto md:w-2/3 lg:w-1/2 py-6">
+    <section className="mx-auto">
 
-      <div className="border-b border-stone-300 py-6 px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Discover your inner beauty</h2>
-          <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-          This tool does not want to change you, but sees the beautiful in you, and creates an opportunity to get the most out of yourself.
-          </p>
-      </div>
-
-      <div className="py-9 px-4 md:px-6 text-center">
-          <div className="w-32 h-32 rounded-full mx-auto relative">
-            <div className="z-40 absolute bottom-3 transition-all -right-5">
-                    <HoverCard>
-                            <HoverCardTrigger className="cursor-pointer pt-[11px] pl-[11px] z-40 absolute bottom-5 transition-all -right-5 text-center text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">
-                                    <SparkleIcon/>
-                            </HoverCardTrigger>
-                            <HoverCardContent className="w-full  mx-auto bg-transparent p-0 border-0 rounded-full">
-                                <Link href="/login">
-                                    <Button variant={"google"} size={"lg"}>Login with Google
-                                        <AiOutlineGoogle size={20} className="ml-2"/>
-                                    </Button>
-                                </Link>
-                            </HoverCardContent>
-                    </HoverCard>
+      <div className="py-9 px-4 md:px-6 text-center md:w-2/3 md:mx-auto md:grid md:grid-cols-12 md:gap-9">
+          <div className="md:col-span-6 mt-6 max-w-96  mx-auto relative">
+            <div className="cursor-pointer pt-[11px] pl-[11px] z-40 absolute top-9 transition-all -right-5 text-center md:text-left text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">
+              <SparkleIcon/>
             </div>
             <Image
-                        className="cover rounded-full"
-                        height="933"
-                        width="934"
+                        className="cover rounded-sm shadow-xl shadow-stone-800/30"
+                        height="1280"
+                        width="1024"
                         alt="hello"
-                        src="/v12.png"
+                        src="/v9.jpg"
             />
           </div>
-            
-          <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Control The First Impression</h2>
-          <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-          This tool does not want to change you, but sees the beautiful in you, and creates an opportunity to get the most out of yourself.
-          </p>
-          <p className="py-12">
-            <Link href="/login">
-              <Button variant={"google"} size={"lg"}>Login with Google
-                <AiOutlineGoogle size={20} className="ml-2"/>
-              </Button>
-            </Link>
-          </p>
+          <div className="md:col-span-6 md:text-left content-center">
+            <h2 className="pt-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Control The First Impression</h2>
+            <p className="md:max-w-[340px] md:float-left mt-4 mb-6 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            In this digital world, personal representation and the personal brand are valued. Improve your digital appearance and seize the first moment.
+            </p>
+            <p className="pt-4">
+              <Link href="/login">
+                <Button variant={"google"} size={"lg"} className="duration-1000">Get Started 
+                  <AiOutlineGoogle size={20} className="ml-2"/>
+                </Button>
+              </Link>
+            </p>
+          </div>
+      </div>
+
+
+      <div className="py-9 px-4 md:px-6 text-center md:w-2/3 md:mx-auto md:grid md:grid-cols-12 md:gap-9">
+          
+          <div className="md:col-span-6 md:text-right content-center">
+
+            <h2 className="pt-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Boost your self-confidence</h2>
+            <p className="md:max-w-[340px] md:float-right mt-4 mb-6 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            Surprising, but if you meet your super photogenic self, your self-image can change in a positive direction.
+            </p>
+            <p className="pt-4">
+              <Link href="/login">
+                <Button variant={"google"} size={"lg"} className="duration-1000">Get Started 
+                  <AiOutlineGoogle size={20} className="ml-2"/>
+                </Button>
+              </Link>
+            </p>
+          </div>
+
+          <div className="md:col-span-6 mt-6 max-w-96  mx-auto relative">
+            <div className="cursor-pointer pt-[11px] pl-[11px] z-40 absolute top-9 transition-all -right-5 text-center md:text-left text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">
+              <LoveIcon/>
+            </div>
+            <Image
+                        className="cover rounded-sm shadow-xl shadow-stone-800/30"
+                        height="1280"
+                        width="1024"
+                        alt="hello"
+                        src="/v13.jpg"
+            />
+          </div>
+
       </div>
 
     </section>
@@ -91,11 +107,20 @@ export function PlusIcon() {
 
 export function SparkleIcon() {
   return (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+<svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
 </svg>
 )
 }
+
+export function LoveIcon() {
+  return (
+<svg className="w-6 h-6" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.89346 2.35248C3.49195 2.35248 2.35248 3.49359 2.35248 4.90532C2.35248 6.38164 3.20954 7.9168 4.37255 9.33522C5.39396 10.581 6.59464 11.6702 7.50002 12.4778C8.4054 11.6702 9.60608 10.581 10.6275 9.33522C11.7905 7.9168 12.6476 6.38164 12.6476 4.90532C12.6476 3.49359 11.5081 2.35248 10.1066 2.35248C9.27059 2.35248 8.81894 2.64323 8.5397 2.95843C8.27877 3.25295 8.14623 3.58566 8.02501 3.88993C8.00391 3.9429 7.98315 3.99501 7.96211 4.04591C7.88482 4.23294 7.7024 4.35494 7.50002 4.35494C7.29765 4.35494 7.11523 4.23295 7.03793 4.04592C7.01689 3.99501 6.99612 3.94289 6.97502 3.8899C6.8538 3.58564 6.72126 3.25294 6.46034 2.95843C6.18109 2.64323 5.72945 2.35248 4.89346 2.35248ZM1.35248 4.90532C1.35248 2.94498 2.936 1.35248 4.89346 1.35248C6.0084 1.35248 6.73504 1.76049 7.20884 2.2953C7.32062 2.42147 7.41686 2.55382 7.50002 2.68545C7.58318 2.55382 7.67941 2.42147 7.79119 2.2953C8.265 1.76049 8.99164 1.35248 10.1066 1.35248C12.064 1.35248 13.6476 2.94498 13.6476 4.90532C13.6476 6.74041 12.6013 8.50508 11.4008 9.96927C10.2636 11.3562 8.92194 12.5508 8.00601 13.3664C7.94645 13.4194 7.88869 13.4709 7.83291 13.5206C7.64324 13.6899 7.3568 13.6899 7.16713 13.5206C7.11135 13.4709 7.05359 13.4194 6.99403 13.3664C6.0781 12.5508 4.73641 11.3562 3.59926 9.96927C2.39872 8.50508 1.35248 6.74041 1.35248 4.90532Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+
+)
+}
+
+
 
 
 

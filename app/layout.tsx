@@ -28,9 +28,9 @@ export default function RootLayout({ children }: any) {
           {children}
         </main>
         
-        {/*<section>
+        <section>
           <FooterV2/>
-          </section>*/}
+        </section>
 
         <Toaster />
         <Analytics />

@@ -32,7 +32,7 @@ export function UtopiaPricing() {
 
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
-                <h1 className="text-4xl font-extrabold text-red-400">1 Credit</h1>
+                <h1 className="text-4xl font-extrabold text-red-400">1 Series</h1>
                 <p className="text-md text-stone-400">40 Professional photo</p>
                 <h1 className="text-4xl">12<span className="text-3xl">€</span></h1>
                 <Link href="/login">
@@ -41,7 +41,7 @@ export function UtopiaPricing() {
               </div>
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white bg-slate-100 text-center hover:shadow-xl">
-                <h1 className="text-4xl font-extrabold text-red-500">3 Credits</h1>
+                <h1 className="text-4xl font-extrabold text-red-500">3 Series</h1>
                 <p className="text-md text-stone-400">3x40 Professional photo</p>
                 <h1 className="text-4xl">33<span className="text-3xl">€</span></h1>
                 <Link href="/login">
@@ -50,7 +50,7 @@ export function UtopiaPricing() {
               </div>
 
               <div className="transition-all border border-stone-300 p-4 rounded-2xl hover:bg-white text-center hover:shadow-xl">
-                <h1 className="text-4xl font-extrabold text-red-600">5 Credits</h1>
+                <h1 className="text-4xl font-extrabold text-red-600">5 Series</h1>
                 <p className="text-md text-stone-400">5x40 Professional photo</p>
                 <h1 className="text-4xl">39<span className="text-3xl">€</span></h1>
                 <Link href="/login">

@@ -42,7 +42,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
             <TableRow
               key={model.modelId}
               onClick={() => handleRedirect(model.id)}
-              className="cursor-pointer h-16 hover:bg-white/30 hover:shadow-lg hover:shadow-neutral-400/20"
+              className="cursor-pointer h-16 hover:bg-white/10 hover:shadow-lg hover:shadow-neutral-400/20"
             >
               <TableCell className="font-medium">{model.name}</TableCell>
               <TableCell>
@@ -50,7 +50,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
                   <Badge
                     className="flex gap-2 items-center w-min"
                     variant={
-                      model.status === "finished" ? "default" : "secondary"
+                      model.status === "finished" ? "finished" : "secondary"
                     }
                   >
                     {model.status === "processing" ? "training" : model.status }

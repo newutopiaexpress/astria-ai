@@ -61,7 +61,7 @@ export default function ClientSideModelsList({
       {models && models.length > 0 && (
         <div className="flex flex-col gap-4 rounded-2xl">
           <div className="flex flex-row gap-4 w-full justify-between items-center text-center">
-            <p className="ml-2 text-lg font-normal text-stone-400">Your models</p>
+            <p className="ml-2 text-lg text-stone-400 font-normal">Your models</p>
             <Link href="/overview/models/train" className="w-fit">
               <Button className="rounded-full text-xs border-stone-100 bg-stone-100 text-stone-500">
                 Create new
