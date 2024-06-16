@@ -140,7 +140,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `Masterpiece fashion Portrait photo of ohwx ${type}, detailed face, soft beautiful lighting, friendly, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
+            text: `masterpiece Glamour Portrait of attractive ohwx ${type}, friendly, energetic, attractive appearance, beautiful highly detailed face, highly detailed eyes, dark background, cinematic lighting,  dark, warm, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
             negative_prompt:`nude, nudity, bad anatomy, red eyes, ugly, old, unrealistic, sad`,
             callback: promptWebhookWithParams,
             num_images: 3,
@@ -152,10 +152,10 @@ export async function POST(request: Request) {
             hires_fix: true,
             face_correct: true,
             face_swap: true,
-
+            steps: 50,
           },
           {
-            text: `masterpiece fashion Portrait of ohwx ${type}, detailed face, dark background, dramatic lighting, friendly, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
+            text: `wide shot half body portrait of ohwx  ${type}, as a beautiful attractive model, professional dramatic lighting, highly detailed face, ultra high quality photo`,
             negative_prompt:`nude, nudity, bad anatomy, red eyes, ugly, old, sad, unrealistic`, 
             callback: promptWebhookWithParams,
             num_images: 3,
@@ -167,9 +167,10 @@ export async function POST(request: Request) {
             hires_fix: true,
             face_correct: true,
             face_swap: true,
+            steps: 50,
           },
           {
-            text: `masterpiece Glamour Portrait of ohwx ${type}, detailed face, dark background, dramatic lighting, friendly, dark, warm, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
+            text: `Masterpiece Portrait photo of ohwx  ${type}, beautiful detailed face, cinematic lighting, friendly, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
             negative_prompt:`nude, nudity, bad anatomy, red eyes, ugly, old,  unrealistic, sad, close up, closeup`,
             callback: promptWebhookWithParams,
             num_images:3,
@@ -181,9 +182,10 @@ export async function POST(request: Request) {
             hires_fix: true,
             face_correct: true,
             face_swap: true,
+            steps: 50,
           },
           {
-            text: `portrait of ohwx ${type} wearing a business suit, office background, model photoshoot, professional photo, white background, Amazing Details, Best Quality, Masterpiece, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
+            text: `half body editorial portrait of ohwx  ${type} with kind, friendly expression, beautiful detailed face, focus on beautiful detailed eyes, cozy evening lights in the background, dark background`,
             negative_prompt:`nude, nudity, bad anatomy, red eyes, ugly, old,  unrealistic, sad`,
             callback: promptWebhookWithParams,
             num_images: 3,
@@ -195,9 +197,10 @@ export async function POST(request: Request) {
             hires_fix: true,
             face_correct: true,
             face_swap: true,
+            steps: 50,
           },
           {
-            text: `half body editorial portrait of ohwx ${type}, detailed face, dark background, beautiful dramatic lighting, friendly look, dark, warm, cozy athmosphere, professional, picturesque, masterpiece, half body portrait`,
+            text: `masterpiece Glamour Portrait of ohwx  ${type}, detailed face, dark background, dramatic lighting, friendly, dark, warm, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait`,
             negative_prompt:`close up, closeup, nude, nudity, bad anatomy, red eyes, ugly, old, unrealistic, sad`,
             callback: promptWebhookWithParams,
             num_images: 3,
@@ -209,23 +212,10 @@ export async function POST(request: Request) {
             hires_fix: true,
             face_correct: true,
             face_swap: true,
+            steps: 50,
           },
           {
-            text: `portrait of ohwx ${type} wearing a business suit, office background, dynamic lighting model photoshoot, professional photo, white background, Amazing Details, Best Quality, Masterpiece, highly detailed, analog photo`,
-            negative_prompt:`nude, nudity, bad anatomy, red eyes, ugly, old, sad`,
-            callback: promptWebhookWithParams,
-            num_images: 3,
-            super_resolution: true,
-            super_resolution_details: true,
-            inpaint_faces: true,
-            w:512,
-            h:640,
-            hires_fix: true,
-            face_correct: true,
-            face_swap: true,
-          },
-          {
-            text: `portrait of elegant ohwx ${type} wearing old money suit, blurred night city lights in the background, dynamic lighting, model photoshoot, professional photo, Amazing Details, Best Quality, Masterpiece, highly detailed, analog photo`,
+            text: `portrait of ohwx woman wearing a business suit, office background, dynamic lighting, model photoshoot, professional photo, white background, Amazing Details, Best Quality, Masterpiece, highly detailed, analog photo`,
             negative_prompt:`old, ugly, sad, wrinkle, nudity, nude, muscular, elongated body, high contrast, airbrushed, blurry, (portrait), (a close up), (close up), (closeup), (close-up)`,
             callback: promptWebhookWithParams,
             num_images: 3,
@@ -237,6 +227,7 @@ export async function POST(request: Request) {
             hires_fix: true,
             face_correct: true,
             face_swap: true,
+            steps: 50,
           },
           {
             text: `wide shot half body portrait of beautiful ohwx ${type}, cinematic lighting, highly detailed face, professional photo, neutral studio background, masterpiece`,
@@ -251,6 +242,7 @@ export async function POST(request: Request) {
             hires_fix: true,
             face_correct: true,
             face_swap: true,
+            steps: 50,
           },
 
 
