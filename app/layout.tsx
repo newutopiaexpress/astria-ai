@@ -5,7 +5,6 @@ import "./globals.css";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
-
 export const metadata = {
   title: "AI Photographer",
   description: "Generate professional portraits with AI",
