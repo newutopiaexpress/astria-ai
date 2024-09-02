@@ -4,13 +4,13 @@ import { Button } from "./ui/button";
 export default function PricingSection() {
   return (
     <div className="w-full">
-      <div className="flex flex-wrap justify-center lg:space-x-4 space-y-4 lg:space-y-0 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {pricingOptions.map((option, index) => (
           <div
             key={index}
-            className={`flex flex-col border rounded-lg p-4 w-full lg:w-1/4 ${option.bgColor}`}
+            className={`p-4  rounded-2xl w-full ${option.bgColor}`}
           >
-            <div className="flex-grow space-y-4">
+            <div className="flex-grow ">
               <h3 className="text-2xl font-semibold text-center">
                 {option.title}
               </h3>
@@ -47,7 +47,7 @@ const pricingOptions = [
     title: "Starter",
     price: "1 Credit",
     description:
-      "19 different hairstyle and haircut for you",
+      "19 photos",
     features: [
       "One round of image generation",
     ],

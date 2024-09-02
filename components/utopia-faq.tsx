@@ -32,6 +32,41 @@ export function UtopiaFaq() {
 
     <section className="mx-auto">
 
+<div className="py-9 px-4 md:px-6 text-center lg:w-2/3 md:mx-auto md:grid md:grid-cols-12 md:gap-9">
+          
+          <div className="md:col-span-6 md:text-right content-center">
+
+            <p className="md:max-w-[290px] md:float-right mt-4 mb-2 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            Stunningly lifelike photos, as if taken by a professional photographer.
+            </p>
+            <br/>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl max-w-[360px] md:text-right text-center md:float-right">Try out the Ai photographer!</h2>
+            <p className="md:max-w-[340px] md:float-right mt-4 mb-6 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <Link href="/login">
+                <Button variant={"google"} size={"lg"} className="duration-1000 mt-4 float-right">Get your photos 
+                  <AiOutlineGoogle size={20} className="ml-2"/>
+                </Button>
+              </Link>
+            </p>
+            <br/>
+
+          </div>
+
+          <div className="md:col-span-6 mt-6 max-w-96  mx-auto relative">
+            <div className="cursor-pointer pt-[11px] pl-[11px] z-40 absolute top-9 transition-all -right-5 text-center md:text-left text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">
+              <LoveIcon/>
+            </div>
+            <Image
+                        className="cover rounded-sm shadow-xl shadow-stone-800/30"
+                        height="1280"
+                        width="1024"
+                        alt="hello"
+                        src="/v13.jpg"
+            />
+          </div>
+
+      </div>
+
       <div className="py-9 px-4 md:px-6 text-center md:w-2/3 md:mx-auto md:grid md:grid-cols-12 md:gap-9">
           <div className="md:col-span-6 mt-6 max-w-96  mx-auto relative">
             <div className="cursor-pointer pt-[11px] pl-[11px] z-40 absolute top-9 transition-all -right-5 text-center md:text-left text-4xl font-bold tracking-tighter w-12 h-12 rounded-full border border-stone-100 bg-gradient-to-t from-stone-200 to-white shadow-lg">

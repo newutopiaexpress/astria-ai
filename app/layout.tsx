@@ -13,26 +13,28 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className="bg-fixed flex flex-col bg-gradient-to-tl from-red-100 to-slate-300">
-        <section>
-          <Suspense
-            fallback={
-              <div className=" px-4 pb-9 items-center text-center gap-8 justify-between h-[69px]" />
-            }
-          >
-            <Navbar />
-          </Suspense>
-        </section>
-        <main className="w-full mx-auto">
-          {children}
-        </main>
-        
-        <section>
-          <FooterV2/>
-        </section>
+      <body className="bg-fixed flex flex-col bg-stone-200">
+        <div className="min-h-screen">
+              <section>
+                <Suspense
+                  fallback={
+                    <div className="px-4 pb-9 items-center text-center gap-8 justify-between h-[69px]" />
+                  }
+                >
+                  <Navbar />
+                </Suspense>
+              </section>
+              <main className="w-full mx-auto">
+                {children}
+              </main>
+              
+              <section>
+                <FooterV2/>
+              </section>
 
-        <Toaster />
-        <Analytics />
+              <Toaster />
+              <Analytics />
+        </div>
       </body>
     </html>
   );
