@@ -37,8 +37,8 @@ export function FooterV2() {
 
           <div className="col-span-12 md:col-span-3 p-4 lg:p-12 border-r border-stone-300 relative content-center hover:bg-stone-100/10">
             <div className="absolute right-4 top-4">
-              <Link href="https://utopia.express/">
-                <Badge variant="outline">voice.utopia.express<LinkIcon/></Badge>
+              <Link href="">
+                <Badge variant="outline">Coming soon...<LinkIcon/></Badge>
               </Link>
             </div>
             <h2 className="font-bold text-lg mt-6">
