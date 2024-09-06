@@ -174,7 +174,7 @@ export async function POST(request: Request) {
       },
     };
 
-    const response = await axios.post(DOMAIN + "/tunes", body, {
+    const response = await axios.post(DOMAIN + "/tunes/1504944/prompts", body, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${API_KEY}`,
