@@ -134,7 +134,6 @@ export async function POST(request: Request) {
         base_tune_id: 1504944,
         model_type: "lora",
         name: type,
-        branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
         image_urls: images,
         input_image: images,
@@ -142,7 +141,7 @@ export async function POST(request: Request) {
         prompts_attributes: [
           {
             text: `masterpiece Glamour Portrait of ohwx ${type}, detailed face, dark background, dramatic lighting, friendly, dark, warm, cozy athmosphere, professional photo, picturesque, masterpiece, half body portrait, editorial portrait`,
-            negative_prompt:`ugly, old, wrinkles, unrealistic, sad, nude, nudity, bad anatomy, close up, closeup`,
+
             callback: promptWebhookWithParams,
             num_images: 2,
             super_resolution: true,
@@ -157,7 +156,7 @@ export async function POST(request: Request) {
           },
           {
             text: `masterpiece fashion Portrait of ohwx ${type}, detailed face, peach orange teal sweather, bright face, depth of field urban, half body portrait, `,
-            negative_prompt:`ugly, old, sad, nude, nudity, bad anatomy, unrealistic, close up, closeup`,
+
             callback: promptWebhookWithParams,
             num_images:2,
             super_resolution: true,
@@ -174,7 +173,7 @@ export async function POST(request: Request) {
       },
     };
 
-    const response = await axios.post(DOMAIN + "/tunes/1504944/prompts", body, {
+    const response = await axios.post(DOMAIN + "/tunes", body, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${API_KEY}`,
