@@ -102,7 +102,7 @@ export function Bento2() {
                 </div>
 
                 <div className="relative border border-stone-300 bg-gradient-to-r from-white to-stone-100 mb-6 shadow-md text-lg bg-slate-300/0 rounded-3xl p-6 h-auto w-full">
-                    <p className="italic">Create portraits in three different styles!</p> 
+                    <p className="italic">Portraits in three different style!</p> 
                     <span className="w-24 h-6 absolute top-4 right-4 opacity-30">
                         <SunIcon/>
                         <MoonIcon/>

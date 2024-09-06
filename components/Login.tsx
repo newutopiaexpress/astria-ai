@@ -100,18 +100,19 @@ export const Login = ({
 
   return (
     <>
-      <div className="flex items-center justify-center p-8">
+      <div className="flex items-center justify-center p-8 h-screen">
         <div className="flex flex-col gap-4 bg-transparent  p-4 max-w-sm w-full">
          
           <Button
             onClick={signInWithGoogle}
             variant={"google"}
-            className="font-semibold"
+            className="font-semibold p-8 rounded-full"
           >
             <AiOutlineGoogle size={20} />
             <span className="pl-2">Continue with Google</span>
           </Button>
           
+          <p className="italic text-center text-sm text-gray-500 pt-6">or with email</p>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -149,7 +150,7 @@ export const Login = ({
               isLoading={isSubmitting}
               disabled={isSubmitting}
               variant="default"
-              className="w-full"
+              className="w-full p-8 font-semibold text-md"
               type="submit"
             >
               Continue with Email

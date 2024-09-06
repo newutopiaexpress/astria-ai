@@ -62,8 +62,8 @@ export default function ClientSideModelsList({
         <div className="flex flex-col gap-4 rounded-2xl">
           <div className="flex flex-row gap-4 w-full  items-center text-center">
             <Link href="/overview/models/train" className="w-fit mx-auto">
-              <Button className="rounded-full text-xs border-stone-100 bg-stone-100 text-stone-500">
-                Create new <SparkleIcon/>
+              <Button className="rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100 mb-16">
+                Create New <SparkleIcon/>
               </Button>
             </Link>
           </div>
@@ -77,11 +77,11 @@ export default function ClientSideModelsList({
             <span className="text-center mx-auto w-32 h-32">
               <UploadIcon/>
             </span>
-             Bring to life your first AI clone!
+             Create your professional portraits!
           </h1>
           <div>
             <Link href="/overview/models/train">
-              <Button variant="default" size={"lg"}>Upload photos</Button>
+              <Button className="rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100 " size={"lg"}>Upload photos</Button>
             </Link>
           </div>
         </div>

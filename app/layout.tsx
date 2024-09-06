@@ -14,7 +14,7 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <body className="bg-fixed flex flex-col bg-stone-200">
-        <div className="min-h-screen">
+        <div className="h-screen">
               <section>
                 <Suspense
                   fallback={
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: any) {
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="w-full mx-auto">
+              <main className="w-full mx-auto h-full">
                 {children}
               </main>
               
