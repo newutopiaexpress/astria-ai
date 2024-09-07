@@ -144,8 +144,6 @@ export async function POST(request: Request) {
             callback: promptWebhookWithParams,
             super_resolution: true,
             inpaint_faces: true,
-            hires_fix: true,
-            face_correct: true,
             num_images: 3,
           },
           {
