@@ -4,15 +4,13 @@ import "./globals.css";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 export const metadata = {
-  title: "AI Photographer",
+  title: "The AI Photographer",
   description: "Generate professional portraits with AI",
 };
 
 export default function RootLayout({ children }: any) {
   return (
-    <ClerkProvider>
     <html lang="en">
       <body className="bg-fixed flex flex-col bg-stone-200 ">
         <div className="min-h-screen">
@@ -38,6 +36,5 @@ export default function RootLayout({ children }: any) {
         </div>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
