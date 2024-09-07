@@ -139,8 +139,14 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `beautiful ohwx ${type}, annie Annie Leibovitz black and white portrait, head turned slightly to the side, looking at the camera, soft smile.`,
+            text: `portrait of beautiful ${type} photographed by annie Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile.`,
+            negative_prompt: 'ugly, old, unrealistic, nude',
             callback: promptWebhookWithParams,
+            training_face_correct: true,
+            super_resolution: true,
+            inpaint_faces: true,
+            hires_fix: true,
+            face_correct: true,
             num_images: 3,
           },
           {
