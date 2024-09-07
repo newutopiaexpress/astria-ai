@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (images?.length < 1) {
+  if (images?.length < 4) {
     return NextResponse.json(
       {
         message: "Upload at least 4 sample images",
@@ -130,7 +130,7 @@ export async function POST(request: Request) {
       tune: {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
-        // https://www.astria.ai/gallery/tunes/690204/prompts 1034743
+        // https://www.astria.ai/gallery/tunes/690204/prompts
         base_tune_id: 690204,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
@@ -139,25 +139,14 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `beautiful ohwx ${type}, annie Annie Leibovitz black and white portrait, head turned slightly to the side, looking at the camera, soft smile.`,
-//            negative_prompt:`ugly, old, wrinkles, unrealistic, sad, nude, nudity, bad anatomy, close up, closeup`,
+            text: `portrait of ohwx ${type} wearing a business suit, professional photo, white background, Amazing Details, Best Quality, Masterpiece, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
             callback: promptWebhookWithParams,
-            num_images: 3,
+            num_images: 8,
           },
           {
-            text: `masterpiece fashion Portrait of ohwx ${type}, detailed face, peach orange teal sweather, bright face, depth of field urban, half body portrait,`,
+            text: `8k close up linkedin profile picture of ohwx ${type}, professional jack suite, professional headshots, photo-realistic, 4k, high-resolution image, workplace settings, upper body, modern outfit, professional suit, business, blurred background, glass building, office window`,
             callback: promptWebhookWithParams,
-            num_images: 3,
-          },
-          {
-            text: `photo of ohwx  ${type}, smiling, headshot for linkedin, professional, detailed, sharp focus, warm light, attractive, full background, directed, vivid colors, perfect composition, elegant, intricate, beautiful, highly saturated color, epic, stunning, gorgeous, cinematic, striking, rich deep detail, romantic, inspired, vibrant, illuminated, fancy, pretty, amazing, symmetry`,
-            callback: promptWebhookWithParams,
-            num_images: 3,
-          },
-          {
-            text: `photo of ohwx  ${type}, smiling, headshot for linkedin, professional, detailed, sharp focus, warm light, attractive, full background, directed, vivid colors, perfect composition, elegant, intricate, beautiful, highly saturated color, epic, stunning, gorgeous, cinematic, striking, rich deep detail, romantic, inspired, vibrant, illuminated, fancy, pretty, amazing, symmetry`,
-            callback: promptWebhookWithParams,
-            num_images: 3,
+            num_images: 8,
           },
         ],
       },
