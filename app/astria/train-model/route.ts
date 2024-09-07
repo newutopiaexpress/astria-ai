@@ -19,6 +19,7 @@ if (!appWebhookSecret) {
 
 export async function POST(request: Request) {
   const payload = await request.json();
+  console.log("Payload received:", payload);
   const images = payload.urls;
   const type = payload.type;
   const name = payload.name;
