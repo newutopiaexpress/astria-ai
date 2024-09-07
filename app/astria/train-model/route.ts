@@ -142,8 +142,6 @@ export async function POST(request: Request) {
             text: `portrait of beautiful ${type} photographed by annie Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile.`,
             negative_prompt: `ugly, old, unrealistic, nude`,
             callback: promptWebhookWithParams,
-            super_resolution: true,
-            inpaint_faces: true,
             num_images: 3,
           },
           {
