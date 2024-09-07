@@ -100,7 +100,7 @@ export const Login = ({
 
   return (
     <>
-      <div className="flex items-center justify-center p-8 h-screen">
+      <div className="flex items-center justify-center h-screen">
         <div className="flex flex-col gap-4 bg-transparent  p-4 max-w-sm w-full">
          
           <Button

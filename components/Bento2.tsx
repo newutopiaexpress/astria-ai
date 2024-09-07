@@ -12,7 +12,7 @@ import { Separator } from "@radix-ui/react-dropdown-menu";
 
 export function Bento2() {
   return (
-	<div className="my-16 mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6">
+	<div className=" mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6">
 
         <div className="md:col-span-7 mt-6">
             <div className="bg-stone-950 rounded-3xl relative h-[500px]">

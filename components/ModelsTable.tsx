@@ -27,10 +27,10 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
   };
 
   return (
-    <div className="rounded-sm border-none shadow-none bg-transparent">
+    <div className="rounded-sm border-none shadow-none bg-transparent md:p-9">
       <Table className="w-full">
         <TableHeader>
-          <TableRow className="text-xs opacity-30">
+          <TableRow className="text-xs opacity-40">
             <TableHead>Name</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Type</TableHead>

@@ -62,8 +62,8 @@ export default function ClientSideModelsList({
         <div className="flex flex-col gap-4 rounded-2xl">
           <div className="flex flex-row gap-4 w-full  items-center text-center">
             <Link href="/overview/models/train" className="w-fit mx-auto">
-              <Button className="rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100 mb-16">
-                Create New <SparkleIcon/>
+              <Button size={"md"} variant={"google"} >
+                Create New Modell<SparkleIcon/>
               </Button>
             </Link>
           </div>
@@ -77,7 +77,7 @@ export default function ClientSideModelsList({
             <span className="text-center mx-auto w-32 h-32">
               <UploadIcon/>
             </span>
-             Create your professional portraits!
+             Create professional portraits!
           </h1>
           <div>
             <Link href="/overview/models/train">
