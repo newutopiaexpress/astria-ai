@@ -1,10 +1,10 @@
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 export const metadata = {
   title: "AI Photographer",
   description: "Generate professional portraits with AI",
@@ -12,6 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: any) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className="bg-fixed flex flex-col bg-stone-200 ">
         <div className="min-h-screen">
@@ -24,7 +25,7 @@ export default function RootLayout({ children }: any) {
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="w-full mx-auto h-full mt-16 mb-16">
+              <main className="w-full mx-auto h-full">
                 {children}
               </main>
               
@@ -37,5 +38,6 @@ export default function RootLayout({ children }: any) {
         </div>
       </body>
     </html>
+    </ClerkProvider>
   );
 }

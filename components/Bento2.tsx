@@ -9,14 +9,15 @@ import { AiOutlineGoogle } from "react-icons/ai";
 import PricingSection from "@/components/PricingSection";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@radix-ui/react-dropdown-menu";
+import { FaFemale, FaMale, FaRainbow } from "react-icons/fa";
 
 export function Bento2() {
   return (
-	<div className=" mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6">
+	<div className="mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6 min-h-screen">
 
-        <div className="md:col-span-7 mt-6">
+        <div className="md:col-span-7">
             <div className="bg-stone-950 rounded-3xl relative h-[500px]">
-                <Link href="/login" className="absolute top-0 right-0 z-20 w-20 h-20 bg-stone-900 rounded-full hidden md:block">
+                <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block">
                     <CamIcon/>
                 </Link>
                 <Image
@@ -68,8 +69,11 @@ export function Bento2() {
 
         </div>
 
-        <div className="md:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">
+        <div className="md:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">        
+
             <div className="col-span-3"> 
+
+            <p>hsdadfkhdf</p>
 
                 <div className="grid md:grid-cols-3 md:gap-6">
                     <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
@@ -101,91 +105,26 @@ export function Bento2() {
                     </div>
                 </div>
 
-                <div className="relative border border-stone-300 bg-gradient-to-r from-white to-stone-100 mb-6 shadow-md text-lg bg-slate-300/0 rounded-3xl p-6 h-auto w-full">
-                    <p className="italic">Portraits in three different style!</p> 
-                    <span className="w-24 h-6 absolute top-4 right-4 opacity-30">
-                        <SunIcon/>
-                        <MoonIcon/>
-                        <UserIcon/>
-                    </span>
+                <div className="relative  mb-6 text-lg rounded-3xl h-auto w-full">
                     
-                    <div className="grid grid-cols-1 lg:grid-cols-3 h-full">
-                        <div className="col-span-1 relative mt-4">
-                            <p className="p-3 bottom-0 text-stone-400 text-xs leading-tight max-w-32 absolute z-40 -rotate-3">Urban environment & casual style</p>
-                            <div className="h-[180px]">
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-0 z-30 -rotate-3 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v1.png">
-                                </Image>
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-1 z-20 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v2.png">
-                                </Image>
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-2 z-10 rotate-3 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v3.png">
-                                </Image>
-                            </div>
+                    <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 h-full">
+                        <div className="col-span-1 lg:col-span-2 relative mt-4 bg-gradient-to-r from-stone-300 via-pink-300 to-sky-300 rounded-3xl">
+                            <p className="p-3 bottom-0 text-stone-800 text-lg leading-tight max-w-32 absolute z-40"  >Select your type</p>
                         </div>
-                        <div className="col-span-1 relative mt-4">
-                            <p className="p-3 bottom-0 text-stone-400 text-xs leading-tight max-w-32 absolute z-40 rotate-3">Glamour-style fashion photography</p>
-                            <div className="h-[180px]">
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-0 z-30 rotate-3 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v4.png">
-                                </Image>
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-1 z-20 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v2.png">
-                                </Image>
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-2 z-10 -rotate-3 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v3.png">
-                                </Image>
-                            </div>
-                        </div>
-                        <div className="col-span-1 relative mt-4">
-                            <p className="p-3 bottom-0 text-stone-700 text-xs leading-tight max-w-32 absolute z-40 -rotate-3">Corporate-style portraits</p>
-                            <div className="h-[180px]">
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-0 z-30 -rotate-3 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v5.png">
-                                </Image>
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-1 z-20 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v2.png">
-                                </Image>
-                                <Image
-                                    className="rounded-3xl float-left mr-2 absolute top-0 left-2 z-10 rotate-3 shadow-md"
-                                    height="180"
-                                    width="150"
-                                    alt="hello"
-                                    src="/v3.png">
-                                </Image>
+                        <div className="col-span-1 lg:col-span-10 relative mt-4 border border-stone-300 rounded-3xl p-6">   
+                            <div className="grid grid-cols-3 gap-6 content-center">
+                                <div className="col-span-1 bg-stone-300">
+                                    <FaFemale className="mb-3 h-6 w-6" />
+                                    <p>Male</p>
+                                </div>
+                                <div className="col-span-1 bg-pink-300">
+                                    <FaMale className="mb-3 h-6 w-6" />
+                                    <p>Female</p>
+                                </div>
+                                <div className="col-span-1 bg-sky-300">
+                                    <FaRainbow className="mb-3 h-6 w-6" />
+                                    <p>Unisex</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,7 +161,7 @@ export function Bento2() {
 
 function CamIcon() {
     return ( 
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="w-10 h-10 text-stone-200 mx-auto my-4 hover:animate-ping">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="z-50 w-10 h-10 text-stone-200 mx-auto my-4 hover:animate-ping">
  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
 </svg>
 )

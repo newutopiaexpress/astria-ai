@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
+import Image from "next/image";
 
 export const revalidate = 0;
 
@@ -74,7 +75,7 @@ export default function ClientSideModelsList({
         <div className="flex flex-col gap-4 items-center py-12">
 
           <h1 className="text-2xl text-center mx-auto">
-            <span className="text-center mx-auto w-32 h-32">
+            <span className="text-center mx-auto w-64 h-64">
               <UploadIcon/>
             </span>
              Create professional portraits!

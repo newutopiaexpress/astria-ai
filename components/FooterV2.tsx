@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export function FooterV2() {
   return (
-    <div className=" text-stone-600 border-t border-stone-300 grid grid-cols-12 px-4 md:h-96">
+    <div className=" text-stone-600 border-t border-stone-300 grid grid-cols-12 px-4 md:mt-32 lg:mt-64 mb-0">
 
           <div className="col-span-12 md:col-span-5 p-4 lg:p-12 border-r border-stone-300 relative hover:bg-stone-100/10">
             <div className="absolute right-4 top-4">
