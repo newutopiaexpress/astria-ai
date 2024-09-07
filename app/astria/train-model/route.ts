@@ -148,6 +148,11 @@ export async function POST(request: Request) {
             callback: promptWebhookWithParams,
             num_images: 3,
           },
+          {
+            text: `masterpiece Portrait of ohwx ${type}, detailed face, half body portrait`,
+            callback: promptWebhookWithParams,
+            num_images: 3,
+          },
         ],
       },
     };
