@@ -131,10 +131,11 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts 1034743
-        base_tune_id: 690204,
+        base_tune_id: 1504944,
         name: type,
-        branch: astriaTestModeIsOn ? "fast" : "sd15",
-        token: "ohwx",
+        model_type: "lora",
+   //     branch: astriaTestModeIsOn ? "fast" : "sd15",
+   //     token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
@@ -154,7 +155,7 @@ export async function POST(request: Request) {
           {
             text: `8k close up linkedin profile picture of ohwx ${type}, professional jack suite, professional headshots, photo-realistic, 4k, high-resolution image, workplace settings, upper body, modern outfit, professional suit, business, blurred background, glass building, office window`,
             callback: promptWebhookWithParams,
-            num_images: 8,
+            num_images: 4,
           },
         ],
       },

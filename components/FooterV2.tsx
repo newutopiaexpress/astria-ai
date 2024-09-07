@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export function FooterV2() {
   return (
-    <div className=" text-stone-600 border-t border-stone-300 grid grid-cols-12 px-4">
+    <div className=" text-stone-600 border-t border-stone-300 grid grid-cols-12 px-4 md:h-96">
 
           <div className="col-span-12 md:col-span-5 p-4 lg:p-12 border-r border-stone-300 relative hover:bg-stone-100/10">
             <div className="absolute right-4 top-4">
@@ -23,7 +23,7 @@ export function FooterV2() {
           </div>
 
           
-          <div className="col-span-12 md:col-span-3 p-4 lg:p-12 border-r border-stone-300 relative content-center hover:bg-stone-100/10">
+          <div className="mb-9 md:mb-0 col-span-12 md:col-span-3 p-4 lg:p-12 border-r border-stone-300 relative content-center hover:bg-stone-100/10">
             <div className="absolute right-4 top-4">
               <Link href="https://utopia.express/">
                 <Badge variant="outline">search.utopia.express<LinkIcon/></Badge>
@@ -35,7 +35,7 @@ export function FooterV2() {
             <p className="text-sm">Multi agent, AI based research and writer tool for content creators</p>
           </div>
 
-          <div className="col-span-12 md:col-span-3 p-4 lg:p-12 border-r border-stone-300 relative content-center hover:bg-stone-100/10">
+          <div className="mb-9 md:mb-0 col-span-12 md:col-span-3 p-4 lg:p-12 border-r border-stone-300 relative content-center hover:bg-stone-100/10">
             <div className="absolute right-4 top-4">
               <Link href="">
                 <Badge variant="outline">Coming soon...<LinkIcon/></Badge>
