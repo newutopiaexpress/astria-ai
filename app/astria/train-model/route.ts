@@ -139,7 +139,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `portrait of ohwx ${type} wearing a business suit, professional photo, white background, Amazing Details, Best Quality, Masterpiece, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
+            text: `photo of ohwx ${type} smiling, headshot for linkedin, professional, detailed, sharp focus, warm light, attractive, full background, directed, vivid colors, perfect composition, elegant, intricate, beautiful, highly saturated color, epic, stunning, gorgeous, cinematic, striking, rich deep detail, romantic, inspired, vibrant, illuminated, fancy, pretty, amazing, symmetry`,
             negative_prompt:`ugly, old, unrealistic`,
             super_resolution: true,
             inpaint_faces : true,
@@ -149,7 +149,7 @@ export async function POST(request: Request) {
             num_images: 4,
           },
           {
-            text: `8k close up linkedin profile picture of ohwx ${type}, professional jack suite, professional headshots, photo-realistic, 4k, high-resolution image, workplace settings, upper body, modern outfit, professional suit, business, blurred background, glass building, office window`,
+            text: `wide shot half body portrait of ohwx ${type} looking at the camera, as a beautiful attractive model, professional dramatic lighting, highly detailed face, high contrasts, ultra high quality photo`,
             callback: promptWebhookWithParams,
             negative_prompt:`ugly, old, unrealistic`,
             super_resolution: true,
