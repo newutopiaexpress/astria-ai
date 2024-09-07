@@ -140,6 +140,7 @@ export async function POST(request: Request) {
         prompts_attributes: [
           {
             text: `portrait of ohwx ${type} wearing a business suit, professional photo, white background, Amazing Details, Best Quality, Masterpiece, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
+            negative_prompt:`ugly, old, unrealistic`,
             callback: promptWebhookWithParams,
             num_images: 4,
           },
