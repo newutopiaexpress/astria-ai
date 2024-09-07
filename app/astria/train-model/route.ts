@@ -158,16 +158,7 @@ export async function POST(request: Request) {
             hires_fix : true,
             num_images: 4,
           },
-          {
-            text: `black and white portrait of beautiful ohwx ${type} photographed by Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile. High contrast, dramatic lighting, detailed face, high quality photo`,
-            callback: promptWebhookWithParams,
-            negative_prompt:`ugly, old, unrealistic`,
-            super_resolution: true,
-            inpaint_faces : true,
-            face_correct : true,
-            hires_fix : true,
-            num_images: 4,
-          },
+
         ],
       },
     };
