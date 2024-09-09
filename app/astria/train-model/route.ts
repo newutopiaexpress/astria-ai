@@ -134,7 +134,6 @@ export async function POST(request: Request) {
         base_tune_id: 1504944,
         model_type: "lora",
         name: type,
-        branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
