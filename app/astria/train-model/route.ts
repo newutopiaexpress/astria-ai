@@ -131,7 +131,8 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 1504944,
+        model_type: "lora",
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -159,7 +160,7 @@ export async function POST(request: Request) {
             num_images: 4,
           },
           {
-            text: `black and white portrait of beautiful ohwx ${type} photographed by Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile. High contrast, dramatic lighting, detailed face, high quality photo`,
+            text: `black and white portrait of beautiful ohwx ${type} photographed by Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile`,
             callback: promptWebhookWithParams,
             negative_prompt:`ugly, old, unrealistic`,
             super_resolution: true,

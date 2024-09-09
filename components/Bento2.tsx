@@ -35,7 +35,7 @@ export function Bento2() {
                     src="/ai.png">
                 </Image>
                 <div className="absolute left-8 bottom-[170px] max-w-96">
-                    <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike photos, as if taken by a professional photographer. </h1>
+                    <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike portraits, as if taken by a professional photographer. </h1>
                 </div>
                 <div className="absolute left-8 top-[360px] w-96">
                     <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic">Upload your photos and let the magic happen</p>
@@ -73,7 +73,7 @@ export function Bento2() {
 
             <div className="col-span-3"> 
 
-            <p>hsdadfkhdf</p>
+            <p className="text-right italic mb-6 text-stone-500 text-sm">For <span className="font-bold">social media</span>, <span className="font-bold">job hunting</span>, or just to increase your <span className="font-bold">self-confidence</span></p>
 
                 <div className="grid md:grid-cols-3 md:gap-6">
                     <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
@@ -108,22 +108,52 @@ export function Bento2() {
                 <div className="relative  mb-6 text-lg rounded-3xl h-auto w-full">
                     
                     <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 h-full">
-                        <div className="col-span-1 lg:col-span-2 relative mt-4 bg-gradient-to-r from-stone-300 via-pink-300 to-sky-300 rounded-3xl">
-                            <p className="p-3 bottom-0 text-stone-800 text-lg leading-tight max-w-32 absolute z-40"  >Select your type</p>
+                        <div className="col-span-1 lg:col-span-3 relative mt-4  rounded-3xl">
+                            <p className="p-3 bottom-0 text-stone-800 text-lg leading-tight max-w-32 absolute z-40">Select your type</p>
+                            <span className="absolute top-0 right-0">
+                                <CamIcon2/>
+                            </span>
                         </div>
-                        <div className="col-span-1 lg:col-span-10 relative mt-4 border border-stone-300 rounded-3xl p-6">   
+                        <div className="col-span-1 lg:col-span-9 relative mt-4">   
                             <div className="grid grid-cols-3 gap-6 content-center">
-                                <div className="col-span-1 bg-stone-300">
-                                    <FaFemale className="mb-3 h-6 w-6" />
-                                    <p>Male</p>
+                                <div className="relative col-span-1 bg-stone-300 rounded-3xl">
+                                    <span className="absolute top-2 left-1 w-14 h-14 bg-stone-900/0 text-stone-200 rounded-full  text-center">
+                                        <FaMale className="h-6 w-6 mx-auto mt-2" />
+                                        <p className="text-xs">Male</p>
+                                    </span>
+                                    <Image
+                                        className="rounded-3xl w-full h-auto"
+                                        height="300"
+                                        width="286"
+                                        alt="hello"
+                                        src="/v2.png">
+                                    </Image>
                                 </div>
-                                <div className="col-span-1 bg-pink-300">
-                                    <FaMale className="mb-3 h-6 w-6" />
-                                    <p>Female</p>
+                                <div className="relative col-span-1 bg-pink-300 rounded-3xl">
+                                    <span className="absolute top-2 left-1 w-14 h-14  text-stone-700 rounded-full  text-center">
+                                        <FaFemale className="h-6 w-6 mx-auto mt-2" />
+                                        <p className="text-xs">Female</p>
+                                    </span>
+                                    <Image
+                                        className="rounded-3xl w-full h-auto"
+                                        height="300"
+                                        width="286"
+                                        alt="hello"
+                                        src="/v1.png">
+                                    </Image>
                                 </div>
-                                <div className="col-span-1 bg-sky-300">
-                                    <FaRainbow className="mb-3 h-6 w-6" />
-                                    <p>Unisex</p>
+                                <div className="relative col-span-1 bg-sky-300 rounded-3xl">
+                                    <span className="absolute top-2 left-2 w-14 h-14  text-stone-200 rounded-full  text-center ">
+                                        <FaRainbow className="h-6 w-6 mx-auto mt-2" />
+                                        <p className="text-xs">Unisex</p>
+                                    </span>
+                                    <Image
+                                        className="rounded-3xl w-full h-auto"
+                                        height="300"
+                                        width="286"
+                                        alt="hello"
+                                        src="/v3.png">
+                                    </Image>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +187,13 @@ export function Bento2() {
   )
 }
 
-
+function CamIcon2() {
+    return ( 
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="z-50 w-10 h-10 text-stone-800 mx-auto my-4 hover:animate-ping">
+ <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+</svg>
+)
+}
 
 function CamIcon() {
     return ( 
