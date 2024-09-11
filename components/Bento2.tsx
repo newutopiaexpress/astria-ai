@@ -17,7 +17,7 @@ export function Bento2() {
 
         <div className="md:col-span-7">
             <div className="bg-stone-950 rounded-3xl relative h-[500px]">
-                <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block">
+                <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0">
                     <CamIcon/>
                 </Link>
                 <Image

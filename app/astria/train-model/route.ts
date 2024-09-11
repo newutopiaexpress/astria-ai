@@ -131,44 +131,12 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 1504944,
         name: type,
-        branch: astriaTestModeIsOn ? "fast" : "sd15",
+        model_type: "lora",
         token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
-        prompts_attributes: [
-          {
-            text: `photo of ohwx ${type} smiling, headshot for linkedin, professional, detailed, sharp focus, warm light, attractive, full background, directed, vivid colors, perfect composition, elegant, intricate, beautiful, highly saturated color, epic, stunning, gorgeous, cinematic, striking, rich deep detail, romantic, inspired, vibrant, illuminated, fancy, pretty, amazing, symmetry`,
-            negative_prompt:`ugly, old, unrealistic`,
-            super_resolution: true,
-            inpaint_faces : true,
-            face_correct : true,
-            hires_fix : true,
-            callback: promptWebhookWithParams,
-            num_images: 4,
-          },
-          {
-            text: `wide shot half body portrait of ohwx ${type} looking at the camera, as a beautiful attractive model, professional dramatic lighting, highly detailed face, high contrasts, ultra high quality photo`,
-            callback: promptWebhookWithParams,
-            negative_prompt:`ugly, old, unrealistic`,
-            super_resolution: true,
-            inpaint_faces : true,
-            face_correct : true,
-            hires_fix : true,
-            num_images: 4,
-          },
-          {
-            text: `black and white portrait of beautiful ohwx ${type} photographed by Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile`,
-            callback: promptWebhookWithParams,
-            negative_prompt:`ugly, old, unrealistic`,
-            super_resolution: true,
-            inpaint_faces : true,
-            face_correct : true,
-            hires_fix : true,
-            num_images: 4,
-          },
-        ],
       },
     };
 
