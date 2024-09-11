@@ -1,6 +1,8 @@
 
 
-[![Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=API%20keys%20needed&envLink=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai%2Fblob%2Fmain%2F.env.local.example&project-name=astria-ai-v2&repository-name=astria-ai-v2)]
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=API%20keys%20needed&envLink=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai%2Fblob%2Fmain%2F.env.local.example&project-name=astria-ai-v2&repository-name=astria-ai-v2)
+
+
 
 
 ## How It Works
@@ -27,7 +29,7 @@ Follow these steps:
 To setup Vercel and your github repo, click on the Vercel Deploy Button and follow the steps.
 
 
-[![Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=API%20keys%20needed&envLink=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai%2Fblob%2Fmain%2F.env.local.example&project-name=astria-ai-v2&repository-name=astria-ai-v2)]
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=API%20keys%20needed&envLink=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai%2Fblob%2Fmain%2F.env.local.example&project-name=astria-ai-v2&repository-name=astria-ai-v2)
 
 The Vercel Deployment will create a new repository with this template on your GitHub account.
 
@@ -158,6 +160,6 @@ yarn dev
 
 Default deploy using Vercel:
 
-[![Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=API%20keys%20needed&envLink=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai%2Fblob%2Fmain%2F.env.local.example&project-name=astria-ai-v2&repository-name=astria-ai-v2)]
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai&env=ASTRIA_API_KEY,APP_WEBHOOK_SECRET&envDescription=API%20keys%20needed&envLink=https%3A%2F%2Fgithub.com%2Fnewutopiaexpress%2Fastria-ai%2Fblob%2Fmain%2F.env.local.example&project-name=astria-ai-v2&repository-name=astria-ai-v2)
 
 
