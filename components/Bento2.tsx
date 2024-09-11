@@ -357,9 +357,9 @@ export function Bento2() {
             </div>
         </div>
 
-        <div className="mx-auto text-center pt-20">
+        <div className="mx-auto text-center pt-20 pb-16 md:pb-0">
             <p>
-                Create your account and get started
+                Create your account and get your awesome photos!
             <Link href="/login" className="ml-4">
                 <Button variant={"google"} size={"md"}>Login with Google
                     <AiOutlineGoogle size={20} className="ml-2"/>
