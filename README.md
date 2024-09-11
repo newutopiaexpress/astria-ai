@@ -5,7 +5,7 @@
 
 ## How It Works
 
-Live demo **[here](https://getheadshots.ai)**.
+Live demo **[here](https://clone.utopia.express)**.
 
 The app is powered by:
 
