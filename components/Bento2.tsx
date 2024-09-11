@@ -11,184 +11,366 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import { FaFemale, FaMale, FaRainbow } from "react-icons/fa";
 
+
 export function Bento2() {
   return (
-	<div className="mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6 ">
 
-        <div className="md:col-span-7">
-            <div className="bg-stone-950 rounded-3xl relative">
-                <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0">
-                    <CamIcon/>
-                </Link>
-                <Image
-                    className="absolute top-0 right-0 z-10  hidden md:block"
-                    height="125"
-                    width="130"
-                    alt="hello"
-                    src="/kor.png">
-                </Image>
-                <div className="grid md:grid-cols-12 gap-0">
-                    <div className="md:col-span-6 lg:col-span-5 pt-32 px-6 md:px-9 ">
-                        <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike portraits, as if taken by a professional photographer. </h1>
-                        <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic pt-16">Upload your photos and let the magic happen</p>
-                        <div className="relative w-60 h-[200px] mt-6">
-                            <Image
-                            className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
-                            height="128"
-                            width="128"
-                            alt="hello"
-                            src="/s1.png">
-                            </Image>
-                            <Image
-                            className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
-                            height="128"
-                            width="128"
-                            alt="hello"
-                            src="/s2.png">
-                            </Image>
-                            <Image
-                            className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
-                            height="128"
-                            width="128"
-                            alt="hello"
-                            src="/s4.png">
-                            </Image>
-                        </div>
-                    </div>
-                    <div className="md:col-span-6 lg:col-span-7 bg-cover">
+    <div>
+
+        <div className="mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6 pb-6">
+            <div className="md:col-span-7">
+                <div className="bg-stone-950 rounded-3xl relative">
+                    <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0">
+                        <CamIcon/>
                         <Image
-                        className="cover rounded-3xl"
-                        height="817"
-                        width="755"
-                        alt="hello"
-                        src="/ai2.png">
+                            className="absolute top-0 right-0 z-10  hidden md:block hover:opacity-25 transition-all duration-150"
+                            height="100"
+                            width="100"
+                            alt="hello"
+                            src="/lens.png">
                         </Image>
+                    </Link>
+                    <Image
+                        className="absolute top-0 right-0 z-10  hidden md:block"
+                        height="125"
+                        width="130"
+                        alt="hello"
+                        src="/kor.png">
+                    </Image>
+                    <div className="grid md:grid-cols-12 gap-0">
+                        <div className="md:col-span-6 lg:col-span-5 pt-32 px-6 md:px-9 ">
+                            <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike portraits, as if taken by a professional photographer. </h1>
+                            <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic pt-16">Upload your photos and let the magic happen</p>
+                            <div className="relative w-60 h-[200px] mt-6">
+                                <Image
+                                className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
+                                height="128"
+                                width="128"
+                                alt="hello"
+                                src="/s1.png">
+                                </Image>
+                                <Image
+                                className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
+                                height="128"
+                                width="128"
+                                alt="hello"
+                                src="/s2.png">
+                                </Image>
+                                <Image
+                                className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
+                                height="128"
+                                width="128"
+                                alt="hello"
+                                src="/s4.png">
+                                </Image>
+                            </div>
+                        </div>
+                        <div className="md:col-span-6 lg:col-span-7 bg-cover">
+                            <Image
+                            className="cover rounded-3xl"
+                            height="817"
+                            width="755"
+                            alt="hello"
+                            src="/ai2.png">
+                            </Image>
+                        </div>
                     </div>
+                    
+
                 </div>
-                
 
             </div>
 
-        </div>
+            <div className="md:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">    
 
-        <div className="md:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">    
+                <div className="col-span-3"> 
 
-            <div className="col-span-3"> 
-
-                <div className="grid md:grid-cols-3 md:gap-6">
-                    <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
-                        <p><StarIcon/></p><br/>
-                        <p className="font-bold mt-2">1 credit</p>
-                        <p className="text-xs md:h-20">One modell, 12 photos in three different settings.</p>
-                        <p className="font-normal text-5xl">9<span className="font-normal text-xl">€</span></p>
-                        <Link href="/login" className="absolute bottom-6 right-6">
-                            <Button variant="outline" size="sm">Select</Button>
-                        </Link>
-                    </div>
-                    <div className="mb-6 col-span-1 bg-gray-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
-                        <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
-                        <p className="font-bold mt-2">3 credit</p>
-                        <p className="text-xs md:h-20">Three modell, 3x12 photos in three different settings.</p>
-                        <p className="font-normal text-5xl">25<span className="font-normal text-xl">€</span></p>
-                        <Link href="/login" className="absolute bottom-6 right-6">
-                            <Button variant="outline" size="sm">Select</Button>
-                        </Link>
-                    </div>
-                    <div className="mb-6 col-span-1 bg-stone-800 text-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:z-10 hover:shadow-xl">
-                        <p><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p><br/>
-                        <p className="font-bold mt-2">5 credit</p>
-                        <p className="text-xs md:h-20">Five modell, 5x12 photos in three different settings.</p>
-                        <p className="font-normal text-5xl">39<span className="font-normal text-xl">€</span></p>
-                        <Link href="/login" className="absolute bottom-6 right-6">
-                            <Button variant="outline" size="sm">Select</Button>
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="relative  mb-6 text-lg rounded-3xl h-auto w-full">
-
-                    <div className="grid grid-cols-1 mb-6 md:grid-cols-12 outline outline-offset-2 outline-stone-300/50 border border-stone-300  rounded-3xl items-center bg-gradient-to-tr from-stone-200 to-stone-100">
-                        <div className="col-span-1 md:col-span-6 relative items-center p-3 md:p-6 ">
-                            <p className="text-2xl text-stone-800 font-thin tracking-tight">Make a good first impression!</p>
-                            <p className=" text-stone-800 text-sm leading-tight max-w-[350px]">Create photos for social media, for a new job, or just to boost your self-confidence.</p>
-                        </div>
-                        <div className="col-span-1 md:col-span-6 grid grid-cols-3 items-center text-center p-2 gap-2">
-                            
-                            <div className="col-span-1 text-center hover:bg-pink-300">
-                                <Image
-                                    className="rounded-md -rotate-3 shadow-md"
-                                    height="350"
-                                    width="300"
-                                    alt="hello"
-                                    src="/v1.png">
-                                </Image>
-                            </div>
-                            <div className="col-span-1 text-center hover:bg-pink-300">
-                                <Image
-                                    className="rounded-md shadow-md"
-                                    height="350"
-                                    width="300"
-                                    alt="hello"
-                                    src="/v2.png">
-                                </Image>
-                            </div>
-                            <div className="col-span-1 text-center hover:bg-pink-300">
-                                <Image
-                                    className="rounded-md rotate-2 shadow-md"
-                                    height="350"
-                                    width="300"
-                                    alt="hello"
-                                    src="/v3.png">
-                                </Image>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div className="grid grid-cols-1 mb-6 md:grid-cols-12 items-center">
-                        <div className="col-span-1 md:col-span-3 grid grid-cols-3 items-center text-center gap-4">
-                            <Link href="/login" className="col-span-1 p-4 bg-pink-200 h-12 w-12 rounded-full outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-pink-300">
-                                <FaFemale/>
-                            </Link>
-                            <Link href="/login" className="col-span-1 p-4 text-center bg-stone-300 h-12 w-12 rounded-full outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-stone-400">
-                                <FaMale/>
-                            </Link>
-                            <Link href="/login" className="col-span-1 p-4 text-center bg-sky-200 h-12 w-12 rounded-full outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-sky-300">
-                                <FaRainbow/>
+                    <div className="grid md:grid-cols-3 md:gap-6">
+                        <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <p><StarIcon/></p><br/>
+                            <p className="font-bold mt-2">1 credit</p>
+                            <p className="text-xs md:h-20">One modell, 12 photos in three different settings.</p>
+                            <p className="font-normal text-5xl">9<span className="font-normal text-xl">€</span></p>
+                            <Link href="/login" className="absolute bottom-6 right-6">
+                                <Button variant="outline" size="sm">Select</Button>
                             </Link>
                         </div>
-                        <div className="col-span-1 md:col-span-9 relative items-center p-3 md:p-6 ">
-                            <p className="text-2xl text-stone-800 font-thin tracking-tight">Select your type & let's started!</p>
+                        <div className="mb-6 col-span-1 bg-gray-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
+                            <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
+                            <p className="font-bold mt-2">3 credit</p>
+                            <p className="text-xs md:h-20">Three modell, 3x12 photos in three different settings.</p>
+                            <p className="font-normal text-5xl">25<span className="font-normal text-xl">€</span></p>
+                            <Link href="/login" className="absolute bottom-6 right-6">
+                                <Button variant="outline" size="sm">Select</Button>
+                            </Link>
+                        </div>
+                        <div className="mb-6 col-span-1 bg-stone-800 text-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:z-10 hover:shadow-xl">
+                            <p><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p><br/>
+                            <p className="font-bold mt-2">5 credit</p>
+                            <p className="text-xs md:h-20">Five modell, 5x12 photos in three different settings.</p>
+                            <p className="font-normal text-5xl">39<span className="font-normal text-xl">€</span></p>
+                            <Link href="/login" className="absolute bottom-6 right-6">
+                                <Button variant="outline" size="sm">Select</Button>
+                            </Link>
                         </div>
                     </div>
 
+                    <div className="relative  mb-6 text-lg rounded-3xl h-auto w-full">
+
+                        <div className="grid grid-cols-1 mb-6 md:grid-cols-12 outline outline-offset-2 outline-stone-300/50 border border-stone-300  rounded-3xl items-center bg-gradient-to-tr from-stone-200 to-stone-100">
+                            <div className="col-span-1 md:col-span-6 relative items-center p-3 md:p-6 ">
+                                <p className="text-2xl text-stone-800 font-thin tracking-tight">Make a good first impression!</p>
+                                <p className=" text-stone-800 text-sm leading-tight max-w-[350px]">Create photos for social media, for a new job, or just to boost your self-confidence.</p>
+                            </div>
+                            <div className="col-span-1 md:col-span-6 grid grid-cols-3 items-center text-center p-2 gap-2">
+                                
+                                <div className="col-span-1 text-center hover:bg-pink-300">
+                                    <Image
+                                        className="rounded-md -rotate-3 shadow-md"
+                                        height="350"
+                                        width="300"
+                                        alt="hello"
+                                        src="/v1.png">
+                                    </Image>
+                                </div>
+                                <div className="col-span-1 text-center hover:bg-pink-300">
+                                    <Image
+                                        className="rounded-md shadow-md"
+                                        height="350"
+                                        width="300"
+                                        alt="hello"
+                                        src="/v2.png">
+                                    </Image>
+                                </div>
+                                <div className="col-span-1 text-center hover:bg-pink-300">
+                                    <Image
+                                        className="rounded-md rotate-2 shadow-md"
+                                        height="350"
+                                        width="300"
+                                        alt="hello"
+                                        src="/v3.png">
+                                    </Image>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div className="grid grid-cols-1 md:mt-16 mb-6 md:grid-cols-12 items-center mx-auto text-center">
+                            <div className="col-span-1 md:col-span-3 grid grid-cols-3 items-center gap-4 mx-auto text-center">
+
+                                <Link href="/login" className="col-span-1 p-4 bg-gradient-to-b from-pink-200/0 to-pink-200/50 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-sm hover:bg-pink-200">
+                                    <FaFemale/>
+                                </Link>
+                                <Link href="/login" className="col-span-1 p-4 text-center bg-gradient-to-b from-stone-200/0 to-stone-300/60 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-stone-300">
+                                    <FaMale/>
+                                </Link>
+                                <Link href="/login" className="col-span-1 p-4 text-center bg-gradient-to-b from-sky-200/0 to-sky-200/50 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-sky-200">
+                                    <FaRainbow/>
+                                </Link>
+                            </div>
+                            <div className="col-span-1 md:col-span-9 relative items-center p-3 md:p-6 ">
+                                <p className="md:text-left text-md text-stone-800 text-sm leading-tight">Select your type & let's started!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                   
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 relative">
-                    <div className="z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
-                        <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
-                        <p className="font-bold mt-2 mb-2 leading-tight">Upload your photos</p>
-                        <p className="text-xs">Upload 8-10 pictures of yourself in which your face is clearly visible and no one else is on it</p>
-                    </div>
-                    <div className="z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
-                    <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">2</p><br/>
-                        <p className="font-bold mt-2 mb-2 leading-tight">Train your own AI model</p>
-                        <p className="text-xs">We train a unique AI agent to model your facial features</p>
-                    </div>
-                    <div className="z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
-                    <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">3</p><br/>
-                        <p className="font-bold mt-2 mb-2 leading-tight">Get your amazing portrait photos</p>
-                        <p className="text-xs">During one training session, 12 images are created in 3 different styles</p>
-                    </div>
-                    <div className="h-px w-full bg-stone-300 absolute top-24 z-0"></div>
-                </div>
+
             </div>
+        </div>
 
+        <div className="border-0 px-6 mx-auto max-w-6xl">
+            <h1 className=" py-12 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-center">AI that sees and highlights the beauty in you</h1>
+            <div className="grid md:grid-cols-4 gap-6 relative mb-20 mt-16">
+                        <div className="outline outline-offset-2 outline-stone-300/50 z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <p className="w-8 h-8 shadow-inner bg-stone-800 text-stone-100 rounded-full text-center content-center">1</p><br/>
+                            <p className="font-bold mt-2 mb-2 leading-tight">Create an account</p>
+                            <p className="text-xs pb-4">Login with Google or your email addresse</p>
+                            <Link href="/login">
+                            <Button variant={"google"} size={"md"}>Login with Google
+                                <AiOutlineGoogle size={20} className="ml-2"/>
+                            </Button>
+                            </Link>
+                        </div>
+                        <div className="outline outline-offset-2 outline-stone-300/50 z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">2</p><br/>
+                            <p className="font-bold mt-2 mb-2 leading-tight">Upload your photos</p>
+                            <p className="text-xs">Upload 8-10 pictures of yourself in which your face is clearly visible and no one else is on it</p>
+                        </div>
+                        <div className="outline outline-offset-2 outline-stone-300/50 z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
+                        <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">3</p><br/>
+                            <p className="font-bold mt-2 mb-2 leading-tight">We train a custom AI model for you</p>
+                            <p className="text-xs">We train a unique AI agent to model your facial features</p>
+                        </div>
+                        <div className="outline outline-offset-2 outline-stone-300/50 z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
+                        <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">4</p><br/>
+                            <p className="font-bold mt-2 mb-2 leading-tight">Get your amazing portrait photos</p>
+                            <p className="text-xs">During one training session, 12 images are created in 3 different styles</p>
+                        </div>
+                        <div className="h-px w-full bg-stone-300 absolute top-24 z-0"></div>
+            </div>
+        </div>
+
+        <div className="border-0  px-6">
+            <div className="grid md:grid-cols-4 gap-6 relative">
+                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="absolute w-60 top-6 left-0 scale-75">
+                                <div className="relative">
+                                    <Image
+                                    className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s5.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s6.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s7.png">
+                                    </Image>
+                                </div>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="896"
+                            width="993"
+                            alt="hello"
+                            src="/male.png">
+                            </Image>
+                        </div>
+                        <div className="col-span-1 bg-stone-200  rounded-3xl relative  shadow-stone-600/10">
+                            <div className="absolute w-60 top-6 left-0 scale-75">
+                                <div className="relative">
+                                    <Image
+                                    className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s1.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s2.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s3.png">
+                                    </Image>
+                                </div>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1152"
+                            width="896"
+                            alt="hello"
+                            src="/female.png">
+                            </Image>
+                        </div>
+                        <div className="col-span-1 bg-stone-200  rounded-3xl relative  shadow-stone-600/10">
+                            <div className="absolute w-60 top-6 left-0 scale-75">
+                                <div className="relative">
+                                    <Image
+                                    className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s5.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s6.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s7.png">
+                                    </Image>
+                                </div>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1152"
+                            width="896"
+                            alt="hello"
+                            src="/male2.png">
+                            </Image>
+                        </div>
+                        <div className="col-span-1 bg-stone-200  rounded-3xl relative shadow-stone-600/10">
+                            <div className="absolute w-60 top-6 left-0 scale-75">
+                                <div className="relative">
+                                    <Image
+                                    className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s1.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s2.png">
+                                    </Image>
+                                    <Image
+                                    className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
+                                    height="128"
+                                    width="128"
+                                    alt="hello"
+                                    src="/s3.png">
+                                    </Image>
+                                </div>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1071"
+                            width="896"
+                            alt="hello"
+                            src="/v6.png">
+                            </Image>
+                        </div>
+
+                        
+            </div>
+        </div>
+
+        <div className="mx-auto text-center pt-20">
+            <p>
+                Create your account and get started
+            <Link href="/login" className="ml-4">
+                <Button variant={"google"} size={"md"}>Login with Google
+                    <AiOutlineGoogle size={20} className="ml-2"/>
+                </Button>
+            </Link>
+            </p>
+            
 
         </div>
-        
-	</div>
+
+    </div>
   )
 }
 
@@ -202,7 +384,7 @@ function CamIcon2() {
 
 function CamIcon() {
     return ( 
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="z-50 w-10 h-10 text-stone-200 mx-auto my-4 hover:animate-ping">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="z-50 w-10 h-10 text-stone-200 mx-auto my-4 animate-ping">
  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
 </svg>
 )
