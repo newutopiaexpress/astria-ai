@@ -117,10 +117,10 @@ export function Bento2() {
 
                     <div className="relative  mb-6 text-lg rounded-3xl h-auto w-full">
 
-                        <div className="grid grid-cols-1 mb-6 md:grid-cols-12 outline outline-offset-2 outline-stone-300/50 border border-stone-300  rounded-3xl items-center bg-gradient-to-tr from-stone-200 to-stone-100">
+                        <div className="grid grid-cols-1 md:mt-8 mb-6 md:grid-cols-12 outline outline-offset-2 outline-stone-300/50 border border-stone-300  rounded-3xl items-center bg-gradient-to-tr from-stone-200 to-stone-100">
                             <div className="col-span-1 md:col-span-6 relative items-center p-3 md:p-6 ">
                                 <p className="text-2xl text-stone-800 font-thin tracking-tight">Make a good first impression!</p>
-                                <p className=" text-stone-800 text-sm leading-tight max-w-[350px]">Create photos for social media, for a new job, or just to boost your self-confidence.</p>
+                                <p className=" text-stone-500 text-sm leading-tight max-w-[350px]">Create photos for social media, for a new job, or just to boost your self-confidence.</p>
                             </div>
                             <div className="col-span-1 md:col-span-6 grid grid-cols-3 items-center text-center p-2 gap-2">
                                 
@@ -169,8 +169,9 @@ export function Bento2() {
                                     <FaRainbow/>
                                 </Link>
                             </div>
-                            <div className="col-span-1 md:col-span-9 relative items-center p-3 md:p-6 ">
-                                <p className="md:text-left text-md text-stone-800 text-sm leading-tight">Select your type & let's started!</p>
+                            <div className="col-span-1 md:col-span-9 relative items-center p-4">
+                                <p className="md:text-left text-stone-800 text-2xl font-thin tracking-tight leading-tight">Select your type & let's started!</p>
+                                <p className="md:text-left text-stone-500 text-sm leading-tight">Our service works with male, female and unisex models</p>
                             </div>
                         </div>
 
