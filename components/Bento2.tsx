@@ -13,10 +13,10 @@ import { FaFemale, FaMale, FaRainbow } from "react-icons/fa";
 
 export function Bento2() {
   return (
-	<div className="mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6 min-h-screen">
+	<div className="mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6 ">
 
         <div className="md:col-span-7">
-            <div className="bg-stone-950 rounded-3xl relative h-[500px]">
+            <div className="bg-stone-950 rounded-3xl relative">
                 <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0">
                     <CamIcon/>
                 </Link>
@@ -27,53 +27,53 @@ export function Bento2() {
                     alt="hello"
                     src="/kor.png">
                 </Image>
-                <Image
-                    className="cover rounded-3xl"
-                    height="817"
-                    width="1200"
-                    alt="hello"
-                    src="/ai.png">
-                </Image>
-                <div className="absolute left-8 bottom-[170px] max-w-96">
-                    <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike portraits, as if taken by a professional photographer. </h1>
-                </div>
-                <div className="absolute left-8 top-[360px] w-96">
-                    <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic">Upload your photos and let the magic happen</p>
-                    <div className="relative w-60 h-[200px] mt-6">
+                <div className="grid md:grid-cols-12 gap-0">
+                    <div className="md:col-span-6 lg:col-span-5 pt-32 px-6 md:px-9 ">
+                        <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike portraits, as if taken by a professional photographer. </h1>
+                        <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic pt-16">Upload your photos and let the magic happen</p>
+                        <div className="relative w-60 h-[200px] mt-6">
+                            <Image
+                            className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
+                            height="128"
+                            width="128"
+                            alt="hello"
+                            src="/s1.png">
+                            </Image>
+                            <Image
+                            className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
+                            height="128"
+                            width="128"
+                            alt="hello"
+                            src="/s2.png">
+                            </Image>
+                            <Image
+                            className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
+                            height="128"
+                            width="128"
+                            alt="hello"
+                            src="/s4.png">
+                            </Image>
+                        </div>
+                    </div>
+                    <div className="md:col-span-6 lg:col-span-7 bg-cover">
                         <Image
-                        className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
-                        height="128"
-                        width="128"
+                        className="cover rounded-3xl"
+                        height="817"
+                        width="755"
                         alt="hello"
-                        src="/s1.png">
-                        </Image>
-                        <Image
-                        className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
-                        height="128"
-                        width="128"
-                        alt="hello"
-                        src="/s2.png">
-                        </Image>
-                        <Image
-                        className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
-                        height="128"
-                        width="128"
-                        alt="hello"
-                        src="/s4.png">
+                        src="/ai2.png">
                         </Image>
                     </div>
-                    
                 </div>
+                
 
             </div>
 
         </div>
 
-        <div className="md:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">        
+        <div className="md:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">    
 
             <div className="col-span-3"> 
-
-            <p className="text-right italic mb-6 text-stone-500 text-sm">For <span className="font-bold">social media</span>, <span className="font-bold">job hunting</span>, or just to increase your <span className="font-bold">self-confidence</span></p>
 
                 <div className="grid md:grid-cols-3 md:gap-6">
                     <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
@@ -106,75 +106,80 @@ export function Bento2() {
                 </div>
 
                 <div className="relative  mb-6 text-lg rounded-3xl h-auto w-full">
-                    
-                    <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 h-full">
-                        <div className="col-span-1 lg:col-span-3 relative mt-4  rounded-3xl">
-                            <p className="p-3 bottom-0 text-stone-800 text-lg leading-tight max-w-32 absolute z-40">Select your type</p>
-                            <span className="absolute top-0 right-0">
-                                <CamIcon2/>
-                            </span>
+
+                    <div className="grid grid-cols-1 mb-6 md:grid-cols-12 outline outline-offset-2 outline-stone-300/50 border border-stone-300  rounded-3xl items-center bg-gradient-to-tr from-stone-200 to-stone-100">
+                        <div className="col-span-1 md:col-span-6 relative items-center p-3 md:p-6 ">
+                            <p className="text-2xl text-stone-800 font-thin tracking-tight">Make a good first impression!</p>
+                            <p className=" text-stone-800 text-sm leading-tight max-w-[350px]">Create photos for social media, for a new job, or just to boost your self-confidence.</p>
                         </div>
-                        <div className="col-span-1 lg:col-span-9 relative mt-4">   
-                            <div className="grid grid-cols-3 gap-6 content-center">
-                                <div className="relative col-span-1 bg-stone-300 rounded-3xl">
-                                    <span className="absolute top-2 left-1 w-14 h-14 bg-stone-900/0 text-stone-200 rounded-full  text-center">
-                                        <FaMale className="h-6 w-6 mx-auto mt-2" />
-                                        <p className="text-xs">Male</p>
-                                    </span>
-                                    <Image
-                                        className="rounded-3xl w-full h-auto"
-                                        height="300"
-                                        width="286"
-                                        alt="hello"
-                                        src="/v2.png">
-                                    </Image>
-                                </div>
-                                <div className="relative col-span-1 bg-pink-300 rounded-3xl">
-                                    <span className="absolute top-2 left-1 w-14 h-14  text-stone-700 rounded-full  text-center">
-                                        <FaFemale className="h-6 w-6 mx-auto mt-2" />
-                                        <p className="text-xs">Female</p>
-                                    </span>
-                                    <Image
-                                        className="rounded-3xl w-full h-auto"
-                                        height="300"
-                                        width="286"
-                                        alt="hello"
-                                        src="/v1.png">
-                                    </Image>
-                                </div>
-                                <div className="relative col-span-1 bg-sky-300 rounded-3xl">
-                                    <span className="absolute top-2 left-2 w-14 h-14  text-stone-200 rounded-full  text-center ">
-                                        <FaRainbow className="h-6 w-6 mx-auto mt-2" />
-                                        <p className="text-xs">Unisex</p>
-                                    </span>
-                                    <Image
-                                        className="rounded-3xl w-full h-auto"
-                                        height="300"
-                                        width="286"
-                                        alt="hello"
-                                        src="/v3.png">
-                                    </Image>
-                                </div>
+                        <div className="col-span-1 md:col-span-6 grid grid-cols-3 items-center text-center p-2 gap-2">
+                            
+                            <div className="col-span-1 text-center hover:bg-pink-300">
+                                <Image
+                                    className="rounded-md -rotate-3 shadow-md"
+                                    height="350"
+                                    width="300"
+                                    alt="hello"
+                                    src="/v1.png">
+                                </Image>
                             </div>
+                            <div className="col-span-1 text-center hover:bg-pink-300">
+                                <Image
+                                    className="rounded-md shadow-md"
+                                    height="350"
+                                    width="300"
+                                    alt="hello"
+                                    src="/v2.png">
+                                </Image>
+                            </div>
+                            <div className="col-span-1 text-center hover:bg-pink-300">
+                                <Image
+                                    className="rounded-md rotate-2 shadow-md"
+                                    height="350"
+                                    width="300"
+                                    alt="hello"
+                                    src="/v3.png">
+                                </Image>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div className="grid grid-cols-1 mb-6 md:grid-cols-12 items-center">
+                        <div className="col-span-1 md:col-span-3 grid grid-cols-3 items-center text-center gap-4">
+                            <Link href="/login" className="col-span-1 p-4 bg-pink-200 h-12 w-12 rounded-full outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-pink-300">
+                                <FaFemale/>
+                            </Link>
+                            <Link href="/login" className="col-span-1 p-4 text-center bg-stone-300 h-12 w-12 rounded-full outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-stone-400">
+                                <FaMale/>
+                            </Link>
+                            <Link href="/login" className="col-span-1 p-4 text-center bg-sky-200 h-12 w-12 rounded-full outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-sky-300">
+                                <FaRainbow/>
+                            </Link>
+                        </div>
+                        <div className="col-span-1 md:col-span-9 relative items-center p-3 md:p-6 ">
+                            <p className="text-2xl text-stone-800 font-thin tracking-tight">Select your type & let's started!</p>
                         </div>
                     </div>
+
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6 relative">
                     <div className="z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
                         <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
                         <p className="font-bold mt-2 mb-2 leading-tight">Upload your photos</p>
-                        <p className="text-xs md:h-20">Upload 8-10 pictures of yourself in which your face is clearly visible and no one else is on it</p>
+                        <p className="text-xs">Upload 8-10 pictures of yourself in which your face is clearly visible and no one else is on it</p>
                     </div>
                     <div className="z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
                     <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">2</p><br/>
                         <p className="font-bold mt-2 mb-2 leading-tight">Train your own AI model</p>
-                        <p className="text-xs md:h-20">We train a unique AI agent to model your facial features</p>
+                        <p className="text-xs">We train a unique AI agent to model your facial features</p>
                     </div>
                     <div className="z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
                     <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">3</p><br/>
                         <p className="font-bold mt-2 mb-2 leading-tight">Get your amazing portrait photos</p>
-                        <p className="text-xs md:h-20">During one training session, 12 images are created in 3 different styles</p>
+                        <p className="text-xs">During one training session, 12 images are created in 3 different styles</p>
                     </div>
                     <div className="h-px w-full bg-stone-300 absolute top-24 z-0"></div>
                 </div>
