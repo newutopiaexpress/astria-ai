@@ -193,29 +193,6 @@ export async function POST(request: Request) {
     // Get the modelId from the created model
     const modelId = data?.id;
 
-    if (modelId) {
-      const API_URL = `https://api.astria.ai/tunes/${modelId}/prompts`;
-      const API_KEY = process.env.ASTRIA_API_KEY; // Ensure your API key is set in the environment variables
-      const headers = { Authorization: `Bearer ${API_KEY}` };
-    
-      const form = new FormData();
-      form.append('prompt[text]', `<lora:${modelId}:strength> a painting of ohwx man in the style of Van Gogh`);
-      form.append('prompt[callback]', `https://${process.env.VERCEL_URL}/astria/prompt-webhook?prompt_id=1`);
-    
-      fetch(API_URL, {
-        method: 'POST',
-        headers: headers,
-        body: form
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Image generation response:', data);
-      })
-      .catch(error => {
-        console.error('Error generating images:', error);
-      });
-    }
-
     const { error: samplesError } = await supabase.from("samples").insert(
       images.map((sample: string) => ({
         modelId: modelId,
@@ -254,6 +231,30 @@ export async function POST(request: Request) {
         );
       }
     }
+
+    if (modelId) {
+      const API_URL = `https://api.astria.ai/tunes/1504944/prompts`;
+      const API_KEY = process.env.ASTRIA_API_KEY; // Ensure your API key is set in the environment variables
+      const headers = { Authorization: `Bearer ${API_KEY}` };
+    
+      const form = new FormData();
+      form.append('prompt[text]', `<lora:${modelId}:strength> a painting of ohwx man in the style of Van Gogh`);
+      form.append('prompt[callback]', `https://${process.env.VERCEL_URL}/astria/prompt-webhook?prompt_id=1`);
+    
+      fetch(API_URL, {
+        method: 'POST',
+        headers: headers,
+        body: form
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Image generation response:', data);
+      })
+      .catch(error => {
+        console.error('Error generating images:', error);
+      });
+    }
+
   } catch (e) {
     console.error(e);
     return NextResponse.json(
