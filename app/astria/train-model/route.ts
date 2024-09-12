@@ -131,12 +131,44 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 1504944,
+        base_tune_id: 690204,
         name: type,
-        model_type: "lora",
+        branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
+        prompts_attributes: [
+          {
+            text: `photo of ohwx ${type} smiling, headshot for linkedin, professional, detailed, sharp focus, warm light, attractive, full background, directed, vivid colors, perfect composition, elegant, intricate, beautiful, highly saturated color, epic, stunning, gorgeous, cinematic, striking, rich deep detail, romantic, inspired, vibrant, illuminated, fancy, pretty, amazing, symmetry`,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
+            callback: promptWebhookWithParams,
+            num_images: 4,
+          },
+          {
+            text: `wide shot half body portrait of ohwx ${type} looking at the camera, as a beautiful attractive model, professional dramatic lighting, highly detailed face, high contrasts, ultra high quality photo`,
+            callback: promptWebhookWithParams,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
+            num_images: 4,
+          },
+          {
+            text: `black and white portrait of beautiful ohwx ${type} photographed by Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile`,
+            callback: promptWebhookWithParams,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
+            num_images: 4,
+          },
+        ],
       },
     };
 
@@ -231,30 +263,6 @@ export async function POST(request: Request) {
         );
       }
     }
-
-    if (modelId) {
-      const API_URL = `https://api.astria.ai/tunes/1504944/prompts`;
-      const API_KEY = process.env.ASTRIA_API_KEY; // Ensure your API key is set in the environment variables
-      const headers = { Authorization: `Bearer ${API_KEY}` };
-    
-      const form = new FormData();
-      form.append('prompt[text]', `<lora:${modelId}:strength> a painting of ohwx man in the style of Van Gogh`);
-      form.append('prompt[callback]', `https://${process.env.VERCEL_URL}/astria/prompt-webhook?prompt_id=1`);
-    
-      fetch(API_URL, {
-        method: 'POST',
-        headers: headers,
-        body: form
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Image generation response:', data);
-      })
-      .catch(error => {
-        console.error('Error generating images:', error);
-      });
-    }
-
   } catch (e) {
     console.error(e);
     return NextResponse.json(
