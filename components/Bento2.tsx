@@ -20,7 +20,7 @@ export function Bento2() {
         <div className="mx-6 grid grid-cols-1 lg:grid-cols-12 md:gap-6 pb-6">
             <div className="md:col-span-7">
                 <div className="bg-stone-950 rounded-3xl relative">
-                    <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0">
+                    <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0 hover:rotate-45">
                         <CamIcon/>
                         <Image
                             className="absolute top-0 right-0 z-10  hidden md:block hover:opacity-25 transition-all duration-150"
@@ -95,7 +95,7 @@ export function Bento2() {
                                 <Button variant="outline" size="sm">Select</Button>
                             </Link>
                         </div>
-                        <div className="mb-6 col-span-1 bg-gray-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
+                        <div className="mb-6 col-span-1 bg-slate-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
                             <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
                             <p className="font-bold mt-2">3 credit</p>
                             <p className="text-xs md:h-20">Three modell, 3x12 photos in three different settings.</p>
@@ -124,27 +124,27 @@ export function Bento2() {
                             </div>
                             <div className="col-span-1 md:col-span-6 grid grid-cols-3 items-center text-center p-2 gap-2">
                                 
-                                <div className="col-span-1 text-center hover:bg-pink-300">
+                                <div className="col-span-1 text-center">
                                     <Image
-                                        className="rounded-md -rotate-3 shadow-md"
+                                        className="rounded-md -rotate-3 hover:rotate-1 hover:scale-105 transition-all shadow-md"
                                         height="350"
                                         width="300"
                                         alt="hello"
                                         src="/v1.png">
                                     </Image>
                                 </div>
-                                <div className="col-span-1 text-center hover:bg-pink-300">
+                                <div className="col-span-1 text-center">
                                     <Image
-                                        className="rounded-md shadow-md"
+                                        className="rounded-md hover:-rotate-1 hover:scale-105 transition-all shadow-md"
                                         height="350"
                                         width="300"
                                         alt="hello"
                                         src="/v2.png">
                                     </Image>
                                 </div>
-                                <div className="col-span-1 text-center hover:bg-pink-300">
+                                <div className="col-span-1 text-center">
                                     <Image
-                                        className="rounded-md rotate-2 shadow-md"
+                                        className="rounded-md rotate-2 hover:-rotate-1 hover:scale-105 transition-all shadow-md"
                                         height="350"
                                         width="300"
                                         alt="hello"
@@ -159,13 +159,13 @@ export function Bento2() {
                         <div className="grid grid-cols-1 md:mt-16 mb-6 md:grid-cols-12 items-center mx-auto text-center">
                             <div className="col-span-1 md:col-span-3 grid grid-cols-3 items-center gap-4 mx-auto text-center">
 
-                                <Link href="/login" className="col-span-1 p-4 bg-gradient-to-b from-pink-200/0 to-pink-200/50 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-sm hover:bg-pink-200">
+                                <Link href="/login" className="col-span-1 p-4 hover:scale-110 bg-gradient-to-b from-stone-200 to-pink-200/50 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all shadow-sm hover:shadow-sm hover:bg-pink-200">
                                     <FaFemale/>
                                 </Link>
-                                <Link href="/login" className="col-span-1 p-4 text-center bg-gradient-to-b from-stone-200/0 to-stone-300/60 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-stone-300">
+                                <Link href="/login" className="col-span-1 p-4 hover:scale-110 text-center bg-gradient-to-b from-stone-200/0 to-stone-300/60 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-stone-300">
                                     <FaMale/>
                                 </Link>
-                                <Link href="/login" className="col-span-1 p-4 text-center bg-gradient-to-b from-sky-200/0 to-sky-200/50 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-sky-200">
+                                <Link href="/login" className="col-span-1 p-4 hover:scale-110 text-center bg-gradient-to-b from-sky-200/0 to-sky-200/50 h-12 w-12 rounded-full border border-stone-300 outline outline-offset-2 outline-stone-300/50 transition-all hover:shadow-lg hover:bg-sky-200">
                                     <FaRainbow/>
                                 </Link>
                             </div>
@@ -183,18 +183,11 @@ export function Bento2() {
             </div>
         </div>
 
-        <div className="border-0 px-6 mx-auto max-w-6xl">
-            <h1 className=" py-12 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-center">AI that sees and highlights the beauty in you</h1>
-            <div className="grid md:grid-cols-4 gap-6 relative mb-20 mt-16">
-                        <div className="outline outline-offset-2 outline-stone-300/50 z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
-                            <p className="w-8 h-8 shadow-inner bg-stone-800 text-stone-100 rounded-full text-center content-center">1</p><br/>
-                            <p className="font-bold mt-2 mb-2 leading-tight">Create an account</p>
-                            <p className="text-xs pb-4">Login with Google or your email addresse</p>
-                            <Link href="/login">
-                            <Button variant={"google"} size={"md"}>Login with Google
-                                <AiOutlineGoogle size={20} className="ml-2"/>
-                            </Button>
-                            </Link>
+        <div className="border-0 px-6 mx-auto">
+            <div className="grid md:grid-cols-5 gap-6 relative mb-6 md:mt-4">
+                        <div className="outline outline-offset-2 outline-stone-300/50 z-10 mb-6 col-span-1 md:col-span-2 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <h1 className=" py-12 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-center"><span className="bg-gradient-to-r from-pink-400 to-sky-400 inline-block text-transparent bg-clip-text">AI</span> that sees and <span className="bg-gradient-to-r from-pink-400 via-sky-400 to-stone-800 inline-block text-transparent bg-clip-text">highlights the beauty</span> in you</h1>
+                            <p className=""></p>
                         </div>
                         <div className="outline outline-offset-2 outline-stone-300/50 z-10 mb-6 col-span-1 bg-stone-200 hover:bg-stone-100 border border-stone-300 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
                             <p className="w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">2</p><br/>
@@ -359,16 +352,14 @@ export function Bento2() {
         </div>
 
         <div className="mx-auto text-center pt-20 pb-16 md:pb-0">
-            <p>
+            <p className="md:border md:border-stone-300 md:rounded-full max-w-max mx-auto py-4 px-6 md:outline md:outline-offset-2 md:outline-stone-300/50">
                 Create your account and get your awesome photos!
             <Link href="/login" className="ml-4">
                 <Button variant={"google"} size={"md"}>Login with Google
                     <AiOutlineGoogle size={20} className="ml-2"/>
                 </Button>
             </Link>
-            </p>
-            
-
+            </p> 
         </div>
 
     </div>

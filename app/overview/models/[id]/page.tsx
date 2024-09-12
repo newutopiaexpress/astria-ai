@@ -50,6 +50,7 @@ export default async function Index({ params }: { params: { id: string } }) {
           </Button> 
         </Link>
         <div className="flex flex-row gap-2 align-middle text-center items-center pb-4">
+          <p>{model.modelId}</p>
           <h1 className="text-xl">{model.name}</h1>
           <div>
             <Badge
