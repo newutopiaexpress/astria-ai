@@ -3,12 +3,13 @@ import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import axios from "axios";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import FormData from 'form-data';
 
 export const dynamic = "force-dynamic";
 
 const astriaApiKey = process.env.ASTRIA_API_KEY;
 const astriaTestModeIsOn = process.env.ASTRIA_TEST_MODE === "true";
+// For local development, recommend using an Ngrok tunnel for the domain
+
 const appWebhookSecret = process.env.APP_WEBHOOK_SECRET;
 const stripeIsConfigured = process.env.NEXT_PUBLIC_STRIPE_IS_ENABLED === "true";
 
@@ -59,6 +60,7 @@ export async function POST(request: Request) {
   }
   let _credits = null;
 
+  console.log({ stripeIsConfigured });
   if (stripeIsConfigured) {
     const { error: creditError, data: credits } = await supabase
       .from("credits")
@@ -66,6 +68,7 @@ export async function POST(request: Request) {
       .eq("user_id", user.id);
 
     if (creditError) {
+      console.error({ creditError });
       return NextResponse.json(
         {
           message: "Something went wrong!",
@@ -75,6 +78,7 @@ export async function POST(request: Request) {
     }
 
     if (credits.length === 0) {
+      // create credits for user.
       const { error: errorCreatingCredits } = await supabase
         .from("credits")
         .insert({
@@ -83,6 +87,7 @@ export async function POST(request: Request) {
         });
 
       if (errorCreatingCredits) {
+        console.error({ errorCreatingCredits });
         return NextResponse.json(
           {
             message: "Something went wrong!",
@@ -124,12 +129,46 @@ export async function POST(request: Request) {
     const body = {
       tune: {
         title: name,
-        base_tune_id: 1504944,
+        // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
+        // https://www.astria.ai/gallery/tunes/690204/prompts
+        base_tune_id: 690204,
         name: type,
-        model_type: "lora",
+        branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
+        prompts_attributes: [
+          {
+            text: `photo of ohwx ${type} smiling, headshot for linkedin, professional, detailed, sharp focus, warm light, attractive, full background, directed, vivid colors, perfect composition, elegant, intricate, beautiful, highly saturated color, epic, stunning, gorgeous, cinematic, striking, rich deep detail, romantic, inspired, vibrant, illuminated, fancy, pretty, amazing, symmetry`,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
+            callback: promptWebhookWithParams,
+            num_images: 4,
+          },
+          {
+            text: `wide shot half body portrait of ohwx ${type} looking at the camera, as a beautiful attractive model, professional dramatic lighting, highly detailed face, high contrasts, ultra high quality photo`,
+            callback: promptWebhookWithParams,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
+            num_images: 4,
+          },
+          {
+            text: `black and white portrait of beautiful ohwx ${type} photographed by Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile`,
+            callback: promptWebhookWithParams,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
+            num_images: 4,
+          },
+        ],
       },
     };
 
@@ -143,6 +182,7 @@ export async function POST(request: Request) {
     const { status, statusText, data: tune } = response;
 
     if (status !== 201) {
+      console.error({ status });
       if (status === 400) {
         return NextResponse.json(
           {
@@ -164,7 +204,7 @@ export async function POST(request: Request) {
     const { error: modelError, data } = await supabase
       .from("models")
       .insert({
-        modelId: tune.id,
+        modelId: tune.id, // store tune Id field to retrieve workflow object if needed later
         user_id: user.id,
         name,
         type,
@@ -173,6 +213,7 @@ export async function POST(request: Request) {
       .single();
 
     if (modelError) {
+      console.error("modelError: ", modelError);
       return NextResponse.json(
         {
           message: "Something went wrong!",
@@ -181,6 +222,7 @@ export async function POST(request: Request) {
       );
     }
 
+    // Get the modelId from the created model
     const modelId = data?.id;
 
     const { error: samplesError } = await supabase.from("samples").insert(
@@ -191,32 +233,10 @@ export async function POST(request: Request) {
     );
 
     if (samplesError) {
+      console.error("samplesError: ", samplesError);
       return NextResponse.json(
         {
           message: "Something went wrong!",
-        },
-        { status: 500 }
-      );
-    }
-
-    // Second API Call to send prompt text and callback URL
-    const promptText = `<lora:${tune.id}:strength> a painting of ohwx man in the style of Van Gogh`;
-    const form = new FormData();
-    form.append('prompt[text]', promptText);
-    form.append('prompt[callback]', promptWebhookWithParams);
-
-    const promptResponse = await fetch(`${DOMAIN}/tunes/${tune.id}/prompts`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
-      },
-      body: form as any, // Cast form to any to bypass type checking
-    });
-
-    if (!promptResponse.ok) {
-      return NextResponse.json(
-        {
-          message: "Failed to send prompt text",
         },
         { status: 500 }
       );
@@ -230,7 +250,11 @@ export async function POST(request: Request) {
         .eq("user_id", user.id)
         .select("*");
 
+      console.log({ data });
+      console.log({ subtractedCredits });
+
       if (updateCreditError) {
+        console.error({ updateCreditError });
         return NextResponse.json(
           {
             message: "Something went wrong!",
@@ -240,6 +264,7 @@ export async function POST(request: Request) {
       }
     }
   } catch (e) {
+    console.error(e);
     return NextResponse.json(
       {
         message: "Something went wrong!",
