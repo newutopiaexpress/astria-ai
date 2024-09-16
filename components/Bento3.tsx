@@ -12,14 +12,15 @@ import { Separator } from "@radix-ui/react-dropdown-menu";
 import { FaFemale, FaMale, FaRainbow } from "react-icons/fa";
 
 
-export function Bento2() {
+export function Bento3() {
   return (
 
     <div>
 
-        <div className="mx-6 grid grid-cols-1 md:grid-cols-12 md:gap-6 pb-6">
-            <div className="md:col-span-7">
-                <div className="bg-stone-950 rounded-3xl relative">
+        <div className="mx-6 grid grid-cols-1 md:grid-cols-12 md:gap-6 pb-6 lg:max-w-[1600px] lg:mx-auto">
+
+            <div className="md:col-span-7 lg:col-span-7">
+                <div className="bg-stone-950 rounded-[60px] relative">
                     <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0 hover:rotate-45">
                         <CamIcon/>
                         <Image
@@ -65,25 +66,20 @@ export function Bento2() {
                                 </Image>
                             </div>
                         </div>
-                        <div className="md:col-span-6 lg:col-span-7 bg-cover">
-                            <Image
-                            className="cover rounded-3xl"
-                            height="817"
-                            width="755"
-                            alt="hello"
-                            src="/ai2.png">
-                            </Image>
+                        <div className="md:col-span-6 lg:col-span-7 bg-cover bg-center rounded-3xl" style={{ backgroundImage: 'url(/ai2.png)' }}>
+
                         </div>
                     </div>
-                    
-
                 </div>
-
             </div>
 
-            <div className="md:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">    
+            <div className="md:col-span-5 lg:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">    
 
-                <div className="col-span-3"> 
+                <div className="">
+                    <p>hello</p>
+                </div>
+
+                <div> 
 
                     <div className="grid md:grid-cols-3 md:gap-6">
                         <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">

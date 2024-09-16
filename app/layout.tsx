@@ -4,6 +4,8 @@ import "./globals.css";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
+import CookieConsent from "@/components/CookieConsent";
+
 export const metadata = {
   title: "The AI Photographer",
   description: "Generate professional portraits with AI",
@@ -26,7 +28,7 @@ export default function RootLayout({ children }: any) {
               <main className="w-full mx-auto h-full">
                 {children}
               </main>
-              
+              <CookieConsent /> 
               <section>
                 <FooterV2/>
               </section>

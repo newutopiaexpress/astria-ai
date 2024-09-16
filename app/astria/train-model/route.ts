@@ -4,11 +4,12 @@ import axios from "axios";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import FormData from 'form-data';
+import fetch from 'node-fetch';
 
 export const dynamic = "force-dynamic";
 
 const astriaApiKey = process.env.ASTRIA_API_KEY;
-const astriaTestModeIsOn = process.env.ASTRIA_TEST_MODE === "true";
+const astrTestModeIsOn = process.env.ASTRIA_TEST_MODE === "false";
 const appWebhookSecret = process.env.APP_WEBHOOK_SECRET;
 const stripeIsConfigured = process.env.NEXT_PUBLIC_STRIPE_IS_ENABLED === "true";
 
@@ -40,8 +41,7 @@ export async function POST(request: Request) {
   if (!astriaApiKey) {
     return NextResponse.json(
       {
-        message:
-          "Missing API Key: Add your Astria API Key to generate headshots",
+        message: "Missing API Key: Add your Astria API Key to generate headshots",
       },
       {
         status: 500,
@@ -93,16 +93,14 @@ export async function POST(request: Request) {
 
       return NextResponse.json(
         {
-          message:
-            "Not enough credits, please purchase some credits and try again.",
+          message: "Not enough credits, please purchase some credits and try again.",
         },
         { status: 500 }
       );
     } else if (credits[0]?.credits < 1) {
       return NextResponse.json(
         {
-          message:
-            "Not enough credits, please purchase some credits and try again.",
+          message: "Not enough credits, please purchase some credits and try again.",
         },
         { status: 500 }
       );
@@ -125,9 +123,8 @@ export async function POST(request: Request) {
       tune: {
         title: name,
         base_tune_id: 1504944,
-        name: type,
         model_type: "lora",
-        token: "ohwx",
+        name: type,
         image_urls: images,
         callback: trainWenhookWithParams,
       },
@@ -199,29 +196,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Second API Call to send prompt text and callback URL
-    const promptText = `<lora:${tune.id}:strength> a painting of ohwx man in the style of Van Gogh`;
-    const form = new FormData();
-    form.append('prompt[text]', promptText);
-    form.append('prompt[callback]', promptWebhookWithParams);
-
-    const promptResponse = await fetch(`${DOMAIN}/tunes/1504944/prompts`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
-      },
-      body: form as any, // Cast form to any to bypass type checking
-    });
-
-    if (!promptResponse.ok) {
-      return NextResponse.json(
-        {
-          message: "Failed to send prompt text",
-        },
-        { status: 500 }
-      );
-    }
-
     if (stripeIsConfigured && _credits && _credits.length > 0) {
       const subtractedCredits = _credits[0].credits - 1;
       const { error: updateCreditError, data } = await supabase
@@ -239,19 +213,55 @@ export async function POST(request: Request) {
         );
       }
     }
-  } catch (e) {
+
+    // Construct the prompt text using the modelId
+    const promptText = `<lora:${modelId}:1> a painting of ohwx man in the style of Van Gogh`;
+
+    // Prepare the form data
+    const form = new FormData();
+    form.append('prompt[text]', promptText);
+    form.append('prompt[callback]', promptWebhookWithParams);
+
+    // Send the prompt to the Astria API
+    const promptResponse = await fetch(`https://api.astria.ai/tunes/${modelId}/prompts`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${astriaApiKey}`,
+      },
+      body: form,
+    });
+
+    const promptResult = await promptResponse.json();
+
+    if (!promptResponse.ok) {
+      return NextResponse.json(
+        {
+          message: 'Failed to generate image',
+          error: promptResult,
+        },
+        { status: promptResponse.status }
+      );
+    }
+
+    // Return the prompt result
     return NextResponse.json(
       {
-        message: "Something went wrong!",
+        message: 'success',
+        promptResult,
+      },
+      { status: 200 }
+    );
+
+  } catch (e) {
+    let errorMessage = "Something went wrong!";
+    if (e instanceof Error) {
+      errorMessage = e.message;
+    }
+    return NextResponse.json(
+      {
+        message: errorMessage,
       },
       { status: 500 }
     );
   }
-
-  return NextResponse.json(
-    {
-      message: "success",
-    },
-    { status: 200 }
-  );
 }
