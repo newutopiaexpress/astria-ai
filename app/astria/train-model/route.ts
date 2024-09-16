@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (images?.length < 1) {
+  if (images?.length < 4) {
     return NextResponse.json(
       {
         message: "Upload at least 4 sample images",
@@ -139,15 +139,33 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `Clean scandinavian design living room, natural light, architecture magazine cover  <lora:epi_noiseoffset2:0.5><lora:FilmVelvia2:0.5><lora:add_detail:0.5><lora:epiCRealismHelper:0.2> --mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 0.5 1`,
-            negative_prompt:`painted, sketch, deformed, easynegative`,
-            controlnet: "lineart",
-            input_image_url: images,
+            text: `photo of ohwx ${type} smiling, headshot for linkedin, professional, detailed, sharp focus, warm light, attractive, full background, directed, vivid colors, perfect composition, elegant, intricate, beautiful, highly saturated color, epic, stunning, gorgeous, cinematic, striking, rich deep detail, romantic, inspired, vibrant, illuminated, fancy, pretty, amazing, symmetry`,
+            negative_prompt:`ugly, old, unrealistic`,
             super_resolution: true,
-            inpaint_faces : false,
-            face_correct : false,
+            inpaint_faces : true,
+            face_correct : true,
             hires_fix : true,
             callback: promptWebhookWithParams,
+            num_images: 4,
+          },
+          {
+            text: `wide shot half body portrait of ohwx ${type} looking at the camera, as a beautiful attractive model, professional dramatic lighting, highly detailed face, high contrasts, ultra high quality photo`,
+            callback: promptWebhookWithParams,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
+            num_images: 4,
+          },
+          {
+            text: `black and white portrait of beautiful ohwx ${type} photographed by Annie Leibovitz, head turned slightly to the side, looking at the camera, soft smile`,
+            callback: promptWebhookWithParams,
+            negative_prompt:`ugly, old, unrealistic`,
+            super_resolution: true,
+            inpaint_faces : true,
+            face_correct : true,
+            hires_fix : true,
             num_images: 4,
           },
         ],
