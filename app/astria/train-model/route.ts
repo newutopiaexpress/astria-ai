@@ -202,6 +202,37 @@ export async function POST(request: Request) {
       }
     }
 
+    const promptBody = new FormData();
+    // promptBody.append('prompt[text]', '<lora:tune_id:strength> a painting of ohwx man in the style of Van Gogh');
+    promptBody.append('prompt[text]', `<lora:tune_id:1> Glowing ohwx ${type} with swirling light, in Van Gogh's bold strokes under a starry sky`);
+    promptBody.append('prompt[callback]', promptWebhookWithParams);
+    // const response2 = await axios.post(DOMAIN + `/tunes/${tune.id}/prompts`, promptBody, {
+    const response2 = await axios.post(`https://api.astria.ai/tunes/1504944/prompts`, promptBody, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${API_KEY}`,
+      },
+    });        
+
+    if (response2.status !== 201) {
+      if (response2.status === 400) {
+        return NextResponse.json(
+          {
+            message: "webhookUrl must be a URL address",
+          },
+          { status }
+        );
+      }
+      if (status === 402) {
+        return NextResponse.json(
+          {
+            message: "Training models is only available on paid plans.",
+          },
+          { status }
+        );
+      }
+    }
+
     const { error: modelError, data } = await supabase
       .from("models")
       .insert({
