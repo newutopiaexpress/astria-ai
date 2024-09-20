@@ -5,33 +5,52 @@ export function PriceCard() {
     return (
 
                     <div className="grid md:grid-cols-3 md:gap-6">
-                        <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
-                            <p><StarIcon/></p><br/>
-                            <p className="font-bold mt-2">1 credit</p>
-                            <p className="text-xs md:h-20">One modell, 12 photos in three different settings.</p>
-                            <p className="font-normal text-5xl">9<span className="font-normal text-xl">€</span></p>
-                            <Link href="/login" className="absolute bottom-6 right-6">
-                                <Button variant="outline" size="sm">Select</Button>
-                            </Link>
+                        
+                        <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <div className="p-6">  
+                                <p><StarIcon/></p><br/>
+                                <p className="font-bold mt-2">1 Session</p>
+                                <p className="text-xs md:h-20">One modell, 12 photos in three different settings.</p>
+                                <p className="font-normal text-5xl">
+                                    9<span className="font-normal text-xl">€</span>
+                                    <Link href="/login" className="float-right">
+                                        <Button variant="outline" size="sm">Select</Button>
+                                    </Link>
+                                </p> 
+                            </div>  
+                            <p className="bg-green-200/50 pl-2 pr-2 pb-4 pt-4 rounded-b-3xl text-xs text-center">100% Money Back Guarantee</p>
                         </div>
-                        <div className="mb-6 col-span-1 bg-slate-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:z-10">
-                            <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
-                            <p className="font-bold mt-2">3 credit</p>
-                            <p className="text-xs md:h-20">Three modell, 3x12 photos in three different settings.</p>
-                            <p className="font-normal text-5xl">25<span className="font-normal text-xl">€</span></p>
-                            <Link href="/login" className="absolute bottom-6 right-6">
-                                <Button variant="outline" size="sm">Select</Button>
-                            </Link>
+
+                        <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <div className="p-6">  
+                                <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
+                                <p className="font-bold mt-2">3 Session</p>
+                                <p className="text-xs md:h-20">Three modell, 3x12 photos in three different settings.</p>
+                                <p className="font-normal text-5xl">
+                                    25<span className="font-normal text-xl">€</span>
+                                    <Link href="/login" className="float-right">
+                                        <Button variant="outline" size="sm">Select</Button>
+                                    </Link>
+                                </p> 
+                            </div>  
+                            <p className="bg-green-200/50 pl-2 pr-2 pb-4 pt-4 rounded-b-3xl text-xs text-center">100% Money Back Guarantee</p>
                         </div>
-                        <div className="mb-6 col-span-1 bg-stone-800 text-stone-300 h-50 rounded-3xl relative p-6 hover:scale-105 transition-all duration-50 hover:z-10 hover:shadow-xl">
-                            <p><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p><br/>
-                            <p className="font-bold mt-2">5 credit</p>
-                            <p className="text-xs md:h-20">Five modell, 5x12 photos in three different settings.</p>
-                            <p className="font-normal text-5xl">39<span className="font-normal text-xl">€</span></p>
-                            <Link href="/login" className="absolute bottom-6 right-6">
-                                <Button variant="outline" size="sm">Select</Button>
-                            </Link>
+
+                        <div className="mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <div className="p-6">  
+                                <p><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></p><br/>
+                                <p className="font-bold mt-2">5 Session</p>
+                                <p className="text-xs md:h-20">Five modell, 5x12 photos in three different settings.</p>
+                                <p className="font-normal text-5xl">
+                                    39<span className="font-normal text-xl">€</span>
+                                    <Link href="/login" className="float-right">
+                                        <Button variant="outline" size="sm">Select</Button>
+                                    </Link>
+                                </p> 
+                            </div>  
+                            <p className="bg-green-200/50 pl-2 pr-2 pb-4 pt-4 rounded-b-3xl text-xs text-center">100% Money Back Guarantee</p>
                         </div>
+
                     </div>
 
     )

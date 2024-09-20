@@ -76,9 +76,6 @@ export function Bento3() {
 
             <div className="md:col-span-5 lg:col-span-5 mt-6 grid md:grid-cols-1 md:gap-6">    
 
-                <div className="rounded-3xl bg-stone-800">
-                    <p>hello</p>
-                </div>
 
                 <div> 
 
