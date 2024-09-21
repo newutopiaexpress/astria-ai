@@ -236,37 +236,88 @@ export default function TrainModelZone() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="rounded-md flex flex-col gap-8"
         >
-          <FormField
-            control={form.control}
-            name="pack"
-            render={({ field }) => (
-              <FormItem className="w-full rounded-md">
-                <FormLabel>Pack</FormLabel>
-                <FormDescription>
-                  Select the style of image you want to generate.
-                </FormDescription>
-                <FormControl>
-                  <Select
-                    onValueChange={handleSelectChange}
-                    defaultValue={field.value}
-                  >
-                    <SelectTrigger className="max-w-screen-sm">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent position="popper" className="max-h-60 overflow-y-auto">
-                      {packs.length > 0 &&
-                        packs?.map((pack) => (
-                          <SelectItem key={pack.id} value={pack.slug}>
-                            {pack.title}
-                          </SelectItem>
-                        ))}
-                    </SelectContent>
-                  </Select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+        <FormField
+          control={form.control}
+          name="pack"
+          render={({ field }) => (
+            <FormItem className="w-full rounded-md">
+              <FormLabel>Pack</FormLabel>
+              <FormDescription>
+                Select the style of image you want to generate.
+              </FormDescription>
+              <FormControl>
+                <RadioGroup
+                  defaultValue={field.value}
+                  className="flex flex-col gap-4"
+                  value={field.value}
+                  onValueChange={(value) => {
+                    form.setValue("pack", value);
+                  }}
+                >
+                  <div className="grid md:grid-cols-6 gap-4">
+                    <div>
+                      <RadioGroupItem
+                        value="aristocratic-portraits"
+                        id="aristocratic-portraits"
+                        className="peer sr-only"
+                        aria-label="aristocratic-portraits"
+                      />
+                      <Label
+                        htmlFor="aristocratic-portraits"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        Aristocratic Portraits
+                      </Label>
+                    </div>
+                    <div>
+                      <RadioGroupItem
+                        value="youtube-thumbnail-reaction"
+                        id="youtube-thumbnail-reaction"
+                        className="peer sr-only"
+                        aria-label="youtube-thumbnail-reaction"
+                      />
+                      <Label
+                        htmlFor="youtube-thumbnail-reaction"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        Youtube Thumbnail Reaction
+                      </Label>
+                    </div>
+                    <div>
+                      <RadioGroupItem
+                        value="glamour-shot"
+                        id="glamour-shot"
+                        className="peer sr-only"
+                        aria-label="glamour-shot"
+                      />
+                      <Label
+                        htmlFor="glamour-shot"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        Glamour Shot
+                      </Label>
+                    </div>
+                    <div>
+                      <RadioGroupItem
+                        value="ai-photographer"
+                        id="ai-photographer"
+                        className="peer sr-only"
+                        aria-label="ai-photographer"
+                      />
+                      <Label
+                        htmlFor="ai-photographer"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        Ai Photographer
+                      </Label>
+                    </div>
+                  </div>
+                </RadioGroup>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
           <FormField
             control={form.control}
@@ -350,6 +401,7 @@ export default function TrainModelZone() {
               </div>
             </RadioGroup>
           </div>
+
           <div
             {...getRootProps()}
             className=" rounded-md justify-center align-middle cursor-pointer flex flex-col gap-4"
