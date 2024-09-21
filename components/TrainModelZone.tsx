@@ -31,6 +31,7 @@ import * as z from "zod";
 import { fileUploadFormSchema } from "@/types/zod";
 import { upload } from "@vercel/blob/client";
 import axios from "axios";
+import Image from "next/image";
 
 type FormInput = z.infer<typeof fileUploadFormSchema>;
 
@@ -241,10 +242,7 @@ export default function TrainModelZone() {
           name="pack"
           render={({ field }) => (
             <FormItem className="w-full rounded-md">
-              <FormLabel>Pack</FormLabel>
-              <FormDescription>
-                Select the style of image you want to generate.
-              </FormDescription>
+              <FormLabel className="mb-12">Select the style of image you want to generate.</FormLabel>
               <FormControl>
                 <RadioGroup
                   defaultValue={field.value}
@@ -264,8 +262,17 @@ export default function TrainModelZone() {
                       />
                       <Label
                         htmlFor="aristocratic-portraits"
-                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                       >
+
+                        <Image
+                          src="/aristocratic.jpg"
+                          width={896}
+                          height={1152}
+                          alt="Aristocratic Portraits"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
                         Aristocratic Portraits
                       </Label>
                     </div>
@@ -280,6 +287,14 @@ export default function TrainModelZone() {
                         htmlFor="youtube-thumbnail-reaction"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                       >
+                        <Image
+                          src="/youtube.jpg"
+                          width={896}
+                          height={1152}
+                          alt="Aristocratic Portraits"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
                         Youtube Thumbnail Reaction
                       </Label>
                     </div>
