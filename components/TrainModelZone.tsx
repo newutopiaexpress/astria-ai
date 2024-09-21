@@ -13,19 +13,32 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FaFemale, FaImages, FaMale, FaRainbow } from "react-icons/fa";
 import * as z from "zod";
 import { fileUploadFormSchema } from "@/types/zod";
 import { upload } from "@vercel/blob/client";
-import { CameraIcon } from "./ui/camera-icon";
+import axios from "axios";
 
 type FormInput = z.infer<typeof fileUploadFormSchema>;
+
+interface Pack {
+  id: string;
+  title: string;
+  slug: string;
+}
 
 const stripeIsConfigured = process.env.NEXT_PUBLIC_STRIPE_IS_ENABLED === "true";
 
@@ -40,6 +53,7 @@ export default function TrainModelZone() {
     defaultValues: {
       name: "",
       type: "man",
+      pack: "corporate-headshots",
     },
   });
 
@@ -128,6 +142,7 @@ export default function TrainModelZone() {
       urls: blobUrls,
       name: form.getValues("name").trim(),
       type: form.getValues("type"),
+      pack: form.getValues("pack"),
     };
 
     // Send the JSON payload to the "/astria/train-model" endpoint
@@ -183,6 +198,37 @@ export default function TrainModelZone() {
 
   const modelType = form.watch("type");
 
+  const handleSelectChange = (value: string) => {
+    form.setValue("pack", value);
+  };
+
+  const [packs, setPacks] = useState<Pack[]>([]);
+
+  const fetchPacks = async (): Promise<void> => {
+    try {
+      const response = await axios.get<Pack[]>("/astria/packs");
+      setPacks(response.data);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        toast({
+          title: "Error fetching packs",
+          description: err.message,
+          duration: 5000,
+        });
+      } else {
+        toast({
+          title: "Unknown error",
+          description: "An unknown error occurred.",
+          duration: 5000,
+        });
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchPacks();
+  }, []);
+
   return (
     <div>
       <Form {...form}>
@@ -192,15 +238,50 @@ export default function TrainModelZone() {
         >
           <FormField
             control={form.control}
+            name="pack"
+            render={({ field }) => (
+              <FormItem className="w-full rounded-md">
+                <FormLabel>Pack</FormLabel>
+                <FormDescription>
+                  Select the style of image you want to generate.
+                </FormDescription>
+                <FormControl>
+                  <Select
+                    onValueChange={handleSelectChange}
+                    defaultValue={field.value}
+                  >
+                    <SelectTrigger className="max-w-screen-sm">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent position="popper" className="max-h-60 overflow-y-auto">
+                      {packs.length > 0 &&
+                        packs?.map((pack) => (
+                          <SelectItem key={pack.id} value={pack.slug}>
+                            {pack.title}
+                          </SelectItem>
+                        ))}
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem className="md:w-5/6 mx-auto">
-                <FormLabel className="text-lg">Name your model:</FormLabel>
+              <FormItem className="w-full rounded-md">
+                <FormLabel>Name</FormLabel>
+                <FormDescription>
+                  Give your model a name so you can easily identify it later.
+                </FormDescription>
                 <FormControl>
                   <Input
-                    placeholder="eq. Lucy"
+                    placeholder="e.g. Natalie Headshots"
                     {...field}
-                    className="max-w-screen-lg"
+                    className="max-w-screen-sm"
                     autoComplete="off"
                   />
                 </FormControl>
@@ -208,9 +289,10 @@ export default function TrainModelZone() {
               </FormItem>
             )}
           />
-          <div className="md:w-5/6 mx-auto pt-4 flex flex-col gap-4">
-            <FormLabel className="text-lg">Select your type:</FormLabel>
-            <FormDescription className="text-stone-400">
+          <div className="flex flex-col gap-4">
+            <FormLabel>Type</FormLabel>
+            <FormDescription>
+              Select the type of headshots you want to generate.
             </FormDescription>
             <RadioGroup
               defaultValue={modelType}
@@ -229,7 +311,7 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="man"
-                  className="flex flex-col items-center justify-between rounded-lg border-2 border-stone-400 bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400  [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
                   <FaMale className="mb-3 h-6 w-6" />
                   Man
@@ -245,7 +327,7 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="woman"
-                  className="flex flex-col items-center justify-between rounded-lg border-2 border-stone-400 bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400  [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
                   <FaFemale className="mb-3 h-6 w-6" />
                   Woman
@@ -260,7 +342,7 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="person"
-                  className="flex flex-col items-center justify-between rounded-lg border-2 border-stone-400 bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400  [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
                   <FaRainbow className="mb-3 h-6 w-6" />
                   Unisex
@@ -268,23 +350,23 @@ export default function TrainModelZone() {
               </div>
             </RadioGroup>
           </div>
-
           <div
             {...getRootProps()}
-            className="md:w-5/6 mx-auto pt-4 rounded-md justify-center align-middle cursor-pointer flex flex-col gap-4"
+            className=" rounded-md justify-center align-middle cursor-pointer flex flex-col gap-4"
           >
-            <FormLabel className="text-lg">Your photos</FormLabel>
+            <FormLabel>Samples</FormLabel>
             <FormDescription>
-              Upload 4-10 images of yourself. 
+              Upload 4-10 images of the person you want to generate headshots
+              for.
             </FormDescription>
-            <div className="outline-dashed outline-2 outline-green-400 hover:outline-blue-500 w-full h-full rounded-md p-4 flex justify-center align-middle">
+            <div className="outline-dashed outline-2 outline-gray-100 hover:outline-blue-500 w-full h-full rounded-md p-4 flex justify-center align-middle">
               <input {...getInputProps()} />
               {isDragActive ? (
                 <p className="self-center">Drop the files here ...</p>
               ) : (
                 <div className="flex justify-center flex-col items-center gap-2">
-                  <CameraIcon/>
-                  <p className="self-center text-xs">
+                  <FaImages size={32} className="text-gray-700" />
+                  <p className="self-center">
                     Drag 'n' drop some files here, or click to select files.
                   </p>
                 </div>
@@ -297,12 +379,12 @@ export default function TrainModelZone() {
                 <div key={file.name} className="flex flex-col gap-1">
                   <img
                     src={URL.createObjectURL(file)}
-                    className="rounded-full w-24 h-24 object-cover"
+                    className="rounded-md w-24 h-24 object-cover"
                   />
                   <Button
-                    variant="secondary"
+                    variant="outline"
                     size={"sm"}
-                    className="w-94"
+                    className="w-full"
                     onClick={() => removeFile(file)}
                   >
                     Remove
@@ -312,8 +394,8 @@ export default function TrainModelZone() {
             </div>
           )}
 
-          <Button type="submit" variant="submit" className="mt-6 md:w-1/3 h-12 mx-auto text-sm" isLoading={isLoading}>
-            Create Images{" "}
+          <Button type="submit" className="w-full" isLoading={isLoading}>
+            Train Model{" "}
             {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
           </Button>
         </form>

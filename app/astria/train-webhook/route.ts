@@ -48,7 +48,18 @@ export async function POST(request: Request) {
 
   const urlObj = new URL(request.url);
   const user_id = urlObj.searchParams.get("user_id");
+  const model_id = urlObj.searchParams.get("model_id");
   const webhook_secret = urlObj.searchParams.get("webhook_secret");
+
+  if (!model_id) {
+    return NextResponse.json(
+      {
+        message: "Malformed URL, no model_id detected!",
+      },
+      { status: 500 }
+    );
+  }
+  
 
   if (!webhook_secret) {
     return NextResponse.json(
@@ -116,19 +127,20 @@ export async function POST(request: Request) {
     if (resendApiKey) {
       const resend = new Resend(resendApiKey);
       await resend.emails.send({
-        from: "noreply@utopia.express",
+        from: "noreply@headshots.tryleap.ai",
         to: user?.email ?? "",
         subject: "Your model was successfully trained!",
-        html: `<h2>Your training was successful! 1 credit has been used from your account.</h2>`,
+        html: `<h2>We're writing to notify you that your model training was successful! 1 credit has been used from your account.</h2>`,
       });
     }
 
     const { data: modelUpdated, error: modelUpdatedError } = await supabase
       .from("models")
       .update({
+        modelId: `${tune.id}`,
         status: "finished",
       })
-      .eq("modelId", tune.id)
+      .eq("id", model_id)
       .select();
 
     if (modelUpdatedError) {

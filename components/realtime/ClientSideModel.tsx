@@ -46,30 +46,32 @@ export default function ClientSideModel({
 
   return (
     <div id="train-model-container" className="w-full h-full">
-      <div className="flex flex-col w-full mt-2 gap-4">
-        <div className="flex flex-col  gap-4 lg:gap-0">
+      <div className="flex flex-col w-full mt-4 gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
           {samples && (
-          <div className="flex w-full flex-col gap-2">
+            <div className="flex w-full lg:w-1/2 flex-col gap-2">
+              <h2 className="text-xl">Training Data</h2>
               <div className="flex flex-row gap-4 flex-wrap">
                 {samples.map((sample) => (
                   <img
+                    key={sample.id}
                     src={sample.uri}
-                    className="rounded-sm w-24 h-24 object-cover"
+                    className="rounded-md w-60 h-60 object-cover"
                   />
                 ))}
               </div>
-          </div>
+            </div>
           )}
-          <div className="flex flex-col w-full  mx-auto">
+          <div className="flex flex-col w-full lg:w-1/2 rounded-md">
             {model.status === "finished" && (
               <div className="flex flex-1 flex-col gap-2">
-                <h1 className="text-xl opacity-25 mt-9">Results</h1>
-                <div className="grid grid-cols-3 md:grid-cols-3 gap-6">
+                <h1 className="text-xl">Results</h1>
+                <div className="flex flex-row flex-wrap gap-4">
                   {serverImages?.map((image) => (
-                    <div key={image.id} className="pb-9">
+                    <div key={image.id}>
                       <img
                         src={image.uri}
-                        className="mx-auto text-center rounded-sm w-96 object-cover"
+                        className="rounded-md w-60 object-cover"
                       />
                     </div>
                   ))}
