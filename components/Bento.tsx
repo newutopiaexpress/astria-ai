@@ -86,7 +86,7 @@ export function Bento() {
                     </div>
                     <p className=" text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-[11px] mt-1 mr-6 text-right">Powered by <Link className="font-bold" target="_blank" href="https://blackforestlabs.ai/">FLUX AI</Link>  </p>
                     <h1 className="md:text-right mt-16 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-indigo-400 to-red-600 inline-block text-transparent bg-clip-text pb-2">Take photos with AI.</span></h1>
-                    <p className="text-stone-500 text-md mt-2 mb-6 md:text-right md:w-72 md:float-right">It's not a filter. It's Your beautiful, carefree, photogenic digital clone.</p>
+                    <p className="text-stone-500 text-md mt-2 mb-6 md:text-right md:w-72 md:float-right">It's not a filter. Meet Your beautiful, carefree, photogenic digital clone.</p>
                 </div> 
                 <div className="col-span-5">
                     <Image
@@ -197,9 +197,9 @@ export function Bento() {
         
     </div>  
 
-    <div className="border-0  px-6 py-16 mt-6 mb-6 mx-auto lg:max-w-[1200px] bg-stone-900 rounded-3xl relative">
+    <div className="border-0  px-6 py-16 mt-6 mx-auto lg:max-w-[1200px] bg-stone-900 rounded-3xl rounded-tl-[60px] rounded-tr-[60px] rounded-br-[0px] rounded-bl-[0px] relative">
 
-            <Link href="/login" className="absolute top-4 right-4 scale-105">
+            <Link href="/login" className="absolute top-4 right-7 scale-105">
                 <Button variant={"googleoutline"} size={"md"}>Login with Google
                     <AiOutlineGoogle size={20} className="ml-2"/>
                 </Button>
@@ -208,8 +208,8 @@ export function Bento() {
             <h1 className="text-center px-6 pt-12 pb-4 text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Get noticed on LinkedIn, Twitter, with recruiters, clients & everywhere else.</h1>
             <p className="text-center text-stone-400 pb-10">Choose one from our constantly updated styles that best suit your goals</p>
         
-            <div className="grid md:grid-cols-6 gap-6 relative">
-                        <div className="mt-6 col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+            <div className="grid md:grid-cols-6 gap-6 relative ">
+                        <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
                             <div className="w-full h-16 absolute -bottom-16 left-0 right-0">
                                 <h1 className="text-center text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Aristocratic Portraits</h1>
                             </div>
@@ -221,7 +221,7 @@ export function Bento() {
                             src="/aristocratic.jpg">
                             </Image>
                         </div>
-                        <div className="mt-6 col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                        <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
                             <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
                                 <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Corporate Headshots</h1>
                             </div>
@@ -234,7 +234,7 @@ export function Bento() {
                             </Image>
                         </div>
 
-                        <div className="mt-6 col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                        <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
                             <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
                                 <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Youtube Thumbnail</h1>
                             </div>
@@ -272,7 +272,7 @@ export function Bento() {
                         </div>
                         <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
                             <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
-                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">AI Photographer</h1>
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Surreal </h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
@@ -288,24 +288,28 @@ export function Bento() {
     </div>
 
             
-    <div className="grid md:grid-cols-1 max-w-[1200px] mx-auto gap-6 mt-8">   
+    <div className="grid md:grid-cols-1 max-w-[1290px] mx-auto gap-6 border-t border-stone-300">   
 
             <div className="col-span-1 rounded-3xl bg-stone-200">
                 <h1 className="text-center px-6 pt-12 pb-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
                     10 times better, <span className="bg-gradient-to-r from-purple-600 via-indigo-400 to-fuchsia-400 inline-block text-transparent bg-clip-text">1/10th the price</span>
                 </h1>
-                <p className="text-center max-w-xs mx-auto mt-4 pb-6 text-stone-500">Professional photos in 30 minutes, without having to go to the hairdresser first!</p>
+                <p className="text-center max-w-xs mx-auto mt-4 pb-6 text-stone-500">Get your photos in 20 minutes, without having to go to the hairdresser first!</p>
             </div> 
 
-            <div className="col-span-1 grid grid-cols-1 md:grid-cols-3 md:gap-9 lg:max-w-[1200px] mx-auto">
+            <div className="col-span-1 grid grid-cols-1 md:grid-cols-4 md:gap-9 lg:max-w-[1200px] mx-auto">
 
-                        <div className="outline outline-offset-2 outline-stone-300 mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-stone-300/50">
+                        <div className="outline outline-4 outline-offset-8 hover:outline-purple-400 outline-stone-300/30 mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-1">
+                            
+                            {/*<div className="absolute top-3 -right-3 rounded-3xl bg-purple-400 pt-0 pb-1 pl-2 pr-2 text-center ">
+                                <p className="text-lg">0.5<span className="font-normal text-sm">€/photo</span></p>
+                            </div>*/}
                             <div className="p-6">  
                                 <p><StarIcon/></p><br/>
                                 <p className="font-bold mt-2 text-sm">1 Photo Session</p>
-                                <p className="text-lg md:h-20">Custom fine tuning + <br/>24 photos in the selected style</p>
+                                <p className="text-md md:h-20 leading-tight">1x Custom fine tuning + <br/>24 photos in the selected style</p>
                                 <p className="font-normal text-5xl">
-                                    14<span className="font-normal text-xl">€</span>
+                                    14<span className="font-normal text-sm">€ /24pcs</span>
                                     <Link href="/login" className="float-right">
                                         <Button variant="outline" size="sm">Select</Button>
                                     </Link>
@@ -313,13 +317,13 @@ export function Bento() {
                             </div>  
                         </div>
 
-                        <div className="outline outline-offset-2 hover:outline-offset-1 outline-stone-300 mb-6 col-span-1 bg-slate-300/70 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                        <div className="outline outline-4 outline-offset-8 hover:outline-purple-400 outline-stone-300/30 mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-1">
                             <div className="p-6">  
                                 <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
                                 <p className="font-bold mt-2 text-sm">3 Photo Session</p>
-                                <p className="text-lg  md:h-20">Custom fine tuning + <br/>3x24 photos in the selected style</p>
+                                <p className="text-md  md:h-20 leading-tight">3x Custom fine tuning + <br/>3x24 photos in the selected style</p>
                                 <p className="font-normal text-5xl">
-                                    39<span className="font-normal text-xl">€</span>
+                                    39<span className="font-normal text-sm">€ /72pcs</span>
                                     <Link href="/login" className="float-right">
                                         <Button variant="outline" size="sm">Select</Button>
                                     </Link>
@@ -327,29 +331,43 @@ export function Bento() {
                             </div>  
                         </div>
 
-                        <div className="outline outline-offset-2 hover:outline-offset-1 outline-stone-300 mb-6 col-span-1 bg-stone-950 text-stone-300 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                        <div className="outline outline-4 outline-offset-8 hover:outline-purple-400 outline-stone-300/30 mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-1">
                             <div className="p-6">  
                                 <p className="text-stone-300"><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/></p><br/>
                                 <p className="font-bold mt-2 text-sm">5 Photo Session</p>
-                                <p className="text-lg md:h-20">Custom fine tuning + <br/>5x24 photos in the selected style</p>
+                                <p className="text-md md:h-20 leading-tight">5x Custom fine tuning + <br/>5x24 photos in the selected style</p>
                                 <p className="font-normal text-5xl">
-                                    63<span className="font-normal text-xl">€</span>
+                                    63<span className="font-normal text-sm">€ /120pcs</span>
                                     <Link href="/login" className="float-right">
                                         <Button variant="outline" size="sm" className="bg-stone-300 text-stone-800">Select</Button>
                                     </Link>
                                 </p> 
                             </div>  
                         </div> 
+
+                        <div className="outline outline-4 outline-offset-8 hover:outline-purple-400 outline-stone-300/30 mb-6 col-span-1 bg-stone-800 text-stone-300 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-1">
+                            <div className="p-6">  
+                                <p className="text-stone-300"><HeartIcon/></p><br/>
+                                <p className="font-bold mt-2 text-sm">15 Photo Session - For Teams, Influencers and Addicts</p>
+                                <p className="text-md md:h-20 leading-tight">15x Custom fine tuning + 15x24 photos in the selected style</p>
+                                <p className="font-normal text-5xl">
+                                    160<span className="font-normal text-sm">€ /360pcs</span>
+                                    <Link href="/login" className="float-right">
+                                        <Button variant="outline" size="sm" className="bg-stone-300 text-stone-800">Select</Button>
+                                    </Link>
+                                </p> 
+                            </div>  
+                        </div>
             </div>
             
     </div> 
 
-    <div className="grid border-t border-stone-300 md:grid-cols-1 gap-6 mx-auto text-center mt-6 pt-12 pb-12  max-w-[1200px]  ">
+    <div className="grid mt-20 md:grid-cols-1 gap-6 mx-auto text-center w-full lg:max-w-[1200px] border border-stone-300 rounded-3xl shadow-md">
 
-        <div className="col-span-6 p-2 rounded-full mx-auto md:max-w-[600px] bg-stone-950 content-center">
-            <p className=" text-stone-300">
+        <div className="min-h-96 w-full border-b border-stone-300 col-span-6 py-auto px-12 rounded-tl-3xl rounded-tr-3xl mx-auto bg-stone-950 content-center bg-cover" style={{ backgroundImage: "url('/al.jpg')" }}>
+            <p className="mt-20 md:mt-8 text-stone-300 text-center md:text-right md:mr-12">
             <Link href="/login" className="ml-4 hover:text-stone-300">
-                Create your account and get your awesome photos!
+                Personal branding, the modern way.
                 <Button variant={"google"} size={"md"} className="ml-4">Login with Google
                     <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300  text-stone-800"/>
                 </Button>
@@ -357,22 +375,22 @@ export function Bento() {
             </p>
         </div>
 
-        <div className="col-span-6 rounded-3xl border-t border-b pb-9 border-stone-300 mt-6 pt-12">
-            <div className="flex flex-row gap-6">
-                <div className="md:w-[600px] md:border-r border-stone-300">
-                    <h1 className="text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Rock Solid Security</h1>
+        <div className="col-span-6 pb-9">
+            <div className="grid md:grid-cols-8 gap-6">
+                <div className="col-span-2 md:border-r border-stone-300">
+                    <h1 className="text-left p-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Rock Solid Security</h1>
                 </div>
                 <div className="col-span-2 text-left p-6">
                     <p className="font-bold">Training Data</p>
                     <p className="leading-tight text-xs">We delete your uploaded images immediately after the fine tune</p>
                 </div>
-                <div className="col-span-2 md:border-r md:border-l md:border-stone-300 text-left p-6">
+                <div className="col-span-2 md:border-r md:border-l md:border-stone-300 text-left p-6 mb-6 md:mb-0">
                     <p className="font-bold">Modell Data</p>
                     <p className="leading-tight text-xs">We delete your data automatically 30 days after the fine tune have been created.</p>
                 </div>
-                <div className="col-span-2 md:border-r text-left p-6">
+                <div className="col-span-2 md:border-r text-left p-6 mb-6 md:mb-0">
                     <p className="font-bold">Infrastructure</p>
-                    <p className="leading-tight text-xs">Access to our database is controlled by a password-less system, all data is encrypted in transit and stored only for the period required.</p>
+                    <p className="leading-tight text-xs">Access to our database is controlled by a password-less system, all data is encrypted in transit and stored only for the period required. We will not give your data to any third party.</p>
                 </div>
             </div>
         </div>
@@ -404,14 +422,21 @@ function CamIcon() {
 
 function StarIcon() {
     return (
-<svg className="w-6 h-6 float-left  opacity-10" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
+<svg className="w-6 h-6 float-left text-stone-600/40 opacity-40" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
     )
 }
 function StarIconLight() {
     return (
-<svg className="w-6 h-6 float-left  opacity-40" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
+<svg className="w-6 h-6 float-left  text-purple-300" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
     )
 }
+
+function HeartIcon() {
+    return (
+<svg className="w-6 h-6 float-left  text-purple-300" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.35248 4.90532C1.35248 2.94498 2.936 1.35248 4.89346 1.35248C6.25769 1.35248 6.86058 1.92336 7.50002 2.93545C8.13946 1.92336 8.74235 1.35248 10.1066 1.35248C12.064 1.35248 13.6476 2.94498 13.6476 4.90532C13.6476 6.74041 12.6013 8.50508 11.4008 9.96927C10.2636 11.3562 8.92194 12.5508 8.00601 13.3664C7.94645 13.4194 7.88869 13.4709 7.83291 13.5206C7.64324 13.6899 7.3568 13.6899 7.16713 13.5206C7.11135 13.4709 7.05359 13.4194 6.99403 13.3664C6.0781 12.5508 4.73641 11.3562 3.59926 9.96927C2.39872 8.50508 1.35248 6.74041 1.35248 4.90532Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+    )
+}
+
 
 
   export function PlusIcon() {
