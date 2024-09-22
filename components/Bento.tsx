@@ -84,7 +84,7 @@ export function Bento() {
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-stone-200"></span>
                         </span>
                     </div>
-                    <h1 className="md:text-right mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-red-500 via-orange-500 to-indigo-500 inline-block text-transparent bg-clip-text pb-2">take photos with AI.</span></h1>
+                    <h1 className="md:text-right mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-red-400 via-fuchsia-300 to-indigo-400 inline-block text-transparent bg-clip-text pb-2">Take photos with AI.</span></h1>
                     <p className="text-stone-500 text-md mt-2 md:text-right">It's not a filter. It's Your beautiful, carefree, photogenic, digital version.</p>
                     <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-xs italic mt-4 text-right">Powered by: Flux AI by <Link className="text-stone-500 font-normal" target="_blank" href="https://blackforestlabs.ai/">Black Forest Labs</Link>  </p>
                 </div> 
