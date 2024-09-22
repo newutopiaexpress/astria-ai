@@ -78,23 +78,23 @@ export function Bento() {
 
             <div className="grid gap-6 md:grid-cols-12 md:w-[79%] md:float-right mt-6 mb-6 bg-slate-100 rounded-3xl rounded-bl-[90px]  relative  shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
                 <div className="col-span-7 relative p-6 md:pt-4 md:ml-6 md:pr-0">
-                    <div className="h-3 w-3 absolute right-0 top-6">
+                    <div className="h-3 w-3 absolute right-0 top-5">
                         <span className="relative flex h-3 w-3">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-stone-200"></span>
                         </span>
                     </div>
-                    <h1 className="md:text-right mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-indigo-400 to-red-600 inline-block text-transparent bg-clip-text pb-2">Take photos with AI.</span></h1>
-                    <p className="text-stone-500 text-md mt-2 md:text-right">It's not a filter. It's Your beautiful, carefree, photogenic, digital version.</p>
-                    <p className="text-stone-400/70 font-thin drop-shadow-sm [text-wrap:balance] text-xs italic mt-4 text-right">Powered by: Flux AI by <Link className="text-stone-500 font-normal" target="_blank" href="https://blackforestlabs.ai/">Black Forest Labs</Link>  </p>
+                    <p className=" text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-[11px] mt-1 mr-6 text-right">Powered by <Link className="font-bold" target="_blank" href="https://blackforestlabs.ai/">FLUX AI</Link>  </p>
+                    <h1 className="md:text-right mt-16 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-indigo-400 to-red-600 inline-block text-transparent bg-clip-text pb-2">Take photos with AI.</span></h1>
+                    <p className="text-stone-500 text-md mt-2 mb-6 md:text-right md:w-72 md:float-right">It's not a filter. It's Your beautiful, carefree, photogenic digital clone.</p>
                 </div> 
                 <div className="col-span-5">
                     <Image
                             className="w-full md:w-72 h-auto float-right rounded-3xl md:rounded-tl-[0px] md:rounded-bl-[0px]"
-                            height="700"
-                            width="463"
+                            height="1152"
+                            width="896"
                             alt="hello"
-                            src="/v0.png">
+                            src="/cyber2.jpg">
                     </Image>
                 </div>      
                         
@@ -107,7 +107,7 @@ export function Bento() {
         <div className="md:col-span-4 lg:col-span-3 flex flex-col md:mb-0">  
 
             <div className="mb-6 bg-slate-100 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
-                <p className="text-md mb-4">"Loved the variety and styling. Very happy with the images!"</p>
+                <p className="text-md mb-4">"I never thought it would, but it was good for my confidence. And my husband also seems to look at me differently "</p>
                 <Image
                         className="w-10 h-10 rounded-full float-left mr-2"
                         height="512"
@@ -116,7 +116,7 @@ export function Bento() {
                         src="/square.png">
                 </Image>
                 <p className="text-sm font-bold align-baseline mt-6">
-                    Barbara
+                    Vanda
                 </p>
             </div>  
 
@@ -136,7 +136,7 @@ export function Bento() {
 
             <div className="relative mb-6 min-h-96 bg-slate-100 text-stone-200 rounded-3xl p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl bg-cover" style={{ backgroundImage: "url('/vx.jpg')" }}>
                 <div className="absolute bottom-4">
-                    <p className="text-md mb-4">"Loved the variety and styling.<br/>Very happy with the images!"</p>
+                    <p className="text-md mb-4">"this is true science fiction"</p>
                     <Image
                         className="w-10 h-10 rounded-full float-left mr-2"
                         height="512"
@@ -145,7 +145,7 @@ export function Bento() {
                         src="/square.png">
                     </Image>
                     <p className="text-md font-bold align-baseline mt-6">
-                        - Dee Dee Cormier
+                        - Tamas
                     </p>
                 </div>
             </div>  
