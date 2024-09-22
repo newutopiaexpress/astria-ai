@@ -237,12 +237,36 @@ export default function TrainModelZone() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="rounded-md flex flex-col gap-8"
         >
+
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem className="w-full mx-auto text-center">
+                <FormDescription className="pb-6 text-center text-sm">
+                  Give your model a name
+                </FormDescription>
+                <FormControl>
+                  <Input
+                    placeholder="e.g. Natalie Headshots"
+                    {...field}
+                    className="max-w-screen-sm mx-auto"
+                    autoComplete="off"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
         <FormField
           control={form.control}
           name="pack"
           render={({ field }) => (
-            <FormItem className="w-full rounded-md">
-              <FormLabel className="mb-12">Select the style of image you want to generate.</FormLabel>
+            <FormItem className="w-full mx-auto mt-9">
+              <FormDescription className="text-center text-sm">
+                Select the style of the image you want to generate.
+              </FormDescription>
               <FormControl>
                 <RadioGroup
                   defaultValue={field.value}
@@ -252,17 +276,45 @@ export default function TrainModelZone() {
                     form.setValue("pack", value);
                   }}
                 >
-                  <div className="grid md:grid-cols-6 gap-4">
+                  <div className="grid md:grid-cols-6 gap-4 mt-6 mb-6">
+
+                    <div>
+                      <RadioGroupItem
+                        value="corporate-portraits"
+                        id="corporate-portraits"
+                        className="peer sr-only"
+                        aria-label="corporate-portraits"
+                      />
+                      <Label
+                        htmlFor="corporate-portraits"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                      >
+
+                        <div>
+                        <Image
+                          src="/corporate.jpg"
+                          width={896}
+                          height={1152}
+                          alt="corporate Portraits"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+                        </div>
+
+                        Corporate Headshots
+                      </Label>
+                    </div>
+
                     <div>
                       <RadioGroupItem
                         value="aristocratic-portraits"
                         id="aristocratic-portraits"
                         className="peer sr-only"
                         aria-label="aristocratic-portraits"
+                        disabled
                       />
                       <Label
                         htmlFor="aristocratic-portraits"
-                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
 
                         <Image
@@ -276,16 +328,18 @@ export default function TrainModelZone() {
                         Aristocratic Portraits
                       </Label>
                     </div>
+                    
                     <div>
                       <RadioGroupItem
                         value="youtube-thumbnail-reaction"
                         id="youtube-thumbnail-reaction"
                         className="peer sr-only"
                         aria-label="youtube-thumbnail-reaction"
+                        disabled
                       />
                       <Label
                         htmlFor="youtube-thumbnail-reaction"
-                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
                         <Image
                           src="/youtube.jpg"
@@ -304,11 +358,21 @@ export default function TrainModelZone() {
                         id="glamour-shot"
                         className="peer sr-only"
                         aria-label="glamour-shot"
+                        disabled
                       />
                       <Label
                         htmlFor="glamour-shot"
-                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
+
+                        <Image
+                          src="/glamour.jpg"
+                          width={896}
+                          height={1152}
+                          alt="Aristocratic Portraits"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
                         Glamour Shot
                       </Label>
                     </div>
@@ -318,14 +382,117 @@ export default function TrainModelZone() {
                         id="ai-photographer"
                         className="peer sr-only"
                         aria-label="ai-photographer"
+                        disabled
                       />
                       <Label
                         htmlFor="ai-photographer"
-                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
+                        <Image
+                          src="/photographer.jpg"
+                          width={896}
+                          height={1152}
+                          alt="Aristocratic Portraits"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
                         Ai Photographer
                       </Label>
                     </div>
+                    <div>
+                      <RadioGroupItem
+                        value="bold-colors"
+                        id="bold-colors"
+                        className="peer sr-only"
+                        aria-label="bold-colors"
+                        disabled
+                      />
+                      <Label
+                        htmlFor="bold-colors"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                      >
+                        <Image
+                          src="/bold.jpg"
+                          width={896}
+                          height={1152}
+                          alt="Aristocratic Portraits"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
+                        Bold Colors
+                      </Label>
+                    </div>
+                    <div>
+                      <RadioGroupItem
+                        value="dating"
+                        id="dating"
+                        className="peer sr-only"
+                        aria-label="dating"
+                        disabled
+                      />
+                      <Label
+                        htmlFor="dating"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                      >
+                        <Image
+                          src="/dating.jpg"
+                          width={896}
+                          height={1152}
+                          alt="dating"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
+                        Dating
+                      </Label>
+                    </div>
+                    <div>
+                      <RadioGroupItem
+                        value="j-crew"
+                        id="j-crew"
+                        className="peer sr-only"
+                        aria-label="j-crew"
+                        disabled
+                      />
+                      <Label
+                        htmlFor="j-crew"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                      >
+                        <Image
+                          src="/jcrew.jpg"
+                          width={896}
+                          height={1152}
+                          alt="j-crew"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
+                        J-crew
+                      </Label>
+                    </div>
+                  
+                    <div>
+                      <RadioGroupItem
+                        value="generative-artistic-filters"
+                        id="generative-artistic-filters"
+                        className="peer sr-only"
+                        aria-label="generative-artistic-filters"
+                        disabled
+                      />
+                      <Label
+                        htmlFor="generative-artistic-filters"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                      >
+                        <Image
+                          src="/artistic.jpg"
+                          width={896}
+                          height={1152}
+                          alt="generative-artistic-filters"
+                          className="active w-80 h-auto mb-2">
+                        </Image>
+
+                        Generative Artistic Filters
+                      </Label>
+                    </div>
+                    
                   </div>
                 </RadioGroup>
               </FormControl>
@@ -334,41 +501,20 @@ export default function TrainModelZone() {
           )}
         />
 
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem className="w-full rounded-md">
-                <FormLabel>Name</FormLabel>
-                <FormDescription>
-                  Give your model a name so you can easily identify it later.
-                </FormDescription>
-                <FormControl>
-                  <Input
-                    placeholder="e.g. Natalie Headshots"
-                    {...field}
-                    className="max-w-screen-sm"
-                    autoComplete="off"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className="flex flex-col gap-4">
-            <FormLabel>Type</FormLabel>
-            <FormDescription>
-              Select the type of headshots you want to generate.
+
+          <div className="flex flex-col gap-4 max-w-96 mx-auto text-center">
+            <FormDescription className="pb-6 text-center text-sm">
+              Select a Style
             </FormDescription>
             <RadioGroup
               defaultValue={modelType}
-              className="grid grid-cols-3 gap-4"
+              className="grid grid-cols-3 gap-12"
               value={modelType}
               onValueChange={(value) => {
                 form.setValue("type", value);
               }}
             >
-              <div>
+              <div className="w-32">
                 <RadioGroupItem
                   value="man"
                   id="man"
@@ -377,14 +523,14 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="man"
-                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                 >
                   <FaMale className="mb-3 h-6 w-6" />
                   Man
                 </Label>
               </div>
 
-              <div>
+              <div className="w-32">
                 <RadioGroupItem
                   value="woman"
                   id="woman"
@@ -393,13 +539,13 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="woman"
-                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                 >
                   <FaFemale className="mb-3 h-6 w-6" />
                   Woman
                 </Label>
               </div>
-              <div>
+              <div className="w-32">
                 <RadioGroupItem
                   value="person"
                   id="person"
@@ -408,7 +554,7 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="person"
-                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                 >
                   <FaRainbow className="mb-3 h-6 w-6" />
                   Unisex
@@ -419,14 +565,12 @@ export default function TrainModelZone() {
 
           <div
             {...getRootProps()}
-            className=" rounded-md justify-center align-middle cursor-pointer flex flex-col gap-4"
+            className="justify-center align-middle cursor-pointer flex flex-col gap-4 mx-auto w-full"
           >
-            <FormLabel>Samples</FormLabel>
-            <FormDescription>
-              Upload 4-10 images of the person you want to generate headshots
-              for.
+            <FormDescription className="mt-16 pb-4 text-center text-sm">
+              Upload 4-10 images
             </FormDescription>
-            <div className="outline-dashed outline-2 outline-gray-100 hover:outline-blue-500 w-full h-full rounded-md p-4 flex justify-center align-middle">
+            <div className="outline outline-8 outline-stone-400/10 hover:outline-stone-400/20 border border-stone-300 hover:border-green-400 w-full h-full rounded-md p-4 flex justify-center align-middle">
               <input {...getInputProps()} />
               {isDragActive ? (
                 <p className="self-center">Drop the files here ...</p>
@@ -461,8 +605,8 @@ export default function TrainModelZone() {
             </div>
           )}
 
-          <Button type="submit" className="w-full" isLoading={isLoading}>
-            Train Model{" "}
+          <Button type="submit" className="w-fit p-6 mx-auto bg-stone-800 text-stone-300 text-lg" isLoading={isLoading}>
+            Create Photos{" "}
             {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
           </Button>
         </form>

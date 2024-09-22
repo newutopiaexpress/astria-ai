@@ -36,7 +36,7 @@ export default async function Navbar() {
   } = await supabase.from("credits").select("*").eq("user_id", user?.id ?? '').single()
 
   return (
-    <div className="flex w-full px-4 py-4 items-center text-center justify-between">
+    <div className="flex w-full px-4 py-4 items-center text-center justify-between fixed">
       <div className="flex h-full">
         <Link href="/">
           <h2 className="font-bold ml-2"><UtopiaLogo/></h2>
@@ -56,7 +56,7 @@ export default async function Navbar() {
         {!user && (
           <Link href="/login">
           <Button variant={"google"} size={"md"}>Login with Google
-            <AiOutlineGoogle size={20} className="ml-2"/>
+            <AiOutlineGoogle size={36} className="p-1 ml-2  rounded-full text-stone-800"/>
           </Button>
         </Link>
         )}

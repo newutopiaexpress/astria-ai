@@ -12,7 +12,9 @@ const buttonVariants = cva(
       variant: {
         submit:
           "bg-stone-800 text-stone-200 rounded-full shadow-sm hover:bg-stone-600",
-        google:"outline outline-offset-2 transition-all duration-100 text-sm bg-stone-800 hover:bg-stone-850 shadow-md shadow-stone-800/50 hover:shadow-md rounded-3xl text-stone-300 hover:text-stone-200",
+        google:"outline outline-offset-2 outline-stone-300/30 shadow-sm transition-all duration-100 text-sm bg-stone-200 hover:bg-stone-800 rounded-3xl text-stone-800 hover:text-stone-300",
+        //google:"outline outline-offset-2 transition-all duration-100 text-sm bg-stone-800 hover:bg-stone-850 shadow-md shadow-stone-800/50 hover:shadow-md rounded-3xl text-stone-300 hover:text-stone-200",
+        googleoutline:"transition-all duration-100 text-sm bg-transparent hover:bg-stone-850 shadow-md shadow-stone-800/50 hover:shadow-md rounded-3xl text-stone-300 hover:text-stone-200",
         loginbig:
           "bg-stone-800 text-stone-200 rounded-lg shadow-sm hover:bg-stone-600",
         default:
@@ -30,7 +32,7 @@ const buttonVariants = cva(
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-6 rounded-full px-3 py-2 text-xs",
-        md:"h-9 px-6 py-6 text-xs align-center",
+        md:"h-9 pl-4 pr-2 py-6 text-xs align-center",
         lg: "h-10 rounded-full px-8",
         icon: "h-9 w-9",
       },

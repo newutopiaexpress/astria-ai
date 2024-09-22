@@ -6,7 +6,7 @@ import { UtopiaPricing } from "@/components/utopia-pricing";
 import { UtopiaFeatures } from "@/components/utopia-features";
 import { UtopiaSecond2 } from "@/components/utopia-second2";
 import { UtopiaFaq } from "@/components/utopia-faq";
-import { Bento3 } from "@/components/Bento3";
+import { Bento } from "@/components/Bento";
 
 export const dynamic = "force-dynamic";
 
@@ -26,7 +26,7 @@ export default async function Index() {
   return (
  
       <div>
-        <Bento3/>
+        <Bento/>
       </div>
 
     

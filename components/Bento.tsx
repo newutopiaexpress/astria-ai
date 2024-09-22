@@ -7,129 +7,393 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AiOutlineGoogle } from "react-icons/ai";
 import PricingSection from "@/components/PricingSection";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@radix-ui/react-dropdown-menu";
+import { FaFemale, FaMale, FaRainbow } from "react-icons/fa";
 
 
 export function Bento() {
   return (
-	<div className="py-4 px-2 mx-auto sm:py-4 lg:px-6">
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
-			<div className="col-span-2 sm:col-span-1 md:col-span-2 h-auto md:h-full flex flex-col">
-                <div className=" bg-[#d7d7d5] rounded-2xl relative border border-stone-400/30">
-                    <div className="grid gap-0 lg:grid-cols-2 xl:grid-cols-2">
-                        <div className="md:pl-10 pb-4 content-center col-span-1 relative">
-                            <h1 className="pb-6 text-stone-700 text-left font-extrabold tracking-tighter drop-shadow-sm [text-wrap:balance] text-4xl leading-[3rem] md:text-6xl md:leading-[3rem]">
-                            The Ai Photographer
-                            </h1>
-                            <p className=" text-stone-500 md:text-xl">
-                            Stunningly lifelike photos, as if taken by a professional photographer. 
-                            </p> 
-                            <div className="top-6 left-12 absolute w-32">
-                                <span className="relative flex h-3 w-3 float-left mt-1 mr-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-stone-400"></span>
-                                </span>
-                                <p className="text-stone-400 text-[12px]">Service is running</p>
-                            </div>         
-                        </div>
-                        <div className="col-span-1 animate-fade-in animate-duration-[2s]">
+<div>
+	<div className="grid grid-cols-1 lg:grid-cols-12 md:gap-6  lg:max-w-[1200px] md:mt-12 mx-auto">
+
+        <div className="md:col-span-8 lg:col-span-9 mb-6 md:mb-0">
+            <div className="bg-stone-950 rounded-3xl grid md:grid-cols-2 md:gap-0 relative">
+                <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0">
+                    <CamIcon/>
+                    <Image
+                        className="z-10 hover:-rotate-6 transition-all duration-50"
+                        height="100"
+                        width="100"
+                        alt="hello"
+                        src="/lens.png">
+                    </Image>
+                </Link>
+                <Image
+                    className="absolute top-0 right-0 z-10  hidden md:block"
+                    height="125"
+                    width="130"
+                    alt="hello"
+                    src="/kor.png">
+                </Image>
+
+
+                <div className="md:col-span-1 relative p-6 min-h-[500px]">
+                    <div className="absolute left-8 bottom-[240px] max-w-96">
+                        <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike photos, as if taken by a professional photographer. </h1>
+                    </div>
+                    <div className="absolute left-8 -bottom-16 w-96">
+                        <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic">Upload your photos and let the magic happen</p>
+                        <div className="relative w-60 h-[200px] mt-6">
                             <Image
-                            className="cover rounded-2xl"
-                            height="1168"
-                            width="901"
+                            className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
+                            height="128"
+                            width="128"
                             alt="hello"
-                            src="/v0.png"
-                            />
+                            src="/s1.png">
+                            </Image>
+                            <Image
+                            className="absolute left-14 top-0 rounded-full w-16 h-16 shadow-lg"
+                            height="128"
+                            width="128"
+                            alt="hello"
+                            src="/s2.png">
+                            </Image>
+                            <Image
+                            className="absolute right-16 top-0 rounded-full w-16 h-16 shadow-lg"
+                            height="128"
+                            width="128"
+                            alt="hello"
+                            src="/s4.png">
+                            </Image>
                         </div>
+                        
                     </div>
                 </div>
-			</div>
-			<div className="col-span-2 sm:col-span-1 md:col-span-2 bg-transparent">
-				<a href="" className="h-64 group relative flex flex-col overflow-hidden rounded-2xl px-4 pb-4 pt-40 mb-4">
-                    <Image src="/v1.jpg" 
-                    width="1456"
-                    height="832"
-                    alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"></Image>
-					
-                    <div className="z-10 absolute top-6 left-6 w-full mx-auto text-center">
-                        <h3 className="text-stone-300 font-thin tracking-tight drop-shadow-xl [text-wrap:balance] text-4xl leading-[3rem] md:text-4xl md:leading-[3rem]">
-                            Upload your photos<br/>& <span className="font-bold">create your Ai twin!</span>
-                        </h3>
-                    </div>
-                        
-                    <div className="w-82 mb-6 flex flex-row gap-1 mx-auto relative">
-                        <Image
-                            className="cover w-14 h-14 rounded-full ml-4 shadow-md border shadow-stone-800/20"
-                            height="128"
-                            width="128"
-                            alt="hello"
-                            src="/s1.png"
-                        />
-                        <Image
-                            className="cover w-14 h-14 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
-                            height="128"
-                            width="128"
-                            alt="hello"
-                            src="/s2.png"
-                        />
-                        <Image
-                            className="cover w-14 h-14 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
-                            height="128"
-                            width="128"
-                            alt="hello"
-                            src="/s3.png"
-                        />
-                        <Image
-                            className="cover w-14 h-14 rounded-full -ml-4 shadow-md border shadow-stone-800/20"
-                            height="128"
-                            width="128"
-                            alt="hello"
-                            src="/s4.png"
-                        />
-                        
-                        <div className="w-14 h-14 z-40 transition-all ml-1">
-                            <div className="cursor-pointer pt-[11px] pl-[11px] z-40  transition-all  text-center text-4xl font-bold tracking-tighter w-14 h-14 rounded-full border border-stone-100 bg-gradient-to-b from-stone-250 to-white shadow-xl shadow-stone-950/90">
-                            <PlusIcon/>
-                            </div>
-                        </div>
-                        
-                    </div>
-				</a>
-				<div className="">
-                    <PricingSection/>
-				</div>
-			</div>
-			<div className="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col rounded-2xl">
-				<a href="" className="group relative flex flex-col overflow-hidden rounded-2xl px-4 pb-4 pt-40 flex-grow">
-                    <Image src="/v1.jpg" 
-                    width="2940"
-                    height="1960"
-                    alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"></Image>
-					<div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-					<h3 className="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Brandy</h3>
-				</a>
-			</div>
-		</div>
 
+                <div className="order-1 md:col-span-1 relative p-6 bg-cover bg-center md:bg-right rounded-3xl min-h-[700px]"  style={{ backgroundImage: "url('/ai.png')" }}>
+                </div>
+
+            </div> 
+
+            <div className="md:max-w-[71%] md:float-right mt-6 mb-6 bg-slate-100 rounded-3xl rounded-tl-[60px] relative p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
+                    <div className="h-3 w-3 absolute right-6 top-6">
+                        <span className="relative flex h-3 w-3">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-stone-200"></span>
+                        </span>
+                    </div>
+                    <h1 className="mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text pb-2">Improve your photos with AI.</span></h1>
+                    <p className="text-stone-500 text-md mt-2 ">It's not a filter.<br/>It's Your beautiful, carefree, photogenic, digital version.</p>
+                    <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-xs italic mt-4 text-right">Powered by: Flux AI by <Link className="text-stone-500 font-normal" target="_blank" href="https://blackforestlabs.ai/">Black Forest Labs</Link>  </p>
+            </div>
+
+
+        </div>
+
+        <div className="md:col-span-4 lg:col-span-3 flex flex-col md:mb-0">  
+
+            <div className="mb-6 bg-slate-100 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
+                <p className="text-md mb-4">"Loved the variety and styling. Very happy with the images!"</p>
+                <Image
+                        className="w-10 h-10 rounded-full float-left mr-2"
+                        height="512"
+                        width="512"
+                        alt="hello"
+                        src="/square.png">
+                </Image>
+                <p className="text-sm font-bold align-baseline mt-6">
+                    Barbara
+                </p>
+            </div>  
+
+            <div className="mb-6 bg-slate-100 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
+                <p className="text-md mb-4">"The results were quick and I couldn't be more happy with the images. I recommend and have done so with my colleagues and family."</p>
+                <Image
+                        className="w-10 h-10 rounded-full float-left mr-2"
+                        height="512"
+                        width="512"
+                        alt="hello"
+                        src="/square.png">
+                </Image>
+                <p className="text-sm font-bold align-baseline mt-6">
+                    Barbara
+                </p>
+            </div> 
+
+            <div className="relative mb-6 min-h-96 bg-slate-100 text-stone-200 rounded-3xl p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl bg-cover" style={{ backgroundImage: "url('/vx.jpg')" }}>
+                <div className="absolute bottom-4">
+                    <p className="text-md mb-4">"Loved the variety and styling.<br/>Very happy with the images!"</p>
+                    <Image
+                        className="w-10 h-10 rounded-full float-left mr-2"
+                        height="512"
+                        width="512"
+                        alt="hello"
+                        src="/square.png">
+                    </Image>
+                    <p className="text-md font-bold align-baseline mt-6">
+                        - Dee Dee Cormier
+                    </p>
+                </div>
+            </div>  
+
+        </div>
+        
 	</div>
+
+    <div className="lg:max-w-[1200px] mx-auto">
+
+        <div className="grid md:grid-cols-3 gap-6">
+            <div className="col-span-1 content-center transition-all w-full h-full bg-stone-950 rounded-3xl rounded-br-[60px] rounded-tr-[60px] z-10 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
+                 <h1 className="pt-12 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-200">Professional portraits, for professionals</h1>
+                 <p className="text-stone-400 mt-2 pb-4">Create some breathtaking photos in minutes! *Be careful because it's addictive.</p>
+            </div>
+            <div className="col-span-2 h-fit mx-auto">
+                <div className="grid md:grid-cols-3 md:gap-16 w-full relative text-center mx-auto md:pl-6 md:mt-10">
+                        
+                        <div className="mx-auto transition-all w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
+                            <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
+                            <p className="font-bold  mb-2 leading-tight">Upload 8-16 pictures of yourself</p>
+                            <p className="text-sm mb-6 leading-tight">
+                                <Link href="/login" className="underline underline-offset-1 italic">
+                                    How to get the best results?
+                                </Link>
+                            </p>
+                        </div>
+
+                        <div className="mx-auto transition-all w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-sky-300/40">
+                        <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">3</p><br/>
+                            <p className="font-bold mb-2 leading-tight">Select a Style</p>
+                            <p className="text-sm mb-6 leading-tight">
+                                Corporate photos, or aristocratic portraits? Our library is constantly updated.
+                            </p>
+                        </div>
+
+                        <div className="mx-auto transition-all w-full h-full bg-slate-100 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-lime-300/40">
+                        <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">4</p><br/>
+                            <p className="font-bold mb-2 leading-tight">Get your awesome photos!</p>
+                            <p className="text-sm mb-6 leading-tight">
+                                We create 20 photos in the selected style, with four different prompt.
+                            </p>
+                        </div>
+
+                        <div className="hidden md:block w-3/4 absolute top-24 left-20  h-px bg-stone-300 z-0"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>  
+
+    <div className="border-0  px-6 py-16 mt-6 mb-6 mx-auto lg:max-w-[1200px] bg-stone-900 rounded-3xl relative">
+
+            <Link href="/login" className="absolute top-4 right-4 scale-105">
+                <Button variant={"googleoutline"} size={"md"}>Login with Google
+                    <AiOutlineGoogle size={20} className="ml-2"/>
+                </Button>
+            </Link>
+            
+            <h1 className="text-center px-6 pt-12 pb-4 text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Get noticed on LinkedIn, Twitter, with recruiters, clients & everywhere else.</h1>
+            <p className="text-center text-stone-400 pb-16">Choose one from our constantly updated styles that best suit your goals</p>
+        
+            <div className="grid md:grid-cols-5 gap-6 relative">
+                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 text-center absolute top-0 left-0 right-0">
+                                <h1 className="text-stone-400">Aristocratic Portraits</h1>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1152"
+                            width="896"
+                            alt="hello"
+                            src="/aristocratic.jpg">
+                            </Image>
+                        </div>
+                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 text-center absolute top-0 left-0 right-0">
+                                <h1 className="text-stone-400">Corporate Headshots</h1>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1152"
+                            width="896"
+                            alt="hello"
+                            src="/corporate.jpg">
+                            </Image>
+                        </div>
+                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-8 text-center absolute top-0 left-0 right-0 ">
+                                <h1 className="text-stone-800">Youtube Thumbnail</h1>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1152"
+                            width="896"
+                            alt="hello"
+                            src="/youtube.png">
+                            </Image>
+                        </div>
+                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-8 text-center absolute top-0 left-0 right-0 ">
+                                <h1 className="text-stone-400">Glamour Photos</h1>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1152"
+                            width="896"
+                            alt="hello"
+                            src="/female.png">
+                            </Image>
+                        </div>
+                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-8 text-center absolute top-0 left-0 right-0 ">
+                                <h1 className="text-stone-400">Glamour Photos</h1>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="1152"
+                            width="896"
+                            alt="hello"
+                            src="/female.png">
+                            </Image>
+                        </div>
+          
+            </div>
+    </div>
+
+            
+    <div className="grid md:grid-cols-6 max-w-[1200px] mx-auto gap-6 mt-8">   
+
+            <div className="col-span-2 rounded-3xl bg-stone-200">
+                <h1 className="text-center md:text-right px-6 pt-12 pb-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
+                    10 times better, <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">1/10th the price</span>
+                </h1>
+                <p className="text-center md:text-right md:float-right mr-6 max-w-xs pb-12 text-stone-500">Professional photos immediately, without having to go to the hairdresser first</p>
+            </div> 
+
+            <div className="col-span-4 grid grid-cols-1 md:grid-cols-3 md:gap-9 lg:max-w-[1200px] mx-auto">
+
+                        <div className="outline outline-offset-2 outline-stone-300 mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-stone-300/50">
+                            <div className="p-6">  
+                                <p><StarIcon/></p><br/>
+                                <p className="font-bold mt-2 text-sm">1 Photo Session</p>
+                                <p className="text-lg md:h-20">Custom fine tuning + <br/>24 photos in the selected style</p>
+                                <p className="font-normal text-5xl">
+                                    21<span className="font-normal text-xl">€</span>
+                                    <Link href="/login" className="float-right">
+                                        <Button variant="outline" size="sm">Select</Button>
+                                    </Link>
+                                </p> 
+                            </div>  
+                        </div>
+
+                        <div className="outline outline-offset-2 hover:outline-offset-1 outline-stone-300 mb-6 col-span-1 bg-slate-300/70 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <div className="p-6">  
+                                <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
+                                <p className="font-bold mt-2 text-sm">3 Photo Session</p>
+                                <p className="text-lg  md:h-20">Custom fine tuning + <br/>3x24 photos in the selected style</p>
+                                <p className="font-normal text-5xl">
+                                    31<span className="font-normal text-xl">€</span>
+                                    <Link href="/login" className="float-right">
+                                        <Button variant="outline" size="sm">Select</Button>
+                                    </Link>
+                                </p> 
+                            </div>  
+                        </div>
+
+                        <div className="outline outline-offset-2 hover:outline-offset-1 outline-stone-300 mb-6 col-span-1 bg-stone-950 text-stone-300 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl">
+                            <div className="p-6">  
+                                <p className="text-stone-300"><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/></p><br/>
+                                <p className="font-bold mt-2 text-sm">5 Photo Session</p>
+                                <p className="text-lg md:h-20">Custom fine tuning + <br/>5x24 photos in the selected style</p>
+                                <p className="font-normal text-5xl">
+                                    59<span className="font-normal text-xl">€</span>
+                                    <Link href="/login" className="float-right">
+                                        <Button variant="outline" size="sm" className="bg-stone-300 text-stone-800">Select</Button>
+                                    </Link>
+                                </p> 
+                            </div>  
+                        </div> 
+            </div>
+            
+    </div>  
+    <div className="mx-auto text-center pt-20 pb-16 md:pb-0">
+            <Link href="/login" className="ml-4 hover:text-stone-300">
+            <p className="bg-stone-200 text-stone-800 md:border md:border-stone-300 md:rounded-full max-w-max mx-auto py-4 px-6 md:outline-8 md:outline md:outline-offset-4 md:outline-stone-300/30">
+                Create your account and get your awesome photos!
+                <Button variant={"google"} size={"md"} className="ml-4">Login with Google
+                    <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300 text-stone-800"/>
+                </Button>
+            </p>
+            </Link> 
+    </div>
+
+
+</div>
   )
 }
 
+function CamIcon2() {
+    return ( 
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="z-50 w-10 h-10 text-stone-800 mx-auto my-4 hover:animate-ping">
+ <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+</svg>
+)
+}
 
+function CamIcon() {
+    return ( 
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="absolute left-6 top-2 z-50 w-8 h-8 text-stone-200 mx-auto my-4 hover:animate-ping">
+ <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+</svg>
+)
+}
 
-function RocketIcon() {
+function StarIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path fill-rule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 15.838 0 0 1 6.382 15H2.25a.75.75 0 0 1-.75-.75 6.75 6.75 0 0 1 7.815-6.666ZM15 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" clip-rule="evenodd" />
-        <path d="M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z" />
-      </svg>
-      
+<svg className="w-6 h-6 float-left  opacity-10" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
     )
-  }
+}
+function StarIconLight() {
+    return (
+<svg className="w-6 h-6 float-left  opacity-40" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
+    )
+}
+
 
   export function PlusIcon() {
     return (
         <svg className="w-8 h-8" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 0.499976C13.9 0.279062 13.7209 0.0999756 13.5 0.0999756C13.2791 0.0999756 13.1 0.279062 13.1 0.499976V1.09998H12.5C12.2791 1.09998 12.1 1.27906 12.1 1.49998C12.1 1.72089 12.2791 1.89998 12.5 1.89998H13.1V2.49998C13.1 2.72089 13.2791 2.89998 13.5 2.89998C13.7209 2.89998 13.9 2.72089 13.9 2.49998V1.89998H14.5C14.7209 1.89998 14.9 1.72089 14.9 1.49998C14.9 1.27906 14.7209 1.09998 14.5 1.09998H13.9V0.499976ZM11.8536 3.14642C12.0488 3.34168 12.0488 3.65826 11.8536 3.85353L10.8536 4.85353C10.6583 5.04879 10.3417 5.04879 10.1465 4.85353C9.9512 4.65827 9.9512 4.34169 10.1465 4.14642L11.1464 3.14643C11.3417 2.95116 11.6583 2.95116 11.8536 3.14642ZM9.85357 5.14642C10.0488 5.34168 10.0488 5.65827 9.85357 5.85353L2.85355 12.8535C2.65829 13.0488 2.34171 13.0488 2.14645 12.8535C1.95118 12.6583 1.95118 12.3417 2.14645 12.1464L9.14646 5.14642C9.34172 4.95116 9.65831 4.95116 9.85357 5.14642ZM13.5 5.09998C13.7209 5.09998 13.9 5.27906 13.9 5.49998V6.09998H14.5C14.7209 6.09998 14.9 6.27906 14.9 6.49998C14.9 6.72089 14.7209 6.89998 14.5 6.89998H13.9V7.49998C13.9 7.72089 13.7209 7.89998 13.5 7.89998C13.2791 7.89998 13.1 7.72089 13.1 7.49998V6.89998H12.5C12.2791 6.89998 12.1 6.72089 12.1 6.49998C12.1 6.27906 12.2791 6.09998 12.5 6.09998H13.1V5.49998C13.1 5.27906 13.2791 5.09998 13.5 5.09998ZM8.90002 0.499976C8.90002 0.279062 8.72093 0.0999756 8.50002 0.0999756C8.2791 0.0999756 8.10002 0.279062 8.10002 0.499976V1.09998H7.50002C7.2791 1.09998 7.10002 1.27906 7.10002 1.49998C7.10002 1.72089 7.2791 1.89998 7.50002 1.89998H8.10002V2.49998C8.10002 2.72089 8.2791 2.89998 8.50002 2.89998C8.72093 2.89998 8.90002 2.72089 8.90002 2.49998V1.89998H9.50002C9.72093 1.89998 9.90002 1.72089 9.90002 1.49998C9.90002 1.27906 9.72093 1.09998 9.50002 1.09998H8.90002V0.499976Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
     )
 }
+
+export function SunIcon() {
+    return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="p-1 w-8 h-8 float-right">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" />
+</svg>
+
+    )
+}
+export function MoonIcon() {
+    return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="p-1 w-8 h-8 float-right">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+</svg>
+    )
+}
+
+export function UserIcon() {
+    return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="p-1 w-8 h-8 float-right">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+</svg>
+
+    )
+}
+
+
+
+
+
 
 

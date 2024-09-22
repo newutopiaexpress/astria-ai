@@ -46,32 +46,34 @@ export default function ClientSideModel({
 
   return (
     <div id="train-model-container" className="w-full h-full">
-      <div className="flex flex-col w-full mt-4 gap-8">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
+      <div className="grid grid-cols-1 w-full mt-4 gap-8">
+        <div className="col-span1">
           {samples && (
-            <div className="flex w-full lg:w-1/2 flex-col gap-2">
-              <h2 className="text-xl">Training Data</h2>
-              <div className="flex flex-row gap-4 flex-wrap">
-                {samples.map((sample) => (
-                  <img
-                    key={sample.id}
-                    src={sample.uri}
-                    className="rounded-md w-60 h-60 object-cover"
-                  />
-                ))}
+            <div className="grid grid-cols-1 gap-2">
+              <div className="col-span-1">
+                <h2 className="text-sm mb-2">Training Data</h2>
+                <div className="flex flex-row gap-4 flex-wrap">
+                  {samples.map((sample) => (
+                    <img
+                      key={sample.id}
+                      src={sample.uri}
+                      className="rounded-md w-20 h-20 object-cover"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           )}
-          <div className="flex flex-col w-full lg:w-1/2 rounded-md">
+          <div className="col-span-1 w-full">
             {model.status === "finished" && (
-              <div className="flex flex-1 flex-col gap-2">
-                <h1 className="text-xl">Results</h1>
-                <div className="flex flex-row flex-wrap gap-4">
+              <div className="flex flex-1 flex-col gap-2 mt-6">
+                <h1 className="text-sm">Results</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {serverImages?.map((image) => (
                     <div key={image.id}>
                       <img
                         src={image.uri}
-                        className="rounded-md w-60 object-cover"
+                        className="rounded-sm shadow-md shadow-stone-800/60 w-full h-auto object-cover"
                       />
                     </div>
                   ))}
