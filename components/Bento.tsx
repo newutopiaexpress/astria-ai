@@ -76,7 +76,7 @@ export function Bento() {
 
             </div> 
 
-            <div className="grid gap-6 md:grid-cols-12 md:w-[79%] md:float-right mt-6 mb-6 bg-slate-100 rounded-3xl rounded-tl-[60px] relative  shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
+            <div className="grid gap-6 md:grid-cols-12 md:w-[79%] md:float-right mt-6 mb-6 bg-slate-100 rounded-3xl rounded-bl-[90px]  relative  shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
                 <div className="col-span-7 relative p-6 md:pt-4 md:ml-6 md:pr-0">
                     <div className="h-3 w-3 absolute right-0 top-6">
                         <span className="relative flex h-3 w-3">
@@ -84,9 +84,9 @@ export function Bento() {
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-stone-200"></span>
                         </span>
                     </div>
-                    <h1 className="md:text-right mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-red-400 via-fuchsia-300 to-indigo-400 inline-block text-transparent bg-clip-text pb-2">Take photos with AI.</span></h1>
+                    <h1 className="md:text-right mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-indigo-400 to-red-600 inline-block text-transparent bg-clip-text pb-2">Take photos with AI.</span></h1>
                     <p className="text-stone-500 text-md mt-2 md:text-right">It's not a filter. It's Your beautiful, carefree, photogenic, digital version.</p>
-                    <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-xs italic mt-4 text-right">Powered by: Flux AI by <Link className="text-stone-500 font-normal" target="_blank" href="https://blackforestlabs.ai/">Black Forest Labs</Link>  </p>
+                    <p className="text-stone-400/70 font-thin drop-shadow-sm [text-wrap:balance] text-xs italic mt-4 text-right">Powered by: Flux AI by <Link className="text-stone-500 font-normal" target="_blank" href="https://blackforestlabs.ai/">Black Forest Labs</Link>  </p>
                 </div> 
                 <div className="col-span-5">
                     <Image
@@ -154,7 +154,7 @@ export function Bento() {
         
 	</div>
 
-    <div className="lg:max-w-[1200px] mx-auto">
+    <div className="lg:max-w-[1300px] mx-auto">
 
         <div className="grid md:grid-cols-3 gap-6">
             <div className="col-span-1 content-center transition-all w-full h-full bg-stone-950 rounded-3xl rounded-br-[60px] rounded-tr-[60px] z-10 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
@@ -357,7 +357,7 @@ export function Bento() {
             </p>
         </div>
 
-        <div className="col-span-6 rounded-3xl border-t border-stone-300 mt-6 pt-12">
+        <div className="col-span-6 rounded-3xl border-t border-b pb-9 border-stone-300 mt-6 pt-12">
             <div className="flex flex-row gap-6">
                 <div className="md:w-[600px] md:border-r border-stone-300">
                     <h1 className="text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Rock Solid Security</h1>
