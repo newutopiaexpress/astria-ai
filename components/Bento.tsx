@@ -208,7 +208,7 @@ export function Bento() {
             <h1 className="text-center px-6 pt-12 pb-4 text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Get noticed on LinkedIn, Twitter, with recruiters, clients & everywhere else.</h1>
             <p className="text-center text-stone-400 pb-10">Choose one from our constantly updated styles that best suit your goals</p>
         
-            <div className="grid md:grid-cols-5 gap-6 relative">
+            <div className="grid md:grid-cols-6 gap-6 relative">
                         <div className="mt-6 col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
                             <div className="w-full h-16 absolute -bottom-16 left-0 right-0">
                                 <h1 className="text-center text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Aristocratic Portraits</h1>
@@ -305,7 +305,7 @@ export function Bento() {
                                 <p className="font-bold mt-2 text-sm">1 Photo Session</p>
                                 <p className="text-lg md:h-20">Custom fine tuning + <br/>24 photos in the selected style</p>
                                 <p className="font-normal text-5xl">
-                                    21<span className="font-normal text-xl">€</span>
+                                    14<span className="font-normal text-xl">€</span>
                                     <Link href="/login" className="float-right">
                                         <Button variant="outline" size="sm">Select</Button>
                                     </Link>
@@ -319,7 +319,7 @@ export function Bento() {
                                 <p className="font-bold mt-2 text-sm">3 Photo Session</p>
                                 <p className="text-lg  md:h-20">Custom fine tuning + <br/>3x24 photos in the selected style</p>
                                 <p className="font-normal text-5xl">
-                                    31<span className="font-normal text-xl">€</span>
+                                    39<span className="font-normal text-xl">€</span>
                                     <Link href="/login" className="float-right">
                                         <Button variant="outline" size="sm">Select</Button>
                                     </Link>
@@ -333,7 +333,7 @@ export function Bento() {
                                 <p className="font-bold mt-2 text-sm">5 Photo Session</p>
                                 <p className="text-lg md:h-20">Custom fine tuning + <br/>5x24 photos in the selected style</p>
                                 <p className="font-normal text-5xl">
-                                    59<span className="font-normal text-xl">€</span>
+                                    63<span className="font-normal text-xl">€</span>
                                     <Link href="/login" className="float-right">
                                         <Button variant="outline" size="sm" className="bg-stone-300 text-stone-800">Select</Button>
                                     </Link>
