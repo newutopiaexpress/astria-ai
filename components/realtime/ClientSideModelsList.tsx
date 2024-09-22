@@ -63,7 +63,7 @@ export default function ClientSideModelsList({
         <div className="flex flex-col gap-4 rounded-2xl">
           <div className="flex flex-row gap-4 w-full  items-center text-center">
             <Link href="/overview/models/train" className="w-fit mx-auto">
-              <Button size={"md"} variant={"google"} >
+              <Button size={"md"} variant={"google"} className="bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200 px-6">
                 Create New Photos<SparkleIcon/>
               </Button>
             </Link>

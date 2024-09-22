@@ -310,7 +310,6 @@ export default function TrainModelZone() {
                         id="aristocratic-portraits"
                         className="peer sr-only"
                         aria-label="aristocratic-portraits"
-                        disabled
                       />
                       <Label
                         htmlFor="aristocratic-portraits"
@@ -335,7 +334,6 @@ export default function TrainModelZone() {
                         id="youtube-thumbnail-reaction"
                         className="peer sr-only"
                         aria-label="youtube-thumbnail-reaction"
-                        disabled
                       />
                       <Label
                         htmlFor="youtube-thumbnail-reaction"

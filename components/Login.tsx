@@ -106,10 +106,10 @@ export const Login = ({
           <Button
             onClick={signInWithGoogle}
             variant={"google"}
-            className="font-semibold p-8 rounded-full"
+            className="font-semibold p-8 rounded-full bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200"
           >
             <AiOutlineGoogle size={20} />
-            <span className="pl-2">Continue with Google</span>
+            <span className="pl-2 ">Continue with Google</span>
           </Button>
           
           <p className="italic text-center text-sm text-gray-500 pt-6">or with email</p>
