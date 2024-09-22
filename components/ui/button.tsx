@@ -12,7 +12,7 @@ const buttonVariants = cva(
       variant: {
         submit:
           "bg-stone-800 text-stone-200 rounded-full shadow-sm hover:bg-stone-600",
-        google:"outline outline-offset-2 outline-stone-300/30 shadow-sm transition-all duration-100 text-sm bg-stone-200 hover:bg-stone-800 rounded-3xl text-stone-800 hover:text-stone-300",
+        google:"outline outline-offset-2 outline-stone-300/30 shadow-sm transition-all duration-100 text-sm bg-stone-200 hover:bg-stone-300 rounded-3xl text-stone-800 hover:text-stone-900",
         //google:"outline outline-offset-2 transition-all duration-100 text-sm bg-stone-800 hover:bg-stone-850 shadow-md shadow-stone-800/50 hover:shadow-md rounded-3xl text-stone-300 hover:text-stone-200",
         googleoutline:"transition-all duration-100 text-sm bg-transparent hover:bg-stone-850 shadow-md shadow-stone-800/50 hover:shadow-md rounded-3xl text-stone-300 hover:text-stone-200",
         loginbig:

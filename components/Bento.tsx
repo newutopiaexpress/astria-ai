@@ -76,16 +76,29 @@ export function Bento() {
 
             </div> 
 
-            <div className="md:max-w-[71%] md:float-right mt-6 mb-6 bg-slate-100 rounded-3xl rounded-tl-[60px] relative p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
-                    <div className="h-3 w-3 absolute right-6 top-6">
+            <div className="grid gap-6 md:grid-cols-12 md:w-[79%] md:float-right mt-6 mb-6 bg-slate-100 rounded-3xl rounded-tl-[60px] relative  shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
+                <div className="col-span-7 relative p-6 md:pt-4 md:ml-6 md:pr-0">
+                    <div className="h-3 w-3 absolute right-0 top-6">
                         <span className="relative flex h-3 w-3">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-stone-200"></span>
                         </span>
                     </div>
-                    <h1 className="mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text pb-2">Improve your photos with AI.</span></h1>
-                    <p className="text-stone-500 text-md mt-2 ">It's not a filter.<br/>It's Your beautiful, carefree, photogenic, digital version.</p>
+                    <h1 className="md:text-right mt-20 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-800">Enhance the first impression.<span className="bg-gradient-to-r from-red-500 via-orange-500 to-indigo-500 inline-block text-transparent bg-clip-text pb-2">take photos with AI.</span></h1>
+                    <p className="text-stone-500 text-md mt-2 md:text-right">It's not a filter. It's Your beautiful, carefree, photogenic, digital version.</p>
                     <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-xs italic mt-4 text-right">Powered by: Flux AI by <Link className="text-stone-500 font-normal" target="_blank" href="https://blackforestlabs.ai/">Black Forest Labs</Link>  </p>
+                </div> 
+                <div className="col-span-5">
+                    <Image
+                            className="w-full md:w-72 h-auto float-right rounded-3xl md:rounded-tl-[0px] md:rounded-bl-[0px]"
+                            height="700"
+                            width="463"
+                            alt="hello"
+                            src="/v0.png">
+                    </Image>
+                </div>      
+                        
+                    
             </div>
 
 
@@ -335,7 +348,7 @@ export function Bento() {
 
         <div className="col-span-6 p-2 rounded-full mx-auto md:max-w-[600px] bg-stone-950 content-center">
             <p className=" text-stone-300">
-            <Link href="/login" className="ml-4 hover:text-stone-700">
+            <Link href="/login" className="ml-4 hover:text-stone-300">
                 Create your account and get your awesome photos!
                 <Button variant={"google"} size={"md"} className="ml-4">Login with Google
                     <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300  text-stone-800"/>
