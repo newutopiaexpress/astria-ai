@@ -193,12 +193,12 @@ export function Bento() {
             </Link>
             
             <h1 className="text-center px-6 pt-12 pb-4 text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Get noticed on LinkedIn, Twitter, with recruiters, clients & everywhere else.</h1>
-            <p className="text-center text-stone-400 pb-16">Choose one from our constantly updated styles that best suit your goals</p>
+            <p className="text-center text-stone-400 pb-10">Choose one from our constantly updated styles that best suit your goals</p>
         
             <div className="grid md:grid-cols-5 gap-6 relative">
-                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
-                            <div className="w-full h-16 text-center absolute top-0 left-0 right-0">
-                                <h1 className="text-stone-400">Aristocratic Portraits</h1>
+                        <div className="mt-6 col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 absolute -bottom-16 left-0 right-0">
+                                <h1 className="text-center text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Aristocratic Portraits</h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
@@ -208,9 +208,9 @@ export function Bento() {
                             src="/aristocratic.jpg">
                             </Image>
                         </div>
-                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
-                            <div className="w-full h-16 text-center absolute top-0 left-0 right-0">
-                                <h1 className="text-stone-400">Corporate Headshots</h1>
+                        <div className="mt-6 col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Corporate Headshots</h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
@@ -220,9 +220,10 @@ export function Bento() {
                             src="/corporate.jpg">
                             </Image>
                         </div>
-                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
-                            <div className="w-full h-8 text-center absolute top-0 left-0 right-0 ">
-                                <h1 className="text-stone-800">Youtube Thumbnail</h1>
+
+                        <div className="mt-6 col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Youtube Thumbnail</h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
@@ -232,9 +233,9 @@ export function Bento() {
                             src="/youtube.png">
                             </Image>
                         </div>
-                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
-                            <div className="w-full h-8 text-center absolute top-0 left-0 right-0 ">
-                                <h1 className="text-stone-400">Glamour Photos</h1>
+                        <div className="mt-6 col-span-1  rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Glamour Photos</h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
@@ -244,33 +245,46 @@ export function Bento() {
                             src="/female.png">
                             </Image>
                         </div>
-                        <div className="col-span-1 bg-stone-200 rounded-3xl relative  shadow-stone-600/10">
-                            <div className="w-full h-8 text-center absolute top-0 left-0 right-0 ">
-                                <h1 className="text-stone-400">Glamour Photos</h1>
+                        <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">AI Photographer</h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
-                            height="1152"
-                            width="896"
+                            height="817"
+                            width="653"
                             alt="hello"
-                            src="/female.png">
+                            src="/photographer.jpg">
                             </Image>
                         </div>
+                        <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
+                            <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">AI Photographer</h1>
+                            </div>
+                            <Image
+                            className="cover rounded-3xl"
+                            height="817"
+                            width="653"
+                            alt="hello"
+                            src="/jcrew.jpg">
+                            </Image>
+                        </div>
+
           
             </div>
     </div>
 
             
-    <div className="grid md:grid-cols-6 max-w-[1200px] mx-auto gap-6 mt-8">   
+    <div className="grid md:grid-cols-1 max-w-[1200px] mx-auto gap-6 mt-8">   
 
-            <div className="col-span-2 rounded-3xl bg-stone-200">
-                <h1 className="text-center md:text-right px-6 pt-12 pb-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
-                    10 times better, <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">1/10th the price</span>
+            <div className="col-span-1 rounded-3xl bg-stone-200">
+                <h1 className="text-center px-6 pt-12 pb-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
+                    10 times better, <span className="bg-gradient-to-r from-purple-600 via-indigo-400 to-fuchsia-400 inline-block text-transparent bg-clip-text">1/10th the price</span>
                 </h1>
-                <p className="text-center md:text-right md:float-right mr-6 max-w-xs pb-12 text-stone-500">Professional photos immediately, without having to go to the hairdresser first</p>
+                <p className="text-center max-w-xs mx-auto mt-4 pb-6 text-stone-500">Professional photos in 30 minutes, without having to go to the hairdresser first!</p>
             </div> 
 
-            <div className="col-span-4 grid grid-cols-1 md:grid-cols-3 md:gap-9 lg:max-w-[1200px] mx-auto">
+            <div className="col-span-1 grid grid-cols-1 md:grid-cols-3 md:gap-9 lg:max-w-[1200px] mx-auto">
 
                         <div className="outline outline-offset-2 outline-stone-300 mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-stone-300/50">
                             <div className="p-6">  
@@ -315,16 +329,43 @@ export function Bento() {
                         </div> 
             </div>
             
-    </div>  
-    <div className="mx-auto text-center pt-20 pb-16 md:pb-0">
-            <Link href="/login" className="ml-4 hover:text-stone-300">
-            <p className="bg-stone-200 text-stone-800 md:border md:border-stone-300 md:rounded-full max-w-max mx-auto py-4 px-6 md:outline-8 md:outline md:outline-offset-4 md:outline-stone-300/30">
+    </div> 
+
+    <div className="grid border-t border-stone-300 md:grid-cols-1 gap-6 mx-auto text-center mt-6 pt-12 pb-12  max-w-[1200px]  ">
+
+        <div className="col-span-6 p-2 rounded-full mx-auto md:max-w-[600px] bg-stone-950 content-center">
+            <p className=" text-stone-300">
+            <Link href="/login" className="ml-4 hover:text-stone-700">
                 Create your account and get your awesome photos!
                 <Button variant={"google"} size={"md"} className="ml-4">Login with Google
-                    <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300 text-stone-800"/>
+                    <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300  text-stone-800"/>
                 </Button>
-            </p>
             </Link> 
+            </p>
+        </div>
+
+        <div className="col-span-6 rounded-3xl border-t border-stone-300 mt-6 pt-12">
+            <div className="flex flex-row gap-6">
+                <div className="md:w-[600px] md:border-r border-stone-300">
+                    <h1 className="text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Rock Solid Security</h1>
+                </div>
+                <div className="col-span-2 text-left p-6">
+                    <p className="font-bold">Training Data</p>
+                    <p className="leading-tight text-xs">We delete your uploaded images immediately after the fine tune</p>
+                </div>
+                <div className="col-span-2 md:border-r md:border-l md:border-stone-300 text-left p-6">
+                    <p className="font-bold">Modell Data</p>
+                    <p className="leading-tight text-xs">We delete your data automatically 30 days after the fine tune have been created.</p>
+                </div>
+                <div className="col-span-2 md:border-r text-left p-6">
+                    <p className="font-bold">Infrastructure</p>
+                    <p className="leading-tight text-xs">Access to our database is controlled by a password-less system, all data is encrypted in transit and stored only for the period required.</p>
+                </div>
+            </div>
+        </div>
+
+        
+
     </div>
 
 

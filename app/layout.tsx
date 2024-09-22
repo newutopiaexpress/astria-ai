@@ -25,7 +25,7 @@ export default function RootLayout({ children }: any) {
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="w-full mx-auto h-full">
+              <main className="w-full mx-auto h-full mt-20 lg:mt-26">
                 {children}
               </main>
               <CookieConsent /> 
