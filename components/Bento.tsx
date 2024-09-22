@@ -10,6 +10,15 @@ import PricingSection from "@/components/PricingSection";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import { FaFemale, FaMale, FaRainbow } from "react-icons/fa";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+  } from "@/components/ui/dialog";
+  
 
 
 export function Bento() {
@@ -90,7 +99,7 @@ export function Bento() {
                 </div> 
                 <div className="col-span-5">
                     <Image
-                            className="w-full md:w-72 h-auto float-right rounded-3xl md:rounded-tl-[0px] md:rounded-bl-[0px]"
+                            className="w-full md:w-72 h-auto float-right rounded-3xl md:rounded-tl-[0px] md:rounded-bl-[0px] shadow-lg shadow-stone-900/40"
                             height="1152"
                             width="896"
                             alt="hello"
@@ -162,15 +171,31 @@ export function Bento() {
                  <p className="text-stone-400 mt-2 pb-4">Create some breathtaking photos in minutes! *Be careful because it's addictive.</p>
             </div>
             <div className="col-span-2 h-fit mx-auto">
-                <div className="grid md:grid-cols-3 md:gap-16 w-full relative text-center mx-auto md:pl-6 md:mt-10">
+                <div className="grid md:grid-cols-3 gap-6 md:gap-16 w-full relative text-center mx-auto md:pl-6 md:mt-10">
                         
                         <div className="mx-auto transition-all w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
                             <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
                             <p className="font-bold  mb-2 leading-tight">Upload 8-16 pictures of yourself</p>
                             <p className="text-sm mb-6 leading-tight">
-                                <Link href="/login" className="underline underline-offset-1 italic">
-                                    How to get the best results?
-                                </Link>
+                                <Dialog>
+                                <DialogTrigger className="underline underline-offset-1 italic">How to get the best results?</DialogTrigger>
+                                <DialogContent className="p-16">
+                                    <DialogHeader>
+                                    <DialogTitle className="font-thin text-3xl mb-6">How to get the best results?</DialogTitle>
+                                    <DialogDescription>
+                                        <ul className="list-disc leading-8">
+                                        <li>Upload both portrait and full body shots</li>
+                                        <li>Use 4-12 pictures of your subject. </li>
+                                        <li>Variation is key - Change body pose for every picture, use pictures from different days backgrounds and lighting.</li>
+                                        <li>Avoid pictures taken at the same hour/day. For example few pictures with the same shirt will make the model learn the shirt as well as part of the subject.</li>
+                                        <li>Always pick a new background.</li>
+                                        <li>Do not upload pictures mixed with other people</li>
+                                        <li>Do not upload upload funny faces</li>
+                                        </ul>
+                                    </DialogDescription>
+                                    </DialogHeader>
+                                </DialogContent>
+                                </Dialog>
                             </p>
                         </div>
 
@@ -197,7 +222,7 @@ export function Bento() {
         
     </div>  
 
-    <div className="border-0  px-6 py-16 mt-6 mx-auto lg:max-w-[1200px] bg-stone-900 rounded-3xl rounded-tl-[60px] rounded-tr-[60px] rounded-br-[0px] rounded-bl-[0px] relative">
+    <div className="border-0  px-6 py-16 mt-9 mx-auto lg:max-w-[1200px] bg-stone-900 rounded-3xl rounded-tl-[60px] rounded-tr-[60px] rounded-br-[0px] rounded-bl-[0px] relative">
 
             <Link href="/login" className="absolute top-4 right-7 scale-105">
                 <Button variant={"googleoutline"} size={"md"}>Login with Google

@@ -9,47 +9,17 @@ import Image from "next/image";
 
 export function FooterV2() {
   return (
-    <div className=" text-stone-600 border-t border-stone-300 grid grid-cols-12 px-4 md:mt-32 lg:mt-64 mb-0">
+    <div className="text-stone-600 w-full h-32 px-6 mt-32">
 
-          <div className="col-span-12 md:col-span-5 p-4 lg:p-12 border-r border-stone-300 relative hover:bg-stone-100/10">
-            <div className="absolute right-4 top-4">
-              <Link href="https://utopia.express/">
-              <Badge variant="outline">utopia.express <LinkIcon/></Badge>
-              </Link>
-            </div>
-            <Image src="/utopia-icon.png" alt="Utopia Express" width={64} height={60} className="opacity-25 hover:opacity-100 animate-pulse transition-all"/>
-            <h2 className="font-extrabold text-2xl mt-2 tracking-tighter">Utopia Express</h2>
-            <p className="text-sm text-stone-500 w-64">Tools that make your yourney to the singularity smoother.</p>
+          <div className="float-left relative">
+            <Image src="/utopia-icon.png" alt="Utopia Express" width={64} height={60} className="scale-90 opacity-25 hover:opacity-100 animate-pulse transition-all"/>
+            <h2 className="font-thin text-2xl mt-2 tracking-tighter">Utopia Express</h2>
+            <p className="text-xs text-stone-500 w-64 leading-tight pb-6">Tools that make your yourney to the singularity smoother.</p>
           </div>
 
-          
-          <div className="mb-9 md:mb-0 col-span-12 md:col-span-3 p-4 lg:p-12 border-r border-stone-300 relative content-center hover:bg-stone-100/10">
-            <div className="absolute right-4 top-4">
-              <Link href="https://utopia.express/">
-                <Badge variant="outline">search.utopia.express<LinkIcon/></Badge>
-              </Link>
-            </div>
-            <h2 className="font-bold text-lg mt-6">
-              Research Assistant
-            </h2>
-            <p className="text-sm">Multi agent, AI based research and writer tool for content creators</p>
-          </div>
 
-          <div className="mb-9 md:mb-0 col-span-12 md:col-span-3 p-4 lg:p-12 border-r border-stone-300 relative content-center hover:bg-stone-100/10">
-            <div className="absolute right-4 top-4">
-              <Link href="">
-                <Badge variant="outline">Coming soon...<LinkIcon/></Badge>
-              </Link>
-            </div>
-            <h2 className="font-bold text-lg mt-6">
-              Voice Assistant
-            </h2>
-            <p className="text-sm">Multi agent, AI based research and writer tool for content creators</p>
-          </div>
-
-          <div className="col-span-12 md:col-span-1 p-4 lg:p-12 relative content-center text-center hover:bg-stone-100/10">
-
-            <div className="flex flex-col items-center gap-6">
+          <div className="float-right relative text-right w-48 h-9 mt-20">
+            <div className="flex flex-row gap-9">
               <Link className="fill-stone-800 hover:text-gray-900 dark:hover:text-gray-50" href="https://www.facebook.com/www.utopia.express/">
                 <FacebookIcon/>
                 <span className="sr-only">Facebook</span>
@@ -66,8 +36,7 @@ export function FooterV2() {
                 <EmailIcon/>
                 <span className="sr-only">Email</span>
               </Link>
-          </div>
-            
+            </div> 
           </div>
      
     </div>
@@ -88,12 +57,14 @@ function LinkIcon() {
 
 function EmailIcon() {
   return (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-  <path fill-rule="evenodd" d="M17.834 6.166a8.25 8.25 0 1 0 0 11.668.75.75 0 0 1 1.06 1.06c-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788 3.807-3.808 9.98-3.808 13.788 0A9.722 9.722 0 0 1 21.75 12c0 .975-.296 1.887-.809 2.571-.514.685-1.28 1.179-2.191 1.179-.904 0-1.666-.487-2.18-1.164a5.25 5.25 0 1 1-.82-6.26V8.25a.75.75 0 0 1 1.5 0V12c0 .682.208 1.27.509 1.671.3.401.659.579.991.579.332 0 .69-.178.991-.579.3-.4.509-.99.509-1.671a8.222 8.222 0 0 0-2.416-5.834ZM15.75 12a3.75 3.75 0 1 0-7.5 0 3.75 3.75 0 0 0 7.5 0Z" clip-rule="evenodd" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 p-1">
+  <path fill-rule="evenodd" d="M2.106 6.447A2 2 0 0 0 1 8.237V16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.236a2 2 0 0 0-1.106-1.789l-7-3.5a2 2 0 0 0-1.788 0l-7 3.5Zm1.48 4.007a.75.75 0 0 0-.671 1.342l5.855 2.928a2.75 2.75 0 0 0 2.46 0l5.852-2.927a.75.75 0 1 0-.67-1.341l-5.853 2.926a1.25 1.25 0 0 1-1.118 0l-5.856-2.928Z" clip-rule="evenodd" />
 </svg>
-
   )
 }
+
+
+
 
 
 
