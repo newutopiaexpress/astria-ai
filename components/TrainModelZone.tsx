@@ -32,6 +32,14 @@ import { fileUploadFormSchema } from "@/types/zod";
 import { upload } from "@vercel/blob/client";
 import axios from "axios";
 import Image from "next/image";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 type FormInput = z.infer<typeof fileUploadFormSchema>;
 
@@ -232,6 +240,28 @@ export default function TrainModelZone() {
 
   return (
     <div>
+
+                              <Dialog>
+                                <DialogTrigger className="underline underline-offset-1 italic">How to get the best results?</DialogTrigger>
+                                <DialogContent className="p-16">
+                                    <DialogHeader>
+                                    <DialogTitle className="font-thin text-3xl mb-6">How to get the best results?</DialogTitle>
+                                    <DialogDescription>
+                                      
+                                        <ul className="list-disc leading-8">
+                                        <li>Upload both portrait and full body shots</li>
+                                        <li>Use 4-12 pictures of your subject. </li>
+                                        <li>Variation is key - Change body pose for every picture, use pictures from different days backgrounds and lighting.</li>
+                                        <li>Avoid pictures taken at the same hour/day. For example few pictures with the same shirt will make the model learn the shirt as well as part of the subject.</li>
+                                        <li>Always pick a new background.</li>
+                                        <li>Do not upload pictures mixed with other people</li>
+                                        <li>Do not upload upload funny faces</li>
+                                        </ul>
+                                    </DialogDescription>
+                                    </DialogHeader>
+                                </DialogContent>
+                              </Dialog>
+
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

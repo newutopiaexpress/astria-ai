@@ -133,10 +133,10 @@ export function Bento() {
                 <p className="text-md mb-4">"The results were quick and I couldn't be more happy with the images. I recommend and have done so with my colleagues and family."</p>
                 <Image
                         className="w-10 h-10 rounded-full float-left mr-2"
-                        height="512"
-                        width="512"
+                        height="1006"
+                        width="1006"
                         alt="hello"
-                        src="/square.png">
+                        src="/v12.png">
                 </Image>
                 <p className="text-sm font-bold align-baseline mt-6">
                     Barbara
@@ -148,10 +148,10 @@ export function Bento() {
                     <p className="text-md mb-4">"this is true science fiction"</p>
                     <Image
                         className="w-10 h-10 rounded-full float-left mr-2"
-                        height="512"
-                        width="512"
+                        height="128"
+                        width="128"
                         alt="hello"
-                        src="/square.png">
+                        src="/s5.png">
                     </Image>
                     <p className="text-md font-bold align-baseline mt-6">
                         - Tamas
