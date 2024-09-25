@@ -248,7 +248,7 @@ export function Bento() {
                         </div>
                         <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
                             <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
-                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Corporate Headshots</h1>
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Corporate Portraits</h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
