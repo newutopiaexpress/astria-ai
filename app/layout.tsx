@@ -8,7 +8,7 @@ import CookieConsent from "@/components/CookieConsent";
 
 export const metadata = {
   title: "The AI Photographer",
-  description: "Generate professional portraits with AI",
+  description: "Take photos in the modern way",
 };
 
 export default function RootLayout({ children }: any) {
@@ -19,13 +19,13 @@ export default function RootLayout({ children }: any) {
               <section>
                 <Suspense
                   fallback={
-                    <div className="px-4 pb-9 items-center text-center gap-8 justify-between h-[69px]" />
+                    <div className="pb-9 items-center text-center gap-8 justify-between h-[69px]" />
                   }
                 >
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="w-full mx-auto h-full mt-20 lg:mt-26 px-6">
+              <main className="w-full mx-auto h-full mt-20 lg:mt-26 px-2">
                 {children}
               </main>
               <CookieConsent /> 

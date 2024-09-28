@@ -32,14 +32,8 @@ import { fileUploadFormSchema } from "@/types/zod";
 import { upload } from "@vercel/blob/client";
 import axios from "axios";
 import Image from "next/image";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import FaqDialog from "@/components/FaqDialog";
+
 import imageCompression from 'browser-image-compression';
 
 type FormInput = z.infer<typeof fileUploadFormSchema>;
@@ -225,54 +219,7 @@ export default function TrainModelZone() {
   return (
     <div>
 
-                              <Dialog>
-                                <DialogTrigger className="underline underline-offset-1 italic"><WarningIcon/>How to get the best results?</DialogTrigger>
-                                <DialogContent className="p-6">
-                                    <DialogHeader>
-                                    <DialogTitle className="font-thin text-3xl mb-6">
-                                      How to get the best results?
-                                    </DialogTitle>
-                                    <p className="text-md max-w-lg">Variation is key - Change body pose for every picture, use pictures from different days backgrounds and lighting.</p>
-                                    <DialogDescription>
-                                      <div className="mt-6 grid md:grid-cols-2 gap-4">
-                                        <div className="col-span-1">
-                                            <h1 className="font-bold pb-2 text-green-500">Good examples</h1>
-                                            <Image
-                                              src="/howto1.png"
-                                              width={563}
-                                              height={229}
-                                              alt="Good Example"
-                                              className="active w-80 h-auto mb-2">
-                                            </Image>
-                                            <ul className="list-disc leading-8 pl-6">
-                                              <li>Use shoulders-up images</li>
-                                              <li>Waist-up images are also good</li>
-                                              <li>Looking at the camera</li>
-                                            </ul>
-                                        </div>
-
-                                        <div className="col-span-1">
-                                            <h1 className="font-bold pb-2 text-red-600">Bad examples</h1>
-                                            <Image
-                                              src="/howto2.png"
-                                              width={563}
-                                              height={229}
-                                              alt="Good Example"
-                                              className="active w-80 h-auto mb-2">
-                                            </Image>
-                                            <ul className="list-disc leading-8 pl-6">
-                                              <li>Extra people</li>
-                                              <li>Funny-faces</li>
-                                              <li>Bad angles</li>
-                                              <li>Hat, glasses</li>
-                                            </ul>
-                                        </div>
-
-                                      </div>
-                                    </DialogDescription>
-                                    </DialogHeader>
-                                </DialogContent>
-                              </Dialog>
+<FaqDialog/>
 
       <Form {...form}>
         <form
@@ -392,7 +339,32 @@ export default function TrainModelZone() {
                         Youtube Thumbnail Reaction
                       </Label>
                     </div>
+
                     <div>
+                      <RadioGroupItem
+                        value="interior-design"
+                        id="interior-design"
+                        className="peer sr-only"
+                        aria-label="interior-design"
+                      />
+                      <Label
+                        htmlFor="interior-design"
+                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                      >
+                        <Image
+                          src="/youtube.jpg"
+                          width={896}
+                          height={1152}
+                          alt="interior design"
+                          className="active w-80 h-auto mb-2 rounded-md shadow-md">
+                        </Image>
+
+                        Interior Design
+                      </Label>
+                    </div>
+
+                  
+{/*}                    <div>
                       <RadioGroupItem
                         value="glamour-shot"
                         id="glamour-shot"
@@ -532,7 +504,7 @@ export default function TrainModelZone() {
                         Generative Artistic Filters
                       </Label>
                     </div>
-                    
+*/}                    
                   </div>
                 </RadioGroup>
               </FormControl>

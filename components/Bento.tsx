@@ -18,6 +18,7 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog";
+  import FaqDialog from "@/components/FaqDialog";
   
 
 
@@ -167,8 +168,8 @@ export function Bento() {
 
         <div className="grid md:grid-cols-3 gap-6">
             <div className="col-span-1 content-center transition-all w-full h-full bg-stone-950 rounded-3xl rounded-br-[60px] rounded-tr-[60px] z-10 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
-                 <h1 className="pt-12 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-200">Professional portraits, for professionals</h1>
-                 <p className="text-stone-400 mt-2 pb-4">Create some breathtaking photos in minutes! *Be careful because it's addictive.</p>
+                 <h1 className="pt-12 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-200">Professional portraits, for everyone</h1>
+                 <p className="text-stone-400 mt-2 pb-4">Create some breathtaking photos in minutes! <br/><span className="text-xs opacity-60">*Be careful because it's addictive.</span></p>
             </div>
             <div className="col-span-2 h-fit mx-auto">
                 <div className="grid md:grid-cols-3 gap-6 md:gap-16 w-full relative text-center mx-auto md:pl-6 md:mt-10">
@@ -177,25 +178,7 @@ export function Bento() {
                             <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
                             <p className="font-bold  mb-2 leading-tight">Upload 8-16 pictures of yourself</p>
                             <p className="text-sm mb-6 leading-tight">
-                                <Dialog>
-                                <DialogTrigger className="underline underline-offset-1 italic">How to get the best results?</DialogTrigger>
-                                <DialogContent className="p-16">
-                                    <DialogHeader>
-                                    <DialogTitle className="font-thin text-3xl mb-6">How to get the best results?</DialogTitle>
-                                    <DialogDescription>
-                                        <ul className="list-disc leading-8">
-                                        <li>Upload both portrait and full body shots</li>
-                                        <li>Use 4-12 pictures of your subject. </li>
-                                        <li>Variation is key - Change body pose for every picture, use pictures from different days backgrounds and lighting.</li>
-                                        <li>Avoid pictures taken at the same hour/day. For example few pictures with the same shirt will make the model learn the shirt as well as part of the subject.</li>
-                                        <li>Always pick a new background.</li>
-                                        <li>Do not upload pictures mixed with other people</li>
-                                        <li>Do not upload upload funny faces</li>
-                                        </ul>
-                                    </DialogDescription>
-                                    </DialogHeader>
-                                </DialogContent>
-                                </Dialog>
+                               <FaqDialog/>
                             </p>
                         </div>
 
@@ -235,7 +218,8 @@ export function Bento() {
         
             <div className="grid md:grid-cols-6 gap-6 relative ">
                         <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">
-                            <div className="w-full h-16 absolute -bottom-16 left-0 right-0">
+                            <p className="absolute z-20 w-full right-0 top-0 text-stone-200 opacity-35">24 photos</p>
+                            <div className="h-16 absolute -bottom-16 left-0 right-0 w-full mx-auto">
                                 <h1 className="text-center text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Aristocratic Portraits</h1>
                             </div>
                             <Image
