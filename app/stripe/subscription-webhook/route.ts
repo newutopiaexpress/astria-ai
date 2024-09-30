@@ -130,11 +130,35 @@ export async function POST(request: Request) {
 
       console.log("totalCreditsPurchased: " + totalCreditsPurchased);
 
-      const { data: existingCredits } = await supabase
+      // Ensure totalCreditsPurchased is not null or undefined
+      if (totalCreditsPurchased == null) {
+        return NextResponse.json(
+          {
+            message: "Error: totalCreditsPurchased is null or undefined",
+          },
+          {
+            status: 400,
+          }
+        );
+      }
+
+      const { data: existingCredits, error: fetchError } = await supabase
         .from("credits")
         .select("*")
         .eq("user_id", userId)
         .single();
+
+      if (fetchError) {
+        console.log(fetchError);
+        return NextResponse.json(
+          {
+            message: `Error fetching existing credits: ${JSON.stringify(fetchError)}`,
+          },
+          {
+            status: 400,
+          }
+        );
+      }
 
       // If user has existing credits, add to it.
       if (existingCredits) {
@@ -182,14 +206,14 @@ export async function POST(request: Request) {
             }
           );
         }
-      }
 
-      return NextResponse.json(
-        {
-          message: "success",
-        },
-        { status: 200 }
-      );
+        return NextResponse.json(
+          {
+            message: "success",
+          },
+          { status: 200 }
+        );
+      }
 
     default:
       return NextResponse.json(
