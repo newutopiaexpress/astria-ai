@@ -218,8 +218,26 @@ export default function TrainModelZone() {
 
   return (
     <div>
+   
+      <div className="bg-stone-800 text-stone-300 mt-6 rounded-3xl shadow-lg p-6 md:p-9 mb-12 ">
+        <h1 className="font-bold italic mb-12"><WarningIcon /> How to get the best results?</h1>
+        <div className="grid md:grid-cols-3 gap-12 lg:gap-32 mx-auto text-center">
+            <div>
+              <Image src="/01.png" width={240} height={240} alt="face" className="w-32 mx-auto h-auto mb-2 rounded-md shadow-md"></Image>
+              <p className="text-sm">Use <span className="text-green-400 font-bold">6-12 photos</span> that clearly show your face and do not include other people.</p>
+            </div>
+            <div>
+              <Image src="/02.png" width={240} height={240} alt="face" className="w-32 mx-auto h-auto mb-2 rounded-md shadow-md"></Image>
+              <p className="text-sm"><span className="text-green-400 font-bold">Variety is the key:</span> different time of day, background, lighting, clothing. Use photos of your face and at least a few that show your upper body</p>
+            </div>
+            <div>
+              <Image src="/03.png" width={240} height={240} alt="face" className="w-32 mx-auto h-auto mb-2 rounded-md shadow-md"></Image>
+              <p className="text-sm"><span className="text-green-400 font-bold">Don't use a photo</span> that you think is unattractive, grimacing, or blurry. Do not use beauty filters!</p>
+            </div>
+        </div>
+      </div>
 
-<FaqDialog/>
+
 
       <Form {...form}>
         <form
@@ -231,15 +249,16 @@ export default function TrainModelZone() {
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem className="w-full mx-auto text-center">
-                <FormDescription className="pb-6 text-center text-sm">
-                  Give your model a name
+              <FormItem className="relative w-full mx-auto text-center border border-stone-300/50 rounded-3xl pt-12 pb-12">
+                <div className="absolute top-6 left-6 font-thin text-stone-300 text-3xl">1</div>
+                <FormDescription className="p-6 text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
+                  Give your model a name:
                 </FormDescription>
                 <FormControl>
                   <Input
                     placeholder="e.g. Natalie Headshots"
                     {...field}
-                    className="max-w-screen-sm mx-auto"
+                    className="max-w-xs md:max-w-lg mx-auto"
                     autoComplete="off"
                   />
                 </FormControl>
@@ -252,9 +271,10 @@ export default function TrainModelZone() {
           control={form.control}
           name="pack"
           render={({ field }) => (
-            <FormItem className="w-full mx-auto mt-9">
-              <FormDescription className="text-center text-sm">
-                Select the style of the image you want to generate.
+            <FormItem className="relative w-full mx-auto mt-4 border border-stone-300/50 rounded-3xl pt-12 pb-12">
+              <div className="absolute top-6 left-6 font-thin text-stone-300 text-3xl">2</div>
+              <FormDescription className="text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
+                Select a style that you want to generate:
               </FormDescription>
               <FormControl>
                 <RadioGroup
@@ -265,7 +285,7 @@ export default function TrainModelZone() {
                     form.setValue("pack", value);
                   }}
                 >
-                  <div className="grid md:grid-cols-6 gap-4 mt-6 mb-6">
+                  <div className="grid md:grid-cols-5 gap-4 mt-6 mb-6 px-6">
 
                     <div>
                       <RadioGroupItem
@@ -514,13 +534,14 @@ export default function TrainModelZone() {
         />
 
 
-          <div className="flex flex-col gap-4 max-w-96 mx-auto text-center">
-            <FormDescription className="pb-6 text-center text-sm">
-              Select a Style
+          <div className="flex flex-col gap-4  mx-auto text-center relative w-full mt-4 border border-stone-300/50 rounded-3xl pt-12 pb-12">
+            <div className="absolute top-6 left-6 font-thin text-stone-300 text-3xl">3</div>
+            <FormDescription className="mt-6 pb-6 text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
+              Select Your Type:
             </FormDescription>
             <RadioGroup
               defaultValue={modelType}
-              className="grid grid-cols-3 gap-12"
+              className="grid grid-cols-3 gap-12 max-w-[460px] mx-auto"
               value={modelType}
               onValueChange={(value) => {
                 form.setValue("type", value);
@@ -577,9 +598,10 @@ export default function TrainModelZone() {
 
           <div
             {...getRootProps()}
-            className="justify-center align-middle cursor-pointer flex flex-col gap-4 mx-auto w-full"
+            className="relative justify-center align-middle cursor-pointer flex flex-col gap-4 mx-auto w-full border border-stone-300/50 rounded-3xl p-6"
           >
-            <FormDescription className="mt-16 pb-4 text-center text-sm">
+            <div className="absolute top-6 left-6 font-thin text-stone-300 text-3xl">4</div>
+            <FormDescription className="mt-12 pb-4 text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
               Upload 4-10 images
             </FormDescription>
             <div className="outline outline-8 outline-stone-400/10 hover:outline-stone-400/20 border border-stone-300 hover:border-green-400 w-full h-full rounded-md p-4 flex justify-center align-middle">
@@ -629,7 +651,7 @@ export default function TrainModelZone() {
 
 export function WarningIcon() {
   return (
-<svg className="w-6 h-6 text-stone-800 float-left mr-2" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.4449 0.608765C8.0183 -0.107015 6.9817 -0.107015 6.55509 0.608766L0.161178 11.3368C-0.275824 12.07 0.252503 13 1.10608 13H13.8939C14.7475 13 15.2758 12.07 14.8388 11.3368L8.4449 0.608765ZM7.4141 1.12073C7.45288 1.05566 7.54712 1.05566 7.5859 1.12073L13.9798 11.8488C14.0196 11.9154 13.9715 12 13.8939 12H1.10608C1.02849 12 0.980454 11.9154 1.02018 11.8488L7.4141 1.12073ZM6.8269 4.48611C6.81221 4.10423 7.11783 3.78663 7.5 3.78663C7.88217 3.78663 8.18778 4.10423 8.1731 4.48612L8.01921 8.48701C8.00848 8.766 7.7792 8.98664 7.5 8.98664C7.2208 8.98664 6.99151 8.766 6.98078 8.48701L6.8269 4.48611ZM8.24989 10.476C8.24989 10.8902 7.9141 11.226 7.49989 11.226C7.08567 11.226 6.74989 10.8902 6.74989 10.476C6.74989 10.0618 7.08567 9.72599 7.49989 9.72599C7.9141 9.72599 8.24989 10.0618 8.24989 10.476Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+<svg className="w-6 h-6 text-stone-300 float-left mr-2" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.4449 0.608765C8.0183 -0.107015 6.9817 -0.107015 6.55509 0.608766L0.161178 11.3368C-0.275824 12.07 0.252503 13 1.10608 13H13.8939C14.7475 13 15.2758 12.07 14.8388 11.3368L8.4449 0.608765ZM7.4141 1.12073C7.45288 1.05566 7.54712 1.05566 7.5859 1.12073L13.9798 11.8488C14.0196 11.9154 13.9715 12 13.8939 12H1.10608C1.02849 12 0.980454 11.9154 1.02018 11.8488L7.4141 1.12073ZM6.8269 4.48611C6.81221 4.10423 7.11783 3.78663 7.5 3.78663C7.88217 3.78663 8.18778 4.10423 8.1731 4.48612L8.01921 8.48701C8.00848 8.766 7.7792 8.98664 7.5 8.98664C7.2208 8.98664 6.99151 8.766 6.98078 8.48701L6.8269 4.48611ZM8.24989 10.476C8.24989 10.8902 7.9141 11.226 7.49989 11.226C7.08567 11.226 6.74989 10.8902 6.74989 10.476C6.74989 10.0618 7.08567 9.72599 7.49989 9.72599C7.9141 9.72599 8.24989 10.0618 8.24989 10.476Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
   )
 }
 
