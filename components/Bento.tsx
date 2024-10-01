@@ -177,6 +177,9 @@ export function Bento() {
                         <div className="mx-auto transition-all w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
                             <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
                             <p className="font-bold  mb-2 leading-tight">Upload 8-16 pictures of yourself</p>
+                            <p className="text-sm mb-2 leading-tight">
+                                and train a custom AI with your photos.
+                            </p>
                             <p className="text-sm mb-6 leading-tight">
                                <FaqDialog/>
                             </p>
@@ -186,7 +189,7 @@ export function Bento() {
                         <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">3</p><br/>
                             <p className="font-bold mb-2 leading-tight">Select a Style</p>
                             <p className="text-sm mb-6 leading-tight">
-                                Corporate photos, or aristocratic portraits? Our library is constantly updated.
+                                Corporate photos, Youtube thumbnails or some beautiful aristocratic portrait? Our library is constantly updated.
                             </p>
                         </div>
 
@@ -194,7 +197,7 @@ export function Bento() {
                         <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">4</p><br/>
                             <p className="font-bold mb-2 leading-tight">Get your awesome photos!</p>
                             <p className="text-sm mb-6 leading-tight">
-                                We create 20 photos in the selected style, with four different prompt.
+                                We create 24 photos in the selected style, with three different prompt.
                             </p>
                         </div>
 
@@ -213,7 +216,7 @@ export function Bento() {
                 </Button>
             </Link>
             
-            <h1 className="text-center px-6 pt-12 pb-4 text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Get noticed on LinkedIn, Twitter, with recruiters, clients & everywhere else.</h1>
+            <h1 className="text-center px-6 pt-12 pb-4 text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Get noticed on LinkedIn, Youtube, with recruiters, clients & everywhere else.</h1>
             <p className="text-center text-stone-400 pb-10">Choose one from our constantly updated styles that best suit your goals</p>
         
             <div className="grid md:grid-cols-6 gap-6 relative ">
@@ -257,14 +260,14 @@ export function Bento() {
                         </div>
                         <div className="mt-6 col-span-1  rounded-3xl relative  shadow-stone-600/10">
                             <div className="w-full h-16 text-center absolute -bottom-16 left-0 right-0">
-                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">Glamour Photos</h1>
+                                <h1 className="text-stone-400 bg-stone-950/70 w-fit p-1 text-xs rounded-full">TED Speaker</h1>
                             </div>
                             <Image
                             className="cover rounded-3xl"
                             height="1152"
                             width="896"
                             alt="hello"
-                            src="/female.png">
+                            src="/ted.jpg">
                             </Image>
                         </div>
                         <div className="mt-6 col-span-1 rounded-3xl relative  shadow-stone-600/10">

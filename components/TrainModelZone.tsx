@@ -289,7 +289,7 @@ export default function TrainModelZone() {
                         </Image>
                         </div>
 
-                        Corporate Headshots
+                        Corporate Photos
                       </Label>
                     </div>
 
@@ -336,30 +336,30 @@ export default function TrainModelZone() {
                           className="active w-80 h-auto mb-2 rounded-md shadow-md">
                         </Image>
 
-                        Youtube Thumbnail Reaction
+                        Youtube Thumbnails
                       </Label>
                     </div>
 
                     <div>
                       <RadioGroupItem
-                        value="interior-design"
-                        id="interior-design"
+                        value="ted-speaker"
+                        id="ted-speaker"
                         className="peer sr-only"
-                        aria-label="interior-design"
+                        aria-label="ted-speaker"
                       />
                       <Label
-                        htmlFor="interior-design"
+                        htmlFor="ted-speaker"
                         className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
                         <Image
-                          src="/youtube.jpg"
+                          src="/ted.jpg"
                           width={896}
                           height={1152}
-                          alt="interior design"
+                          alt="Ted Speaker"
                           className="active w-80 h-auto mb-2 rounded-md shadow-md">
                         </Image>
 
-                        Interior Design
+                        Ted Speaker
                       </Label>
                     </div>
 
