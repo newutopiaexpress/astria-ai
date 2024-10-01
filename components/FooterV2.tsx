@@ -13,8 +13,8 @@ export function FooterV2() {
 
           <div className="float-left relative">
             <Image src="/utopia-icon.png" alt="Utopia Express" width={64} height={60} className="scale-90 opacity-25 hover:opacity-100 animate-pulse transition-all"/>
-            <h2 className="font-thin text-2xl mt-2 tracking-tighter">Utopia Express</h2>
-            <p className="text-xs text-stone-500 w-64 leading-tight pb-6">Tools that make your yourney to the singularity smoother.</p>
+            <h2 className="font-bold text-lg mt-2 tracking-tighter">Utopia Express</h2>
+            <p className="text-xs text-stone-500 w-64 leading-tight pb-6">2024.</p>
           </div>
 
 
