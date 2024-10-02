@@ -274,7 +274,7 @@ export default function TrainModelZone() {
             <FormItem className="relative w-full mx-auto mt-4 border border-stone-300/50 rounded-3xl pt-12 pb-12">
               <div className="absolute top-6 left-6 font-thin text-stone-300 text-3xl">2</div>
               <FormDescription className="text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
-                Select a style that you want to generate:
+                  Pick your pic style:
               </FormDescription>
               <FormControl>
                 <RadioGroup
@@ -312,7 +312,7 @@ export default function TrainModelZone() {
                         Corporate Photos
                       </Label>
                     </div>
-
+{/*
                     <div>
                       <RadioGroupItem
                         value="aristocratic-portraits"
@@ -336,6 +336,7 @@ export default function TrainModelZone() {
                         Aristocratic Portraits
                       </Label>
                     </div>
+*/}
                     
                     <div>
                       <RadioGroupItem
@@ -384,13 +385,12 @@ export default function TrainModelZone() {
                     </div>
 
                   
-{/*}                    <div>
+                   <div>
                       <RadioGroupItem
                         value="glamour-shot"
                         id="glamour-shot"
                         className="peer sr-only"
                         aria-label="glamour-shot"
-                        disabled
                       />
                       <Label
                         htmlFor="glamour-shot"
@@ -408,16 +408,16 @@ export default function TrainModelZone() {
                         Glamour Shot
                       </Label>
                     </div>
+
                     <div>
                       <RadioGroupItem
-                        value="ai-photographer"
-                        id="ai-photographer"
+                        value="generative-artistic-filters"
+                        id="generative-artistic-filters"
                         className="peer sr-only"
-                        aria-label="ai-photographer"
-                        disabled
+                        aria-label="generative-artistic-filters"
                       />
                       <Label
-                        htmlFor="ai-photographer"
+                        htmlFor="generative-artistic-filters"
                         className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
                         <Image
@@ -428,7 +428,7 @@ export default function TrainModelZone() {
                           className="active w-80 h-auto mb-2 rounded-md shadow-md">
                         </Image>
 
-                        Ai Photographer
+                        Generative Artistic Filters
                       </Label>
                     </div>
                     <div>
@@ -437,7 +437,6 @@ export default function TrainModelZone() {
                         id="bold-colors"
                         className="peer sr-only"
                         aria-label="bold-colors"
-                        disabled
                       />
                       <Label
                         htmlFor="bold-colors"
@@ -460,7 +459,6 @@ export default function TrainModelZone() {
                         id="dating"
                         className="peer sr-only"
                         aria-label="dating"
-                        disabled
                       />
                       <Label
                         htmlFor="dating"
@@ -483,7 +481,6 @@ export default function TrainModelZone() {
                         id="j-crew"
                         className="peer sr-only"
                         aria-label="j-crew"
-                        disabled
                       />
                       <Label
                         htmlFor="j-crew"
@@ -500,31 +497,7 @@ export default function TrainModelZone() {
                         J-crew
                       </Label>
                     </div>
-                  
-                    <div>
-                      <RadioGroupItem
-                        value="generative-artistic-filters"
-                        id="generative-artistic-filters"
-                        className="peer sr-only"
-                        aria-label="generative-artistic-filters"
-                        disabled
-                      />
-                      <Label
-                        htmlFor="generative-artistic-filters"
-                        className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
-                      >
-                        <Image
-                          src="/artistic.jpg"
-                          width={896}
-                          height={1152}
-                          alt="generative-artistic-filters"
-                          className="active w-80 h-auto mb-2 rounded-md shadow-md ">
-                        </Image>
-
-                        Generative Artistic Filters
-                      </Label>
-                    </div>
-*/}                    
+                    
                   </div>
                 </RadioGroup>
               </FormControl>
