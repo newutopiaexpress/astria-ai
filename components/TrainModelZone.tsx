@@ -477,24 +477,24 @@ export default function TrainModelZone() {
                     </div>
                     <div>
                       <RadioGroupItem
-                        value="test-pack-x"
-                        id="test-pack-x"
+                        value="j-crew"
+                        id="j-crew"
                         className="peer sr-only"
-                        aria-label="test-pack-x"
+                        aria-label="j-crew"
                       />
                       <Label
-                        htmlFor="test-pack-x"
+                        htmlFor="j-crew"
                         className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
                         <Image
                           src="/jcrew.jpg"
                           width={896}
                           height={1152}
-                          alt="test-pack-x"
+                          alt="j-crew"
                           className="active w-80 h-auto mb-2 rounded-md shadow-md">
                         </Image>
 
-                        test-pack-x
+                        J-crew
                       </Label>
                     </div>
                     
