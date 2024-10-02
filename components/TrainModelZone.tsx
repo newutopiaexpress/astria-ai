@@ -289,13 +289,13 @@ export default function TrainModelZone() {
 
                     <div>
                       <RadioGroupItem
-                        value="corporate-portraits"
-                        id="corporate-portraits"
+                        value="corporate-headshots"
+                        id="corporate-headshots"
                         className="peer sr-only"
-                        aria-label="corporate-portraits"
+                        aria-label="corporate-headshots"
                       />
                       <Label
-                        htmlFor="corporate-portraits"
+                        htmlFor="corporate-headshots"
                         className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
 
@@ -304,7 +304,7 @@ export default function TrainModelZone() {
                           src="/corporate.jpg"
                           width={896}
                           height={1152}
-                          alt="corporate Portraits"
+                          alt="Corporate Portraits"
                           className="active w-80 h-auto mb-2 rounded-md shadow-md">
                         </Image>
                         </div>
@@ -352,7 +352,7 @@ export default function TrainModelZone() {
                           src="/youtube.jpg"
                           width={896}
                           height={1152}
-                          alt="Aristocratic Portraits"
+                          alt="Youtube Thumbnails"
                           className="active w-80 h-auto mb-2 rounded-md shadow-md">
                         </Image>
 

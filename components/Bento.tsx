@@ -169,12 +169,12 @@ export function Bento() {
         <div className="grid md:grid-cols-3 gap-6">
             <div className="col-span-1 content-center transition-all w-full h-full bg-cover bg-gradient-to-r from-stone-900 from-70% via-stone-800 via-90% to-stone-900 to-99% rounded-3xl rounded-br-[60px] rounded-tr-[60px] z-10 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
                  <h1 className="pt-12 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-200">Professional portraits, for everyone</h1>
-                 <p className="text-stone-400 mt-2 pb-4">Create some breathtaking photos in minutes! <br/><span className="text-xs opacity-60">*Be careful because it's addictive.</span></p>
+                 <p className="text-stone-400 mt-2 pb-4">Create some breathtaking photos in minutes!</p>
             </div>
             <div className="col-span-2 h-fit mx-auto">
                 <div className="grid md:grid-cols-3 gap-6 md:gap-16 w-full relative text-center mx-auto md:pl-6 md:mt-10">
                         
-                        <div className="mx-auto transition-all w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
+                        <div className="max-w-3/4 float-right transition-all md:w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
                             <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
                             <p className="font-bold  mb-2 leading-tight">Upload 8-16 pictures of yourself</p>
                             <p className="text-sm mb-2 leading-tight">
@@ -360,7 +360,7 @@ export function Bento() {
                         <div className="outline outline-4 outline-offset-8 hover:outline-purple-400 outline-stone-300/30 mb-6 col-span-1 bg-stone-800 text-stone-300 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-1">
                             <div className="p-6">  
                                 <p className="text-stone-300"><HeartIcon/></p><br/>
-                                <p className="font-bold mt-2 text-sm">15 Photo Session - For Teams, Influencers and Addicts</p>
+                                <p className="font-bold mt-2 text-sm">15 Session - For Teams, Companies and Addicts</p>
                                 <p className="text-md md:h-20 leading-tight">15x Custom fine tuning + 15x24 photos in the selected style</p>
                                 <p className="font-normal text-5xl">
                                     160<span className="font-normal text-sm">€ /360pcs</span>
