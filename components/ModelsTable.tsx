@@ -1,4 +1,4 @@
-
+"Use Client";
 import {
   Table,
   TableBody,
@@ -50,7 +50,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
                   className="flex gap-2 items-center w-max"
                   variant={model.status === "finished" ? "finished" : "secondary"}
                 >
-                  {model.status === "finished" ? "Finished, click to view" : model.status === "processing" ? "training" : model.status}
+                  {model.status === "finished" ? "Finished, click to view" : model.status === "processing" ? "training process.." : model.status}
                   {model.status === "processing" && (
                     <Icons.spinner className="h-4 w-4 animate-spin" />
                   )}

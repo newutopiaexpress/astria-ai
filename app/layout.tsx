@@ -14,8 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className="bg-fixed flex flex-col bg-stone-200 ">
-        <div className="min-h-screen">
+      <body className="bg-fixed flex flex-col bg-stone-200 h-screen">
               <section>
                 <Suspense
                   fallback={
@@ -25,7 +24,7 @@ export default function RootLayout({ children }: any) {
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="w-full mx-auto h-full mt-20 lg:mt-26 px-2">
+              <main className="w-full mx-auto mt-20 lg:mt-26 px-2">
                 {children}
               </main>
               <CookieConsent /> 
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: any) {
 
               <Toaster />
               <Analytics />
-        </div>
       </body>
     </html>
   );

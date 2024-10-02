@@ -362,13 +362,13 @@ export default function TrainModelZone() {
 
                     <div>
                       <RadioGroupItem
-                        value="ted-speaker"
-                        id="ted-speaker"
+                        value="speaker"
+                        id="speaker"
                         className="peer sr-only"
                         aria-label="ted-speaker"
                       />
                       <Label
-                        htmlFor="ted-speaker"
+                        htmlFor="speaker"
                         className="cursor-pointer	flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-2 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                       >
                         <Image

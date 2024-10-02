@@ -174,30 +174,27 @@ export function Bento() {
             <div className="col-span-2 h-fit mx-auto">
                 <div className="grid md:grid-cols-3 gap-6 md:gap-16 w-full relative text-center mx-auto md:pl-6 md:mt-10">
                         
-                        <div className="max-w-3/4 float-right transition-all md:w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
+                        <div className="max-w-3/4 float-right transition-all md:w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl hover:rounded-[40px] z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
                             <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">1</p><br/>
                             <p className="font-bold  mb-2 leading-tight">Upload 8-16 pictures of yourself</p>
                             <p className="text-sm mb-2 leading-tight">
-                                and train a custom AI with your photos.
-                            </p>
-                            <p className="text-sm mb-6 leading-tight">
-                               <FaqDialog/>
+                                We train a custom AI modell, that able to "learn" you.
                             </p>
                         </div>
 
-                        <div className="mx-auto transition-all w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-sky-300/40">
+                        <div className="mx-auto transition-all w-full h-full bg-stone-200 hover:bg-slate-100 rounded-3xl hover:rounded-[40px] z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-sky-300/40">
                         <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">3</p><br/>
                             <p className="font-bold mb-2 leading-tight">Select a Style</p>
                             <p className="text-sm mb-6 leading-tight">
-                                Corporate photos, Youtube thumbnails or some beautiful aristocratic portrait? Our library is constantly updated.
+                              Well-engineered prompts in carefully selected styles. Choose the one that suits your current goals.
                             </p>
                         </div>
 
-                        <div className="mx-auto transition-all w-full h-full bg-slate-100 hover:bg-slate-100 rounded-3xl z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-lime-300/40">
+                        <div className="mx-auto transition-all w-full h-full bg-slate-100 hover:bg-slate-100 rounded-3xl hover:rounded-[40px] z-10 col-span-1 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-lime-300/40">
                         <p className="mx-auto w-8 h-8 shadow-inner bg-stone-200 text-stone-600 rounded-full text-center content-center">4</p><br/>
                             <p className="font-bold mb-2 leading-tight">Get your awesome photos!</p>
                             <p className="text-sm mb-6 leading-tight">
-                                We create 24 photos in the selected style, with three different prompt.
+                                We create 24 photos in each style, with three of four different prompt.
                             </p>
                         </div>
 
