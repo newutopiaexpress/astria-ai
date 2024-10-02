@@ -131,7 +131,7 @@ export function Bento() {
             </div>  
 
             <div className="mb-6 bg-slate-100 rounded-3xl relative p-6 shadow-md shadow-stone-600/10 transition-all duration-50 hover:shadow-xl">
-                <p className="text-md mb-4">"The results were quick and I couldn't be more happy with the images. I recommend and have done so with my colleagues and family."</p>
+                <p className="text-md mb-4">"Finally we have a uniform look on our company website! The results were quick and I couldn't be more happy with the images."</p>
                 <Image
                         className="w-10 h-10 rounded-full float-left mr-2"
                         height="1006"
@@ -167,7 +167,7 @@ export function Bento() {
     <div className="lg:max-w-[1300px] mx-auto">
 
         <div className="grid md:grid-cols-3 gap-6">
-            <div className="col-span-1 content-center transition-all w-full h-full bg-stone-950 rounded-3xl rounded-br-[60px] rounded-tr-[60px] z-10 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
+            <div className="col-span-1 content-center transition-all w-full h-full bg-cover bg-gradient-to-r from-stone-900 from-70% via-stone-800 via-90% to-stone-900 to-99% rounded-3xl rounded-br-[60px] rounded-tr-[60px] z-10 relative p-6 shadow-md outline outline-8 hover:outline-2 hover:outline-offset-4 outline-offset-8 outline-stone-300/20 hover:outline-fuchsia-300/40">
                  <h1 className="pt-12 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem] text-stone-200">Professional portraits, for everyone</h1>
                  <p className="text-stone-400 mt-2 pb-4">Create some breathtaking photos in minutes! <br/><span className="text-xs opacity-60">*Be careful because it's addictive.</span></p>
             </div>

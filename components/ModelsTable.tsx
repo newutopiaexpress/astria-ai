@@ -1,4 +1,3 @@
-"use client";
 
 import {
   Table,
@@ -47,17 +46,15 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
               <TableCell className="font-medium">{model.name}</TableCell>
               <TableCell>
                 <div>
-                  <Badge
-                    className="flex gap-2 items-center w-min"
-                    variant={
-                      model.status === "finished" ? "finished" : "secondary"
-                    }
-                  >
-                    {model.status === "processing" ? "training" : model.status }
-                    {model.status === "processing" && (
-                      <Icons.spinner className="h-4 w-4 animate-spin" />
-                    )}
-                  </Badge>
+                <Badge
+                  className="flex gap-2 items-center w-max"
+                  variant={model.status === "finished" ? "finished" : "secondary"}
+                >
+                  {model.status === "finished" ? "Finished, click to view" : model.status === "processing" ? "training" : model.status}
+                  {model.status === "processing" && (
+                    <Icons.spinner className="h-4 w-4 animate-spin" />
+                  )}
+                </Badge>
                 </div>
               </TableCell>
               <TableCell>{model.type}</TableCell>
