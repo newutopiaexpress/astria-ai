@@ -15,9 +15,9 @@ import Image from "next/image";
 export default async function Index() {
   return (
 
-    <div className="mt-2 relative w-full mx-auto bg-transparent py-10 shadow-none">
+    <div className="relative w-full mx-auto bg-transparent py-10 shadow-none">
         <Link href="/overview" className="text-sm w-fit">
-          <Button variant={"ghost"} className="text-xs absolute top-4 right-1 " size="sm">
+          <Button variant={"ghost"} className="text-xs absolute top-0 right-1 " size="sm">
             <CloseIcon/>
           </Button>
         </Link>

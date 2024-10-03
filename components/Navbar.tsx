@@ -67,7 +67,7 @@ export default async function Navbar() {
             )}
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer">
-                <div className="transition-all pt-2 pl-2 w-8 h-8 bg-transparent hover:bg-stone-100 border border-stone-200 rounded-full shadow-lg">
+                <div className="transition-all pt-2 pl-2 w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-300 outline outline-4 outline-stone-300/50 outline-offset-2 hover:outline hover:outline-1 hover:outline-green-400 hover:outline-offset-0">
                   <UserIcon/>     
                 </div>
               </DropdownMenuTrigger>
