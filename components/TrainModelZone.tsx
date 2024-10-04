@@ -318,7 +318,7 @@ export default function TrainModelZone() {
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Generative Artistic Filters examples</DialogTitle>
+                              <DialogTitle>Corporate Portraits</DialogTitle>
                               <DialogDescription>
                                 <Image
                                   src="/model-corp.png"
@@ -408,13 +408,13 @@ export default function TrainModelZone() {
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Generative Artistic Filters examples</DialogTitle>
+                              <DialogTitle>Ted Speaker</DialogTitle>
                               <DialogDescription>
                                 <Image
                                   src="/model-gener.png"
                                   width={1198}
                                   height={1000}
-                                  alt="Corporate Portraits"
+                                  alt="Ted Speaker"
                                   className="active w-full h-auto mb-2 rounded-md shadow-md">
                                 </Image>
                               </DialogDescription>
@@ -442,6 +442,7 @@ export default function TrainModelZone() {
                         id="glamour-shot"
                         className="peer sr-only"
                         aria-label="glamour-shot"
+                        disabled
                       />
                       <Label
                         htmlFor="glamour-shot"
@@ -454,13 +455,13 @@ export default function TrainModelZone() {
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Generative Artistic Filters examples</DialogTitle>
+                              <DialogTitle>Glamour Shot</DialogTitle>
                               <DialogDescription>
                                 <Image
-                                  src="/model-gener.png"
-                                  width={1198}
+                                  src="/model-glam.png"
+                                  width={1180}
                                   height={1000}
-                                  alt="Corporate Portraits"
+                                  alt="Glamour Shot"
                                   className="active w-full h-auto mb-2 rounded-md shadow-md">
                                 </Image>
                               </DialogDescription>
@@ -531,6 +532,7 @@ export default function TrainModelZone() {
                         id="bold-colors"
                         className="peer sr-only"
                         aria-label="bold-colors"
+                        disabled
                       />
                       <Label
                         htmlFor="bold-colors"
@@ -575,6 +577,7 @@ export default function TrainModelZone() {
                         id="dating"
                         className="peer sr-only"
                         aria-label="dating"
+                        disabled
                       />
                       <Label
                         htmlFor="dating"
@@ -619,6 +622,7 @@ export default function TrainModelZone() {
                         id="j-crew"
                         className="peer sr-only"
                         aria-label="j-crew"
+                        disabled
                       />
                       <Label
                         htmlFor="j-crew"
