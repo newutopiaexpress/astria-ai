@@ -16,6 +16,7 @@ module.exports = {
       },
     },
     extend: {
+      visibility: ["group-hover"],
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
