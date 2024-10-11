@@ -205,8 +205,8 @@ export function Bento() {
     </div> 
 
     <div className="flex justify-center mb-12 mt-16 pt-6 pb-6  mx-auto w-full bg-stone-200 rounded-3xl rounded-tl-[0px] rounded-tr-[0px] rounded-br-[0px] rounded-bl-[0px] relative">
-        <div className="scale-75 -top-16 right-2 flex items-center justify-center rounded-full p-2 text-center z-40 absolute w-80 h-80 shadow-xl bg-stone-200 outline outline-8 outline-offset-4 outline-stone-300/50">
-            <h1 className="text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Constantly updated Style Packs</h1>
+            <div className="scale-50 -top-24 right-0 flex items-center justify-center rounded-full p-1 text-center z-40 absolute w-72 h-72 shadow-xl bg-stone-800  outline outline-8 outline-offset-4 outline-stone-300/50">
+            <h1 className="text-stone-200 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Constantly updated Style Packs</h1>
         </div>
         <Slider/>
     </div>

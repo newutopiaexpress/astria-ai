@@ -30,17 +30,17 @@ export default async function RootLayout({
 
   return <div>
             {children}
-{/*}
+
             <Sheet>
                 <SheetTrigger className="transition-all w-10 h-10 outline outline-8 outline-offset-2 outline-stone-300/50 hover:outline-offset-1 hover:outline-2 hover:outline-stone-300/80 border border-stone-300 bg-stone-200 rounded-full fixed left-5 bottom-6">Open</SheetTrigger>
                 <SheetContent className="md:min-w-[600px] sm:w-full">
                   <SheetHeader>
-                    <SheetTitle>Are you absolutely sure?</SheetTitle>
+                    <SheetTitle></SheetTitle>
                     <SheetDescription>
                       <Chat/>
                     </SheetDescription>
                   </SheetHeader>
                 </SheetContent>
-            </Sheet>*/}
+            </Sheet>
           </div>;
 }

@@ -12,12 +12,12 @@ export function Slider() {
 >
     <ul className="text-stone-300 text-sm text-center flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll">
         <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
-            <div className="shadow-md z-50 absolute top-4 -right-4 -rotate-3 w-12 h-12 rounded-full bg-stone-800 text-stone-300 pt-4 text-xs italic font-bold">NEW!</div>
             <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/corp2.jpg" alt="Corporate Portraits" />
             <p className="mt-2 mb-2">Corporate Portraits</p>
         </li>
         <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
-            <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/sexy.jpg" alt="Corporate Headshots" />
+            <div className="shadow-md z-50 absolute top-4 -right-4 -rotate-3 w-12 h-12 rounded-full bg-stone-800 text-stone-300 pt-4 text-xs italic font-bold">NEW!</div>
+            <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/sexy3.jpg" alt="Corporate Headshots" />
             <p className="mt-2 mb-2">Sexy Comicbook</p>
         </li>
         <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
@@ -36,6 +36,10 @@ export function Slider() {
         <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
             <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/v0.jpg" alt="Corporate Portraits" />
             <p className="mt-2 mb-2">Famous Musician</p>
+        </li> 
+        <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
+            <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/dating.jpg" alt="Corporate Portraits" />
+            <p className="mt-2 mb-2">Dating</p>
         </li>     
     </ul>
     <ul className="text-stone-300 text-sm text-center flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
@@ -44,6 +48,7 @@ export function Slider() {
             <p className="mt-2 mb-2">Corporate Portraits</p>
         </li>
         <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
+            <div className="shadow-md z-50 absolute top-4 -right-4 -rotate-3 w-12 h-12 rounded-full bg-stone-800 text-stone-300 pt-4  text-xs italic font-bold">NEW!</div>
             <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/sexy.jpg" alt="Corporate Headshots" />
             <p className="mt-2 mb-2">Sexy Comicbook</p>
         </li>
@@ -52,6 +57,7 @@ export function Slider() {
             <p className="mt-2 mb-2">YouTube Covers</p>
         </li>
         <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
+            <div className="shadow-md z-50 absolute top-4 -right-4 -rotate-3 w-12 h-12 rounded-full bg-stone-800 text-stone-300 pt-4  text-xs italic font-bold">NEW!</div>  
             <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/hallo.jpg" alt="TED Speaker" />
             <p className="mt-2 mb-2">Halloween</p>
         </li>
@@ -62,7 +68,11 @@ export function Slider() {
         <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
             <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/v0.jpg" alt="Corporate Portraits" />
             <p className="mt-2 mb-2">Famous Musician</p>
-        </li>     
+        </li> 
+        <li className="rounded-3xl bg-stone-300 text-stone-700 p-2 shadow-lg">
+            <img className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" src="/dating.jpg" alt="Corporate Portraits" />
+            <p className="mt-2 mb-2">Dating</p>
+        </li>      
     </ul>
 
 </div>
