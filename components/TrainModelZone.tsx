@@ -863,16 +863,15 @@ export default function TrainModelZone() {
           <Separator orientation="vertical" className="bg-stone-300 mx-auto h-12"/>
           <Badge className="mx-auto w-10 h-10 rounded-full p-4 text-center border-stone-300 mt-0 mb-0 ">4</Badge>
           <Separator orientation="vertical" className="bg-stone-300 mx-auto h-6"/>
-
           <div
             {...getRootProps()}
             className="relative justify-center align-middle cursor-pointer flex flex-col gap-4 mx-auto w-full p-6"
           >
             <FormDescription className="pb-4 text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
-              Upload 4-10 images
-              <p className="text-md not-italic">How to get the best results?</p>
+            Upload 6-10 pictures
+            <p className="text-sm tracking-normal font-normal max-w-[480px] mx-auto">in which your face is clearly visible and no other person is on it. <span className="font-bold">The key is variety:</span> different background, clothing, lighting in each photo. <span className="font-bold text-red-400">Don't use</span> filters and don't make grimaces in the pictures.</p>
             </FormDescription>
-            <div className="max-w-[840px] mx-auto outline outline-8 outline-stone-400/10 hover:outline-stone-400/20 border border-stone-300 hover:border-green-400 w-full h-full rounded-3xl p-12 flex justify-center align-middle">
+            <div className="max-w-[540px] mx-auto outline outline-8 outline-stone-400/10 hover:outline-stone-400/20 border border-stone-300 hover:border-green-400 w-full h-full rounded-3xl p-12 flex justify-center align-middle">
               <input {...getInputProps()} />
               {isDragActive ? (
                 <p className="self-center">Drop the files here ...</p>
