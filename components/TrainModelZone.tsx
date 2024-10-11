@@ -784,50 +784,6 @@ export default function TrainModelZone() {
                       </Label>
                     </div>
 
-                    <div className="relative group">
-                      <RadioGroupItem
-                        value="interior-test"
-                        id="interior-test"
-                        className="peer sr-only"
-                        aria-label="interior-test"
-                      />
-                      <Label
-                        htmlFor="interior-test"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-                        <div className="relative group">
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Generative Artistic Filters examples</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/model-gener.png"
-                                  width={1198}
-                                  height={1000}
-                                  alt="Corporate Portraits"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/jcrew.jpg"
-                          width={896}
-                          height={1152}
-                          alt="j-crew"
-                          className="active w-80 h-auto mb-2 rounded-md shadow-md">
-                        </Image>
-                        </div>
-
-                        Interior
-                      </Label>
-                    </div>
                     
                   </div>
                 </RadioGroup>
