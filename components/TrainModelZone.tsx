@@ -334,6 +334,52 @@ export default function TrainModelZone() {
 
                     <div>
                       <RadioGroupItem
+                        value="sexy-comic-vol-1"
+                        id="sexy-comic-vol-1"
+                        className="peer sr-only"
+                        aria-label="sexy-comic-vol-1"
+                      />
+                      <Label
+                        htmlFor="sexy-comic-vol-1"
+                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
+                      >
+
+                        <div className="relative group">
+                        <Dialog>
+                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
+                          <Badge variant="outline">Examples</Badge>
+                          </DialogTrigger>
+                          <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>Sexy Comic vol.1</DialogTitle>
+                              <DialogDescription>
+                                <Image
+                                  src="/sexyb.png"
+                                  width={1180}
+                                  height={1000}
+                                  alt="sexy-comic-vol-1"
+                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
+                                </Image>
+                              </DialogDescription>
+                            </DialogHeader>
+                          </DialogContent>
+                        </Dialog>
+                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
+                        <Image
+                          src="/head.jpg"
+                          width={896}
+                          height={1152}
+                          alt="sexy-comic-vol-1"
+                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
+                        </Image>
+                        </div>
+
+                        Sexy Comic vol.1
+                      </Label>
+                    </div>
+
+                    <div>
+                      <RadioGroupItem
                         value="corporate-headshots"
                         id="corporate-headshots"
                         className="peer sr-only"
@@ -478,6 +524,7 @@ export default function TrainModelZone() {
                         className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
                       >
                         <div className="relative group">
+                        <div className="shadow-md z-50 absolute bottom-1 -right-4 rotate-6 w-12 h-12 rounded-full bg-stone-800 text-stone-300 pt-4 pl-2 text-xs italic font-bold">NEW!</div>
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
                           <Badge variant="outline">Examples</Badge>
