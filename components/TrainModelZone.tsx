@@ -366,7 +366,7 @@ export default function TrainModelZone() {
                         </Dialog>
                         <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
                         <Image
-                          src="/head.jpg"
+                          src="/sexy2.jpg"
                           width={896}
                           height={1152}
                           alt="sexy-comic-vol-1"
@@ -412,7 +412,7 @@ export default function TrainModelZone() {
                         </Dialog>
                         <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
                         <Image
-                          src="/head.jpg"
+                          src="/corph.jpg"
                           width={896}
                           height={1152}
                           alt="Corporate Headshots"
