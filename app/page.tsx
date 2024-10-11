@@ -25,7 +25,7 @@ export default async function Index() {
 
   return (
  
-      <div>
+      <div className="px-4">
         <Bento/>
       </div>
 

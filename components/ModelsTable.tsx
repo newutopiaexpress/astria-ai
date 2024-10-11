@@ -1,4 +1,4 @@
-"Use Client";
+"Use Client"
 import {
   Table,
   TableBody,
@@ -26,11 +26,11 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
   };
 
   return (
-    <div className="rounded-sm border-none shadow-none bg-transparent md:p-9">
+    <div className="rounded-sm border-none shadow-none">
       <Table className="w-full">
         <TableHeader>
-          <TableRow className="text-xs opacity-40">
-            <TableHead>Name</TableHead>
+          <TableRow className="text-xs opacity-40 border border-b">
+            <TableHead className="pl-4 md:pl-6">Name</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Type</TableHead>
             <TableHead>Samples</TableHead>
@@ -41,35 +41,48 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
             <TableRow
               key={model.modelId}
               onClick={() => handleRedirect(model.id)}
-              className="cursor-pointer h-16 hover:bg-white/10 hover:shadow-lg hover:shadow-neutral-400/20"
+              className="cursor-pointer h-20 border-b border-stone-300/50 hover:shadow-lg hover:shadow-stone-400/20 transition-all group"
             >
-              <TableCell className="font-medium">{model.name}</TableCell>
-              <TableCell>
+              <TableCell className="font-medium pl-4 md:pl-6 w-[33%]">{model.name}</TableCell>
+              <TableCell className="w-[130px]">
                 <div>
                 <Badge
                   className="flex gap-2 items-center w-max"
                   variant={model.status === "finished" ? "finished" : "secondary"}
                 >
-                  {model.status === "finished" ? "Finished, click to view" : model.status === "processing" ? "training process.." : model.status}
+                  {model.status === "finished" ? "Finished" : model.status === "processing" ? "training process.." : model.status}
                   {model.status === "processing" && (
                     <Icons.spinner className="h-4 w-4 animate-spin" />
                   )}
                 </Badge>
                 </div>
               </TableCell>
-              <TableCell>{model.type}</TableCell>
+              <TableCell className="text-sm w-[130px]">{model.type}</TableCell>
               <TableCell>
-                <div className="flex gap-2 flex-shrink-0 items-center">
-                  {model.samples.slice(0, 3).map((sample) => (
+                <div className="gap-2 flex flex-shrink-0 items-center md:hidden">
+                  {model.samples.slice(0, 1).map((sample) => (
                     <Avatar key={sample.id}>
                       <AvatarImage src={sample.uri} className="object-cover" />
                     </Avatar>
                   ))}
-                  {model.samples.length > 3 && (
-                    <Badge className="rounded-full h-10" variant={"outline"}>
-                      +{model.samples.length - 3}
+                  {model.samples.length > 1 && (
+                    <Badge className="rounded-full h-10 w-10" variant={"outline"}>
+                      +{model.samples.length - 1}
                     </Badge>
                   )}
+                </div>
+                <div className="gap-2 flex-shrink-0 items-center hidden md:flex group relative">
+                  {model.samples.slice(0, 4).map((sample) => (
+                    <Avatar key={sample.id}>
+                      <AvatarImage src={sample.uri} className="object-cover" />
+                    </Avatar>
+                  ))}
+                  {model.samples.length > 4 && (
+                    <Badge className="rounded-full h-10 w-10" variant={"outline"}>
+                      +{model.samples.length - 4}
+                    </Badge>
+                  )}
+                  <div className="invisible group-hover:visible float-right absolute right-2 sm:hidden md:block"><EyeIcon/></div>
                 </div>
               </TableCell>
             </TableRow>
@@ -79,3 +92,14 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
     </div>
   );
 }
+
+
+export function EyeIcon() {
+  return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-stone-700">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+</svg>
+
+  )
+}
+

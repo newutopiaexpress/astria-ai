@@ -42,28 +42,21 @@ export default async function Index({ params }: { params: { id: string } }) {
   const { data: samples } = await supabase.from("samples").select("*").eq("modelId", model.id);
 
   return (
-    <div id="train-model-container" className="p-4 w-full bg-transparent rounded-sm shadow-none relative">
-      <div className="">
-        <Link href="/overview" className="text-sm w-fit">
-          <Button variant={"ghost"} className="text-xs absolute top-0 right-0" size="sm">
-            <CloseIcon/>
-          </Button> 
-        </Link>
+    <div id="train-model-container" className="px-6 w-full bg-transparent rounded-sm shadow-none relative">
         <div className="flex flex-row align-left text-left items-center pb-4">
           <h1 className="text-xl">{model.name}</h1>
           <div className="ml-2">
             <Badge
-              variant={model.status === "finished" ? "default" : "finished"}
-              className="text-xs font-medium"
-            >
-              {model.status === "processing" ? "training" : model.status }
-              {model.status === "processing" && (
-                <Icons.spinner className="h-4 w-4 animate-spin ml-2 inline-block" />
-              )}
+                  className="flex gap-2 items-center w-max"
+                  variant={model.status === "finished" ? "finished" : "secondary"}
+                >
+                  {model.status === "finished" ? "Finished" : model.status === "processing" ? "training process.." : model.status}
+                  {model.status === "processing" && (
+                    <Icons.spinner className="h-4 w-4 animate-spin" />
+                  )}
             </Badge>
           </div>
         </div>
-      </div>
 
       <ClientSideModel samples={samples ?? []} serverModel={model} serverImages={images ?? []} />
     </div>

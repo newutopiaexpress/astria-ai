@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
 import CookieConsent from "@/components/CookieConsent";
 
+
 export const metadata = {
   title: "The AI Photographer",
   description: "Take photos in the modern way",
@@ -24,14 +25,13 @@ export default function RootLayout({ children }: any) {
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="w-full mx-auto mt-20 lg:mt-26 px-2">
+              <main className="mx-auto mt-20 lg:mt-28 w-full"> {/* max-w-[1500px] */}
                 {children}
               </main>
               <CookieConsent /> 
               <section>
                 <FooterV2/>
               </section>
-
               <Toaster />
               <Analytics />
       </body>

@@ -4,6 +4,13 @@ import { Database } from "@/types/supabase";
 import { creditsRow } from "@/types/utils";
 import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
+import { Badge } from "../ui/badge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const revalidate = 0;
 
@@ -45,6 +52,17 @@ export default function ClientSideCredits({
   if (!credits) return null;
 
   return (
-    <p>Credits: {credits.credits}</p>
+    <p className="text-xs text-stone-500 align-middle mt-[6px] mr-1">
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger>
+          <Badge  variant="credits" className="ml-2">{credits.credits}</Badge>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Your credits</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+    </p>
   );
 }

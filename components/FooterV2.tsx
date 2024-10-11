@@ -10,15 +10,15 @@ import Image from "next/image";
 export function FooterV2() {
   return (
     <div className="text-stone-600 w-full h-32 px-6 mt-32">
-
+{/*}
           <div className="float-left relative">
             <Image src="/utopia-icon.png" alt="Utopia Express" width={64} height={60} className="scale-90 opacity-25 hover:opacity-100 animate-pulse transition-all"/>
             <h2 className="font-bold text-lg mt-2 tracking-tighter">Utopia Express</h2>
             <p className="text-xs text-stone-500 w-64 leading-tight pb-6">2024.</p>
-          </div>
+          </div>*/}
 
 
-          <div className="float-right relative text-right w-48 h-9 mt-20">
+          <div className="float-right relative text-right w-48 h-9 mt-20 mr-14">
             <div className="flex flex-row gap-9">
               <Link className="fill-stone-800 hover:text-gray-900 dark:hover:text-gray-50" href="https://www.facebook.com/www.utopia.express/">
                 <FacebookIcon/>

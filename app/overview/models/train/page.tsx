@@ -15,18 +15,13 @@ import Image from "next/image";
 export default async function Index() {
   return (
 
-    <div className="relative w-full mx-auto bg-transparent py-10 shadow-none">
-        <Link href="/overview" className="text-sm w-fit">
-          <Button variant={"ghost"} className="text-xs absolute top-0 right-1 " size="sm">
-            <CloseIcon/>
-          </Button>
-        </Link>
+    <div className="relative w-full mx-auto shadow-none">
       <div
         id="train-model-container"
         className="flex flex-1 flex-col relative "
       >
         <Card className="border-none shadow-none bg-transparent">
-          <CardContent className="grid gap-6">
+          <CardContent >
             <TrainModelZone />
           </CardContent>
         </Card>

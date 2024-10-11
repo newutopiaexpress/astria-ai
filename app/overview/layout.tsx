@@ -1,6 +1,15 @@
 import Login from "../login/page";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import Chat from "@/components/Chat";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +28,19 @@ export default async function RootLayout({
     return <Login />;
   }
 
-  return <div className="shadow-lg border rounded-3xl border-stone-300 md:mx-auto lg:max-w-[1400px] bg-stone-100 flex  flex-col md:px-6 py-9">
+  return <div>
             {children}
+{/*}
+            <Sheet>
+                <SheetTrigger className="transition-all w-10 h-10 outline outline-8 outline-offset-2 outline-stone-300/50 hover:outline-offset-1 hover:outline-2 hover:outline-stone-300/80 border border-stone-300 bg-stone-200 rounded-full fixed left-5 bottom-6">Open</SheetTrigger>
+                <SheetContent className="md:min-w-[600px] sm:w-full">
+                  <SheetHeader>
+                    <SheetTitle>Are you absolutely sure?</SheetTitle>
+                    <SheetDescription>
+                      <Chat/>
+                    </SheetDescription>
+                  </SheetHeader>
+                </SheetContent>
+            </Sheet>*/}
           </div>;
 }
