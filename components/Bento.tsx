@@ -22,7 +22,10 @@ import {
   import FaqDialog from "@/components/FaqDialog";
 import { Video } from "./Video";
 import { Slider } from "./Slider";
-
+import { RevealFx } from "./RevealFx";
+import styles from './RevealFx.module.scss';
+import { LetterFx } from "./LetterFx";
+import { Typeform } from "./Typeform";
 
 export function Bento() {
   return (
@@ -51,11 +54,47 @@ export function Bento() {
 
 
                 <div className="md:col-span-1 relative p-6 min-h-[500px]">
-                    <div className="absolute left-8 bottom-[240px] max-w-96">
-                        <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike photos, as if taken by a professional photographer. </h1>
+                    <div className="absolute left-8 bottom-[230px] max-w-96">
+                        <RevealFx
+                        className="pb-2"
+                        speed="medium"
+                        delay={0}
+                        translateY={0}
+                        >
+                        <h1 className="text-stone-300 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Stunningly lifelike photos, as if taken by a professional photographer. </h1> 
+                        </RevealFx>
                     </div>
                     <div className="absolute left-8 -bottom-16 w-96">
-                        <p className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic">Upload your photos and let the magic happen</p>
+                        <p
+                        style={{
+                            fontFamily: 'var(--font-family-code)'
+                        }}
+                        >
+                        <LetterFx
+                            className="text-stone-400 font-thin drop-shadow-sm [text-wrap:balance] text-md italic"
+                            speed="medium"
+                            trigger="instant"
+                            charset={[
+                            'X',
+                            '@',
+                            '$',
+                            'a',
+                            'H',
+                            'z',
+                            'o',
+                            '0',
+                            'y',
+                            '#',
+                            '?',
+                            '*',
+                            '0',
+                            '1',
+                            '+'
+                            ]}
+                        >
+                            Upload your photos and let the magic happen
+                        </LetterFx>
+                        </p>
                         <div className="relative w-60 h-[200px] mt-6">
                             <Image
                             className="absolute left-0 top-0 rounded-full w-16 h-16 shadow-lg"
@@ -302,10 +341,10 @@ export function Bento() {
 
     </div>
 
-{/*}
+
     <div className="border-b border-stone-300 grid md:grid-cols-12 gap-4 max-w-[1400px] mx-auto mt-10">
         <div className="md:col-span-6">
-            <Image  className="rounded-3xl h-[500px] mx-auto md:h-[650px] md:float-right w-auto" height="1152" width="737" alt="hello" src="/video.png"></Image>
+            {/*<Image  className="rounded-3xl h-[500px] mx-auto md:h-[650px] md:float-right w-auto" height="1152" width="737" alt="hello" src="/video.png"></Image>*/}
             <Video/>
         </div>
 
@@ -315,14 +354,11 @@ export function Bento() {
             </h1>
            <p className="max-w-[400px] text-lg"><br/>Are you an influencer and need a lot of photos?<br/>Would you like to have your entire team photographed professionally, but quickly and cost-effectively?</p>
            <p>
-           <Link href="/login" className="ml-4 hover:text-stone-300">
-                <Button variant={"google"} size={"md"} className="ml-4">Login with Google    
-                </Button>
-            </Link> 
+           <Typeform/>
            </p>
         </div>
     </div>
-*/}
+
 
     
   

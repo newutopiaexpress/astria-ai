@@ -271,7 +271,7 @@ export default function TrainModelZone() {
           control={form.control}
           name="pack"
           render={({ field }) => (
-            <FormItem className="relative w-full mx-auto rounded-tr-2xl rounded-br-3xl bg-transparent rounded-bl-3xl pb-9 transition-all">
+            <FormItem className="relative w-full lg:max-w-[1400px] mx-auto rounded-tr-2xl rounded-br-3xl bg-transparent rounded-bl-3xl pb-9 transition-all">
               <FormDescription className="p-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
               Choose a Style Pack
               </FormDescription>
@@ -514,13 +514,13 @@ export default function TrainModelZone() {
 
                     <div>
                       <RadioGroupItem
-                        value="ted-speaker"
-                        id="ted-speaker"
+                        value="halloween"
+                        id="halloween"
                         className="peer sr-only"
-                        aria-label="ted-speaker"
+                        aria-label="halloween"
                       />
                       <Label
-                        htmlFor="ted-speaker"
+                        htmlFor="halloween"
                         className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
                       >
                         <div className="relative group">

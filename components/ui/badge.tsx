@@ -12,6 +12,8 @@ const badgeVariants = cva(
           "border border-red-900 text-xs font-normal bg-transparent text-stone-500 shadow-sm hover:shadow-md",
         default:
           "border border-red-900 text-xs font-normal bg-transparent text-stone-500 shadow-sm hover:shadow-md",
+        message:
+          "rounded-full w-5 h-5 bg-green-400 text-center text-xs font-normal text-stone-800 shadow-md hover:shadow-md border-0",
         secondary:
           "border-transparent bg-transparent shadow-sm text-secondary-foreground hover:bg-secondary/80",
         destructive:

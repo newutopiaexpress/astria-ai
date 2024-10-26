@@ -51,13 +51,13 @@ export default function ClientSideModel({
           {samples && (
             <div className="grid grid-cols-1 gap-2">
               <div className="col-span-1">
-                <h2 className="text-sm mb-2">Training Data</h2>
+                <h2 className="text-xs mb-2">Training Data</h2>
                 <div className="flex flex-row gap-4 flex-wrap">
                   {samples.map((sample) => (
                     <img
                       key={sample.id}
                       src={sample.uri}
-                      className="rounded-md w-20 h-20 object-cover"
+                      className="rounded-full w-16 h-16 object-cover"
                     />
                   ))}
                 </div>
@@ -67,13 +67,13 @@ export default function ClientSideModel({
           <div className="col-span-1 w-full">
             {model.status === "finished" && (
               <div className="flex flex-1 flex-col gap-2 mt-9">
-                <h1 className="text-sm">Results</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
+                <h1 className="text-xs">Results</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
                   {serverImages?.map((image) => (
                     <div key={image.id}>
                       <img
                         src={image.uri}
-                        className="rounded-sm shadow-md shadow-stone-800/60 w-full h-auto object-cover"
+                        className="transition-all rounded-sm shadow-sm hover:shadow-md shadow-stone-800/60 w-full h-auto object-cover"
                       />
                     </div>
                   ))}
