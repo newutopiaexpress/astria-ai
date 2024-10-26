@@ -4,6 +4,7 @@ import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { Cross2Icon } from "@radix-ui/react-icons"
 import { cva, type VariantProps } from "class-variance-authority"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 
@@ -64,6 +65,16 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
+      <div className="flex items-center text-sm md:px-14">
+        <Image
+          className="rounded-full float-left w-10 h-10 mr-2"
+          src="/lucy2.png"
+          alt="Logo"
+          width={200}
+          height={200}
+        />
+        If you have any questions, ask Lucy our Ai assistant!
+      </div>
       <SheetPrimitive.Close className="absolute right-8 top-8 rounded-sm opacity-100 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none  disabled:pointer-events-none data-[state=open]:bg-secondary">
         <Cross2Icon className="h-8 w-8 p-2 rounded-full border border-stone-300 hover:shadow-md" />
         <span className="sr-only">Close</span>

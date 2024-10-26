@@ -6,7 +6,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
 import CookieConsent from "@/components/CookieConsent";
 
-
 export const metadata = {
   title: "The AI Photographer",
   description: "Take photos in the modern way",
@@ -34,7 +33,10 @@ export default function RootLayout({ children }: any) {
               </section>
               <Toaster />
               <Analytics />
+
+
       </body>
     </html>
   );
 }
+
