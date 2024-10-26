@@ -251,8 +251,8 @@ export function Bento() {
         <Slider/>
     </div>
 
-    <div className="grid md:grid-cols-1 max-w-[1290px] mx-auto gap-6 py-6">   
-            <h1 className="text-center md:pt-6 pb-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Highest Quality fine tuning <br/><span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2"> for the best price</span><br/></h1>
+    <div className="grid md:grid-cols-1 max-w-[1300px] mx-auto gap-6 py-6">   
+            <h1 className="text-center md:pt-6 pb-4 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Enhance your digital presence<br/><span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2"> & get noticed everywhere!</span><br/></h1>
             <div className="col-span-1 grid grid-cols-1 md:grid-cols-3 md:gap-12 lg:max-w-[1200px] mx-auto">
 
                         <div className="outline outline-4 outline-offset-8 hover:outline-purple-400 outline-stone-300/30 mb-6 col-span-1 bg-slate-100 h-50 rounded-3xl relative shadow-md shadow-stone-600/10 hover:scale-105 transition-all duration-50 hover:shadow-xl hover:outline hover:outline-2 hover:outline-offset-1">
@@ -305,11 +305,38 @@ export function Bento() {
             
     </div>  
 
+    <div className="grid md:grid-cols-12 gap-0 max-w-[1400px] mx-auto mt-10">
+        <div className="md:col-span-6">
+            <Image  className="rounded-3xl h-[500px] mx-auto md:h-[650px] md:float-right w-auto" height="1152" width="737" alt="hello" src="/video.png"></Image>
+            {/*<Video/>*/}
+        </div>
+
+        <div className="md:col-span-6 content-center md:mr-16">
+            <div className="bg-gradient-to-r from-stone-100/0 to-stone-100 rounded-br-[90px] rounded-tr-[90px] pt-6 pb-12">
+                <h1 className="text-left md:pt-12 md:max-w-[360px] text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
+                Do you need <span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2">something special?</span>
+                </h1>
+                <p className=" text-lg">An unified look for your team?<br/>
+                Eye-catching advertisement with your own face?<br/>
+                Custom fine tuning and image generation in any style!</p>
+            </div>
+        </div>
+    </div>
+
+    <div className="max-w-[960px] mx-auto bg-stone-800 rounded-[60px] relative p-6 outline outline-8 outline-offset-4 outline-stone-300/30 shadow-2xl shadow-fuchsia-700/20">
+        <div className="scale-50  absolute -top-28 left-[52%] rounded-full bg-gradient-to-b from-white to-stone-300 outline outline-8 outline-offset-2 outline-stone-100/20 text-stone-100 z-50">
+            <img className="w-64 h-64 mx-auto invert" src="/eur.png"/>
+        </div>
+        <div className="h-4 w-[95%] absolute top-4  bg-stone-800 z-30"></div>
+        <div className="h-20 w-[95%] absolute bottom-4  bg-stone-800 z-30"></div>
+        <Widget id="kqhmv5H3" style={{ width: '100%', height:'500px', borderRadius:'60px', border:'0px' }} className="bg-transparent" />
+    </div>
+
     <div className="grid md:grid-cols-1 gap-6 mx-auto text-center w-full lg:max-w-[1200px] ">
 
-        <div className="mt-12 min-h-96 w-full border-b border-stone-300 col-span-6 py-auto px-12 rounded-tl-3xl rounded-tr-[90px] mx-auto bg-stone-950 content-center bg-cover" style={{ backgroundImage: "url('/al.jpg')" }}>
-            <p className="mt-20 md:mt-8 text-stone-300 text-center md:text-right md:mr-12">
-            <Link href="/login" className="ml-4 hover:text-stone-300">
+        <div className="mt-12 min-h-96 w-full border-b border-stone-300 col-span-6 py-auto px-12 rounded-tl-3xl rounded-tr-[90px] mx-auto bg-stone-200 content-center bg-cover" >
+            <p className="mt-20 md:mt-8 text-stone-800 text-center ">
+            <Link href="/login" className="ml-4 hover:text-stone-700">
                 Personal branding, the modern way.
                 <Button variant={"google"} size={"md"} className="ml-4">Login with Google
                     <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300  text-stone-800"/>
@@ -317,6 +344,7 @@ export function Bento() {
             </Link> 
             </p>
         </div>
+        
 
         <div className="col-span-6 pb-9">
             <div className="grid md:grid-cols-8 gap-6">
@@ -338,38 +366,9 @@ export function Bento() {
             </div>
         </div>
 
-        
-
     </div>
 
-
-    <div className="grid md:grid-cols-12 gap-4 max-w-[1400px] mx-auto mt-10">
-        <div className="md:col-span-6">
-            <Image  className="rounded-3xl h-[500px] mx-auto md:h-[650px] md:float-right w-auto" height="1152" width="737" alt="hello" src="/video2.png"></Image>
-            {/*<Video/>*/}
-        </div>
-
-        <div className="md:col-span-6 content-center p-6">
-            <h1 className="text-left md:pt-12  text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
-            Do you need <span className="bg-gradient-to-r from-[#DA3048]  to-blue-400 inline-block text-transparent bg-clip-text pb-2"> Some Special?</span>
-            </h1>
-            <p className=" text-lg">Do you want a unique look for your team?<br/>
-A custom, eye-catching advertisement with your face?<br/>
-A series of photos in some exotic location?<br/> <span className="font-bold">Ask for a unique offer!</span></p>
-        </div>
-    </div>
-
-    <div className="max-w-[960px] mx-auto bg-stone-800 rounded-[60px] shadow-xl relative p-6">
-        <div className="h-4 w-[95%] bg-stone-800 absolute top-5 z-40"></div>
-        <div className="absolute top-12 -left-12 w-28 h-28 rounded-full bg-[#DA3048] flex items-center justify-center text-stone-100 z-50">
-            <p className="text-xs italic">from</p>
-            <p className="text-3xl font-bold">95<span className="text-md">€</span></p>
-        </div>
-        <Widget id="kqhmv5H3" style={{ width: '100%', height:'500px', borderRadius:'60px', border:'0px' }} className="bg-transparent" />
-    </div>
-
-
-    
+     
   
 
 </div>
@@ -399,7 +398,7 @@ function StarIcon() {
 }
 function StarIconLight() {
     return (
-<svg className="w-6 h-6 float-left  text-red-300" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
+<svg className="w-6 h-6 float-left  text-fuchsia-200" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z" fill="currentColor"></path></svg> 
     )
 }
 
