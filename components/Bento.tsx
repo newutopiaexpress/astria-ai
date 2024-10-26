@@ -351,7 +351,7 @@ export function Bento() {
 
         <div className="md:col-span-6 content-center p-6">
             <h1 className="text-left md:pt-12  text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
-            Do you need <span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2"> Some Special?</span>
+            Do you need <span className="bg-gradient-to-r from-[#DA3048]  to-blue-400 inline-block text-transparent bg-clip-text pb-2"> Some Special?</span>
             </h1>
             <p className=" text-lg">Do you want a unique look for your team?<br/>
 A custom, eye-catching advertisement with your face?<br/>
@@ -359,8 +359,13 @@ A series of photos in some exotic location?<br/> <span className="font-bold">Ask
         </div>
     </div>
 
-    <div className="max-w-[960px] mx-auto bg-stone-800 rounded-3xl shadow-xl">
-        <Widget id="kqhmv5H3" style={{ width: '100%', height:'500px' }} className="bg-transparent" />
+    <div className="max-w-[960px] mx-auto bg-stone-800 rounded-[60px] shadow-xl relative p-6">
+        <div className="h-4 w-[95%] bg-stone-800 absolute top-5 z-40"></div>
+        <div className="absolute top-12 -left-12 w-28 h-28 rounded-full bg-[#DA3048] flex items-center justify-center text-stone-100 z-50">
+            <p className="text-xs italic">from</p>
+            <p className="text-3xl font-bold">95<span className="text-md">€</span></p>
+        </div>
+        <Widget id="kqhmv5H3" style={{ width: '100%', height:'500px', borderRadius:'60px', border:'0px' }} className="bg-transparent" />
     </div>
 
 
