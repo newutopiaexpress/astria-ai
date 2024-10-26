@@ -26,6 +26,7 @@ import { RevealFx } from "./RevealFx";
 import styles from './RevealFx.module.scss';
 import { LetterFx } from "./LetterFx";
 import { PopupButton  } from '@typeform/embed-react';
+import { Widget } from '@typeform/embed-react'
 
 export function Bento() {
   return (
@@ -342,23 +343,24 @@ export function Bento() {
     </div>
 
 
-    <div className="border-b border-stone-300 grid md:grid-cols-12 gap-4 max-w-[1400px] mx-auto mt-10">
+    <div className="grid md:grid-cols-12 gap-4 max-w-[1400px] mx-auto mt-10">
         <div className="md:col-span-6">
-            {/*<Image  className="rounded-3xl h-[500px] mx-auto md:h-[650px] md:float-right w-auto" height="1152" width="737" alt="hello" src="/video.png"></Image>*/}
-            <Video/>
+            <Image  className="rounded-3xl h-[500px] mx-auto md:h-[650px] md:float-right w-auto" height="1152" width="737" alt="hello" src="/video2.png"></Image>
+            {/*<Video/>*/}
         </div>
 
         <div className="md:col-span-6 content-center p-6">
             <h1 className="text-left md:pt-12  text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
-            Do you need <span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2"> a unique style?</span>
+            Do you need <span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2"> Some Special?</span>
             </h1>
-           <p className="max-w-[400px] text-lg"><br/>Are you an influencer and need a lot of photos?<br/>Would you like to have your entire team photographed professionally, but quickly and cost-effectively?</p>
-           <p>
-    <PopupButton id="01JB329XRSCBG91TS6HBA0WS7X" style={{ fontSize: 20 }} className="my-button">
-      click to open form in popup
-    </PopupButton>
-           </p>
+            <p className=" text-lg">Do you want a unique look for your team?<br/>
+A custom, eye-catching advertisement with your face?<br/>
+A series of photos in some exotic location?<br/> <span className="font-bold">Ask for a unique offer!</span></p>
         </div>
+    </div>
+
+    <div className="max-w-[960px] mx-auto bg-stone-800 rounded-3xl shadow-xl">
+        <Widget id="kqhmv5H3" style={{ width: '100%', height:'500px' }} className="bg-transparent" />
     </div>
 
 
