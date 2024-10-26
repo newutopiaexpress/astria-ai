@@ -30,12 +30,14 @@ export default function Chat() {
         ))}
       </div>
 
+      <div className="flex-1 overflow-y-auto mb-4 max-h-[490px]">
       {messages.map(m => (
         <div key={m.id} className="whitespace-pre-wrap py-4 text-md">
           {m.role === 'user' ? <UserIcon/> : <Heart2Icon/>}
           {m.content}
         </div>
       ))}
+      </div>
 
       <form onSubmit={handleSubmit}>
         <input
