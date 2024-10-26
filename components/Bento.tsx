@@ -25,7 +25,7 @@ import { Slider } from "./Slider";
 import { RevealFx } from "./RevealFx";
 import styles from './RevealFx.module.scss';
 import { LetterFx } from "./LetterFx";
-import { Typeform } from "./Typeform";
+import { PopupButton  } from '@typeform/embed-react';
 
 export function Bento() {
   return (
@@ -354,7 +354,9 @@ export function Bento() {
             </h1>
            <p className="max-w-[400px] text-lg"><br/>Are you an influencer and need a lot of photos?<br/>Would you like to have your entire team photographed professionally, but quickly and cost-effectively?</p>
            <p>
-           <Typeform/>
+    <PopupButton id="01JB329XRSCBG91TS6HBA0WS7X" style={{ fontSize: 20 }} className="my-button">
+      click to open form in popup
+    </PopupButton>
            </p>
         </div>
     </div>
