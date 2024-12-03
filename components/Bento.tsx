@@ -343,7 +343,7 @@ export function Bento() {
             <p className="mt-20 md:mt-8 text-stone-800 text-center ">
             <Link href="/login" className="ml-4 hover:text-stone-700">
                 Personal branding, the modern way.
-                <Button variant={"google"} size={"md"} className="ml-4">Login with Google
+                <Button variant={"google"} className="ml-4">Login with Google
                     <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300  text-stone-800"/>
                 </Button>
             </Link> 
