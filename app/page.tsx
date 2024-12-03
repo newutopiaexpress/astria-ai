@@ -7,10 +7,11 @@ import { UtopiaFeatures } from "@/components/utopia-features";
 import { UtopiaSecond2 } from "@/components/utopia-second2";
 import { UtopiaFaq } from "@/components/utopia-faq";
 import { Bento2 } from "@/components/Bento2";
-import Spline from "@splinetool/react-spline";
-
+import dynamicImport from "next/dynamic";
 
 export const dynamic = "force-dynamic";
+
+const Spline = dynamicImport(() => import("@splinetool/react-spline"), { ssr: false });
 
 
 export default async function Index() {

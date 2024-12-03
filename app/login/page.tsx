@@ -3,9 +3,11 @@ import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { Database } from "../../types/supabase";
 import { Login } from "@/components/Login";
-import Spline from "@splinetool/react-spline";
+import dynamicImport from "next/dynamic";
 
 export const dynamic = "force-dynamic";
+
+const Spline = dynamicImport(() => import("@splinetool/react-spline"), { ssr: false });
 
 export default async function LoginPage({
   searchParams,
