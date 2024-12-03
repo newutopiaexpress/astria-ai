@@ -6,10 +6,11 @@ import { UtopiaPricing } from "@/components/utopia-pricing";
 import { UtopiaFeatures } from "@/components/utopia-features";
 import { UtopiaSecond2 } from "@/components/utopia-second2";
 import { UtopiaFaq } from "@/components/utopia-faq";
-import { Bento } from "@/components/Bento";
+import { Bento2 } from "@/components/Bento2";
+import Spline from "@splinetool/react-spline";
+
 
 export const dynamic = "force-dynamic";
-
 
 
 export default async function Index() {
@@ -25,8 +26,15 @@ export default async function Index() {
 
   return (
  
-      <div className="px-4">
-        <Bento/>
+      <div className="mx-auto px-4 relative">
+        <div className="w-full absolute left-0 right-0 z-30">
+          <Bento2/>
+        </div>
+        
+        <Spline
+      className="fixed z-[1] top-0 left-0 w-full h-full"
+        scene="https://prod.spline.design/yKd8nBRvxzKJGFCn/scene.splinecode" 
+      />
       </div>
 
     

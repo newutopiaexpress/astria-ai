@@ -324,7 +324,7 @@ export function Bento3() {
             <p className="md:border md:border-stone-300 md:rounded-full max-w-max mx-auto py-4 px-6 md:outline md:outline-offset-2 md:outline-stone-300/50">
                 Create your account and get your awesome photos!
             <Link href="/login" className="ml-4">
-                <Button variant={"google"} size={"md"}>Login with Google
+                <Button variant={"google"}>Login with Google
                     <AiOutlineGoogle size={20} className="ml-2"/>
                 </Button>
             </Link>

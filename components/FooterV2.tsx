@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export function FooterV2() {
   return (
-    <div className="text-stone-600 w-full h-32 px-6 mt-32">
+    <div className="text-stone-600 w-96 h-32 fixed bottom-0 right-0">
 {/*}
           <div className="float-left relative">
             <Image src="/utopia-icon.png" alt="Utopia Express" width={64} height={60} className="scale-90 opacity-25 hover:opacity-100 animate-pulse transition-all"/>

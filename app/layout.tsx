@@ -18,6 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AiOutlineGoogle } from "react-icons/ai";
+import { ChristmasBanner } from "@/components/ChristmasBanner"
 
 export const metadata = {
   title: "The AI Photographer",
@@ -27,7 +28,9 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className="bg-fixed flex flex-col bg-stone-200 h-screen">
+      <body className="bg-fixed flex flex-col bg-stone-200 h-screen overflow-x-hidden">
+              
+              {/*<ChristmasBanner />*/}
               <section>
                 <Suspense
                   fallback={
@@ -47,6 +50,9 @@ export default function RootLayout({ children }: any) {
               <Toaster />
               <Analytics />
 
+
+
+{/*}
               <Sheet>
                 <SheetTrigger className="transition-all w-10 h-10 outline outline-8 outline-offset-2 outline-stone-300/50 hover:outline-offset-1 hover:outline-2 hover:outline-stone-300/80 border border-stone-300 bg-stone-200 rounded-full fixed left-5 bottom-6">
                   <Badge className="absolute -top-4 -right-1 opacity-0 animate-bounce-in  flex items-center justify-center" variant={"message"}>1</Badge>
@@ -67,7 +73,7 @@ export default function RootLayout({ children }: any) {
                   </SheetHeader>
                 </SheetContent>
               </Sheet>
-
+*/}
 
       </body>
     </html>

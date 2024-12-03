@@ -42,7 +42,7 @@ export default async function Index({ params }: { params: { id: string } }) {
   const { data: samples } = await supabase.from("samples").select("*").eq("modelId", model.id);
 
   return (
-    <div id="train-model-container" className="px-6 w-full bg-transparent rounded-sm shadow-none relative">
+    <div id="train-model-container" className="px-6 w-full bg-transparent rounded-sm shadow-none relative z-30">
         <div className="flex flex-row align-left text-left items-center pb-4">
           <h1 className="text-xl">{model.name}</h1>
           <div className="ml-2">

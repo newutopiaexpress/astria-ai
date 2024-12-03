@@ -12,6 +12,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { CloseIcon } from "@/components/ui/close-icon";
 import Image from "next/image";
 
+
 export default async function Index() {
   return (
 

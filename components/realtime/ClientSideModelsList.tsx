@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
 import Image from "next/image";
+import Spline from "@splinetool/react-spline";
 
 export const revalidate = 0;
 
@@ -58,7 +59,7 @@ export default function ClientSideModelsList({
   }, [supabase, models, setModels]);
 
   return (
-    <div id="train-model-container" className="mx-auto max-w-[840px]">
+    <div id="train-model-container" className="mx-auto max-w-[840px] z-30">
       {models && models.length > 0 && (
         <div className="flex flex-col gap-4 rounded-2xl relative">
 
@@ -72,8 +73,8 @@ export default function ClientSideModelsList({
      
           <div className="flex flex-row gap-4 w-full mb-6 items-center text-center">
             <Link href="/overview/models/train" className="w-fit mx-auto">
-              <Button size={"md"} variant={"google"} className="bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200 px-6">
-                Create New Photos<SparkleIcon/>
+              <Button  className="rounded-full bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200 px-6">
+                Create a New Series<SparkleIcon/>
               </Button>
             </Link>
           </div>
@@ -83,19 +84,29 @@ export default function ClientSideModelsList({
         </div>
       )}
       {models && models.length === 0 && (
-        <div className="flex flex-col gap-4 items-center py-12">
-
-          <h1 className="text-2xl text-center mx-auto">
-            <span className="text-center mx-auto w-64 h-64">
-              <UploadIcon/>
-            </span>
-             Create professional portraits!
-          </h1>
-          <div>
-            <Link href="/overview/models/train">
-              <Button className="rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100 " size={"lg"}>Upload photos</Button>
-            </Link>
+        <div className="animate-in h-full  fade-in zoom-in flex flex-col gap-4 items-center justify-center relative">
+          <div className="z-30 mt-[27%]">
+            <h1 className="text-2xl text-center mx-auto">
+              Your story starts here!
+            </h1>
+            <div className="mx-auto text-center mt-4 flex flex-row gap-4">
+              <Link href="/get-credits">
+                <Button className="animate-jump-in animate-delay-300 p-5 transition-colors w-auto h-6 rounded-full text-center border-none bg-green-300 hover:bg-green-300/60 text-xs font-medium text-green-700" size={"lg"}>
+                Buy Credits
+                </Button>
+              </Link>
+              <Link href="/overview/models/train">
+                <Button className="rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100 " size={"lg"}>
+                  Start Creating
+                  <SparkleIcon/>
+                </Button>
+              </Link>
+            </div>
           </div>
+          <Spline
+      className="fixed z-[1] top-0 left-0 w-full h-full"
+        scene="https://prod.spline.design/D2jez6cdpXZmTCmu/scene.splinecode" 
+      />
         </div>
       )}
     </div>
@@ -104,8 +115,9 @@ export default function ClientSideModelsList({
 
 export function SparkleIcon() {
   return (
-<svg className="animate-ping w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+<svg className="animate-ping w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
 </svg>
 )
 }
+

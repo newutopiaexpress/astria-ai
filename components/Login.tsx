@@ -100,27 +100,28 @@ export const Login = ({
 
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
-        <div className="flex flex-col gap-4 bg-transparent  p-4 max-w-sm w-full">
+      <div className="flex h-full w-full items-center justify-center py-32 z-30">
+        <div className="flex flex-col gap-4 bg-transparent max-w-[460px]">
          
           <Button
             onClick={signInWithGoogle}
-            variant={"google"}
-            className="font-semibold p-8 rounded-full bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200"
+            variant={"googledark"}
+            className="font-semibold p-8 rounded-full "
           >
-            <AiOutlineGoogle size={20} />
-            <span className="pl-2 ">Continue with Google</span>
+            <AiOutlineGoogle size={30} className=""/>
+            <span className="pl-2">Continue with Google</span>
           </Button>
           
-          <p className="italic text-center text-sm text-gray-500 pt-6">or with email</p>
+          <p className="italic text-center text-sm text-gray-500 pt-6">or continue with email</p>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-2"
+            className="flex flex-row gap-2 "
           >
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
                 <Input
+                  className="outline-0"
                   type="email"
                   placeholder="Email"
                   {...register("email", {
@@ -147,13 +148,11 @@ export const Login = ({
             </div>
 
             <Button
-              isLoading={isSubmitting}
-              disabled={isSubmitting}
               variant="default"
-              className="w-full p-8 font-semibold text-md"
+              className="w-auto p-6 rounded-full font-semibold text-md"
               type="submit"
             >
-              Continue with Email
+              Login
             </Button>
           </form>
         </div>

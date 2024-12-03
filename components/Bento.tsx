@@ -26,7 +26,8 @@ import { RevealFx } from "./RevealFx";
 import styles from './RevealFx.module.scss';
 import { LetterFx } from "./LetterFx";
 import { PopupButton  } from '@typeform/embed-react';
-import { Widget } from '@typeform/embed-react'
+import { Widget } from '@typeform/embed-react';
+import { CameraIcon } from "@radix-ui/react-icons"
 
 export function Bento() {
   return (
@@ -35,8 +36,11 @@ export function Bento() {
 
         <div className="md:col-span-8 lg:col-span-9 mb-6 md:mb-0">
             <div className=" bg-stone-950 rounded-3xl rounded-tl-[60px] grid md:grid-cols-2 md:gap-0 relative">
+                <span className="text-stone-100 absolute right-0 top-0 z-50 w-20 h-20 flex items-center justify-center">
+                    
+                    <SparkleIcon/>
+                </span>
                 <Link href="/login" className="absolute top-0 right-0 z-40 w-20 h-20 bg-stone-900 rounded-full hidden md:block outline outline-offset-2 outline-stone-300 hover:outline-stone-300/0">
-                    <CamIcon/>
                     <Image
                         className="z-10 hover:-rotate-6 transition-all duration-50 animate-spin duration-10000"
                         height="100"
@@ -305,7 +309,7 @@ export function Bento() {
             
     </div>  
 
-    <div className="grid md:grid-cols-12 gap-0 max-w-[1400px] mx-auto mt-10">
+    <div className="grid md:grid-cols-12 gap-0 max-w-[1190px] mx-auto mt-10">
         <div className="md:col-span-6">
             <Image  className="rounded-3xl h-[500px] mx-auto md:h-[650px] md:float-right w-auto" height="1152" width="737" alt="hello" src="/video.png"></Image>
             {/*<Video/>*/}
@@ -324,7 +328,8 @@ export function Bento() {
     </div>
 
     <div className="max-w-[960px] mx-auto bg-stone-800 rounded-[60px] relative p-6 outline outline-8 outline-offset-4 outline-stone-300/30 shadow-2xl shadow-fuchsia-700/20">
-        <div className="scale-50  absolute -top-28 left-[52%] rounded-full bg-gradient-to-b from-white to-stone-300 outline outline-8 outline-offset-2 outline-stone-100/20 text-stone-100 z-50">
+        <div className="absolute top-12 left-[52%] z-50 ml-28"><SparkleIcon/></div>
+        <div className="scale-50 rotate-6 absolute -top-28 left-[52%] rounded-full bg-gradient-to-b from-white to-stone-300 outline outline-8 outline-offset-2 outline-stone-100/20 text-stone-100 z-40">
             <img className="w-64 h-64 mx-auto invert" src="/eur.png"/>
         </div>
         <div className="h-4 w-[95%] absolute top-4  bg-stone-800 z-30"></div>
@@ -468,3 +473,12 @@ export function Heart2Icon() {
         <svg className="w-10 h-10 text-stone-700 mx-auto" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.89346 2.35248C3.49195 2.35248 2.35248 3.49359 2.35248 4.90532C2.35248 6.38164 3.20954 7.9168 4.37255 9.33522C5.39396 10.581 6.59464 11.6702 7.50002 12.4778C8.4054 11.6702 9.60608 10.581 10.6275 9.33522C11.7905 7.9168 12.6476 6.38164 12.6476 4.90532C12.6476 3.49359 11.5081 2.35248 10.1066 2.35248C9.27059 2.35248 8.81894 2.64323 8.5397 2.95843C8.27877 3.25295 8.14623 3.58566 8.02501 3.88993C8.00391 3.9429 7.98315 3.99501 7.96211 4.04591C7.88482 4.23294 7.7024 4.35494 7.50002 4.35494C7.29765 4.35494 7.11523 4.23295 7.03793 4.04592C7.01689 3.99501 6.99612 3.94289 6.97502 3.8899C6.8538 3.58564 6.72126 3.25294 6.46034 2.95843C6.18109 2.64323 5.72945 2.35248 4.89346 2.35248ZM1.35248 4.90532C1.35248 2.94498 2.936 1.35248 4.89346 1.35248C6.0084 1.35248 6.73504 1.76049 7.20884 2.2953C7.32062 2.42147 7.41686 2.55382 7.50002 2.68545C7.58318 2.55382 7.67941 2.42147 7.79119 2.2953C8.265 1.76049 8.99164 1.35248 10.1066 1.35248C12.064 1.35248 13.6476 2.94498 13.6476 4.90532C13.6476 6.74041 12.6013 8.50508 11.4008 9.96927C10.2636 11.3562 8.92194 12.5508 8.00601 13.3664C7.94645 13.4194 7.88869 13.4709 7.83291 13.5206C7.64324 13.6899 7.3568 13.6899 7.16713 13.5206C7.11135 13.4709 7.05359 13.4194 6.99403 13.3664C6.0781 12.5508 4.73641 11.3562 3.59926 9.96927C2.39872 8.50508 1.35248 6.74041 1.35248 4.90532Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
 )
 }
+
+export function SparkleIcon() {
+    return (
+  <svg className="animate-ping w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+  </svg>
+  )
+  }
+  

@@ -17,7 +17,7 @@ export default async function Index() {
   }
 
   return (
-    <div className="flex flex-col flex-1 w-full py-6 lg:py-12 bg-stone-100 mx-auto">
+    <div className="flex flex-col flex-1 w-full py-6 lg:py-12 bg-stone-100/0 mx-auto">
         <StripePricingTable user={user} />
     </div>
    

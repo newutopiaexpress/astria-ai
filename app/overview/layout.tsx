@@ -12,6 +12,7 @@ import {
 import Chat from "@/components/Chat";
 import { Badge } from "@/components/ui/badge";
 
+
 export const dynamic = "force-dynamic";
 
 export default async function RootLayout({
@@ -29,12 +30,14 @@ export default async function RootLayout({
     return <Login />;
   }
 
-  return <div>
-            {children}
-
+  return <div className="relative w-full h-full">
+            <div className="z-10">
+              {children}
+            </div>
+          
             <Sheet>
-                <SheetTrigger className="transition-all w-10 h-10 outline outline-8 outline-offset-2 outline-stone-300/50 hover:outline-offset-1 hover:outline-2 hover:outline-stone-300/80 border border-stone-300 bg-stone-200 rounded-full fixed left-5 bottom-6">
-                  <Badge className="absolute -top-4 -right-1 opacity-0 animate-bounce-in  flex items-center justify-center" variant={"message"}>1</Badge>
+                <SheetTrigger className="transition-all z-50 w-10 h-10 outline outline-8 outline-offset-2 outline-stone-300/50 hover:outline-offset-1 hover:outline-2 hover:outline-stone-300/80 border border-stone-300 bg-stone-200 rounded-full fixed left-5 bottom-6">
+                  <Badge className="absolute -top-4 z-50 -right-1 opacity-0 animate-bounce-in  flex items-center justify-center" variant={"message"}>1</Badge>
                   <ChatIcon/>
                 </SheetTrigger>
                 <SheetContent className="md:min-w-[600px] sm:w-full">
@@ -46,7 +49,9 @@ export default async function RootLayout({
                   </SheetHeader>
                 </SheetContent>
             </Sheet>
-          </div>;
+
+          </div>
+          ;
 }
 
 export function ChatIcon() {

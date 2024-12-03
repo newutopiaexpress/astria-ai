@@ -66,8 +66,9 @@ export default async function Navbar() {
       <div className="flex gap-4 lg:ml-auto mr-2 ">
         {!user && (
           <Link href="/login">
-          <Button variant={"google"} size={"md"}>Login with Google
-            <AiOutlineGoogle size={36} className="p-1 ml-2  rounded-full text-stone-800"/>
+            <span className="text-xs opacity-50 mr-4">Login with Google</span>
+          <Button variant={"google"} size={"login"} className="group">  
+            <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><AiOutlineGoogle/></span>
           </Button>
         </Link>
         )}
@@ -121,6 +122,15 @@ export function ModelsIcon() {
  
 )
 }
+
+export function SparkleIcon() {
+  return (
+<svg className="animate-ping w-4 h-4 ml-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+</svg>
+)
+}
+
 
 
 

@@ -45,6 +45,13 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "./ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+
 
 type FormInput = z.infer<typeof fileUploadFormSchema>;
 
@@ -227,11 +234,9 @@ export default function TrainModelZone() {
   }, []);
 
   return (
-    <div className="grid grid-cols-12 w-full rounded-3xl">
+    <div className="grid grid-cols-12 w-full rounded-3xl relative">
 
-
-
-      <div className="col-span-12 md:col-span-12 bg-stone-100/0 bg-no-repeat bg-top bg-[url('/bulb.png')] animate-fade-in">
+      <div className="col-span-12 md:col-span-12 bg-stone-100/0 z-10">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -284,8 +289,54 @@ export default function TrainModelZone() {
                     form.setValue("pack", value);
                   }}
                 >
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-12 mx-auto pt-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 lg:gap-12 mx-auto pt-4">
 
+                    <div>
+                      <RadioGroupItem
+                        value="xmas-2024"
+                        id="xmas-2024"
+                        className="peer sr-only"
+                        aria-label="xmas-2024"
+                      />
+                      <Label
+                        htmlFor="xmas-2024"
+                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
+                      >
+
+                        <div className="relative group">
+                        <Dialog>
+                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
+                          <Badge variant="outline">Examples</Badge>
+                          </DialogTrigger>
+                          <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>Xmas-2024</DialogTitle>
+                              <DialogDescription>
+                                <Image
+                                  src="/model-corp.png"
+                                  width={1198}
+                                  height={1000}
+                                  alt="Corporate Portraits"
+                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
+                                </Image>
+                              </DialogDescription>
+                            </DialogHeader>
+                          </DialogContent>
+                        </Dialog>
+                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
+                        <Image
+                          src="/xmas2.png"
+                          width={896}
+                          height={1152}
+                          alt="Corporate Portraits"
+                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
+                        </Image>
+                        </div>
+
+                        Corporate Portraits
+                      </Label>
+                    </div>
+                    
                     <div>
                       <RadioGroupItem
                         value="corporate-portraits"
@@ -329,98 +380,6 @@ export default function TrainModelZone() {
                         </div>
 
                         Corporate Portraits
-                      </Label>
-                    </div>
-
-                    <div>
-                      <RadioGroupItem
-                        value="sexy-comic-vol-1"
-                        id="sexy-comic-vol-1"
-                        className="peer sr-only"
-                        aria-label="sexy-comic-vol-1"
-                      />
-                      <Label
-                        htmlFor="sexy-comic-vol-1"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-
-                        <div className="relative group">
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Sexy Comic vol.1</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/sexyb.png"
-                                  width={1180}
-                                  height={1000}
-                                  alt="sexy-comic-vol-1"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/sexy2.jpg"
-                          width={896}
-                          height={1152}
-                          alt="sexy-comic-vol-1"
-                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
-                        </Image>
-                        </div>
-
-                        Sexy Comic vol.1
-                      </Label>
-                    </div>
-
-                    <div>
-                      <RadioGroupItem
-                        value="corporate-headshots"
-                        id="corporate-headshots"
-                        className="peer sr-only"
-                        aria-label="corporate-headshots"
-                      />
-                      <Label
-                        htmlFor="corporate-headshots"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-
-                        <div className="relative group">
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Corporate Portraits</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/model-corp.png"
-                                  width={1198}
-                                  height={1000}
-                                  alt="Corporate Headshots"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/corph.jpg"
-                          width={896}
-                          height={1152}
-                          alt="Corporate Headshots"
-                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
-                        </Image>
-                        </div>
-
-                        Corporate Headshots
                       </Label>
                     </div>
                     
@@ -514,188 +473,6 @@ export default function TrainModelZone() {
 
                     <div>
                       <RadioGroupItem
-                        value="halloween"
-                        id="halloween"
-                        className="peer sr-only"
-                        aria-label="halloween"
-                      />
-                      <Label
-                        htmlFor="halloween"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-                        <div className="relative group">
-                        <div className="shadow-md z-50 absolute bottom-1 -right-4 rotate-6 w-12 h-12 rounded-full bg-stone-800 text-stone-300 pt-4 pl-2 text-xs italic font-bold">NEW!</div>
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Happy Halloween</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/hello2.png"
-                                  width={1198}
-                                  height={1000}
-                                  alt="THappy Halloween"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/hallo.jpg"
-                          width={896}
-                          height={1152}
-                          alt="Happy Halloween"
-                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
-                        </Image>
-                        </div>
-                        Happy Halloween
-                      </Label>
-                    </div>
-
-                  
-                   <div>
-                      <RadioGroupItem
-                        value="glamour-shot"
-                        id="glamour-shot"
-                        className="peer sr-only"
-                        aria-label="glamour-shot"
-                      />
-                      <Label
-                        htmlFor="glamour-shot"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-                        <div className="relative group">
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Glamour Shot</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/model-glam.png"
-                                  width={1180}
-                                  height={1000}
-                                  alt="Glamour Shot"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/glamour.jpg"
-                          width={896}
-                          height={1152}
-                          alt="Aristocratic Portraits"
-                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
-                        </Image>
-                        </div>
-
-                        Glamour Shot
-                      </Label>
-                    </div>
-
-                    <div>
-                      <RadioGroupItem
-                        value="generative-design"
-                        id="generative-design"
-                        className="peer sr-only"
-                        aria-label="generative-design"
-                      />
-                      <Label
-                        htmlFor="generative-design"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-                        <div className="relative group">
-                        <div className="shadow-md z-50 absolute bottom-1 -right-4 rotate-6 w-12 h-12 rounded-full bg-stone-800 text-stone-300 pt-4 pl-2 text-xs italic font-bold">NEW!</div>
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                            <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Generative Artistic Filters</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/model-gener.png"
-                                  width={1198}
-                                  height={1000}
-                                  alt="Corporate Portraits"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/generative.jpg"
-                          width={896}
-                          height={1152}
-                          alt="generative-design"
-                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
-                        </Image>
-                        </div>
-
-                        Generative Artistic Filters
-                      </Label>
-                    </div>
-
-                    <div>
-                      <RadioGroupItem
-                        value="bold-colors"
-                        id="bold-colors"
-                        className="peer sr-only"
-                        aria-label="bold-colors"
-                      />
-                      <Label
-                        htmlFor="bold-colors"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-                        <div className="relative group">
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Generative Artistic Filters examples</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/model-gener.png"
-                                  width={1198}
-                                  height={1000}
-                                  alt="Corporate Portraits"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/bold.jpg"
-                          width={896}
-                          height={1152}
-                          alt="Aristocratic Portraits"
-                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
-                        </Image>
-                        </div>
-
-                        Bold Colors
-                      </Label>
-                    </div>
-
-                    <div>
-                      <RadioGroupItem
                         value="dating"
                         id="dating"
                         className="peer sr-only"
@@ -738,52 +515,6 @@ export default function TrainModelZone() {
                         Dating
                       </Label>
                     </div>
-
-                    <div className="relative group">
-                      <RadioGroupItem
-                        value="j-crew"
-                        id="j-crew"
-                        className="peer sr-only"
-                        aria-label="j-crew"
-                      />
-                      <Label
-                        htmlFor="j-crew"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-                        <div className="relative group">
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Generative Artistic Filters examples</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/model-gener.png"
-                                  width={1198}
-                                  height={1000}
-                                  alt="Corporate Portraits"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/jcrew.jpg"
-                          width={896}
-                          height={1152}
-                          alt="j-crew"
-                          className="active w-80 h-auto mb-2 rounded-md shadow-md">
-                        </Image>
-                        </div>
-
-                        J-crew
-                      </Label>
-                    </div>
-
                     
                   </div>
                 </RadioGroup>
@@ -802,17 +533,17 @@ export default function TrainModelZone() {
 
 
             <FormDescription className="mt-6 pb-6 text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
-              Select Your Type:
+              Select Your Subject
             </FormDescription>
             <RadioGroup
               defaultValue={modelType}
-              className="grid grid-cols-3 gap-12 md:gap-18 mt-4 max-w-[840px] mx-auto"
+              className="grid md:grid-cols-6 gap-12 md:gap-18 mt-4 max-w-[1240px] mx-auto"
               value={modelType}
               onValueChange={(value) => {
                 form.setValue("type", value);
               }}
             >
-              <div className="w-32 scale-95">
+              <div className="">
                 <RadioGroupItem
                   value="man"
                   id="man"
@@ -821,14 +552,20 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="man"
-                  className="transition-all p-9 flex flex-col items-center justify-between rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                  className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                 >
-                  <FaMale className="mb-3 h-6 w-6" />
+                  <Image 
+                    src="/man.png"
+                    width={56}
+                    height={56}
+                    alt="Man icon"
+                    className="mb-3"
+                  />
                   Man
                 </Label>
               </div>
 
-              <div className="w-32 scale-95">
+              <div className="w-32">
                 <RadioGroupItem
                   value="woman"
                   id="woman"
@@ -837,25 +574,100 @@ export default function TrainModelZone() {
                 />
                 <Label
                   htmlFor="woman"
-                  className="transition-all p-9 flex flex-col items-center justify-between rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                  className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                 >
-                  <FaFemale className="mb-3 h-6 w-6" />
+                  <Image 
+                    src="/woman.png"
+                    width={56}
+                    height={56}
+                    alt="Man icon"
+                    className="mb-3"
+                  />
                   Woman
                 </Label>
               </div>
-              <div className="w-32 scale-95">
+              <div className="w-32">
                 <RadioGroupItem
-                  value="person"
-                  id="person"
+                  value="boy"
+                  id="boy"
                   className="peer sr-only"
-                  aria-label="person"
+                  aria-label="boy"
                 />
                 <Label
-                  htmlFor="person"
-                  className="transition-all p-9 flex flex-col items-center justify-between rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                  htmlFor="boy"
+                  className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                 >
-                  <FaRainbow className="mb-3 h-6 w-6" />
-                  Unisex
+                  <Image 
+                    src="/boy.png"
+                    width={56}
+                    height={56}
+                    alt="Man icon"
+                    className="mb-3"
+                  />
+                  Boy
+                </Label>
+              </div>
+              <div className="w-32">
+                <RadioGroupItem
+                  value="girl"
+                  id="girl"
+                  className="peer sr-only"
+                  aria-label="girl"
+                />
+                <Label
+                  htmlFor="girl"
+                  className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                >
+                  <Image 
+                    src="/girl.png"
+                    width={56}
+                    height={56}
+                    alt="Man icon"
+                    className="mb-3"
+                  />
+                  Girl
+                </Label>
+              </div>
+              <div className="w-32">
+                <RadioGroupItem
+                  value="cat"
+                  id="cat"
+                  className="peer sr-only"
+                  aria-label="cat"
+                />
+                <Label
+                  htmlFor="cat"
+                  className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                >
+                  <Image 
+                    src="/cat.png"
+                    width={56}
+                    height={56}
+                    alt="Man icon"
+                    className="mb-3"
+                  />
+                  Cat
+                </Label>
+              </div>
+              <div className="w-32">
+                <RadioGroupItem
+                  value="dog"
+                  id="dog"
+                  className="peer sr-only"
+                  aria-label="dog"
+                />
+                <Label
+                  htmlFor="dog"
+                  className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                >
+                  <Image 
+                    src="/dog.png"
+                    width={56}
+                    height={56}
+                    alt="Man icon"
+                    className="mb-3"
+                  />
+                  Dog
                 </Label>
               </div>
             </RadioGroup>
@@ -908,14 +720,29 @@ export default function TrainModelZone() {
             </div>
           )}
           <Separator orientation="vertical" className="bg-stone-300 mx-auto h-12"/>
-          <Button type="submit" className="transition-all w-fit p-12 mx-auto bg-stone-800 hover:bg-stone-800/90 text-stone-300 hover:text-stone-200 text-lg mb-16 mt-6 outline outline-8 outline-offset-4 outline-stone-300/50 hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green-400" isLoading={isLoading}>
-            Create Photos{" "}
-            {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
-            <SparkleIcon/>
-          </Button>
+          <Button 
+  type="submit" 
+  className="rounded-full transition-all w-fit p-12 mx-auto bg-green-300/50 hover:bg-green-300 text-stone-800 hover:text-stone-800 text-lg mb-16 mt-6 outline outline-8 outline-offset-4 outline-stone-300/50 hover:outline hover:outline-2 hover:outline-offset-1 hover:outline-green-400"
+  disabled={isLoading}
+>
+  {isLoading ? (
+    <>
+      
+      Creating...
+    </>
+  ) : (
+    <>
+      Create Photos{" "}
+      {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
+      <SparkleIcon/>
+    </>
+  )}
+</Button>
         </form>
       </Form>
       </div>
+
+      
 
     </div>
   );
