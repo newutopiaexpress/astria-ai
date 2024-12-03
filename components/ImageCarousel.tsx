@@ -151,7 +151,7 @@ export default function ImageCarousel() {
       onMouseLeave={() => setIsHovered(false)}
     >
       
-      <nav className="flex justify-center overflow-x-auto">
+      <nav className="max-w-md md:max-w-full md:flex md:justify-center overflow-x-auto">
         <div className="flex space-x-2">
           {slides.map((slide, index) => (
             <button
@@ -174,17 +174,17 @@ export default function ImageCarousel() {
         </div>
       </nav>
 
-      <div className="bg-transparent w-full md:max-w-[1100px] mx-auto shadow-2xl shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
+      <div className="bg-transparent md:max-w-[1100px] mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
         <Carousel className="bg-transparent border-none p-0 md:p-3 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
           <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab	">
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
-                <Card className="border-none bg-transparent relative rounded-3xl" style={{ backgroundColor: slide.backgroundColor }}>
+                <Card className="max-w-md md:max-w-full border-none bg-transparent relative rounded-3xl" style={{ backgroundColor: slide.backgroundColor }}>
                   <div className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center">
                     <p className="text-lg font-normal leading-tight text-left text-stone-100/60">
                       {slide.description}
                     </p>
-                    <p className="text-right">
+                    <p className="text-right flex flex-col md:flex-row">
                       <span className="opacity-100 text-stone-100/70 tracking-wide text-xs font-thin">
                         {slide.additionalText}
                       </span>
