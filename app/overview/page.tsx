@@ -3,12 +3,6 @@ import { Database } from "@/types/supabase";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
-import dynamicImport from "next/dynamic";
-
-export const dynamic = "force-dynamic";
-
-const Spline = dynamicImport(() => import("@splinetool/react-spline"), { ssr: false });
-
 export default async function Index() {
   const supabase = createServerComponentClient<Database>({ cookies });
 

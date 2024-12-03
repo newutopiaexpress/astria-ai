@@ -6,15 +6,10 @@ import { modelRowWithSamples } from "@/types/utils";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
 import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
 import Image from "next/image";
-import dynamicImport from "next/dynamic";
-
-export const dynamic = "force-dynamic";
-
-const Spline = dynamicImport(() => import("@splinetool/react-spline"), { ssr: false });
+import Spline from '@splinetool/react-spline/next';
 
 
 export const revalidate = 0;
