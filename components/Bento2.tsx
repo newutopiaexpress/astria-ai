@@ -195,7 +195,7 @@ export function Bento2() {
         <PriceTable2/>
     </div>
     
-  <div className="w-full mx-auto gap-6 md:pt-24 bg-repeat-x bg-contain bg-bottom bg-[url('/bg.png')] pb-14">   
+  <div className="w-full mx-auto gap-6 md:pt-24 pb-32 md:pb-16 bg-repeat-x bg-contain bg-bottom bg-[url('/bg.png')] ">   
             <div className="grid md:grid-cols-12 mx-auto text-center  min-h-[400px] ">
                 <div className="col-span-12 md:col-span-5 relative min-h-[300px]">
                     <InView
@@ -237,7 +237,7 @@ export function Bento2() {
                       <br/>
                       <span className="">The digital world is full of possibilities.<br/>Our AI capture your true essence and helps you shine in every one of them</span>
                     </p>
-                    <div className="mt-4">
+                    <div className="mt-4 mx-auto text-center md:float-left">
                       <Link href="/login">
                         <Button className="rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-6 px-6 font-normal text-sm text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
                         Take photos with Ai<SparkleIcon/>

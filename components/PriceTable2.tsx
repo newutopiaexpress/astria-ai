@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 export function PriceTable2() {
     return (
-<div className="grid md:grid-cols-12 gap-10 mx-auto mb-16">
+<div className="grid grid-cols-12 gap-10 mx-auto mb-16">
 
     <div className="col-span-12">
         <h1 className="py-12 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
@@ -10,7 +10,7 @@ export function PriceTable2() {
         </h1>
     </div>
 
-    <div className="col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
+    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
         <div className="mb-6 transition-all duration-50 bg-sky-200/0 shadow-xl hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
             
             {/*<div className="absolute top-3 -right-3 rounded-3xl bg-purple-400 pt-0 pb-1 pl-2 pr-2 text-center ">
@@ -39,7 +39,7 @@ export function PriceTable2() {
         </div>
     </div>
 
-    <div className="col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
+    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
         <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
             <div className="p-9">  
                 <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
@@ -63,7 +63,7 @@ export function PriceTable2() {
         </div>
     </div>
 
-    <div className="col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
+    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
         <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 text-stone-800 rounded-3xl relative">
             <div className="p-9">  
                 <p className="text-stone-300"><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/></p><br/>

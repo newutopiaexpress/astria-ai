@@ -4,9 +4,9 @@ import { InView } from "@/components/core/in-view";
 
 export default function TestimonialGrid() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-12 gap-6 p-4 min-w-full mx-auto">
+    <div className="grid grid-cols-12 gap-6 p-4 min-w-full mx-auto">
       
-      <div className="backdrop-blur-md	md:col-span-3 relative overflow-hidden h-fit rounded-3xl shadow-md">
+      <div className="backdrop-blur-md col-span-12	md:col-span-3 relative overflow-hidden h-fit rounded-3xl shadow-md">
         <InView
         variants={{
         hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
@@ -43,7 +43,7 @@ export default function TestimonialGrid() {
         </InView>
       </div>
 
-      <div className="backdrop-blur-md	md:col-span-3 relative overflow-hidden h-[522px] rounded-3xl shadow-md">
+      <div className="backdrop-blur-md	col-span-12 md:col-span-3 relative overflow-hidden h-[522px] rounded-3xl shadow-md">
         <InView
         variants={{
         hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
@@ -80,7 +80,7 @@ export default function TestimonialGrid() {
         </InView>
       </div>
 
-      <div className="backdrop-blur-md	md:col-span-3 relative overflow-hidden h-fit rounded-3xl shadow-md">
+      <div className="backdrop-blur-md	col-span-12 md:col-span-3 relative overflow-hidden h-fit rounded-3xl shadow-md">
         <InView
         variants={{
         hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
@@ -117,7 +117,7 @@ export default function TestimonialGrid() {
         </InView>
       </div>
 
-      <div className="backdrop-blur-md	md:col-span-3 relative overflow-hidden h-fit rounded-3xl shadow-md">
+      <div className="backdrop-blur-md	col-span-12 md:col-span-3 relative overflow-hidden h-fit rounded-3xl shadow-md">
         <InView
         variants={{
         hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
