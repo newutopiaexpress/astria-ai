@@ -11,6 +11,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { WaitingForMagicLink } from "./WaitingForMagicLink";
 
+
+
 type Inputs = {
   email: string;
 };

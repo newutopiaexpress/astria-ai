@@ -10,7 +10,12 @@ import { useEffect, useState } from "react";
 import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
 import Image from "next/image";
-import Spline from "@splinetool/react-spline";
+import dynamicImport from "next/dynamic";
+
+export const dynamic = "force-dynamic";
+
+const Spline = dynamicImport(() => import("@splinetool/react-spline"), { ssr: false });
+
 
 export const revalidate = 0;
 
