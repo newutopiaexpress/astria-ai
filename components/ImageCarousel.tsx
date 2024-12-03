@@ -133,7 +133,7 @@ export default function ImageCarousel() {
 
   return (
     <div
-      className="w-full mx-auto"
+      className="mx-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -158,9 +158,10 @@ export default function ImageCarousel() {
           </button>
         ))}
       </nav>
-      <div className="bg-transparent max-w-lg md:max-w-[1100px] mx-auto shadow-2xl shadow-slate-900/40 rounded-[30px]">
-        <Carousel className="bg-transparent border-none p-3 rounded-[30px]" setApi={setApi}>
-          <CarouselContent className="rounded-3xl cursor-grab	">
+
+      <div className="bg-transparent w-full md:max-w-[1100px] mx-auto shadow-2xl shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
+        <Carousel className="bg-transparent border-none p-0 md:p-3 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
+          <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab	">
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
                 <Card className="border-none bg-transparent relative rounded-3xl" style={{ backgroundColor: slide.backgroundColor }}>
@@ -182,7 +183,7 @@ export default function ImageCarousel() {
                   <CardContent className="p-0 relative">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-2 px-6 md:px-12 py-6">
                       {slide.images.map((image, imageIndex) => (
-                        <div key={imageIndex} className="relative aspect-[7/9]">
+                        <div key={imageIndex} className="relative aspect-[7/9] w-full">
                           <Image
                             src={image.src}
                             alt={image.alt}

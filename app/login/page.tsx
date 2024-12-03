@@ -31,7 +31,7 @@ export default async function LoginPage({
     <div className="flex flex-col flex-1 w-full relative">
       <Login host={host} searchParams={searchParams} />
       <Spline
-      className="fixed z-[1] top-0 left-0 w-full h-full"
+      className="fixed z-[1] top-0 left-0 w-full h-full hidden md:block"
         scene="https://prod.spline.design/D2jez6cdpXZmTCmu/scene.splinecode" 
       />
     </div>
