@@ -96,6 +96,19 @@ const slides: Slide[] = [
     additionalText: "24pcs  | Female | Male", 
     maleImage: "/corporate.jpg?height=1152&width=896",
   },
+  {
+    images: [
+      { src: "/m1.jpg?height=1152&width=896", alt: "ddd" },
+      { src: "/m2.jpg?height=1152&width=896", alt: "Image 2" },
+      { src: "/m3.jpg?height=1152&width=896", alt: "Image 3" },
+      { src: "/m4.jpg?height=1152&width=896", alt: "Image 4" },
+    ],
+    description: "Cat Meowgic",
+    linkText: "Cat Meowgic",
+    backgroundColor: "#3F4C54", 
+    additionalText: "24pcs  | Female | Male", 
+    maleImage: "/corporate.jpg?height=1152&width=896",
+  },
 ]
 
 export default function ImageCarousel() {
@@ -139,24 +152,26 @@ export default function ImageCarousel() {
     >
       
       <nav className="flex justify-center overflow-x-auto">
-        {slides.map((slide, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={cn(
-              "px-4 py-2 text-xs leading-tight md:text-sm font-normal md:leading-relaxed rounded-xl transition-colors",
-              current === index
-                ? "text-stone-100"
-                : "text-muted-foreground hover:bg-muted"
-            )}
-            style={{
-              backgroundColor: current === index ? slide.backgroundColor : 'transparent',
-            }}
-            aria-current={current === index ? "true" : "false"}
-          >
-            {slide.linkText}
-          </button>
-        ))}
+        <div className="flex space-x-2">
+          {slides.map((slide, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={cn(
+                "px-4 py-2 text-xs leading-tight md:text-sm font-normal md:leading-relaxed rounded-xl transition-colors",
+                current === index
+                  ? "text-stone-100"
+                  : "text-muted-foreground hover:bg-muted"
+              )}
+              style={{
+                backgroundColor: current === index ? slide.backgroundColor : 'transparent',
+              }}
+              aria-current={current === index ? "true" : "false"}
+            >
+              {slide.linkText}
+            </button>
+          ))}
+        </div>
       </nav>
 
       <div className="bg-transparent w-full md:max-w-[1100px] mx-auto shadow-2xl shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
