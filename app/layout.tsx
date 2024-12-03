@@ -18,7 +18,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AiOutlineGoogle } from "react-icons/ai";
-import { ChristmasBanner } from "@/components/ChristmasBanner"
+import { ChristmasBanner } from "@/components/ChristmasBanner";
+import Spline from '@splinetool/react-spline/next';
 
 export const metadata = {
   title: "The AI Photographer",
@@ -34,13 +35,13 @@ export default function RootLayout({ children }: any) {
               <section>
                 <Suspense
                   fallback={
-                    <div className="pb-9 items-center text-center gap-8 justify-between h-[69px]" />
+                    <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
                   }
                 >
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="mx-auto mt-20 lg:mt-28 w-full"> {/* max-w-[1500px] */}
+              <main className="mx-auto mt-20 lg:mt-28 w-full z-10"> {/* max-w-[1500px] */}
                 {children}
               </main>
               <CookieConsent /> 
@@ -50,7 +51,10 @@ export default function RootLayout({ children }: any) {
               <Toaster />
               <Analytics />
 
-
+      <Spline
+      className="fixed z-[1] top-0 left-0 w-full h-full hidden md:block"
+        scene="https://prod.spline.design/yKd8nBRvxzKJGFCn/scene.splinecode" 
+      />
 
 {/*}
               <Sheet>
