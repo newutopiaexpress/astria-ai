@@ -30,9 +30,9 @@ export default function Chat() {
         ))}
       </div>
 
-      <div className="flex-1 overflow-y-auto mb-4 max-h-[490px]">
+      <div className="chat-content flex-1 overflow-y-auto mb-4 max-h-[490px]">
       {messages.map(m => (
-        <div key={m.id} className="whitespace-pre-wrap py-4 text-md">
+        <div key={m.id} className="whitespace-pre-wrap py-6 px-2 text-md">
           {m.role === 'user' ? <UserIcon/> : <Heart2Icon/>}
           {m.content}
         </div>

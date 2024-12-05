@@ -30,6 +30,7 @@ import { Widget } from '@typeform/embed-react';
 import { CameraIcon } from "@radix-ui/react-icons";
 import SocialProofSection from "./SocialProofSection";
 import TestimonialGrid from "./TestimonialGrid";
+import TestimonialGrid2 from "./TestimonialGrid2";
 import { SpinningText } from "./core/spinning-text";
 import { TextEffect } from './core/text-effect';
 import { PriceTable2 } from "./PriceTable2";
@@ -69,126 +70,136 @@ export function Bento2() {
 
 <div>
 
-	<div className="lg:max-w-[1200px] mx-auto z-30 bg-transparent">
+	<div className="w-full mx-auto z-30 bg-transparent">
           
-        <div className="text-center pt-24 md:pt-40 mb-32 md:mb-16">
+        <div className="text-center pt-24 md:pt-24 mb-32 md:mb-0">
           <InView
-            variants={{
-              hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
-              visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-            }}
-            viewOptions={{ margin: '0px 0px 0px 0px' }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-          >
-          <h1 className="text-center mb-10 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
-          Stunning First Impressions with <span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2">Ai-powered Photography</span><br/>
-          </h1>
+              variants={{
+                hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
+                visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+              }}
+              viewOptions={{ margin: '0px 0px 0px 0px' }}
+              transition={{ duration: 0.4, ease: 'easeIn', delay: 3 }}
+            >
+            <p className="text-sm text-center mb-4 md:mb-0 md:mr-5">
+                      <span className="font-bold mr-2">Christmas Promo Gift!</span><span className="font-thin italic">🎄 Spotlight Series for free!</span> 
+            </p>
           </InView>
-
+          <h1 className="text-center py-4 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
+            <TextEffect
+              per='char'
+              delay={0}
+              variants={{
+                container: {
+                  hidden: {
+                    opacity: 0,
+                  },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.05,
+                    },
+                  },
+                },
+                item: {
+                  hidden: {
+                    opacity: 0,
+                    rotateX: 90,
+                    y: 10,
+                  },
+                  visible: {
+                    opacity: 1,
+                    rotateX: 0,
+                    y: 0,
+                    transition: {
+                      duration: 0.1,
+                    },
+                  },
+                },
+              }}
+            >
+        Stunning First Impressions with 
+            </TextEffect>
+            <span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2">
+              <TextEffect per='char' preset='fade' delay={1.5}>
+              Ai-powered Photography
+              </TextEffect>         
+            </span>
+          </h1>
             <InView
               variants={{
                 hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
                 visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
               }}
               viewOptions={{ margin: '0px 0px 0px 0px' }}
-              transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.5 }}
+              transition={{ duration: 0.6, ease: 'easeIn', delay: 0.6 }}
             >
-            <div className="mt-10 w-[430px] mx-auto  flex flex-col md:flex-row">
-                <div className="flex items-center justify-center">
-                    <p className="text-xs text-right mb-4 md:mb-0 md:mr-5">
-                    <span className="font-bold mr-2">🎄Christmas Promo Gift!</span><span className="font-thin italic">24 Photoshoot Portrait for free!</span> 
-                    </p>
-                </div>
-                <div>
+            <div className="mt-6 mx-auto">
                     <Link href="/login">
-                    <Button className="rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-6 px-6 font-normal text-sm text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
+                    <Button className="rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-6 px-8 font-normal text-sm text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
                     Take Any Photo of Yourself<SparkleIcon/>
                     </Button>
                     </Link>
-                </div>
             </div>
             </InView>
         </div>
-        
 
-          <InView
+        <InView
             variants={{
               hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
               visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
             }}
             viewOptions={{ margin: '0px 0px 0px 0px' }}
-            transition={{ duration: 0.6, ease: 'easeInOut', delay:1 }}
+            transition={{ duration: 0.6, ease: 'easeIn', delay:0 }}
           >
-        <div className="backdrop-blur-md flex justify-center mb-0 md:mb-12 mt-0 md:mt-36  mx-auto w-full bg-transparent  relative">
+          <div className="max-w-[1200px] backdrop-blur-md flex justify-center mb-0 md:mb-12 mt-0 md:mt-20  mx-auto w-full bg-transparent  relative">
 
-           {/*} <SpinningText
-            radius={5}
-            fontSize={1.2}
-            className='font-medium leading-none'
-            >
-            {`In many different styles • `}
-            </SpinningText>*/}
+            {/*} <SpinningText
+              radius={5}
+              fontSize={1.2}
+              className='font-medium leading-none'
+              >
+              {`In many different styles • `}
+              </SpinningText>*/}
 
-        <Slider/>
-        </div> 
+          <Slider/>
+          </div> 
         </InView>   
 	</div>
 
 
   <InView
-            variants={{
-              hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-              visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-            }}
-            viewOptions={{ margin: '100px 0px 0px 0px' }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-          >
-  <div className="pt-24 max-w-[960px] mx-auto">
-          <HowToSteps steps={steps} />
-          {/*<VerticalTimeline/>*/}
-  </div>
+      variants={{
+      hidden: { opacity: 0, y: 0, filter: 'blur(4px)' },
+      visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+      }}
+      viewOptions={{ margin: '0px 0px 0px 0px' }}
+      transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
+  >
+    <div className="w-full grid grid-cols-12 py-24 gap-12 mx-auto bg-gradient-to-b from-stone-900/0 from-10% via-neutral-900/0 via-30% to-stone-900/0 to-90% backdrop-blur-md min-h-96 relative">
+      <div className="col-span-12 text-center backdrop-blur-md">
+          <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit mx-auto text-sm px-4 py-1">No studio, no stress.</p>
+          <h1 className="text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
+          Picture This: <span className="bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">You, But Even Better </span>
+          </h1>
+          <p className="text-center mx-auto md:px-0 text-2xl font-thin text-stone-700 leading-tight">
+          Drop your photos, pick your vibe, and watch the magic unfold.
+          </p>
+      </div>
+      <div className="py-12 col-span-12 w-full mx-auto bg-black/0">
+        <ImageCarousel/>
+        {/*<StyleSlider/>*/}
+      </div>
+    </div>
   </InView>
 
 
-  <div className="max-w-[1200px] mx-auto mt-24">
-        <TestimonialGrid/> 
+  <div className="max-w-[1200px] mx-auto py-12">
+      <h1 className="pb-4 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
+      Real Stories, <span className="bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">Real Magic</span>
+      </h1>
+      <TestimonialGrid2/> 
   </div>
-
-
-  <InView
-                    variants={{
-                        hidden: { opacity: 0, y: 0, filter: 'blur(4px)' },
-                        visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-                    }}
-                    viewOptions={{ margin: '0px 0px 0px 0px' }}
-                    transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
-                    >
-  <div className="grid grid-cols-12 py-12 gap-12 mx-auto bg-gradient-to-b from-stone-900/0 from-10% via-neutral-900/0 via-30% to-stone-900/0 to-90% backdrop-blur-md min-h-96 relative">
-  
-
-    <div className="col-span-12 text-center backdrop-blur-md">
-        <h1 className="md:mt-[6%] text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
-        Styles <span className="bg-gradient-to-r from-stone-800 to-red-800 inline-block text-transparent bg-clip-text pb-2"> for </span> <span className="bg-gradient-to-r from-red-800  to-fuchsia-800 inline-block text-transparent bg-clip-text pb-2"> Every Occasion</span><br/>
-        </h1>
-        <p className="py-4 text-center max-w-[460px] mx-auto md:px-0 text-lg text-stone-700 leading-tight">
-         Professional to Personal, select from our diverse style collection, spanning business presence to festive celebrations.
-        </p>
-        <p>
-          {/*}
-        <Link href="/login">
-                    <Button className="rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-b from-stone-900 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:via-fuchsia-900 hover:to-neutral-900 py-6 px-6 font-normal text-sm text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
-                    Create Your First Collection<SparkleIcon/>
-                    </Button>
-        </Link>*/}
-        </p>
-    </div>
-    <div className="col-span-12 w-full mx-auto bg-black/0">
-      <ImageCarousel/>
-      {/*<StyleSlider/>*/}
-    </div>
-  </div>
-
-  </InView>
 
 
     <div className="max-w-[1100px] mx-auto mt-24">

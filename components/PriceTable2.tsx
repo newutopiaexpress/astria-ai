@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import OverlappingAvatars from "@/components/OverlappingAvatars"
+
+
 export function PriceTable2() {
     return (
-<div className="grid grid-cols-12 gap-10 mx-auto mb-16">
+<div className="grid grid-cols-12 gap-14 mx-auto">
 
     <div className="col-span-12">
         <h1 className="py-12 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
@@ -19,12 +22,12 @@ export function PriceTable2() {
             <div className="p-9">  
                 <p><StarIcon/></p><br/>
                 <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
-                    Personal Portfolio
+                Studio Starter
                 </h1>
                 <p className="text-sm leading-tight">
-                Great for building a varied professional presence or creating seasonal content.
+                Beyond what a camera can capture. Your first step into next-gen photography!
                 </p>
-                <ul className="mb-4 mt-4 leading-relaxed text-xs">
+                <ul className="mb-4 mt-4 leading-relaxed text-xs text-left">
                     <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>1 AI model creation</li>
                     <li className="border-b border-neutral-400/50 py-2"><FileIcon/>1x24 generated images</li>
                 </ul> 
@@ -40,39 +43,16 @@ export function PriceTable2() {
     </div>
 
     <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
-        <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
-            <div className="p-9">  
-                <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
-                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
-                    Digital Creator</h1>
-                <p className="text-sm leading-tight">
-                Great for building a varied professional presence or creating seasonal content.
-                </p>
-                <ul className="mb-4 mt-4 leading-relaxed text-xs">
-                <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>5 AI model creation</li>
-                <li className="border-b border-neutral-400/50 py-2"><FileIcon/>5x24 generated images</li>
-                </ul> 
-                <p className="font-normal text-5xl ">
-                    54<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /120pcs</span>
-                    <br/>
-                    <Link href="/login" className="w-full">
-                        <Button variant="buy">Select <PlusIcon2/></Button>
-                    </Link>
-                </p> 
-            </div>  
-        </div>
-    </div>
-
-    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
         <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 text-stone-800 rounded-3xl relative">
             <div className="p-9">  
                 <p className="text-stone-300"><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/></p><br/>
-                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem]">
-                   Teams, Influencers</h1>
-                <p className="text-sm mt-4 leading-tight">Perfect for team photos in the same style, 
+                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.4rem]">
+                Complete Revolution</h1>
+                <p className="text-sm mt-4 leading-tight">
+                Your entire year's photo needs solved! Unlimited styles, impossible shots, zero hassle
                 </p>
-                <ul className="mb-4 mt-4 leading-relaxed text-xs">
-                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>15 AI model creation</li>
+                <ul className="mb-4 mt-4 leading-relaxed text-xs text-left">
+                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>10 AI model creation</li>
                     <li className="border-b border-neutral-400/50 py-2"><FileIcon/>10x24 generated images</li>
                 </ul>   
                 <p className="font-normal text-5xl">
@@ -86,6 +66,29 @@ export function PriceTable2() {
         </div>
     </div>
 
+    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
+        <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
+            <div className="p-9"> 
+                {/*<p><StarIcon/><StarIcon/><StarIcon/></p><br/>*/}
+                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
+                Portfolio Plus</h1>
+                <p className="text-sm leading-tight">
+                Great for building a varied professional presence or creating seasonal content.
+                </p>
+                <ul className="mb-4 mt-4 leading-relaxed text-xs text-left">
+                <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>5 AI model creation</li>
+                <li className="border-b border-neutral-400/50 py-2"><FileIcon/>5x24 generated images</li>
+                </ul> 
+                <p className="font-normal text-5xl ">
+                    54<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /120pcs</span>
+                    <br/>
+                    <Link href="/login" className="w-full">
+                        <Button variant="buy">Select <PlusIcon2/></Button>
+                    </Link>
+                </p> 
+            </div>  
+        </div>
+    </div>
 
 </div>
     );

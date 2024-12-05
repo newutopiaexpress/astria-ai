@@ -17,7 +17,7 @@ export function FooterV2() {
             <p className="text-xs text-stone-500 w-64 leading-tight pb-6">2024.</p>
           </div>*/}
 
-
+{/*
           <div className="float-right relative text-right w-48 h-9 mt-20 mr-14">
             <div className="flex flex-row gap-9">
               <Link className="fill-stone-800 hover:text-gray-900 dark:hover:text-gray-50" href="https://www.facebook.com/www.utopia.express/">
@@ -38,6 +38,7 @@ export function FooterV2() {
               </Link>
             </div> 
           </div>
+          */}
      
     </div>
   )

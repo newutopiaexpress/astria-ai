@@ -289,7 +289,7 @@ export default function TrainModelZone() {
                     form.setValue("pack", value);
                   }}
                 >
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 lg:gap-12 mx-auto pt-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-12 mx-auto pt-4">
 
                     <div>
                       <RadioGroupItem
@@ -306,53 +306,7 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
-                          </DialogTrigger>
-                          <DialogContent>
-                            <DialogHeader>
-                              <DialogTitle>Xmas-2024</DialogTitle>
-                              <DialogDescription>
-                                <Image
-                                  src="/model-corp.png"
-                                  width={1198}
-                                  height={1000}
-                                  alt="Corporate Portraits"
-                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
-                                </Image>
-                              </DialogDescription>
-                            </DialogHeader>
-                          </DialogContent>
-                        </Dialog>
-                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
-                        <Image
-                          src="/xmas2.png"
-                          width={896}
-                          height={1152}
-                          alt="Corporate Portraits"
-                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
-                        </Image>
-                        </div>
-
-                        Corporate Portraits
-                      </Label>
-                    </div>
-                    
-                    <div>
-                      <RadioGroupItem
-                        value="corporate-portraits"
-                        id="corporate-portraits"
-                        className="peer sr-only"
-                        aria-label="corporate-portraits"
-                      />
-                      <Label
-                        htmlFor="corporate-portraits"
-                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
-                      >
-
-                        <div className="relative group">
-                        <Dialog>
-                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
+                          <Badge variant="examples">Examples</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
@@ -385,6 +339,52 @@ export default function TrainModelZone() {
                     
                     <div>
                       <RadioGroupItem
+                        value="corporate-portraits"
+                        id="corporate-portraits"
+                        className="peer sr-only"
+                        aria-label="corporate-portraits"
+                      />
+                      <Label
+                        htmlFor="corporate-portraits"
+                        className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
+                      >
+
+                        <div className="relative group">
+                        <Dialog>
+                          <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
+                          <Badge variant="examples">Examples</Badge>
+                          </DialogTrigger>
+                          <DialogContent>
+                            <DialogHeader>
+                              <DialogTitle>Cool Christmas</DialogTitle>
+                              <DialogDescription>
+                                <Image
+                                  src="/model-corp.png"
+                                  width={1198}
+                                  height={1000}
+                                  alt="Corporate Portraits"
+                                  className="active w-full h-auto mb-2 rounded-md shadow-md">
+                                </Image>
+                              </DialogDescription>
+                            </DialogHeader>
+                          </DialogContent>
+                        </Dialog>
+                        <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
+                        <Image
+                          src="/xm.jpg"
+                          width={896}
+                          height={1152}
+                          alt="Corporate Portraits"
+                          className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
+                        </Image>
+                        </div>
+
+                        Cool Christmas
+                      </Label>
+                    </div>
+                    
+                    <div>
+                      <RadioGroupItem
                         value="youtube-covers"
                         id="youtube-covers"
                         className="peer sr-only"
@@ -397,7 +397,7 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
+                          <Badge variant="examples">Examples</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>

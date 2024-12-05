@@ -18,8 +18,8 @@ const badgeVariants = cva(
           "border-transparent bg-transparent shadow-sm text-secondary-foreground hover:bg-secondary/80",
         destructive:
           "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
-        outline: "outline outline-6 outline-offset-4 outline-stone-100 bg-stone-100/0 transition-all hover:backdrop-blur-sm hover:bg-stone-100 py-1 px-4 shadow-0 border border-stone-100 rounded-full text-xs text-stone-600 hover:text-stone-800",
-        examples: "border-none",
+          examples: "bg-stone-100/80 transition-all hover:backdrop-blur-sm hover:bg-stone-100 py-1 px-4 shadow-0 border border-stone-100 rounded-full text-xs text-stone-600 hover:text-stone-800",
+          outline: "outline outline-6 outline-offset-4 outline-stone-100 bg-stone-100/0 transition-all hover:backdrop-blur-sm hover:bg-stone-100 py-1 px-4 shadow-0 border border-stone-100 rounded-full text-xs text-stone-600 hover:text-stone-800",
         finished:
           "border border-green-300 text-xs font-normal bg-transparent text-green-600 shadow-sm hover:shadow-md",
         credits:

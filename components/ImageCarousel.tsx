@@ -25,8 +25,9 @@ interface Slide {
   description: string;
   linkText: string;
   backgroundColor: string;
-  additionalText: string; // Add this line
-  maleImage: string; // Add this line
+  additionalText: string; 
+  maleImage: string; 
+  isNew?: boolean;
 }
 
 // Sample slide data
@@ -38,11 +39,12 @@ const slides: Slide[] = [
       { src: "/corph.jpg?height=1152&width=896", alt: "Image 3" },
       { src: "/van.jpg?height=1152&width=896", alt: "Image 4" },
     ],
-    description: "Business Photoshoots",
+    description: "Look like a CEO, in just one click",
     linkText: "Business Photoshoots",
-    backgroundColor: "#191817", 
+    backgroundColor: "#0F121C", 
     additionalText: "24pcs | Female | Male", 
     maleImage: "/t2.png?height=128&width=128",
+    isNew: true,
   },
   {
     images: [
@@ -51,50 +53,40 @@ const slides: Slide[] = [
       { src: "/xmasb.jpg?height=1152&width=896", alt: "Image 3" },
       { src: "/xmasg.jpg?height=1152&width=896", alt: "Image 4" },
     ],
-    description: "Cool Christmas 2024",
+    description: "Santa got an upgrade - your holidays just got cooler!",
     linkText: "Cool Christmas 2024",
     backgroundColor: "#5A8C7D", 
     additionalText: "24pcs  | Female | Male | Boy | Girl", 
     maleImage: "/corporate.jpg?height=1152&width=896",
+    isNew: true,
   },
   {
     images: [
-      { src: "/real1.jpg?height=1152&width=896", alt: "ddd" },
-      { src: "/real2.jpg?height=1152&width=896", alt: "Image 2" },
-      { src: "/real3.jpg?height=1152&width=896", alt: "Image 3" },
-      { src: "/real4.jpg?height=1152&width=896", alt: "Image 4" },
+      { src: "/anna3.jpg?height=1024&width=640", alt: "ddd" },
+      { src: "/anna5.jpg?height=1152&width=896", alt: "Image 2" },
+      { src: "/adam4.jpg?height=1152&width=896", alt: "Image 3" },
+      { src: "/adam1.jpg?height=1152&width=896", alt: "Image 4" },
     ],
-    description: "Real estate agent photoshoots",
+    description: "Your key to looking like a top-selling agent!",
     linkText: "Real Estate Agent",
     backgroundColor: "#362D25", 
     additionalText: "24pcs  | Female | Male", 
     maleImage: "/corporate.jpg?height=1152&width=896",
+    isNew: false,
   },
   {
     images: [
-      { src: "/ted1.jpg?height=1152&width=896", alt: "ddd" },
-      { src: "/ted2.jpg?height=1152&width=896", alt: "Image 2" },
-      { src: "/ted3.jpg?height=1152&width=896", alt: "Image 3" },
-      { src: "/ted4.jpg?height=1152&width=896", alt: "Image 4" },
+      { src: "/xxxx.jpg?height=1152&width=896", alt: "ddd" },
+      { src: "/xxx.jpg?height=1152&width=896", alt: "Image 2" },
+      { src: "/spot.jpg?height=1152&width=896", alt: "Image 3" },
+      { src: "/spot2.jpg?height=1152&width=896", alt: "Image 4" },
     ],
-    description: "TED Speaker",
-    linkText: "TED Speaker",
-    backgroundColor: "#940400", 
+    description: "Main character energy in every shot!",
+    linkText: "Spotlight Series",
+    backgroundColor: "#4D3F4F", 
     additionalText: "24pcs  | Female | Male", 
     maleImage: "/corporate.jpg?height=1152&width=896",
-  },
-  {
-    images: [
-      { src: "/m1.jpg?height=1152&width=896", alt: "ddd" },
-      { src: "/m2.jpg?height=1152&width=896", alt: "Image 2" },
-      { src: "/m3.jpg?height=1152&width=896", alt: "Image 3" },
-      { src: "/m4.jpg?height=1152&width=896", alt: "Image 4" },
-    ],
-    description: "Motivational Board",
-    linkText: "Motivational Board",
-    backgroundColor: "#3F4C54", 
-    additionalText: "24pcs  | Female | Male", 
-    maleImage: "/corporate.jpg?height=1152&width=896",
+    isNew: true,
   },
   {
     images: [
@@ -103,11 +95,26 @@ const slides: Slide[] = [
       { src: "/m3.jpg?height=1152&width=896", alt: "Image 3" },
       { src: "/m4.jpg?height=1152&width=896", alt: "Image 4" },
     ],
-    description: "Cat Meowgic",
-    linkText: "Cat Meowgic",
+    description: "See it, believe it, achieve it!",
+    linkText: "Peak You",
     backgroundColor: "#3F4C54", 
     additionalText: "24pcs  | Female | Male", 
     maleImage: "/corporate.jpg?height=1152&width=896",
+    isNew: false,
+  },
+  {
+    images: [
+      { src: "/elf1.jpg?height=1152&width=896", alt: "ddd" },
+      { src: "/elf2.jpg?height=1152&width=896", alt: "Image 2" },
+      { src: "/elf3.jpg?height=1152&width=896", alt: "Image 3" },
+      { src: "/elf4.jpg?height=1152&width=896", alt: "Image 4" },
+    ],
+    description: "Warning: May cause pointy ears and excessive joy!",
+    linkText: "Elfie Magic",
+    backgroundColor: "#356530", 
+    additionalText: "24pcs  | Female | Male", 
+    maleImage: "/corporate.jpg?height=1152&width=896",
+    isNew: false,
   },
 ]
 
@@ -146,51 +153,56 @@ export default function ImageCarousel() {
 
   return (
     <div
-      className="mx-auto"
+      className="mx-auto max-w-[1280px] rounded-[0px] md:rounded-[30px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       
-      <nav className="max-w-md md:max-w-full md:flex md:justify-center overflow-x-auto">
+      <nav className="md:flex md:justify-center overflow-x-auto">
         <div className="flex space-x-2">
           {slides.map((slide, index) => (
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={cn(
-                "px-4 py-2 text-xs leading-tight md:text-sm font-normal md:leading-relaxed rounded-xl transition-colors",
-                current === index
-                  ? "text-stone-100"
-                  : "text-muted-foreground hover:bg-muted"
-              )}
-              style={{
-                backgroundColor: current === index ? slide.backgroundColor : 'transparent',
-              }}
-              aria-current={current === index ? "true" : "false"}
-            >
-              {slide.linkText}
-            </button>
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={cn(
+              "relative px-4 py-2 text-sm leading-tight md:text-sm font-normal md:leading-relaxed rounded-xl transition-colors",
+              current === index
+                ? "text-stone-100"
+                : "text-muted-foreground hover:bg-muted"
+            )}
+            style={{
+              backgroundColor: current === index ? slide.backgroundColor : 'transparent',
+            }}
+            aria-current={current === index ? "true" : "false"}
+          >
+            {slide.linkText}
+            {slide.isNew && (
+              <span className="mt-0 ml-1 border border-black/20 shadow-sm bg-white/30 text-stone-800 text-[0.7em] font-normal px-2 py-1 rounded-full">
+                New
+              </span>
+            )}
+          </button>
           ))}
         </div>
       </nav>
 
-      <div className="bg-transparent md:max-w-[1100px] mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
-        <Carousel className="bg-transparent border-none p-0 md:p-3 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
-          <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab	">
+      <div className="max-w-[1280px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
+        <Carousel className="bg-transparent border-none p-0 md:p-2 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
+          <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab ">
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
-                <Card className="max-w-md md:max-w-full border-none bg-transparent relative rounded-3xl" style={{ backgroundColor: slide.backgroundColor }}>
+                <Card className="max-w-md md:max-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
                   <div className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center">
-                    <p className="text-lg font-normal leading-tight text-left text-stone-100/60">
+                    <p className="text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
                       {slide.description}
                     </p>
                     <p className="text-right flex flex-col md:flex-row">
-                      <span className="opacity-100 text-stone-100/70 tracking-wide text-xs font-thin">
+                      {/*<span className="opacity-100 text-stone-800/40 tracking-wide text-xs font-thin">
                         {slide.additionalText}
-                      </span>
+                      </span>*/}
                       <Link href="/login">
                         <span className="ml-4 text-sm tracking-normal font-normal bg-stone-100/10 hover:bg-stone-100/20 text-stone-300 rounded-full px-4 py-1">
-                        Take Photos < PlusIcon className="inline-block w-3 h-3" />
+                        Take Photos <SparkleIcon/>
                         </span>
                       </Link>
                     </p>
@@ -220,5 +232,13 @@ export default function ImageCarousel() {
         
     </div>
   )
+}
+
+export function SparkleIcon() {
+  return (
+<svg className="animate-ping inline-block w-3 h-3 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+<path stroke-linecap="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+</svg>
+)
 }
 

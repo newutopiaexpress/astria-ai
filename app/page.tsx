@@ -12,13 +12,7 @@ import { Bento2 } from "@/components/Bento2";
 export default async function Index() {
   const supabase = createServerComponentClient({ cookies });
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
 
-  if (user) {
-    return redirect("/overview");
-  }
 
   return (
  

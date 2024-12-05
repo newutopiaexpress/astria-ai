@@ -51,10 +51,6 @@ export default function RootLayout({ children }: any) {
               <Toaster />
               <Analytics />
 
-      <Spline
-      className="fixed z-[1] top-0 left-0 w-full h-full hidden md:block"
-        scene="https://prod.spline.design/yKd8nBRvxzKJGFCn/scene.splinecode" 
-      />
 
 {/*}
               <Sheet>
