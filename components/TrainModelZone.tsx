@@ -293,13 +293,13 @@ export default function TrainModelZone() {
 
                     <div>
                       <RadioGroupItem
-                        value="xmas-2024"
-                        id="xmas-2024"
+                        value="corporate-headshots"
+                        id="corporate-headshots"
                         className="peer sr-only"
-                        aria-label="xmas-2024"
+                        aria-label="corporate-headshots"
                       />
                       <Label
-                        htmlFor="xmas-2024"
+                        htmlFor="corporate-headshots"
                         className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
                       >
 
@@ -339,13 +339,13 @@ export default function TrainModelZone() {
                     
                     <div>
                       <RadioGroupItem
-                        value="corporate-portraits"
-                        id="corporate-portraits"
+                        value="cool-christmas"
+                        id="cool-christmas"
                         className="peer sr-only"
-                        aria-label="corporate-portraits"
+                        aria-label="cool-christmas"
                       />
                       <Label
-                        htmlFor="corporate-portraits"
+                        htmlFor="cool-christmas"
                         className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
                       >
 
@@ -385,13 +385,13 @@ export default function TrainModelZone() {
                     
                     <div>
                       <RadioGroupItem
-                        value="youtube-covers"
-                        id="youtube-covers"
+                        value="christmas-elf"
+                        id="christmas-elf"
                         className="peer sr-only"
-                        aria-label="youtube-covers"
+                        aria-label="christmas-elf"
                       />
                       <Label
-                        htmlFor="youtube-covers"
+                        htmlFor="christmas-elf"
                         className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
                       >
                         <div className="relative group">
@@ -401,13 +401,13 @@ export default function TrainModelZone() {
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Youtube Thumbnails</DialogTitle>
+                              <DialogTitle>Christmas Elf</DialogTitle>
                               <DialogDescription>
                                 <Image
-                                  src="/model-you.png"
+                                  src="/elfprev.png"
                                   width={1300}
                                   height={677}
-                                  alt="Youtube Thumbnails"
+                                  alt="Christmas Elf"
                                   className="active w-full h-auto mb-2 rounded-md shadow-md">
                                 </Image>
                               </DialogDescription>
@@ -416,14 +416,14 @@ export default function TrainModelZone() {
                         </Dialog>
                         <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3">24<br/><span className="text-xs">pcs</span></p>
                         <Image
-                          src="/youtube.jpg"
-                          width={896}
-                          height={1152}
-                          alt="Youtube Thumbnails"
+                          src="/elf3.jpg"
+                          width={1792}
+                          height={2304}
+                          alt="Christmas Elf"
                           className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
                         </Image>
                         </div>
-                        Youtube Thumbnails
+                        Christmas Elf
                       </Label>
                     </div>
 
@@ -537,13 +537,13 @@ export default function TrainModelZone() {
             </FormDescription>
             <RadioGroup
               defaultValue={modelType}
-              className="grid md:grid-cols-6 gap-12 md:gap-18 mt-4 max-w-[1240px] mx-auto"
+              className="grid md:grid-cols-12 gap-12 md:gap-18 mt-4 max-w-[1240px] mx-auto"
               value={modelType}
               onValueChange={(value) => {
                 form.setValue("type", value);
               }}
             >
-              <div className="">
+              <div className="col-span-3">
                 <RadioGroupItem
                   value="man"
                   id="man"
@@ -565,7 +565,7 @@ export default function TrainModelZone() {
                 </Label>
               </div>
 
-              <div className="w-32">
+              <div className="col-span-3">
                 <RadioGroupItem
                   value="woman"
                   id="woman"
@@ -586,7 +586,7 @@ export default function TrainModelZone() {
                   Woman
                 </Label>
               </div>
-              <div className="w-32">
+              <div className="col-span-3">
                 <RadioGroupItem
                   value="boy"
                   id="boy"
@@ -607,7 +607,7 @@ export default function TrainModelZone() {
                   Boy
                 </Label>
               </div>
-              <div className="w-32">
+              <div className="col-span-3">
                 <RadioGroupItem
                   value="girl"
                   id="girl"
@@ -628,6 +628,7 @@ export default function TrainModelZone() {
                   Girl
                 </Label>
               </div>
+{/*
               <div className="w-32">
                 <RadioGroupItem
                   value="cat"
@@ -670,6 +671,8 @@ export default function TrainModelZone() {
                   Dog
                 </Label>
               </div>
+              */}
+
             </RadioGroup>
           </div>
 
