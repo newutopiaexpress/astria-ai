@@ -8,6 +8,7 @@ import Spline from '@splinetool/react-spline/next';
 import { SparkleIcon } from '@/components/SparkleIcon';
 
 export default function HelloWorldPage() {
+
     return (
     <div className="w-full ">
 	    <div className="w-full mx-auto z-30 bg-transparent">
