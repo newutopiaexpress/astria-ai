@@ -16,12 +16,10 @@ export default async function Index() {
 
   return (
  
-      <div className="mx-auto px-4 relative">
-        <div className="w-full">
+        <div>
           <Bento2/>
         </div>
         
-      </div>
 
     
   );

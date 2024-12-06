@@ -24,9 +24,9 @@ export function Slider() {
         </li>
 
         <li className="rounded-3xl  text-stone-700 p-2 shadow-lg relative">
-            <Image className="absolute bottom-4 left-4 w-16 h-16 rounded-full" width={128} height={128} src="/s6.png" alt="Corporate Portraits" />
-            <Image className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" width={896} height={1152} src="/corp4.png" alt="Corporate Portraits" />
-            <p className="mb-2 text-right">Anita</p>
+            <Image className="absolute bottom-4 left-4 w-16 h-16 rounded-full" width={128} height={128} src="/odett.png" alt="Corporate Portraits" />
+            <Image className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" width={896} height={1152} src="/elfSlider.png" alt="Corporate Portraits" />
+            <p className="mb-2 text-right">Sophie</p>
         </li>
 
         <li className="rounded-3xl  text-stone-700 p-2 shadow-lg relative">
@@ -36,15 +36,15 @@ export function Slider() {
         </li>
 
         <li className="rounded-3xl  text-stone-700 p-2 shadow-lg relative">
-            <Image className="absolute bottom-4 left-4 w-16 h-16 rounded-full" width={128} height={128} src="/dog2.png" alt="Corporate Portraits" />
-            <Image className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" width={896} height={1152} src="/dog1.png" alt="Corporate Portraits" />
-            <p className="mb-2 text-right">Dogy</p>
+            <Image className="absolute bottom-4 left-4 w-16 h-16 rounded-full" width={128} height={128} src="/s3.png" alt="Corporate Portraits" />
+            <Image className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" width={896} height={1152} src="/hotxmas.jpg" alt="Corporate Portraits" />
+            <p className="mb-2 text-right">Hannah</p>
         </li>
 
         <li className="rounded-3xl  text-stone-700 p-2 shadow-lg relative">
-            <Image className="absolute bottom-4 left-4 w-16 h-16 rounded-full" width={128} height={128} src="/cat2.png" alt="Corporate Portraits" />
-            <Image className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" width={896} height={1152} src="/cat1.png" alt="Corporate Portraits" />
-            <p className="mb-2 text-right">Kuszkusz</p>
+            <Image className="absolute bottom-4 left-4 w-16 h-16 rounded-full" width={128} height={128} src="/tomi2.png" alt="Corporate Portraits" />
+            <Image className="w-52 h-auto rounded-tl-3xl rounded-tr-3xl" width={896} height={1152} src="/elftomi.jpg" alt="Corporate Portraits" />
+            <p className="mb-2 text-right">Tomi</p>
         </li>
 
         <li className="rounded-3xl  text-stone-700 p-2 shadow-lg relative">

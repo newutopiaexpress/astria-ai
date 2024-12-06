@@ -5,7 +5,7 @@ import OverlappingAvatars from "@/components/OverlappingAvatars"
 
 export function PriceTable2() {
     return (
-<div className="grid grid-cols-12 gap-14 mx-auto">
+<div className="grid grid-cols-12 gap-0 md:gap-14 mx-auto px-6">
 
     <div className="col-span-12">
         <h1 className="py-12 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">

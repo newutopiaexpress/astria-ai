@@ -68,8 +68,8 @@ export function Bento2() {
   return (
 
 
-<div>
-
+<div className="w-full ">
+  
 	<div className="w-full mx-auto z-30 bg-transparent">
           
         <div className="text-center pt-24 md:pt-24 mb-32 md:mb-0">
@@ -118,7 +118,7 @@ export function Bento2() {
                 },
               }}
             >
-        Stunning First Impressions with 
+            Stunning First Impressions with 
             </TextEffect>
             <span className="bg-gradient-to-r from-red-400  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2">
               <TextEffect per='char' preset='fade' delay={1.5}>
@@ -176,8 +176,8 @@ export function Bento2() {
       viewOptions={{ margin: '0px 0px 0px 0px' }}
       transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
   >
-    <div className="w-full grid grid-cols-12 py-24 gap-12 mx-auto bg-gradient-to-b from-stone-900/0 from-10% via-neutral-900/0 via-30% to-stone-900/0 to-90% backdrop-blur-md min-h-96 relative">
-      <div className="col-span-12 text-center backdrop-blur-md">
+    <div className="w-full grid grid-cols-12 pt-24 gap-0 mx-auto min-h-96 relative">
+      <div className="col-span-12 px-6 text-center backdrop-blur-md">
           <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit mx-auto text-sm px-4 py-1">No studio, no stress.</p>
           <h1 className="text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
           Picture This: <span className="bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">You, But Even Better </span>
@@ -186,7 +186,7 @@ export function Bento2() {
           Drop your photos, pick your vibe, and watch the magic unfold.
           </p>
       </div>
-      <div className="py-12 col-span-12 w-full mx-auto bg-black/0">
+      <div className="py-12 col-span-12 max-w-full mx-auto bg-black/0">
         <ImageCarousel/>
         {/*<StyleSlider/>*/}
       </div>
@@ -194,7 +194,7 @@ export function Bento2() {
   </InView>
 
 
-  <div className="max-w-[1200px] mx-auto py-12">
+  <div className="max-w-[1200px] mx-auto pt-24">
       <h1 className="pb-4 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
       Real Stories, <span className="bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">Real Magic</span>
       </h1>
@@ -202,7 +202,7 @@ export function Bento2() {
   </div>
 
 
-    <div className="max-w-[1100px] mx-auto mt-24">
+    <div className="max-w-[1100px] mx-auto">
         <PriceTable2/>
     </div>
     

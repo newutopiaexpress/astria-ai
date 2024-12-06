@@ -158,7 +158,7 @@ export default function ImageCarousel() {
       onMouseLeave={() => setIsHovered(false)}
     >
       
-      <nav className="md:flex md:justify-center overflow-x-auto">
+      <nav className="md:flex md:justify-center overflow-x-auto hidden">
         <div className="flex space-x-2">
           {slides.map((slide, index) => (
             <button
@@ -186,24 +186,22 @@ export default function ImageCarousel() {
         </div>
       </nav>
 
-      <div className="max-w-[1280px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
+      <div className="px-6 max-w-[1280px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
         <Carousel className="bg-transparent border-none p-0 md:p-2 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
           <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab ">
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
                 <Card className="max-w-md md:max-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
                   <div className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center">
-                    <p className="text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
+                    <p className="text-lg md:text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
                       {slide.description}
                     </p>
                     <p className="text-right flex flex-col md:flex-row">
                       {/*<span className="opacity-100 text-stone-800/40 tracking-wide text-xs font-thin">
                         {slide.additionalText}
                       </span>*/}
-                      <Link href="/login">
-                        <span className="ml-4 text-sm tracking-normal font-normal bg-stone-100/10 hover:bg-stone-100/20 text-stone-300 rounded-full px-4 py-1">
-                        Take Photos <SparkleIcon/>
-                        </span>
+                      <Link href="/login" className="text-xs md:text-sm tracking-normal font-normal bg-stone-100/10 hover:bg-stone-100/20 text-stone-300 rounded-full px-4 py-1">
+                        Select <SparkleIcon/>
                       </Link>
                     </p>
                   </div>
