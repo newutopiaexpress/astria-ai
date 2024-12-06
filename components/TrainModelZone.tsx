@@ -306,7 +306,9 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="examples">Examples</Badge>
+                          <Badge variant="examples">Look like a CEO, in just one click
+
+</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
@@ -352,7 +354,7 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="examples">Examples</Badge>
+                          <Badge variant="examples">Santa got an upgrade - your holidays just got cooler!</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
@@ -371,9 +373,9 @@ export default function TrainModelZone() {
                         </Dialog>
                         <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
                         <Image
-                          src="/xm.jpg"
-                          width={896}
-                          height={1152}
+                          src="/xmasx.jpg"
+                          width={1792}
+                          height={2304}
                           alt="Corporate Portraits"
                           className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
                         </Image>
@@ -397,7 +399,7 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="examples">Examples</Badge>
+                          <Badge variant="examples">Warning: May cause pointy ears and excessive joy!</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
@@ -441,14 +443,14 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">Examples</Badge>
+                          <Badge variant="outline">See it, believe it, achieve it!</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Ted Speaker</DialogTitle>
+                              <DialogTitle>Peak You</DialogTitle>
                               <DialogDescription>
                                 <Image
-                                  src="/model-gener.png"
+                                  src="/insp.png"
                                   width={1198}
                                   height={1000}
                                   alt="Ted Speaker"
@@ -460,14 +462,14 @@ export default function TrainModelZone() {
                         </Dialog>
                         <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
                         <Image
-                          src="/ted.jpg"
-                          width={896}
-                          height={1152}
+                          src="/m1.jpg"
+                          width={192}
+                          height={2304}
                           alt="Ted Speaker"
                           className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
                         </Image>
                         </div>
-                        Ted Speaker
+                        Peak YOu
                       </Label>
                     </div>
 
