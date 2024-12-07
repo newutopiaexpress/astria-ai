@@ -113,6 +113,8 @@ export const Login = ({
             <AiOutlineGoogle size={30} className=""/>
             <span className="pl-2">Continue with Google</span>
           </Button>
+
+          {/*
           
           <p className="italic text-center text-sm text-gray-500 pt-6">or continue with email</p>
 
@@ -157,6 +159,8 @@ export const Login = ({
               Login
             </Button>
           </form>
+
+          */}
         </div>
       </div>
     </>
