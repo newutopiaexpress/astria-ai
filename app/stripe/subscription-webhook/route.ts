@@ -40,9 +40,7 @@ export async function POST(request: Request) {
 
   if (!stripeSecretKey) {
     return NextResponse.json(
-      {
-        message: `Missing stripeSecretKey`,
-      },
+      { message: `Missing stripeSecretKey` },
       { status: 400 }
     );
   }
@@ -54,18 +52,14 @@ export async function POST(request: Request) {
 
   if (!sig) {
     return NextResponse.json(
-      {
-        message: `Missing signature`,
-      },
+      { message: `Missing signature` },
       { status: 400 }
     );
   }
 
   if (!request.body) {
     return NextResponse.json(
-      {
-        message: `Missing body`,
-      },
+      { message: `Missing body` },
       { status: 400 }
     );
   }
@@ -80,9 +74,7 @@ export async function POST(request: Request) {
     const error = err as Error;
     console.log("Error verifying webhook signature: " + error.message);
     return NextResponse.json(
-      {
-        message: `Webhook Error: ${error?.message}`,
-      },
+      { message: `Webhook Error: ${error?.message}` },
       { status: 400 }
     );
   }
@@ -102,15 +94,12 @@ export async function POST(request: Request) {
   // Handle the event
   switch (event.type) {
     case "checkout.session.completed":
-      const checkoutSessionCompleted = event.data
-        .object as Stripe.Checkout.Session;
+      const checkoutSessionCompleted = event.data.object as Stripe.Checkout.Session;
       const userId = checkoutSessionCompleted.client_reference_id;
 
       if (!userId) {
         return NextResponse.json(
-          {
-            message: `Missing client_reference_id`,
-          },
+          { message: `Missing client_reference_id` },
           { status: 400 }
         );
       }
@@ -123,103 +112,68 @@ export async function POST(request: Request) {
       const creditsPerUnit = creditsPerPriceId[priceId];
       const totalCreditsPurchased = quantity! * creditsPerUnit;
 
-      console.log({ lineItems });
-      console.log({ quantity });
-      console.log({ priceId });
-      console.log({ creditsPerUnit });
-
+      console.log({ lineItems, quantity, priceId, creditsPerUnit });
       console.log("totalCreditsPurchased: " + totalCreditsPurchased);
 
-      // Ensure totalCreditsPurchased is not null or undefined
       if (totalCreditsPurchased == null) {
         return NextResponse.json(
-          {
-            message: "Error: totalCreditsPurchased is null or undefined",
-          },
-          {
-            status: 400,
-          }
+          { message: "Error: totalCreditsPurchased is null or undefined" },
+          { status: 400 }
         );
       }
 
+      // Modified query to handle both new and existing users
       const { data: existingCredits, error: fetchError } = await supabase
         .from("credits")
         .select("*")
-        .eq("user_id", userId)
-        .single();
+        .eq("user_id", userId);
 
       if (fetchError) {
         console.log(fetchError);
         return NextResponse.json(
-          {
-            message: `Error fetching existing credits: ${JSON.stringify(fetchError)}`,
-          },
-          {
-            status: 400,
-          }
+          { message: `Error fetching existing credits: ${JSON.stringify(fetchError)}` },
+          { status: 400 }
         );
       }
 
-      // If user has existing credits, add to it.
-      if (existingCredits) {
-        const newCredits = existingCredits.credits + totalCreditsPurchased;
-        const { data, error } = await supabase
+      // If user has existing credits
+      if (existingCredits && existingCredits.length > 0) {
+        const newCredits = existingCredits[0].credits + totalCreditsPurchased;
+        const { error: updateError } = await supabase
           .from("credits")
-          .update({
-            credits: newCredits,
-          })
+          .update({ credits: newCredits })
           .eq("user_id", userId);
 
-        if (error) {
-          console.log(error);
+        if (updateError) {
+          console.log(updateError);
           return NextResponse.json(
-            {
-              message: `Error updating credits: ${JSON.stringify(error)}. data=${data}`,
-            },
-            {
-              status: 400,
-            }
+            { message: `Error updating credits: ${JSON.stringify(updateError)}` },
+            { status: 400 }
           );
         }
-
-        return NextResponse.json(
-          {
-            message: "success",
-          },
-          { status: 200 }
-        );
       } else {
-        // Else create new credits row.
-        const { data, error } = await supabase.from("credits").insert({
-          user_id: userId,
-          credits: totalCreditsPurchased,
-        });
+        // Create new credits row for new user
+        const { error: insertError } = await supabase
+          .from("credits")
+          .insert({
+            user_id: userId,
+            credits: totalCreditsPurchased,
+          });
 
-        if (error) {
-          console.log(error);
+        if (insertError) {
+          console.log(insertError);
           return NextResponse.json(
-            {
-              message: `Error creating credits: ${JSON.stringify(error)}\n ${JSON.stringify(data)}`,
-            },
-            {
-              status: 400,
-            }
+            { message: `Error creating credits: ${JSON.stringify(insertError)}` },
+            { status: 400 }
           );
         }
-
-        return NextResponse.json(
-          {
-            message: "success",
-          },
-          { status: 200 }
-        );
       }
+
+      return NextResponse.json({ message: "success" }, { status: 200 });
 
     default:
       return NextResponse.json(
-        {
-          message: `Unhandled event type ${event.type}`,
-        },
+        { message: `Unhandled event type ${event.type}` },
         { status: 400 }
       );
   }
