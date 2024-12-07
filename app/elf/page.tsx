@@ -44,13 +44,15 @@ export default function HelloWorldPage() {
                 transition={{ duration: 0.6, ease: 'easeIn', delay: 0.6 }}
               >
               <p className="mt-6 mx-auto">
-                <span className="md:mr-4">24 printable photos</span>
+                <span className="md:mr-4 rounded-full border border-stone-300 px-4 py-4">24pcs Printable Photo</span>
+                
+                
                       <Link href="/login">
                       <Button className="rounded-full outline outline-green-500/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-r from-fuchsia-950 to-neutral-950 hover:bg-gradient-to-br hover:from-fuchsia-900 hover:to-neutral-900 py-6 px-8 font-normal text-sm text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
-                      <span className="md:ml-4">€13.99</span>Activate Elf Magic<SparkleIcon/>
+                      <span className="font-bold mr-1 border-r border-stone-100/20 pr-2 text-lg">€13.99</span>
+                      Activate Elf Magic<SparkleIcon/>
                       </Button>
                       </Link>
-                
               </p>
               </InView>
           </div>
