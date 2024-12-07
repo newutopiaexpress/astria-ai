@@ -20,7 +20,7 @@ const CookieConsent = () => {
   if (!showBanner) return null;
 
   return (
-    <div className="z-50 fixed rounded-2xl bottom-1/2 mx-auto md:max-w-[500px] right-4 left-4 shadow-2xl bg-stone-100 text-stone-800 p-6 flex justify-between items-center">  
+    <div className="z-50 fixed rounded-2xl bottom-0 mx-auto md:max-w-[500px] right-4 left-4 shadow-2xl bg-stone-100 text-stone-800 p-6 flex justify-between items-center">  
       <p><span className="font-bold mr-2">We use cookies to improve your experience on our site.</span><br/>The protection of your personal data is extremely important to us, learn more about our data management on our website.</p>
       <button onClick={handleAccept} className="bg-stone-800 text-stone-200 px-4 py-2 m-4 rounded">
         Accept
