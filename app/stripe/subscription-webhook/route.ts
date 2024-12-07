@@ -28,8 +28,8 @@ const creditsPerPriceId: {
   [key: string]: number;
 } = {
   [oneCreditPriceId]: 1,
-  [threeCreditsPriceId]: 3,
-  [fiveCreditsPriceId]: 5,
+  [threeCreditsPriceId]: 5,
+  [fiveCreditsPriceId]: 10,
 };
 
 export async function POST(request: Request) {

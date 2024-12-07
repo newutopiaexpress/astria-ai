@@ -52,7 +52,7 @@ export default function ClientSideModel({
           {samples && (
             <div className="grid grid-cols-1 gap-2">
               <div className="col-span-1">
-                <h2 className="text-xs mb-2">Training Data</h2>
+                <h2 className="text-xs mb-2">Uploaded photos</h2>
                 <div className="flex flex-row gap-4 flex-wrap">
                   {samples.map((sample) => (
                     <img
