@@ -7,7 +7,6 @@ import dynamicImport from "next/dynamic";
 
 export const dynamic = "force-dynamic";
 
-const Spline = dynamicImport(() => import("@splinetool/react-spline"), { ssr: false });
 
 export default async function LoginPage({
   searchParams,
