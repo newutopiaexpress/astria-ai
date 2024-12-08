@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
 <h2>3. How We Use Your Information</h2>
 <p>We use your information to: Provide our photo transformation services, process your payments, improve our services, communicate with you, ensure platform security, comply with legal obligations.</p>
 <h2>4. Photo Usage and Storage</h2>
-<p>4.1 Uploaded Photos: We process your photos to provide our AI transformation services. Your original photos remain your property. We store photos securely for service provision. Photos are deleted [X] days after processing unless otherwise specified.</p>
+<p>4.1 Uploaded Photos: We process your photos to provide our AI transformation services. Your original photos remain your property. We store photos securely for service provision. Photos are deleted 30 days after processing unless otherwise specified.</p>
 <p>4.2 Generated Images: AI-generated images are provided for your personal use. Usage rights are subject to our Terms of Service.</p>
 <h2>5. Data Security</h2>
 <p>We implement appropriate security measures to protect your data, including: Encryption of sensitive data, secure servers, regular security updates, access controls, data backup systems.</p>
@@ -37,11 +37,11 @@ export default function PrivacyPolicy() {
 <h2>11. Changes to This Policy</h2>
 <p>We may update this policy periodically. We will notify you of significant changes through our website or email.</p>
 <h2>12. Contact Us</h2>
-<p>For privacy-related questions or concerns: Email: [privacy@utopia.photos] Address: [Your Business Address]</p>
+<p>For privacy-related questions or concerns: Email: [admin@utopia.photos]</p>
 <h2>13. Legal Basis for Processing (GDPR)</h2>
 <p>We process your data based on: Contract performance, legal obligations, legitimate interests, your consent.</p>
 <h2>14. Data Retention</h2>
-<p>We retain your data for: Active accounts: Duration of service, inactive accounts: [X] months, financial records: As required by law, generated images: [X] days.</p>
+<p>We retain your data for: Active accounts: Duration of service, inactive accounts: 30 days, financial records: As required by law, generated images: 30 days.</p>
 <h2>15. Third-Party Services</h2>
 <p>Our service may include links to third-party websites. We are not responsible for their privacy practices.</p>
 <h2>16. California Privacy Rights</h2>
