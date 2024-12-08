@@ -54,7 +54,7 @@ export const Login = ({
         title: "Something went wrong",
         variant: "destructive",
         description:
-          "Please try again, if the problem persists, contact us at hello@tryleap.ai",
+          "Please try again, if the problem persists, contact us at tamas@utopia.express",
         duration: 5000,
       });
     }

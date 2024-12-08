@@ -19,7 +19,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { ChristmasBanner } from "@/components/ChristmasBanner";
-import Spline from '@splinetool/react-spline/next';
 
 export const metadata = {
   title: "The AI Photographer",
