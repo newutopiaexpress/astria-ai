@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
 import Image from "next/image";
-import Spline from '@splinetool/react-spline/next';
-
 
 export const revalidate = 0;
 
@@ -103,10 +101,6 @@ export default function ClientSideModelsList({
               </Link>
             </div>
           </div>
-          <Spline
-      className="fixed z-[1] top-0 left-0 w-full h-full"
-        scene="https://prod.spline.design/D2jez6cdpXZmTCmu/scene.splinecode" 
-      />
         </div>
       )}
     </div>
