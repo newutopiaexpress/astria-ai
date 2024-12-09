@@ -128,8 +128,8 @@ export const Login = ({
           </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row gap-2">
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-2">
+            <div className="mx-auto flex flex-col gap-4">
+              <div className="mx-auto flex flex-col gap-2">
                 <Input
                   className="outline-0"
                   type="email"
