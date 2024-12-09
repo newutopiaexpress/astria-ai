@@ -10,12 +10,12 @@ import { UtopiaLogo } from "./ui/utopia-logo";
 
 export function FooterV2() {
   return (
-    <footer className="w-full bg-[#FFFFFF] text-stone-800 py-6">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+    <footer className="">
+
+        <div className="fixed bottom-0 right-6 w-full bg-transparent text-stone-800 py-6">
+          {/*<div className="mb-4 md:mb-0">
             <UtopiaLogo/>
-          </div>
+          </div>*/}
           <nav>
             <ul className="text-xs flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
               <li>
@@ -23,10 +23,15 @@ export function FooterV2() {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+                <Link href="mailto:tamas@utopia.express" className="hover:text-gray-300 transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
-      </div>
+
     </footer>
 
   )
