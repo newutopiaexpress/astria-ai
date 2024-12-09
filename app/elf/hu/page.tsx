@@ -23,7 +23,7 @@ export default function HelloWorldPage() {
                 transition={{ duration: 0.4, ease: 'easeIn', delay: 3 }}
               >
               <p className="text-sm text-center mb-4 md:mb-0 md:mr-5">
-                <span className="font-bold mr-2">24 Magical Elf Portraits</span>
+                <span className="font-bold mr-2">24 Varázslatos Elf Portré</span>
                 <span className="font-normal">🎄 Ready to Print!</span> 
               </p>
             </InView>
@@ -31,7 +31,7 @@ export default function HelloWorldPage() {
 
               <span className="bg-gradient-to-r from-green-500  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2">
                 <TextEffect per='char' preset='fade' delay={1.5}>
-                Dear Santa, I Want to Be an Elf!
+                Kedves Télapó, Elf Szeretnék Lenni!
                 </TextEffect>         
               </span>
             </h1>
@@ -48,7 +48,7 @@ export default function HelloWorldPage() {
                       <Link href="/login">
                       <Button className="rounded-full outline outline-green-500/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-r from-fuchsia-950 to-neutral-950 hover:bg-gradient-to-br hover:from-fuchsia-900 hover:to-neutral-900 py-6 px-8 font-normal text-sm text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
                       <span className="font-bold mr-1 border-r border-stone-100/20 pr-2 text-lg">€13.99</span>
-                      Activate Elf Magic<SparkleIcon/>
+                      Elf Varázslat Aktiválása<SparkleIcon/>
                       </Button>
                       </Link>
               </p>
