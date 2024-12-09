@@ -11,6 +11,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { WaitingForMagicLink } from "./WaitingForMagicLink";
 
+// iOS in-app browser detection
 const isIOSInAppBrowser = () => {
   if (typeof window === 'undefined') return false;
   const ua = navigator.userAgent;
@@ -20,11 +21,6 @@ const isIOSInAppBrowser = () => {
     ua.includes('FBAV') || 
     ua.includes('Instagram')
   );
-};
-
-const openInSafari = () => {
-  const currentURL = window.location.href;
-  window.location.href = currentURL;
 };
 
 type Inputs = {
@@ -113,17 +109,8 @@ export const Login = ({
         <div className="flex flex-col gap-4 bg-transparent max-w-[460px]">
           
           {isIOSInAppBrowser() ? (
-            <div className="flex flex-col gap-2">
-              <div className="max-w-[400px] max-auto px-4 text-xs text-center p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-500">
-                Social login is disabled in this browser. Please use email login or open in Safari.
-              </div>
-              <Button
-                onClick={openInSafari}
-                variant="outline"
-                className="text-xs p-2 hover:bg-amber-50"
-              >
-                Open in Safari
-              </Button>
+            <div className="text-sm text-center p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 mb-4">
+              Social login is disabled in this browser. Please use email login or open in Safari.
             </div>
           ) : (
             <Button
@@ -174,9 +161,8 @@ export const Login = ({
               variant="default"
               className="w-auto p-6 rounded-full font-semibold text-md"
               type="submit"
-              disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Login"}
+              Login
             </Button>
           </form>
         </div>
