@@ -17,6 +17,8 @@ import ClientSideCredits from "./realtime/ClientSideCredits";
 import { UtopiaLogo } from "./ui/utopia-logo";
 import { UserIcon } from "./ui/user-icon";
 import { AiOutlineGoogle } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 export const dynamic = "force-dynamic";
 
@@ -65,12 +67,23 @@ export default async function Navbar() {
 
       <div className="flex gap-4 lg:ml-auto mr-2 ">
         {!user && (
+          <span className="flex gap-4">
           <Link href="/login">
-            <span className="text-xs opacity-50 mr-4">Login with Google</span>
+            <Button variant={"google"} size={"login"} className="group">  
+              <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><AiOutlineGoogle/></span>
+            </Button>
+          </Link>
+          <Link href="/login">
           <Button variant={"google"} size={"login"} className="group">  
-            <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><AiOutlineGoogle/></span>
+            <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><FaFacebook/></span>
           </Button>
         </Link>
+        <Link href="/login">
+          <Button variant={"google"} size={"login"} className="group">  
+            <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><MdOutlineEmail/></span>
+          </Button>
+        </Link>
+        </span>
         )}
         {user && (
           <div className="flex flex-row gap-4 text-center align-middle justify-center">
