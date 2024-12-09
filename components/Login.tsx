@@ -109,7 +109,7 @@ export const Login = ({
         <div className="flex flex-col gap-4 bg-transparent max-w-[460px]">
           
           {isIOSInAppBrowser() ? (
-            <div className="text-sm text-center p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 mb-4">
+            <div className="max-w-[400px] max-auto px-4 text-xs text-center p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 mb-4">
               Social login is disabled in this browser. Please use email login or open in Safari.
             </div>
           ) : (
