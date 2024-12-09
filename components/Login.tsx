@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { WaitingForMagicLink } from "./WaitingForMagicLink";
+import { FaFacebook } from "react-icons/fa";
 
 // iOS in-app browser detection
 const isIOSInAppBrowser = () => {
@@ -86,6 +87,15 @@ export const Login = ({
     });
   };
 
+  const signInWithFacebook = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "facebook",
+      options: {
+        redirectTo: redirectUrl,
+      },
+    });
+  };
+
   const signInWithMagicLink = async (email: string) => {
     const { error } = await supabase.auth.signInWithOtp({
       email,
@@ -107,24 +117,32 @@ export const Login = ({
     <>
       <div className="flex h-full w-full items-center justify-center py-32 z-30">
         <div className="flex flex-col gap-4 bg-transparent max-w-[460px]">
-          
-          {isIOSInAppBrowser() ? (
-            <div className="text-sm text-center p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 mb-4">
-              Social login is disabled in this browser. Please use email login or open in Safari.
-            </div>
-          ) : (
-            <Button
-              onClick={signInWithGoogle}
-              variant="googledark"
-              className="font-semibold p-8 rounded-full"
-            >
-              <AiOutlineGoogle size={30} />
-              <span className="pl-2">Continue with Google</span>
-            </Button>
+          <Button
+            onClick={signInWithFacebook}
+            className="font-semibold p-8 rounded-full bg-[#1877F2] hover:bg-[#0C63D4] text-white"
+          >
+            <FaFacebook size={30} />
+            <span className="pl-2">Continue with Facebook</span>
+          </Button>
+
+          {!isIOSInAppBrowser() && (
+            <>
+              <OR />
+              <Button
+                onClick={signInWithGoogle}
+                variant="googledark"
+                className="font-semibold p-8 rounded-full"
+              >
+                <AiOutlineGoogle size={30} />
+                <span className="pl-2">Continue with Google</span>
+              </Button>
+            </>
           )}
 
-          <p className="italic text-center text-sm text-gray-500 pt-6">
-            or continue with email
+          <OR />
+
+          <p className="italic text-center text-sm text-gray-500">
+            continue with email
           </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row gap-2">
@@ -161,8 +179,9 @@ export const Login = ({
               variant="default"
               className="w-auto p-6 rounded-full font-semibold text-md"
               type="submit"
+              disabled={isSubmitting}
             >
-              Login
+              {isSubmitting ? "Sending..." : "Login"}
             </Button>
           </form>
         </div>
