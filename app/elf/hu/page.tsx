@@ -24,7 +24,7 @@ export default function HelloWorldPage() {
               >
               <p className="text-sm text-center mb-4 md:mb-0 md:mr-5">
                 <span className="font-bold mr-2">24 Varázslatos Elf Portré</span>
-                <span className="font-normal">🎄 Ready to Print!</span> 
+                <span className="font-normal">🎄 Nyomtatásra Kész!</span> 
               </p>
             </InView>
             <h1 className="text-center py-4 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
