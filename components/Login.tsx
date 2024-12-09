@@ -6,12 +6,22 @@ import { useToast } from "@/components/ui/use-toast";
 import { Database } from "@/types/supabase";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import disposableDomains from "disposable-email-domains";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { WaitingForMagicLink } from "./WaitingForMagicLink";
 
-
+// iOS in-app browser detection
+const isIOSInAppBrowser = () => {
+  if (typeof window === 'undefined') return false;
+  const ua = navigator.userAgent;
+  const isIOS = /iPad|iPhone|iPod/.test(ua);
+  return isIOS && (
+    ua.includes('FBAN') || 
+    ua.includes('FBAV') || 
+    ua.includes('Instagram')
+  );
+};
 
 type Inputs = {
   email: string;
@@ -53,8 +63,7 @@ export const Login = ({
       toast({
         title: "Something went wrong",
         variant: "destructive",
-        description:
-          "Please try again, if the problem persists, contact us at tamas@utopia.express",
+        description: "Please try again, if the problem persists, contact us at tamas@utopia.express",
         duration: 5000,
       });
     }
@@ -68,8 +77,6 @@ export const Login = ({
   const protocol = host?.includes("localhost") ? "http" : "https";
   const redirectUrl = `${protocol}://${host}/auth/callback`;
 
-  console.log({ redirectUrl });
-
   const signInWithGoogle = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -77,8 +84,6 @@ export const Login = ({
         redirectTo: redirectUrl,
       },
     });
-
-    console.log(data, error);
   };
 
   const signInWithMagicLink = async (email: string) => {
@@ -95,33 +100,34 @@ export const Login = ({
   };
 
   if (isMagicLinkSent) {
-    return (
-      <WaitingForMagicLink toggleState={() => setIsMagicLinkSent(false)} />
-    );
+    return <WaitingForMagicLink toggleState={() => setIsMagicLinkSent(false)} />;
   }
 
   return (
     <>
       <div className="flex h-full w-full items-center justify-center py-32 z-30">
         <div className="flex flex-col gap-4 bg-transparent max-w-[460px]">
-         
-          <Button
-            onClick={signInWithGoogle}
-            variant="googledark"
-            className="font-semibold p-8 rounded-full "
-          >
-            <AiOutlineGoogle size={30} className=""/>
-            <span className="pl-2">Continue with Google</span>
-          </Button>
-
-       
           
-          <p className="italic text-center text-sm text-gray-500 pt-6">or continue with email</p>
+          {isIOSInAppBrowser() ? (
+            <div className="text-sm text-center p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 mb-4">
+              Social login is disabled in this browser. Please use email login or open in Safari.
+            </div>
+          ) : (
+            <Button
+              onClick={signInWithGoogle}
+              variant="googledark"
+              className="font-semibold p-8 rounded-full"
+            >
+              <AiOutlineGoogle size={30} />
+              <span className="pl-2">Continue with Google</span>
+            </Button>
+          )}
 
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-row gap-2 "
-          >
+          <p className="italic text-center text-sm text-gray-500 pt-6">
+            or continue with email
+          </p>
+
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row gap-2">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
                 <Input
@@ -144,7 +150,7 @@ export const Login = ({
                   })}
                 />
                 {isSubmitted && errors.email && (
-                  <span className={"text-xs text-red-400"}>
+                  <span className="text-xs text-red-400">
                     {errors.email?.message || "Email is required to sign in"}
                   </span>
                 )}
@@ -159,8 +165,6 @@ export const Login = ({
               Login
             </Button>
           </form>
-
-       
         </div>
       </div>
     </>
