@@ -6,12 +6,23 @@ import { useToast } from "@/components/ui/use-toast";
 import { Database } from "@/types/supabase";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import disposableDomains from "disposable-email-domains";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { WaitingForMagicLink } from "./WaitingForMagicLink";
 
+const isInAppBrowser = () => {
+  const ua = navigator.userAgent;
+  return (
+    ua.indexOf('FBAN') > -1 || 
+    ua.indexOf('FBAV') > -1 || 
+    ua.indexOf('Instagram') > -1
+  );
+};
 
+const openInNativeBrowser = (url: string) => {
+  window.open(url, '_system') || window.open(url, '_blank');
+};
 
 type Inputs = {
   email: string;
@@ -35,6 +46,18 @@ export const Login = ({
     formState: { errors, isSubmitted },
   } = useForm<Inputs>();
 
+  useEffect(() => {
+    if (isInAppBrowser()) {
+      const currentURL = window.location.href;
+      toast({
+        title: "Browser not supported",
+        description: "Please open in Safari or Chrome for better experience",
+        duration: 5000,
+      });
+      openInNativeBrowser(currentURL);
+    }
+  }, []);
+
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setIsSubmitting(true);
     try {
@@ -53,24 +76,28 @@ export const Login = ({
       toast({
         title: "Something went wrong",
         variant: "destructive",
-        description:
-          "Please try again, if the problem persists, contact us at tamas@utopia.express",
+        description: "Please try again, if the problem persists, contact us at tamas@utopia.express",
         duration: 5000,
       });
     }
   };
 
-  let inviteToken = null;
-  if (searchParams && "inviteToken" in searchParams) {
-    inviteToken = searchParams["inviteToken"];
-  }
-
+  let inviteToken = searchParams?.inviteToken;
   const protocol = host?.includes("localhost") ? "http" : "https";
   const redirectUrl = `${protocol}://${host}/auth/callback`;
 
-  console.log({ redirectUrl });
-
   const signInWithGoogle = async () => {
+    if (isInAppBrowser()) {
+      toast({
+        title: "Browser not supported",
+        description: "Please open in Safari or Chrome to login with Google",
+        variant: "destructive",
+        duration: 5000,
+      });
+      openInNativeBrowser(window.location.href);
+      return;
+    }
+
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
@@ -78,7 +105,13 @@ export const Login = ({
       },
     });
 
-    console.log(data, error);
+    if (error) {
+      toast({
+        title: "Login failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
   };
 
   const signInWithMagicLink = async (email: string) => {
@@ -95,33 +128,27 @@ export const Login = ({
   };
 
   if (isMagicLinkSent) {
-    return (
-      <WaitingForMagicLink toggleState={() => setIsMagicLinkSent(false)} />
-    );
+    return <WaitingForMagicLink toggleState={() => setIsMagicLinkSent(false)} />;
   }
 
   return (
     <>
       <div className="flex h-full w-full items-center justify-center py-32 z-30">
         <div className="flex flex-col gap-4 bg-transparent max-w-[460px]">
-         
           <Button
             onClick={signInWithGoogle}
             variant="googledark"
-            className="font-semibold p-8 rounded-full "
+            className="font-semibold p-8 rounded-full"
           >
-            <AiOutlineGoogle size={30} className=""/>
+            <AiOutlineGoogle size={30} />
             <span className="pl-2">Continue with Google</span>
           </Button>
 
-       
-          
-          <p className="italic text-center text-sm text-gray-500 pt-6">or continue with email</p>
+          <p className="italic text-center text-sm text-gray-500 pt-6">
+            or continue with email
+          </p>
 
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-row gap-2 "
-          >
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row gap-2">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
                 <Input
@@ -144,7 +171,7 @@ export const Login = ({
                   })}
                 />
                 {isSubmitted && errors.email && (
-                  <span className={"text-xs text-red-400"}>
+                  <span className="text-xs text-red-400">
                     {errors.email?.message || "Email is required to sign in"}
                   </span>
                 )}
@@ -159,8 +186,6 @@ export const Login = ({
               Login
             </Button>
           </form>
-
-       
         </div>
       </div>
     </>
