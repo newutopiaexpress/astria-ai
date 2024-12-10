@@ -306,11 +306,11 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="examples">Look like a CEO, in just one click</Badge>
+                          <Badge variant="examples">Examples</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Corporate Portraits</DialogTitle>
+                              <DialogTitle>Corporate Portraits - Look like a CEO, in just one click</DialogTitle>
                               <DialogDescription>
                                 <Image
                                   src="/model-corp.png"
@@ -352,11 +352,11 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="examples">Santa got an upgrade - your holidays just got cooler!</Badge>
+                          <Badge variant="examples">Examples</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Cool Christmas</DialogTitle>
+                              <DialogTitle>Santa got an upgrade - your holidays just got cooler!</DialogTitle>
                               <DialogDescription>
                                 <Image
                                   src="/model-corp.png"
@@ -397,11 +397,11 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="examples">Warning: May cause pointy ears and excessive joy!</Badge>
+                          <Badge variant="examples">Examples</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Christmas Elf</DialogTitle>
+                              <DialogTitle>Warning: May cause pointy ears and excessive joy!</DialogTitle>
                               <DialogDescription>
                                 <Image
                                   src="/elfprev.png"
@@ -445,7 +445,7 @@ export default function TrainModelZone() {
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>
-                              <DialogTitle>Peak You</DialogTitle>
+                              <DialogTitle>See it, believe it, achieve it!</DialogTitle>
                               <DialogDescription>
                                 <Image
                                   src="/insp.png"
@@ -467,7 +467,7 @@ export default function TrainModelZone() {
                           className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
                         </Image>
                         </div>
-                        Peak YOu
+                        Peak You
                       </Label>
                     </div>
 
