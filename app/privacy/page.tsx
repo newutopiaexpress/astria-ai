@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
         <CardContent className="prose dark:prose-invert max-w-none">
           
 <h2>Privacy Policy for Utopia.photos</h2>
-<p>Last Updated: [Current Date]</p>
+<p>Last Updated: 2024.12.09.</p>
 <h2>1. Introduction</h2>
 <p>Welcome to Utopia.photos ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our AI-powered photo transformation service.</p>
 <h2>2. Information We Collect</h2>
