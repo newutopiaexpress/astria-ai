@@ -88,7 +88,7 @@ export default function HelloWorldPage() {
       viewOptions={{ margin: '0px 0px 0px 0px' }}
       transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
   >
-    <div className="w-full grid grid-cols-12 pt-32 gap-0 mx-auto min-h-96 relative">
+    <div className="w-full grid grid-cols-12 pt-32 gap-0 mx-auto min-h-96 relative bg-stone-100">
       <div className="col-span-12 px-6 text-center backdrop-blur-md">
           <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit mx-auto text-sm px-4 py-1">
             No studio, no stress.
