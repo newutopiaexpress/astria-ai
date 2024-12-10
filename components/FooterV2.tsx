@@ -12,19 +12,19 @@ export function FooterV2() {
   return (
     <footer className="">
 
-        <div className="fixed bottom-0 right-6 w-full bg-transparent text-stone-800 py-6">
+        <div className=" z-100 fixed bottom-0 right-6 w-full bg-transparent text-stone-800 py-6">
           {/*<div className="mb-4 md:mb-0">
             <UtopiaLogo/>
           </div>*/}
           <nav>
             <ul className="text-xs flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
               <li>
-                <Link href="/privacy" className="hover:text-gray-300 transition-colors">
+                <Link href="/privacy" className="hover:text-gray-300 transition-colors z-100">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="mailto:tamas@utopia.express" className="hover:text-gray-300 transition-colors">
+                <Link href="mailto:tamas@utopia.express" className="hover:text-gray-300 transition-colors z-100">
                   Contact
                 </Link>
               </li>
