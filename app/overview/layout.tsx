@@ -12,7 +12,6 @@ import {
 import Chat from "@/components/Chat";
 import { Badge } from "@/components/ui/badge";
 
-
 export const dynamic = "force-dynamic";
 
 export default async function RootLayout({
@@ -31,7 +30,7 @@ export default async function RootLayout({
   }
 
   return <div className="relative w-full h-full">
-            <div className="z-10">
+            <div className="">
               {children}
             </div>
           

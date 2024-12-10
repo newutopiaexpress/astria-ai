@@ -50,30 +50,6 @@ export default function RootLayout({ children }: any) {
               <Toaster />
               <Analytics />
 
-
-{/*}
-              <Sheet>
-                <SheetTrigger className="transition-all w-10 h-10 outline outline-8 outline-offset-2 outline-stone-300/50 hover:outline-offset-1 hover:outline-2 hover:outline-stone-300/80 border border-stone-300 bg-stone-200 rounded-full fixed left-5 bottom-6">
-                  <Badge className="absolute -top-4 -right-1 opacity-0 animate-bounce-in  flex items-center justify-center" variant={"message"}>1</Badge>
-                  <ChatIcon/>
-                </SheetTrigger>
-                <SheetContent className="md:min-w-[600px] sm:w-full">
-                  <SheetHeader>
-                    <SheetTitle></SheetTitle>
-                    <SheetDescription>
-                      <p className="mx-auto text-center mt-16">
-                      <Link href="/login" className=" hover:text-stone-300">
-                          <Button variant={"google"} size={"md"} className="ml-4">Login with Google
-                              <AiOutlineGoogle size={30} className="ml-2 hover:text-stone-300  text-stone-800"/>
-                          </Button>
-                      </Link>
-                      </p>
-                    </SheetDescription>
-                  </SheetHeader>
-                </SheetContent>
-              </Sheet>
-*/}
-
       </body>
     </html>
   );
