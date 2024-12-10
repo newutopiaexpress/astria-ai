@@ -441,7 +441,7 @@ export default function TrainModelZone() {
                         <div className="relative group">
                         <Dialog>
                           <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                          <Badge variant="outline">See it, believe it, achieve it!</Badge>
+                          <Badge variant="outline">Examples</Badge>
                           </DialogTrigger>
                           <DialogContent>
                             <DialogHeader>

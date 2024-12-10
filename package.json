@@ -73,6 +73,7 @@
     "react-facebook": "^9.0.12",
     "react-hook-form": "^7.46.1",
     "react-icons": "^4.11.0",
+    "react-messenger-chat-plugin": "^3.0.5",
     "replicate": "^1.0.1",
     "resend": "^3.2.0",
     "sass": "^1.80.1",
