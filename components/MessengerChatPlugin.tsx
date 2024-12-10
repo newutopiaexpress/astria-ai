@@ -14,8 +14,8 @@ export default function MessengerChatPlugin() {
 
   return (
     <MessengerChat
-      pageId="109268111769502"
-      language="sv_SE"
+      pageId="527780757077912"
+      language="eng_ENG"
       themeColor={"#000000"}
       bottomSpacing={300}
       loggedInGreeting="loggedInGreeting"
