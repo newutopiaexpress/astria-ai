@@ -136,7 +136,7 @@ export function Bento2() {
             >
             Stunning First Impressions with 
             </TextEffect>
-            <span className="bg-gradient-to-r from-amber-600  to-stone-800 inline-block text-transparent bg-clip-text pb-2">
+            <span className="bg-gradient-to-r from-stone-700 via-amber-700 to-stone-800 inline-block text-transparent bg-clip-text pb-2">
               <TextEffect per='char' preset='fade' delay={1.5}>
               Ai-powered Photography
               </TextEffect>         
@@ -145,8 +145,17 @@ export function Bento2() {
 {/*}
           <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit mx-auto text-sm px-4 py-1">Three Easy Steps</p>
          */} 
-          <p className="px-6 pt-6 text-center mx-auto md:px-0 text-2xl font-thin text-stone-700 leading-tight">👨Drop your photos, 🎨 select a Style Pack, and ✨ watch the magic unfold</p>
-
+          
+            <InView
+                variants={{
+                  hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                }}
+                viewOptions={{ margin: '0px 0px 0px 0px' }}
+                transition={{ duration: 0.6, ease: 'easeIn', delay: 2 }}
+              >
+            <p className="px-6 pt-6 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">👨Drop your photos, 🎨 select a Style Pack, and ✨ watch the magic unfold</p>
+            </InView>
             <InView
               variants={{
                 hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
