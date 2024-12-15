@@ -153,19 +153,19 @@ export default function ImageCarousel() {
 
   return (
     <div
-      className="mx-auto min-w-full max-w-[1280px] rounded-[0px] md:rounded-[30px]"
+      className="mx-auto w-full rounded-[0px] md:rounded-[30px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       
       <nav className="md:flex md:justify-center overflow-x-auto hidden">
-        <div className="flex space-x-0 md:space-x-2">
+        <div className="flex space-x-0 ">
           {slides.map((slide, index) => (
             <button
             key={index}
             onClick={() => goToSlide(index)}
             className={cn(
-              "relative px-4 py-2 text-sm leading-tight md:text-sm font-normal md:leading-relaxed rounded-xl transition-colors",
+              "relative px-4 py-4 text-sm leading-tight md:text-sm font-normal md:leading-relaxed rounded-tr-xl rounded-tl-xl transition-colors",
               current === index
                 ? "text-stone-100"
                 : "text-muted-foreground hover:bg-muted"
@@ -186,12 +186,12 @@ export default function ImageCarousel() {
         </div>
       </nav>
 
-      <div className="px-0 md:px-6 max-w-[1280px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px]">
-        <Carousel className="bg-transparent border-none p-0 md:p-2 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
+      <div className="px-0 max-w-[1440px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px] ">
+        <Carousel className="bg-transparent border-none p-0  rounded-[0px] md:rounded-[30px]" setApi={setApi}>
           <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab ">
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
-                <Card className="max-w-md md:max-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
+                <Card className="max-w-md md:min-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
                   <div className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center">
                     <p className="text-lg md:text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
                       {slide.description}
