@@ -106,7 +106,7 @@ export default async function Navbar() {
               />
             )}
 
-            {/*}
+            
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer z-50">
                 <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
@@ -127,32 +127,8 @@ export default async function Navbar() {
                 </form>
               </DropdownMenuContent>
             </DropdownMenu>
-            */}
+            
 
-            <Sheet>
-                  <SheetTrigger className="ml-4">
-                    <NavIcon />
-                  </SheetTrigger>
-                  <SheetContent className="w-[440px] sm:w-[540px]">
-                    <SheetHeader>
-                      <SheetDescription className="pt-16">
-                        <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
-                          <FiUser />
-                        </div>
-                        <p className="text-lg ml-4 mr-4 mt-2">{user.email}</p>
-                        <form action="/auth/sign-out" method="post">
-                          <Button
-                            type="submit"
-                            className="ml-4 mt-2 w-min text-left bg-stone-800"
-                            >
-                            Log out
-                          </Button>
-                        </form>
-                        <VerticalNav/>
-                      </SheetDescription>
-                    </SheetHeader>
-                  </SheetContent>
-            </Sheet>
 
           </div>
         )}

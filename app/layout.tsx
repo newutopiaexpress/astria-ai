@@ -5,19 +5,6 @@ import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
 import CookieConsent from "@/components/CookieConsent";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import Chat from "@/components/Chat";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { AiOutlineGoogle } from "react-icons/ai";
 import { ChristmasBanner } from "@/components/ChristmasBanner";
 
 export const metadata = {

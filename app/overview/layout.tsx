@@ -1,16 +1,7 @@
 import Login from "../login/page";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import Chat from "@/components/Chat";
-import { Badge } from "@/components/ui/badge";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -26,9 +17,8 @@ export default async function RootLayout({
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return <Login />;
+    return redirect("/login");
   }
-
   return <div className="relative w-full h-full">
             <div className="">
               {children}
