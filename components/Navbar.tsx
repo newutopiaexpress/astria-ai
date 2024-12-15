@@ -20,8 +20,6 @@ import { AiOutlineGoogle } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { VerticalNav } from "./VerticalNav";
 import { LoginSheet } from "./LoginSheet";
-import { headers } from "next/headers";
-import { LoggedInSheet } from "./LoggedInSheet";
 import { FiUser } from "react-icons/fi";
 import {
   Sheet,
@@ -40,8 +38,6 @@ export const revalidate = 0;
 
 export default async function Navbar() {
   const supabase = createServerComponentClient<Database>({ cookies });
-  const headersList = headers(); // Get headers list
-  const host = headersList.get("host");
 
   const {
     data: { user },
@@ -86,7 +82,7 @@ export default async function Navbar() {
       <div className="flex gap-4 lg:ml-auto mr-2 ">
         {!user && (
           <div className="flex items-center justify-center">
-            <LoginSheet host={headersList.get("host")} />
+            <p>login</p>
         </div>
         )}
         {user && (

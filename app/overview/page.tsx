@@ -23,7 +23,6 @@ export default async function Index() {
   return (
     <div className="relative z-10">
       <ClientSideModelsList serverModels={models ?? []} />
-      <IntercomChat />
     </div>
   );
 }

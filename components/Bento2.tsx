@@ -48,14 +48,10 @@ import { UtopiaFeatures } from "./utopia-features";
 import HoverSlideshow from "./HoverSlideshow";
 import { HowToSteps, type Step } from "./HowToSteps";
 import ImageCarousel from "./ImageCarousel";
-import { LoginModal } from "./LoginModal";
 import { headers } from "next/headers";
-import { FacebookChat } from './FacebookChat';
-import { Session } from '@talkjs/react';
+
 
 export function Bento2() {
-  const headersList = headers(); // Get headers list
-  const host = headersList.get("host");
   const steps: Step[] = [
     { number: 1, title: "Set Your Stage", description: "Upload photos and select from our style library - business to christmas" },
     { number: 2, title: "AI Magic Begins", description: "We build your personal AI and generate your professional photo collection" },
@@ -73,8 +69,6 @@ export function Bento2() {
 
 <div className="w-full px-4">
 
-
-<Session appId="tC5Xvewl" userId="sample_user_alice"></Session>
   
 	<div className="w-full mx-auto z-30 bg-transparent">
         <InView
@@ -164,9 +158,13 @@ export function Bento2() {
               viewOptions={{ margin: '0px 0px 0px 0px' }}
               transition={{ duration: 0.6, ease: 'easeIn', delay: 0.6 }}
             >
-            <div className="mx-auto text-center bg-stone-800/0 py-12">
-              <span> <FacebookChat/> </span>
-              <LoginModal host={headersList.get("host")} />
+            <div className="mx-auto text-center bg-stone-800/0 py-12 w-full flex justify-center items-center">
+                <Link href="/login">
+                <Button className="flex items-center justify-center rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
+                     Start Creating<SparkleIcon/>
+                </Button>
+                </Link>
+                
             </div>
             </InView>
         </div> 
