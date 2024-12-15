@@ -18,7 +18,11 @@ import { UtopiaLogo } from "./ui/utopia-logo";
 import { UserIcon } from "./ui/user-icon";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import { VerticalNav } from "./VerticalNav";
+import { LoginSheet } from "./LoginSheet";
+import { headers } from "next/headers";
+import { LoggedInSheet } from "./LoggedInSheet";
+import { FiUser } from "react-icons/fi";
 
 export const dynamic = "force-dynamic";
 
@@ -28,6 +32,8 @@ export const revalidate = 0;
 
 export default async function Navbar() {
   const supabase = createServerComponentClient<Database>({ cookies });
+  const headersList = headers(); // Get headers list
+  const host = headersList.get("host");
 
   const {
     data: { user },
@@ -36,22 +42,22 @@ export default async function Navbar() {
   const {
     data: credits,
   } = await supabase.from("credits").select("*").eq("user_id", user?.id ?? '').single()
+  
 
   return (
-    <div className="flex w-full px-4 py-4 items-center justify-between fixed bg-gradient-to-b from-stone-200/30 via-stone-200/10 to-stone-200/0 z-50"> {/*backdrop-blur-md*/}
+    <div className="flex w-full py-4 px-4 items-center justify-between z-50"> {/*backdrop-blur-md*/}
       <div className="flex h-full">
         <Link href="/">
-          <h2 className="font-bold ml-2"><UtopiaLogo/></h2>
+          <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
         </Link>
       </div>
       {user && (
         <div className="flex flex-row gap-1 md:gap-4 ml-0 md:ml-6">
           {stripeIsConfigured && (
             <Link href="/get-credits">
-              <Button variant={"navbar"} size={"navbar"}>
+              <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
                 <CoinIcon/>
-                <span className="hidden md:block ml-2 text-xs">Get Credits</span>
-              </Button>
+              </div>
             </Link>
           )}
           {stripeIsConfigured && (
@@ -67,23 +73,9 @@ export default async function Navbar() {
 
       <div className="flex gap-4 lg:ml-auto mr-2 ">
         {!user && (
-          <span className="flex gap-4">
-          <Link href="/login">
-            <Button variant={"google"} size={"login"} className="group">  
-              <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><AiOutlineGoogle/></span>
-            </Button>
-          </Link>
-          <Link href="/login">
-          <Button variant={"google"} size={"login"} className="group">  
-            <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><FaFacebook/></span>
-          </Button>
-        </Link>
-        <Link href="/login">
-          <Button variant={"google"} size={"login"} className="group">  
-            <span className="group-hover:scale-105 text-stone-800 bg-stone-800/0 rounded-full w-10 h-10 flex items-center justify-center"><MdOutlineEmail/></span>
-          </Button>
-        </Link>
-        </span>
+          <div className="flex items-center justify-center">
+            <LoginSheet host={headersList.get("host")} />
+        </div>
         )}
         {user && (
           <div className="flex flex-row gap-4 text-center align-middle justify-center">
@@ -92,8 +84,8 @@ export default async function Navbar() {
             )}
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer z-50">
-                <div className="transition-all pt-2 pl-2 w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-300 outline outline-4 outline-stone-300/50 outline-offset-2 hover:outline hover:outline-1 hover:outline-green-400 hover:outline-offset-0">
-                  <UserIcon/>     
+                <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
+                <FiUser />
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
@@ -110,6 +102,7 @@ export default async function Navbar() {
                 </form>
               </DropdownMenuContent>
             </DropdownMenu>
+            <LoggedInSheet host={headersList.get("host")} />
           </div>
         )}
       </div>
@@ -143,6 +136,18 @@ export function SparkleIcon() {
 </svg>
 )
 }
+
+
+export function NavIcon() {
+  return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+)
+}
+
+
+
 
 
 

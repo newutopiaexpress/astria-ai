@@ -14,6 +14,9 @@ const buttonVariants = cva(
           "text-xs hover:shadow-sm bg-stone-100/40 border hover:bg-stone-100 text-stone-800",
         googledark:
           "transition-all duration-75 font-medium text-stone-100 bg-stone-800 fill-stone-100 rounded-full outline outline-8 hover:outline-0 outline-offset-2 hover:outline-offset-0 outline-stone-300/20 hover:bg-gradient-to-b hover:from-white hover:to-neutral-200 hover:text-stone-800 hover:shadow-sm",
+          loginbtn:
+          "font-thin bg-gradient-to-b from-white to-white/0 rounded-full text-stone-800  hover:bg-gradient-to-b hover:from-white hover:to-neutral-200 hover:text-stone-800 hover:shadow-sm transition-all",
+
         google:
           "font-medium bg-gradient-to-b from-white to-white/0 rounded-full text-stone-800 outline outline-8 hover:outline-0 outline-offset-2 hover:outline-offset-0 outline-stone-300/20 hover:bg-gradient-to-b hover:from-white hover:to-neutral-200 hover:text-stone-800 hover:shadow-sm transition-all",
         navbar:
@@ -33,7 +36,7 @@ const buttonVariants = cva(
       },
       size: {
         navbar: "h-9 pl-5 pr-3 py-2",
-        login: "h-9 w-9 ",
+        login: "h-8 w-8",
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",

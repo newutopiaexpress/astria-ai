@@ -28,10 +28,9 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden">
-              
-              {/*<ChristmasBanner />*/}
-              <section>
+      <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden"> 
+              <section className="">
+                  <ChristmasBanner />
                 <Suspense
                   fallback={
                     <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
@@ -40,7 +39,7 @@ export default function RootLayout({ children }: any) {
                   <Navbar />
                 </Suspense>
               </section>
-              <main className="mx-auto mt-20 lg:mt-28 w-full z-10"> {/* max-w-[1500px] */}
+              <main className="mx-auto w-full"> {/* max-w-[1500px] */}
                 {children}
               </main>
               <CookieConsent /> 

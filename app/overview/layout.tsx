@@ -33,22 +33,6 @@ export default async function RootLayout({
             <div className="">
               {children}
             </div>
-          
-            <Sheet>
-                <SheetTrigger className="transition-all z-50 w-10 h-10 outline outline-8 outline-offset-2 outline-stone-300/50 hover:outline-offset-1 hover:outline-2 hover:outline-stone-300/80 border border-stone-300 bg-stone-200 rounded-full fixed left-5 bottom-6">
-                  <Badge className="absolute -top-4 z-50 -right-1 opacity-0 animate-bounce-in  flex items-center justify-center" variant={"message"}>1</Badge>
-                  <ChatIcon/>
-                </SheetTrigger>
-                <SheetContent className="md:min-w-[600px] sm:w-full">
-                  <SheetHeader>
-                    <SheetTitle></SheetTitle>
-                    <SheetDescription>
-                      <Chat/>
-                    </SheetDescription>
-                  </SheetHeader>
-                </SheetContent>
-            </Sheet>
-
           </div>
           ;
 }

@@ -10,14 +10,16 @@ import { UtopiaLogo } from "./ui/utopia-logo";
 
 export function FooterV2() {
   return (
-    <footer className="">
+    <footer className="z-100">
 
-        <div className=" z-100 fixed bottom-0 right-6 w-full bg-transparent text-stone-800 py-6">
-          {/*<div className="mb-4 md:mb-0">
+
+{/*
+        <div className="z-[99999] fixed bottom-0 right-0 w-full bg-stone-200 text-stone-800 py-6">
+          <div className="mb-4 md:mb-0">
             <UtopiaLogo/>
-          </div>*/}
+          </div>
           <nav>
-            <ul className="text-xs flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+            <ul className="text-xs flex flex-wrap justify-center md:justify-end space-x-8 md:space-x-10">
               <li>
                 <Link href="/privacy" className="hover:text-gray-300 transition-colors z-100">
                   Privacy Policy
@@ -25,13 +27,18 @@ export function FooterV2() {
               </li>
               <li>
                 <Link href="mailto:tamas@utopia.express" className="hover:text-gray-300 transition-colors z-100">
-                  Contact
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="mailto:tamas@utopia.express" className="hover:text-gray-300 transition-colors z-100">
+                  Facebook
                 </Link>
               </li>
             </ul>
           </nav>
         </div>
-
+*/}
     </footer>
 
   )

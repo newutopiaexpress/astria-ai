@@ -7,6 +7,7 @@ import { TextEffect } from '@/components/core/text-effect';
 import Spline from '@splinetool/react-spline/next';
 import { SparkleIcon } from '@/components/SparkleIcon';
 import ImageCarousel from "@/components/ImageCarousel";
+import { PriceTable } from "@/components/PriceTable";
 
 export default function HelloWorldPage() {
 
@@ -14,7 +15,20 @@ export default function HelloWorldPage() {
     <div className="w-full ">
 	    <div className="w-full mx-auto z-30 bg-transparent">
           
-          <div className="text-center pt-48 md:pt-40 mb-32 md:mb-0">
+          <div className="text-center px-4 mx-auto mb-32 md:mb-0">
+
+            <div className="max-w-[870px] mx-auto relative">
+              <ElfSlider/>
+            </div>
+
+            <h1 className="max-w-[870px] mx-auto text-center text-pretty py-8 text-stone-800 font-thin tracking-tight drop-shadow-sm text-6xl leading-[3.6rem] md:text-7xl md:leading-[4rem]">
+              <span className="bg-gradient-to-r from-emerald-600  to-red-500 inline-block text-transparent bg-clip-text pb-2">
+                {/*<TextEffect per='char' preset='fade' delay={1.5}>
+                Turn Your Little One into a Real Christmas Elf!
+                </TextEffect>  */}
+                Turn Your Little One into a Real Christmas Elf!       
+              </span>
+            </h1>
             <InView
                 variants={{
                   hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
@@ -24,18 +38,14 @@ export default function HelloWorldPage() {
                 transition={{ duration: 0.4, ease: 'easeIn', delay: 3 }}
               >
               <p className="text-sm text-center mb-4 md:mb-0 md:mr-5">
-                <span className="font-bold mr-2">24 Magical Elf Portraits</span>
-                <span className="font-normal">🎄 Ready to Print!</span> 
+                <span className="font-bold mr-2">✨ The coolest gift in 2024</span>
+                <span className="font-normal"> ⚡ Ready to print or share</span> 
               </p>
             </InView>
-            <h1 className="text-center py-4 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[2.5rem] md:text-6xl md:leading-[3.8rem]">
 
-              <span className="bg-gradient-to-r from-green-500  to-fuchsia-400 inline-block text-transparent bg-clip-text pb-2">
-                <TextEffect per='char' preset='fade' delay={1.5}>
-                Dear Santa, I Want to Be an Elf!
-                </TextEffect>         
-              </span>
-            </h1>
+            <p className="max-w-[700px] py-6 mx-auto text-center md:px-0 text-2xl font-thin text-stone-700 leading-tight">
+            Create stunning elf portraits that capture your child's unique smile and personality. Professional-quality printable Christmas photos without the studio hassle!
+            </p>
               <InView
                 variants={{
                   hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
@@ -56,27 +66,6 @@ export default function HelloWorldPage() {
               </InView>
           </div>
   
-          <InView
-              variants={{
-                hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
-                visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-              }}
-              viewOptions={{ margin: '0px 0px 0px 0px' }}
-              transition={{ duration: 0.6, ease: 'easeIn', delay:0 }}
-            >
-            <div className="max-w-[1200px] backdrop-blur-md flex justify-center mb-0 md:mb-12 mt-0 md:mt-20  mx-auto w-full bg-transparent  relative">
-  
-              {/*} <SpinningText
-                radius={5}
-                fontSize={1.2}
-                className='font-medium leading-none'
-                >
-                {`In many different styles • `}
-                </SpinningText>*/}
-  
-            <ElfSlider/>
-            </div> 
-          </InView>   
       </div>
 
 
@@ -88,7 +77,7 @@ export default function HelloWorldPage() {
       viewOptions={{ margin: '0px 0px 0px 0px' }}
       transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
   >
-    <div className="w-full grid grid-cols-12 pt-32 gap-0 mx-auto min-h-96 relative bg-stone-100">
+    <div className="max-w-[960px] grid grid-cols-12 pt-32 gap-0 mx-auto min-h-96 relative bg-stone-100/0">
       <div className="col-span-12 px-6 text-center backdrop-blur-md">
           <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit mx-auto text-sm px-4 py-1">
             No studio, no stress.
@@ -101,7 +90,7 @@ export default function HelloWorldPage() {
           </p>
       </div>
       <div className="py-12 col-span-12 max-w-full mx-auto bg-black/0">
-        <ImageCarousel/>
+        <PriceTable/>
         {/*<StyleSlider/>*/}
       </div>
       <div className="col-span-12 max-w-full mx-auto py-16">
@@ -114,11 +103,12 @@ export default function HelloWorldPage() {
     </div>
   </InView>
 
-
-        <Spline
+{/*
+      <Spline
         scene="https://prod.spline.design/fbdje1byrTMqbiBQ/scene.splinecode" 
         className="fixed top-0 left-0 w-full h-full z-[-1]"
       />
+      */}
     </div>
     );
   }

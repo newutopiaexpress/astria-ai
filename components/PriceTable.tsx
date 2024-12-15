@@ -1,111 +1,88 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import OverlappingAvatars from "@/components/OverlappingAvatars"
+
 
 export function PriceTable() {
     return (
-<div className="grid md:grid-cols-12 gap-10 mx-auto mb-16">
+<div className="grid grid-cols-12 gap-0 md:gap-14 mx-auto px-6">
 
-<div className="col-span-12 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
-    <p className="text-lg"><span className="font-normal text-sm">🤗 Promo gift! 24 Photoshoot Portrait for free!</span></p>
-</div>
-
-<div className="col-span-8 aspect-[2.5/0.5]">
-    <div className="relative transition-all duration-50 rounded-3xl bg-amber-300/20 hover:bg-amber-300/30 backdrop-blur-sm">
-                        
-                        <div className="p-6 md:p-9 bg-white/60 rounded-3xl relative ">  
-                             
-                            <div className="grid md:grid-cols-12 gap-0">
-                                <div className="col-span-6 flex flex-col place-items-start">
-                                    <h1 className=" text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[3rem]">
-                                    <RocketIcon/>Launch Sale!
-                                      </h1>
-                                    <p className="text-md leading-tight mr-12">Ideal for testing the waters or creating a specific set for one occasion</p>
-                                </div>
-                                <div className="col-span-6 flex items-end justify-start border-l border-neutral-400/50">
-                                    <ul className="leading-relaxed text-xs">
-                                        <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>1 AI model fine-tuning sessions</li>
-                                        <li className="border-b border-neutral-400/50 py-2"><FileIcon/>24 total images across different styles</li>
-                                    </ul> 
-                                </div>
-                            </div>
-
-                            <p className="font-normal text-5xl absolute right-6 top-4">
-                                4<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /24pcs</span>
-                            </p>  
-
-                            <p className="font-normal text-5xl absolute right-6 bottom-6">
-                                <Link href="/login" className="ml-4 float-right">
-                                    <Button variant="outline">Select <PlusIcon2/></Button>
-                                </Link>
-                            </p>   
-                        </div>  
-    </div>
-</div>
-
-<div className="col-span-4 row-span-2">
-    <div className="mb-6 col-span-1 bg-green-300/20 text-stone-800 h-full rounded-3xl relative">
-            <div className="p-9">  
-                <p className="text-stone-300"><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/></p><br/>
-                <h1 className="mt-12 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">Companies, Teams</h1>
-                <p className="text-md mt-4 leading-tight">Perfect for professional influencers and business leaders.
-                Our most comprehensive package for those who need constant visual content updates across multiple platforms and purposes.
-                </p>
-                <ul className="leading-relaxed text-xs">
-                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>50 AI model fine-tuning sessions</li>
-                    <li className="border-b border-neutral-400/50 py-2"><FileIcon/>1200 total images across different styles</li>
-                </ul>   
-                <p className="font-normal text-5xl absolute right-6 bottom-6">
-                    139<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /24pcs</span>
-                    <Link href="/login" className="ml-4 float-right">
-                        <Button variant="outline">Select <PlusIcon2/></Button>
-                    </Link>
-                </p> 
-            </div>  
-    </div>
-</div>
-
-<div className="col-span-4 mb-6 transition-all duration-50 bg-sky-200/20 hover:bg-sky-200/40 rounded-3xl relative backdrop-blur-md">
+    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
+        <div className="mb-6 transition-all duration-50 bg-sky-200/0 shadow-xl hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
             
             {/*<div className="absolute top-3 -right-3 rounded-3xl bg-purple-400 pt-0 pb-1 pl-2 pr-2 text-center ">
                 <p className="text-lg">0.5<span className="font-normal text-sm">€/photo</span></p>
             </div>*/}
             <div className="p-9">  
-                <p className="bg-neutral-400/40 rounded-full max-w-fit p-2 flex items-center justify-center">10</p><br/>
-                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">Portrait Portfolio</h1>
-                <p className="text-md font-thin leading-tight">
-                Great for building a varied professional presence or creating seasonal content.
+                <p><StarIcon/></p><br/>
+                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
+                Studio Starter
+                </h1>
+                <p className="text-sm leading-tight">
+                Beyond what a camera can capture. Your first step into next-gen photography!
                 </p>
-                <p className="font-normal text-5xl py-3">
-                    <span className="font-normal text-[.5em]">€</span>24<span className="text-xl align-top border-b border-stone-800">99</span>
-                </p>
-                <ul className="mb-4 mt-2 leading-relaxed text-xs font-thin">
-                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>10 AI model fine-tuning sessions</li>
-                    <li className="border-b border-neutral-400/50 py-2"><FileIcon/>240 total images across different styles</li>
+                <ul className="mb-4 mt-4 leading-relaxed text-xs text-left">
+                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>1 AI model creation</li>
+                    <li className="border-b border-neutral-400/50 py-2"><FileIcon/>1x24 generated images</li>
                 </ul> 
-                <p className="font-normal text-5xl ">
-                    <Link href="/login" className="ml-4 float-right">
-                        <Button variant="outline">Select <PlusIcon2/></Button>
+                <p className="font-normal text-5xl">
+                    11<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /24pcs</span>
+                    <br/>
+                    <Link href="/login" className="w-full">
+                        <Button variant="buy">Select <PlusIcon2/></Button>
                     </Link>
                 </p>
             </div>  
-</div>
+        </div>
+    </div>
 
-<div className="col-span-4 mb-6 bg-rose-200/30 hover:bg-rose-200/30 rounded-3xl relative backdrop-blur-md">
+    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
+        <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 text-stone-800 rounded-3xl relative">
             <div className="p-9">  
-                <p><StarIcon/><StarIcon/><StarIcon/></p><br/>
-                <h1 className="mt-12 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">Professional</h1>
-                <ul className="mb-4 mt-2 leading-relaxed text-xs">
-                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>30 AI model fine-tuning sessions</li>
-                    <li className="border-b border-neutral-400/50 py-2"><FileIcon/>720 total images across different styles</li>
-                </ul> 
-                <p className="font-normal text-5xl ">
-                    69<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /24pcs</span>
-                    <Link href="/login" className="ml-4 float-right">
-                        <Button variant="outline">Select <PlusIcon2/></Button>
+                <p className="text-stone-300"><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/></p><br/>
+                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.4rem]">
+                Complete Revolution</h1>
+                <p className="text-sm mt-4 leading-tight">
+                Your entire year's photo needs solved! Unlimited styles, impossible shots, zero hassle
+                </p>
+                <ul className="mb-4 mt-4 leading-relaxed text-xs text-left">
+                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>10 AI model creation</li>
+                    <li className="border-b border-neutral-400/50 py-2"><FileIcon/>10x24 generated images</li>
+                </ul>   
+                <p className="font-normal text-5xl">
+                    99<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /240pcs</span>
+                    <br/>
+                    <Link href="/login" className="w-full">
+                        <Button variant="buy">Select <PlusIcon2/></Button>
                     </Link>
                 </p> 
             </div>  
-</div>
+        </div>
+    </div>
+
+    <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
+        <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
+            <div className="p-9"> 
+                {/*<p><StarIcon/><StarIcon/><StarIcon/></p><br/>*/}
+                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
+                Portfolio Plus</h1>
+                <p className="text-sm leading-tight">
+                Great for building a varied professional presence or creating seasonal content.
+                </p>
+                <ul className="mb-4 mt-4 leading-relaxed text-xs text-left">
+                <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>5 AI model creation</li>
+                <li className="border-b border-neutral-400/50 py-2"><FileIcon/>5x24 generated images</li>
+                </ul> 
+                <p className="font-normal text-5xl ">
+                    54<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /120pcs</span>
+                    <br/>
+                    <Link href="/login" className="w-full">
+                        <Button variant="buy">Select <PlusIcon2/></Button>
+                    </Link>
+                </p> 
+            </div>  
+        </div>
+    </div>
 
 </div>
     );
@@ -230,14 +207,3 @@ export function SparkleIcon() {
     
   )
   }
-
-  
-  export function RocketIcon() {
-    return (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="w-8 h-8  mt-1">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-</svg>
-
-  )
-  }
-

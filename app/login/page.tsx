@@ -3,7 +3,6 @@ import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { Database } from "../../types/supabase";
 import { Login } from "@/components/Login";
-import dynamicImport from "next/dynamic";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +26,7 @@ export default async function LoginPage({
   const host = headersList.get("host");
 
   return (
-    <div className="flex flex-col flex-1 w-full relative">
+    <div className="flex flex-col flex-1 w-full relative items-center justify-center">
       <Login host={host} searchParams={searchParams} />
       {/*<Spline
       className="fixed z-[1] top-0 left-0 w-full h-full hidden md:block"

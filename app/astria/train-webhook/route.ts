@@ -130,7 +130,22 @@ export async function POST(request: Request) {
         from: "noreply@utopia.express",
         to: user?.email ?? "",
         subject: "Your model was successfully trained!",
-        html: `<h2>We're writing to notify you that your model training was successful! 1 credit has been used from your account.</h2>`,
+        html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #292524;">Your model training was successful!</h2>
+            <p>1 credit has been used from your account.</p>
+            <a href="https://utopia.photos/overview" 
+               style="display: inline-block; 
+                      background: linear-gradient(to right, #18181B, #292524);
+                      color: white;
+                      padding: 12px 24px;
+                      text-decoration: none;
+                      border-radius: 24px;
+                      margin-top: 16px;">
+              View Your Models
+            </a>
+          </div>
+        `,
       });
     }
 
