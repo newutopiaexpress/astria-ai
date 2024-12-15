@@ -23,6 +23,14 @@ import { LoginSheet } from "./LoginSheet";
 import { headers } from "next/headers";
 import { LoggedInSheet } from "./LoggedInSheet";
 import { FiUser } from "react-icons/fi";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { NavIcon } from "@/components/ui/navicon";
 
 export const dynamic = "force-dynamic";
 
@@ -53,18 +61,22 @@ export default async function Navbar() {
       </div>
       {user && (
         <div className="flex flex-row gap-1 md:gap-4 ml-0 md:ml-6">
+          {/*}
           {stripeIsConfigured && (
-            <Link href="/get-credits">
-              <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
-                <CoinIcon/>
-              </div>
+            <Link href="/get-credits" className="flex items-center justify-cente text-sm">
+              <span className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
+                <CoinIcon/>   
+              </span>
+              Buy Credits
             </Link>
           )}
+            */}
+
           {stripeIsConfigured && (
             <Link href="/overview">
               <Button variant={"navbar"} size={"navbar"}>
                 <ModelsIcon/>
-                <span className="hidden md:block ml-2">Your Models</span>
+                <span className="hidden md:block ml-2">Your Series</span>
               </Button>
             </Link>
           )}
@@ -80,8 +92,13 @@ export default async function Navbar() {
         {user && (
           <div className="flex flex-row gap-4 text-center align-middle justify-center">
             {stripeIsConfigured && (
-              <ClientSideCredits creditsRow={credits ? credits : null} />
+              <ClientSideCredits 
+              creditsRow={credits ? credits : null} 
+              className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
+              />
             )}
+
+            {/*}
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer z-50">
                 <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
@@ -102,7 +119,33 @@ export default async function Navbar() {
                 </form>
               </DropdownMenuContent>
             </DropdownMenu>
-            <LoggedInSheet host={headersList.get("host")} />
+            */}
+
+            <Sheet>
+                  <SheetTrigger className="ml-4">
+                    <NavIcon />
+                  </SheetTrigger>
+                  <SheetContent className="w-[440px] sm:w-[540px]">
+                    <SheetHeader>
+                      <SheetDescription className="pt-16">
+                        <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
+                          <FiUser />
+                        </div>
+                        <p className="text-lg ml-4 mr-4 mt-2">{user.email}</p>
+                        <form action="/auth/sign-out" method="post">
+                          <Button
+                            type="submit"
+                            className="ml-4 mt-2 w-min text-left bg-stone-800"
+                            >
+                            Log out
+                          </Button>
+                        </form>
+                        <VerticalNav/>
+                      </SheetDescription>
+                    </SheetHeader>
+                  </SheetContent>
+            </Sheet>
+
           </div>
         )}
       </div>
@@ -138,13 +181,6 @@ export function SparkleIcon() {
 }
 
 
-export function NavIcon() {
-  return (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-</svg>
-)
-}
 
 
 

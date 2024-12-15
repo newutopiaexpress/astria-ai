@@ -50,6 +50,8 @@ import { HowToSteps, type Step } from "./HowToSteps";
 import ImageCarousel from "./ImageCarousel";
 import { LoginModal } from "./LoginModal";
 import { headers } from "next/headers";
+import { FacebookChat } from './FacebookChat';
+import { Session } from '@talkjs/react';
 
 export function Bento2() {
   const headersList = headers(); // Get headers list
@@ -70,6 +72,9 @@ export function Bento2() {
 
 
 <div className="w-full px-4">
+
+
+<Session appId="tC5Xvewl" userId="sample_user_alice"></Session>
   
 	<div className="w-full mx-auto z-30 bg-transparent">
         <InView
@@ -151,6 +156,7 @@ export function Bento2() {
               transition={{ duration: 0.6, ease: 'easeIn', delay: 0.6 }}
             >
             <div className="mx-auto text-center bg-stone-800/0 py-12">
+              <span> <FacebookChat/> </span>
               <LoginModal host={headersList.get("host")} />
             </div>
             </InView>

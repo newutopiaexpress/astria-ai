@@ -19,10 +19,10 @@ export function ChristmasBanner() {
       className=" bg-stone-200 border-b border-stone-300 text-stone-600 py-2 px-4 flex justify-between items-center z-40"
     >
       <div className="flex  md:flex-1 text-center items-center justify-center">
-        <p className="text-xs ml-3 md:ml-0">
-            <span className="font-bold italic mr-2 flex-row items-center justify-center">New Style Pack!</span><span className="font-normal italic opacity-75">🎄 24 Magical Elf Portraits</span> 
+        <p className="text-[12px] ml-3 md:ml-0">
+            <span className="font-semibold italic mr-2 flex-row items-center justify-center">Christmas Offer!</span><span className="font-normal italic opacity-75">🎄 20% OFF for Every Style Pack</span> 
             <Link href="/login" className="ml-1">
-              <Button className="text-xs font-bold border scale-75 bg-white/0 text-stone-500 border-stone-300 rounded-lg">Try Out Now </Button>
+              <Button className="text-xs font-bold border scale-75 bg-white/0 text-stone-500 border-stone-300 rounded-lg">REDEEM NOW </Button>
             </Link>
          </p>
       </div>
