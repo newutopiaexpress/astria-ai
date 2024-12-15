@@ -82,7 +82,19 @@ export default async function Navbar() {
       <div className="flex gap-4 lg:ml-auto mr-2 ">
         {!user && (
           <div className="flex items-center justify-center">
-            <p>login</p>
+            <Sheet>
+                  <SheetTrigger className="ml-4">
+                    <NavIcon />
+                  </SheetTrigger>
+                  <SheetContent className="w-[440px] sm:w-[540px]">
+                    <SheetHeader>
+                      <SheetDescription className="pt-16">
+                        
+                        <VerticalNav/>
+                      </SheetDescription>
+                    </SheetHeader>
+                  </SheetContent>
+            </Sheet>
         </div>
         )}
         {user && (
