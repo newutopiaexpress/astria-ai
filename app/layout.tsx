@@ -6,14 +6,21 @@ import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
 import CookieConsent from "@/components/CookieConsent";
 import { ChristmasBanner } from "@/components/ChristmasBanner";
+import type {Metadata} from "next";
+import Script from "next/script";
+import IntercomClientComponent from "@/components/IntercomClientComponent";
 
 export const metadata = {
   title: "The AI Photographer",
   description: "Take photos in the modern way",
 };
 
-export default function RootLayout({ children }: any) {
-  return (
+export default function RootLayout({
+  children,
+}: Readonly<{
+children: React.ReactNode;
+}>) {
+return (
     <html lang="en">
       <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden"> 
               <section className="">
@@ -35,6 +42,20 @@ export default function RootLayout({ children }: any) {
               </section>
               <Toaster />
               <Analytics />
+
+        <Script
+            strategy="afterInteractive"
+            id="intercom-settings"
+            dangerouslySetInnerHTML={{
+                __html: `
+                        window.intercomSettings = {
+                            api_base: "https://api-iam.intercom.io",
+                            app_id: "opfhxwa2", 
+                        };
+                    `
+            }}
+        />
+        <IntercomClientComponent/>
 
       </body>
     </html>

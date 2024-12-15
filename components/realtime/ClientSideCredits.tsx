@@ -69,25 +69,23 @@ export default function ClientSideCredits({
         <Tooltip>
           <TooltipTrigger>
             {credits.credits === 0 ? (
-              <Link href="/get-credits">
-                <Badge 
-                  className={`ml-2 animate-pulse bg-red-400 hover:bg-red-500 transition-colors cursor-pointer ${className}`}
-                >
+                <Badge className={`ml-2 animate-pulse rounded-full bg-red-400 hover:bg-red-500 transition-colors cursor-pointer ${className}`}>
                   {credits.credits}
                 </Badge>
-              </Link>
+
+                
             ) : (
               <div className="flex gap-0 items-center">
               <CoinIcon/>
               <Badge className={`ml-2 rounded-full h-8 w-8 flex items-center justify-center bg-emerald-300/0 border border-emerald-300 text-stone-800 shadow-sm ${className}`}>
                 {credits.credits}
               </Badge>
-              <a href="/get-credits" className="text-xs ml-8 border border-stone-300 px-4 py-1 rounded-full hover:bg-stone-100 hover:shadow-sm">Buy Credits</a>
+              <Link href="/get-credits" className="text-xs ml-8 border border-stone-300 px-4 py-1 rounded-full hover:bg-stone-100 hover:shadow-sm">Buy Credits</Link>
               </div>
             )}
           </TooltipTrigger>
           <TooltipContent>
-            <p>{credits.credits === 0 ? 'Get more credits' : 'Your credits'}</p>
+            <p>{credits.credits === 0 ? 'Buy Credits' : 'Your credits'}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
