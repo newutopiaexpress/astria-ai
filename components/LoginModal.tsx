@@ -31,7 +31,7 @@ import {
                         </Button>
             </div>
         </DialogTrigger>
-        <DialogContent className="bg-transparent shadow-0 border-0">
+        <DialogContent className="bg-transparent shadow-0 border-0 max-w-[440px]">
           <DialogHeader>
             <DialogDescription>
               <Login host={host} searchParams={params} />

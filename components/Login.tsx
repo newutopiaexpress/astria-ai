@@ -147,7 +147,7 @@ export const Login = ({
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row gap-2">
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 w-[210px]">
                 <Input
                   className="outline-0"
                   type="email"
