@@ -19,6 +19,7 @@ export default function IntercomChat() {
           
           if (user) {
             Intercom({
+              api_base:"https://api-iam.intercom.io",
               app_id: 'opfhxwa2',
               user_id: user.id,
               name: user.user_metadata?.full_name,
