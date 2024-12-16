@@ -20,7 +20,7 @@ export function ChristmasBanner() {
     >
       <div className="flex  md:flex-1 text-center items-center justify-center">
         <p className="text-[12px] ml-3 md:ml-0">
-            <span className="font-semibold italic mr-2 flex-row items-center justify-center">Christmas Offer!</span><span className="font-normal italic opacity-75">🎄 20% OFF for Every Style Pack</span> 
+            <span className="font-semibold italic mr-2 flex-row items-center justify-center">We are experiencing a temporary technical issue, we are working on a solution.</span><span className="font-normal italic opacity-75">🎄 Thank you for your patience!</span> 
             <Link href="/login" className="ml-1">
               <Button className="text-xs font-bold border scale-75 bg-white/0 text-stone-500 border-stone-300 rounded-lg">REDEEM NOW </Button>
             </Link>
