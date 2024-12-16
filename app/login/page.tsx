@@ -25,7 +25,7 @@ export default async function LoginPage({
   const host = headersList.get("host");
 
   return (
-    <div className="flex flex-col flex-1 w-full">
+    <div className="flex flex-col flex-1 max-w-[400px] mx-auto py-6 lg:py-12">
       <Login host={host} searchParams={searchParams} />
     </div>
   );
