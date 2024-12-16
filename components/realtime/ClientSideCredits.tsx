@@ -27,14 +27,7 @@ export default function ClientSideCredits({
 
   if (!creditsRow) return (
     <div className="flex gap-2 items-center">
-      <p className="pt-1 text-stone-500 text-sm">Credits: 0</p>
-      <Link href="/get-credits">
-        <Badge 
-          className="animate-pulse bg-red-300 border-red-400 hover:bg-red-500 transition-colors cursor-pointer"
-        >
-          Buy credits
-        </Badge>
-      </Link>
+      <p className="pt-1 text-stone-500 text-sm">Credits: 0</p>    
     </div>
   )
 
