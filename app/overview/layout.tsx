@@ -1,7 +1,6 @@
 import Login from "../login/page";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -17,12 +16,12 @@ export default async function RootLayout({
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return redirect("/login");
+    return <Login />;
   }
+
   return <div className="relative w-full h-full">
             <div className="">
-              {children}
+            {children}
             </div>
-          </div>
-          ;
+          </div>;
 }

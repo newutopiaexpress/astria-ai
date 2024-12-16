@@ -19,7 +19,6 @@ import { UserIcon } from "./ui/user-icon";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { VerticalNav } from "./VerticalNav";
-import { LoginSheet } from "./LoginSheet";
 import { FiUser } from "react-icons/fi";
 import {
   Sheet,

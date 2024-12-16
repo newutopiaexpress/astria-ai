@@ -2,13 +2,12 @@ import ClientSideModelsList from "@/components/realtime/ClientSideModelsList";
 import { Database } from "@/types/supabase";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import Login from "../login/page";
-import IntercomChat from "@/components/IntercomChat";
-import { redirect } from "next/navigation";
+
+
+export const dynamic = "force-dynamic";
 
 export default async function Index() {
   const supabase = createServerComponentClient<Database>({ cookies });
-
 
   const {
     data: { user },
@@ -17,10 +16,6 @@ export default async function Index() {
   if (!user) {
     return <div>User not found</div>;
   }
-
-    if (!user) {
-      return <Login />;
-    }
 
   const { data: models } = await supabase
     .from("models")
@@ -31,9 +26,5 @@ export default async function Index() {
     )
     .eq("user_id", user.id);
 
-  return (
-    <div className="relative z-10">
-      <ClientSideModelsList serverModels={models ?? []} />
-    </div>
-  );
+  return <ClientSideModelsList serverModels={models ?? []} />;
 }
