@@ -85,17 +85,17 @@ export default async function Navbar() {
                   <SheetTrigger className="ml-4">
                     <NavIcon />
                   </SheetTrigger>
-                  <SheetContent className="w-[440px] sm:w-[540px]">
+                  <SheetContent className="md:w-[440px] sm:w-[80%]">
                     <SheetHeader>
                       <SheetDescription className="pt-16">
-<Link href="/auth/sign-in">
-                        <Button
-                          className="w-min text-left bg-stone-800 rounded-full text-white"
-                          variant={"ghost"}
-                        >
-                          Log in
-                        </Button>
-</Link>
+                        <Link href="/auth/sign-in">
+                          <Button
+                            className="w-min text-left bg-stone-800 rounded-full text-white"
+                            variant={"ghost"}
+                          >
+                            Log in
+                          </Button>
+                        </Link>
                         <VerticalNav/>
                       </SheetDescription>
                     </SheetHeader>
