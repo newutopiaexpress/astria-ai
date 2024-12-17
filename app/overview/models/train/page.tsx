@@ -1,4 +1,4 @@
-import TrainModelZone from "@/components/TrainModelZone";
+import TrainModelZoneTabs from "@/components/TrainModelZoneTabs";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -23,7 +23,7 @@ export default async function Index() {
       >
         <Card className="border-none shadow-none bg-transparent">
           <CardContent >
-            <TrainModelZone />
+            <TrainModelZoneTabs />
           </CardContent>
         </Card>
       </div>
