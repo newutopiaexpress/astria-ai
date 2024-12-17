@@ -186,8 +186,8 @@ export default function ImageCarousel() {
         </div>
       </nav>
 
-      <div className="px-0 max-w-[1440px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  rounded-[0px] md:rounded-[30px] ">
-        <Carousel className="bg-transparent border-none p-0  rounded-[0px] md:rounded-[30px]" setApi={setApi}>
+      <div className="px-0 max-w-[1440px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  md:rounded-[0px] md:rounded-bl-[30px] md:rounded-br-[30px]">
+        <Carousel className="bg-transparent border-none p-0  md:rounded-[0px] md:rounded-bl-[30px] md:rounded-br-[30px]" setApi={setApi}>
           <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab ">
             {slides.map((slide, index) => (
               <CarouselItem key={index}>
