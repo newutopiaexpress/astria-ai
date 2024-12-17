@@ -28,14 +28,14 @@ export function VerticalNav() {
             )}
             >
             <div className="flex h-full flex-col">
-                <ScrollArea className="flex-1 px-3">
+                <ScrollArea className="flex-1">
                 <div className="space-y-2 mt-16 flex-col items-center justify-between">
                     {navItems.map((item) => (
                     <Link
                         key={item.name}
                         href={item.href}
                         className={cn(
-                        "flex items-center px-2 py-4 border-b border-stone-300 text-gray-900 transition-all hover:bg-stone-100/40 dark:text-gray-100 dark:hover:bg-gray-800",
+                        "flex items-center py-4 border-b border-stone-300 text-gray-900 transition-all hover:bg-stone-100/40 dark:text-gray-100 dark:hover:bg-gray-800",
                         pathname === item.href ? "bg-gray-100 dark:bg-gray-800" : ""
                         )}
                     >

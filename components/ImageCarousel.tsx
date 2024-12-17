@@ -158,14 +158,14 @@ export default function ImageCarousel() {
       onMouseLeave={() => setIsHovered(false)}
     >
       
-      <nav className="md:flex md:justify-center overflow-x-auto hidden">
+      <nav className=" md:justify-center overflow-x-auto ">
         <div className="flex space-x-0 ">
           {slides.map((slide, index) => (
             <button
             key={index}
             onClick={() => goToSlide(index)}
             className={cn(
-              "relative px-4 py-4 text-sm leading-tight md:text-sm font-normal md:leading-relaxed rounded-tr-xl rounded-tl-xl transition-colors",
+              "relative px-4 py-2 text-xs md:text-sm leading-tight font-normal md:leading-relaxed rounded-tr-xl rounded-tl-xl transition-colors",
               current === index
                 ? "text-stone-100"
                 : "text-muted-foreground hover:bg-muted"

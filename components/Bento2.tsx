@@ -48,6 +48,8 @@ import { UtopiaFeatures } from "./utopia-features";
 import HoverSlideshow from "./HoverSlideshow";
 import { HowToSteps, type Step } from "./HowToSteps";
 import ImageCarousel from "./ImageCarousel";
+import { UtopiaFaq } from "./utopia-faq";
+import { UtopiaSecond2 } from "./utopia-second2";
 
 
 
@@ -67,35 +69,13 @@ export function Bento2() {
   return (
 
 
-<div className="w-full px-4">
+<div className="w-full">
 
   
-	<div className="w-full mx-auto z-30 bg-transparent">
-        <InView
-            variants={{
-              hidden: { opacity: 0, x: 0, filter: 'blur(4px)' },
-              visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
-            }}
-            viewOptions={{ margin: '0px 0px 0px 0px' }}
-            transition={{ duration: 0.6, ease: 'easeIn', delay:0 }}
-          >
-          <div className="w-full backdrop-blur-md flex justify-center mt-16 md:mt-6  mx-auto bg-transparent  relative">
-
-            {/*} <SpinningText
-              radius={5}
-              fontSize={1.2}
-              className='font-medium leading-none'
-              >
-              {`In many different styles • `}
-              </SpinningText>*/}
-
-          <Slider/>
-          </div> 
-        </InView>  
-          
+	<div className="w-full mx-auto z-30 bg-contain bg-center bg-no-repeat bg-[url('/bgwhite.png')]">
         <div className="text-left md:text-center md:pt-0 mb-12 md:mb-0">
 
-          <h1 className="pt-12 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-7xl md:leading-[4.85rem]">
+          <h1 className="pt-24 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
             <TextEffect
               per='char'
               delay={0}
@@ -130,15 +110,15 @@ export function Bento2() {
             >
             Stunning First Impressions with 
             </TextEffect>
-            <span className="bg-gradient-to-r from-stone-700 via-amber-700 to-stone-800 inline-block text-transparent bg-clip-text pb-2">
+            <span className="font-bold bg-gradient-to-r from-stone-700 via-stone-600 to-stone-800 inline-block text-transparent bg-clip-text pb-2">
               <TextEffect per='char' preset='fade' delay={1.5}>
               Ai-powered Photography
               </TextEffect>         
             </span>
           </h1>
-{/*}
+          {/*}
           <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit mx-auto text-sm px-4 py-1">Three Easy Steps</p>
-         */} 
+          */} 
           
             <InView
                 variants={{
@@ -148,7 +128,7 @@ export function Bento2() {
                 viewOptions={{ margin: '0px 0px 0px 0px' }}
                 transition={{ duration: 0.6, ease: 'easeIn', delay: 2 }}
               >
-            <p className="px-6 pt-6 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">👨Drop your photos, 🎨 select a Style Pack, and ✨ watch the magic unfold</p>
+            <p className="px-12 pt-6 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">Drop your photos, Select a Style Pack, and Watch the Magic Unfold</p>
             </InView>
             <InView
               variants={{
@@ -168,6 +148,28 @@ export function Bento2() {
             </div>
             </InView>
         </div> 
+        <InView
+            variants={{
+              hidden: { opacity: 0, x: 0, filter: 'blur(4px)' },
+              visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
+            }}
+            viewOptions={{ margin: '0px 0px 0px 0px' }}
+            transition={{ duration: 0.6, ease: 'easeIn', delay:0 }}
+          >
+        <div className="w-full backdrop-blur-md flex justify-center mt-16 md:mt-16  mx-auto bg-transparent  relative">
+
+            {/*} <SpinningText
+              radius={5}
+              fontSize={1.2}
+              className='font-medium leading-none'
+              >
+              {`In many different styles • `}
+              </SpinningText>*/}
+
+          <Slider/>
+        </div> 
+        </InView>  
+        
 	</div>
 
   <div className="max-w-[1200px] mx-auto">
@@ -182,20 +184,23 @@ export function Bento2() {
       viewOptions={{ margin: '0px 0px 0px 0px' }}
       transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
   >
-    <div className="w-full grid grid-cols-12 pt-24 gap-0 mx-auto min-h-96 relative">
-      <div className="col-span-12 px-6 text-center backdrop-blur-md">
-          <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit uppercase tracking-wider mx-auto text-xs px-6 py-2 shadow-md">No studio, no stress.</p>
-          <h1 className="pt-8 pb-4 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-7xl md:leading-[4.85rem]">
-          Picture This: <span className="bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">You, But Even Better </span>
+    <div className="w-full grid grid-cols-12 mt-12 mx-auto min-h-96 relative z-50">
+      <div className="col-span-12 mx-auto text-center mt-24">
+          <p className="mb-4 mx auto text-center border border-stone-300 bg-stone-100 text-stone-400 rounded-full max-w-fit uppercase tracking-wider mx-auto text-xs px-6 py-2">No studio, no stress.</p>
+          <h1 className="pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
+          Picture This: <span className="font-thin bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">You, But Even Better </span>
           </h1>
+          <p className="px-12 pb-4 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">Hand-crafted, curated Themes and Styles that bring out the best in you</p>
 
       </div>
-      <div className="pt-12 col-span-12 max-w-full mx-auto bg-black/0">
+      <div className="pt-12 col-span-12 max-w-full px-4 pb-4 mx-auto bg-black/0">
         <ImageCarousel/>
         {/*<StyleSlider/>*/}
       </div>
     </div>
   </InView>
+
+
 
 
  <div className="max-w-[1200px] mx-auto pt-6">
@@ -389,4 +394,4 @@ export function SparkleIcon() {
 
 
 
-  
+

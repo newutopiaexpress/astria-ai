@@ -5,6 +5,7 @@ import { X } from 'lucide-react'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export function ChristmasBanner() {
   const [isVisible, setIsVisible] = useState(true)
@@ -20,9 +21,12 @@ export function ChristmasBanner() {
     >
       <div className="flex  md:flex-1 text-center items-center justify-center">
         <p className="text-[12px] ml-3 md:ml-0">
-            <span className="font-semibold italic mr-2 flex-row items-center justify-center">We are experiencing a temporary technical issue, we are working on a solution.</span><span className="font-normal italic opacity-75">🎄 Thank you for your patience!</span> 
+            <span className="font-semibold italic mr-2 flex-row items-center justify-center">
+              <Image src="/elf/elf1.png" width={100} height={100} alt="elf" className="float-left w-10 h-10 rounded-full mr-4" /> 
+              Turn Your Child into a Real Christmas Elf!
+            </span><span className="font-normal italic opacity-75"></span> 
             <Link href="/login" className="ml-1">
-              <Button className="text-xs font-bold border scale-75 bg-white/0 text-stone-500 border-stone-300 rounded-lg">REDEEM NOW </Button>
+              <Button className="text-xs font-bold border scale-75 bg-white/0 text-stone-500 hover:text-stone-300 border-stone-300 rounded-lg">CREATE NOW </Button>
             </Link>
          </p>
       </div>

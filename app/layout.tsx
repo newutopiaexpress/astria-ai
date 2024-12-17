@@ -23,7 +23,7 @@ return (
     <html lang="en">
       <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden"> 
               <section className="">
-                  
+              <ChristmasBanner/>
                 <Suspense
                   fallback={
                     <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />

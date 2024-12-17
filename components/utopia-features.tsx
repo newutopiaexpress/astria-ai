@@ -26,7 +26,7 @@ export function UtopiaFeatures() {
     },
     {
       icon: <VscWand />,
-      title: "Umnder 30 minutes",
+      title: "Under 30 minutes",
       highlight: "",
       description: "Perfect price / quality ratio for professional use or for experimentation."
     }

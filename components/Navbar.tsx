@@ -71,7 +71,7 @@ export default async function Navbar() {
             <Link href="/overview">
               <Button variant={"navbar"} size={"navbar"}>
                 <ModelsIcon/>
-                <span className="hidden md:block ml-2">Your Series</span>
+                <span className="hidden md:block ml-2">Your Photos</span>
               </Button>
             </Link>
           )}
@@ -88,7 +88,14 @@ export default async function Navbar() {
                   <SheetContent className="w-[440px] sm:w-[540px]">
                     <SheetHeader>
                       <SheetDescription className="pt-16">
-                        
+<Link href="/auth/sign-in">
+                        <Button
+                          className="w-min text-left bg-stone-800 rounded-full text-white"
+                          variant={"ghost"}
+                        >
+                          Log in
+                        </Button>
+</Link>
                         <VerticalNav/>
                       </SheetDescription>
                     </SheetHeader>
@@ -105,27 +112,36 @@ export default async function Navbar() {
               />
             )}
 
-            
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild className="cursor-pointer z-50">
-                <div className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
-                <FiUser />
-                </div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel className="text-primary text-center overflow-hidden text-ellipsis">{user.email}</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <form action="/auth/sign-out" method="post">
-                  <Button
-                    type="submit"
-                    className="w-full text-left"
-                    variant={"ghost"}
-                    >
-                    Log out
-                  </Button>
-                </form>
-              </DropdownMenuContent>
-            </DropdownMenu>
+
+            <Sheet>
+                  <SheetTrigger className="ml-4">
+                    <NavIcon />
+                  </SheetTrigger>
+                  <SheetContent className="w-[440px] sm:w-[540px]">
+                    <SheetHeader>
+                      <SheetDescription className="pt-10 px-0">
+                        <div className="flex items-center justify-start">
+                          <div className="float-left mb-2 mr-2 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
+                            <FiUser />
+                          </div>
+                          <p className="text-md">{user.email}</p>
+                        </div>
+                        <div className="w-full mt-4">
+                          <form action="/auth/sign-out" method="post">
+                            <Button
+                              type="submit"
+                              className="w-min text-left bg-stone-800 rounded-full text-white"
+                              variant={"ghost"}
+                              >
+                              Log out
+                            </Button>
+                          </form>
+                        </div>
+                        <VerticalNav/>
+                      </SheetDescription>
+                    </SheetHeader>
+                  </SheetContent>
+            </Sheet>
             
 
 

@@ -45,12 +45,6 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "./ui/badge";
 import { Separator } from "@/components/ui/separator";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
 
 
 type FormInput = z.infer<typeof fileUploadFormSchema>;
@@ -62,6 +56,13 @@ interface Pack {
 }
 
 const stripeIsConfigured = process.env.NEXT_PUBLIC_STRIPE_IS_ENABLED === "true";
+
+const steps = [
+  { number: 1, title: "Name It" },
+  { number: 2, title: "Choose Style" },
+  { number: 3, title: "Select Subject" },
+  { number: 4, title: "Upload Photos" },
+];
 
 export default function TrainModelZone() {
   const [files, setFiles] = useState<File[]>([]);
@@ -264,6 +265,47 @@ export default function TrainModelZone() {
   return (
     <div className="grid grid-cols-12 w-full rounded-3xl relative">
       <div className="col-span-12 md:col-span-12 bg-stone-100/0 z-10">
+        {/* Add Step Indicator */}
+        <div className="sm:hidden xs:hidden md:block w-full md:max-w-2xl mx-auto flex items-center justify-center mb-8">
+          <div className="flex items-center space-x-4 w-full px-4 justify-center  mt-12">
+            {steps.map((step, index) => (
+              <div key={step.number} className="flex-1">
+                <div className="flex items-center justify-center">
+                  <div
+                    className={`flex-shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center
+                      ${currentStep === step.number
+                        ? "border-green-400 bg-green-400/10 text-green-600"
+                        : currentStep > step.number
+                        ? "border-green-400 bg-green-400 text-white"
+                        : "border-stone-300 text-stone-500"
+                      }`}
+                  >
+                    {currentStep > step.number ? (
+                      "✓"
+                    ) : (
+                      <span className="text-xs opacity-45">{step.number}</span>
+                    )}
+                  </div>
+                  <div
+                    className={`hidden sm:flex flex-col ml-4 ${
+                      currentStep === step.number ? "text-stone-800" : "text-stone-500"
+                    }`}
+                  >
+                    <span className="text-xs font-normal opacity-50">{step.title}</span>
+                  </div>
+                  {index < steps.length - 1 && (
+                    <div
+                      className={`flex-1 h-[2px] ml-4 ${
+                        currentStep > step.number ? "bg-green-400" : "bg-stone-300"
+                      }`}
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -278,9 +320,6 @@ export default function TrainModelZone() {
                   <div>
                     <FormItem className="relative w-full p-6 mx-auto pb-12">
                       <FormDescription className="z-10 p-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
-                        <Badge className="w-10 h-10 rounded-full p-4 text-center bg-stone-200 border-stone-300">1</Badge>
-                        <br/>
-                        <Separator orientation="vertical" className="bg-stone-300 mx-auto h-10"/>
                         Give your model a name
                       </FormDescription>
                       <FormControl>
@@ -304,7 +343,7 @@ export default function TrainModelZone() {
                 control={form.control}
                 name="pack"
                 render={({ field }) => (
-                  <FormItem className="relative w-full lg:max-w-[1400px] mx-auto rounded-tr-2xl rounded-br-3xl bg-transparent rounded-bl-3xl pb-9 transition-all">
+                  <FormItem className="mt-6 relative w-full lg:max-w-[1400px] mx-auto rounded-tr-2xl rounded-br-3xl bg-transparent rounded-bl-3xl pb-9 transition-all">
                     <FormDescription className="p-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
                     Choose a Style Pack
                     </FormDescription>
@@ -317,8 +356,8 @@ export default function TrainModelZone() {
                           form.setValue("pack", value);
                         }}
                       >
-                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 lg:gap-12 mx-auto pt-4">
-                          <div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 lg:gap-12 mx-auto pt-4">
+                                              <div>
                                                 <RadioGroupItem
                                                   value="corporate-headshots"
                                                   id="corporate-headshots"
@@ -386,7 +425,7 @@ export default function TrainModelZone() {
                                                         <DialogTitle>Santa got an upgrade - your holidays just got cooler!</DialogTitle>
                                                         <DialogDescription>
                                                           <Image
-                                                            src="/model-corp.png"
+                                                            src="/cool.png"
                                                             width={1198}
                                                             height={1000}
                                                             alt="Corporate Portraits"
@@ -456,19 +495,19 @@ export default function TrainModelZone() {
                           
                                               <div>
                                                 <RadioGroupItem
-                                                  value="ted-speaker"
-                                                  id="ted-speaker"
+                                                  value="motivational-board"
+                                                  id="motivational-board"
                                                   className="peer sr-only"
-                                                  aria-label="ted-speaker"
+                                                  aria-label="motivational-board"
                                                 />
                                                 <Label
-                                                  htmlFor="ted-speaker"
+                                                  htmlFor="motivational-board"
                                                   className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
                                                 >
                                                   <div className="relative group">
                                                   <Dialog>
                                                     <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
-                                                    <Badge variant="outline">Examples</Badge>
+                                                    <Badge variant="examples">Examples</Badge>
                                                     </DialogTrigger>
                                                     <DialogContent>
                                                       <DialogHeader>
@@ -496,7 +535,52 @@ export default function TrainModelZone() {
                                                   </div>
                                                   Peak You
                                                 </Label>
-                                              </div>               
+                                              </div> 
+
+                                              <div>
+                                                <RadioGroupItem
+                                                  value="glamour-shot"
+                                                  id="glamour-shot"
+                                                  className="peer sr-only"
+                                                  aria-label="glamour-shot"
+                                                />
+                                                <Label
+                                                  htmlFor="glamour-shot"
+                                                  className="shadow-lg pb-2 transition-all cursor-pointer flex flex-col items-center justify-between rounded-md border border-stone-300 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 outline  outline-0 outline-stone-300 hover:outline hover:outline-offset-8 hover:outline-8 hover:outline-stone-300/50 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-2  peer-data-[state=checked]:outline-green-400/80 peer-data-[state=checked]:outline-offset-0 peer-data-[state=checked]:shadow-lg"
+                                                >
+                                                  <div className="relative group">
+                                                  <Dialog>
+                                                    <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
+                                                    <Badge variant="outline">Examples</Badge>
+                                                    </DialogTrigger>
+                                                    <DialogContent>
+                                                      <DialogHeader>
+                                                        <DialogTitle>Santa got an upgrade - your holidays just got cooler!</DialogTitle>
+                                                        <DialogDescription>
+                                                          <Image
+                                                            src="/model-glam.png"
+                                                            width={1198}
+                                                            height={1000}
+                                                            alt="Cool Christmas"
+                                                            className="active w-full h-auto mb-2 rounded-md shadow-md">
+                                                          </Image>
+                                                        </DialogDescription>
+                                                      </DialogHeader>
+                                                    </DialogContent>
+                                                  </Dialog>
+                                                  <p className="transition-all text-xl text-center absolute top-4 right-4 invisible group-hover:visible leading-3 text-stone-400">24<br/><span className="text-xs">pcs</span></p>
+                                                  <Image
+                                                    src="/xmasx.jpg"
+                                                    width={1792}
+                                                    height={2304}
+                                                    alt="Ted Speaker"
+                                                    className="active w-80 h-auto mb-2 rounded-tl-md rounded-tr-md">
+                                                  </Image>
+                                                  </div>
+                                                  Peak You
+                                                </Label>
+                                              </div> 
+                                                      
                         </div>
                       </RadioGroup>
                     </FormControl>
@@ -508,22 +592,19 @@ export default function TrainModelZone() {
 
             {/* Step 3 - Subject Type */}
             {currentStep === 3 && (
-              <div className="flex flex-col mx-auto text-center relative w-full mt-0 border-t border-b border-stone-300/50 pb-12">
-                <Separator orientation="vertical" className="bg-stone-300 mx-auto h-12"/>
-                <Badge className="mx-auto w-10 h-10 rounded-full p-4 text-center border-stone-300 mt-0 mb-0 ">3</Badge>
-                <Separator orientation="vertical" className="bg-stone-300 mx-auto h-6"/>
-                <FormDescription className="mt-6 pb-6 text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
+              <div className="flex flex-col mx-auto text-center relative w-full pb-12 mt-6">
+                <FormDescription className="p-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
                   Select Your Subject
                 </FormDescription>
                 <RadioGroup
                   defaultValue={modelType}
-                  className="grid md:grid-cols-12 gap-12 md:gap-18 mt-4 max-w-[1240px] mx-auto"
+                  className="grid grid-cols-12 gap-4 md:gap-18 mt-4 mx-auto"
                   value={modelType}
                   onValueChange={(value) => {
                     form.setValue("type", value);
                   }}
                 >
-                  <div className="col-span-3">
+                                <div className="col-span-3">
                                   <RadioGroupItem
                                     value="man"
                                     id="man"
@@ -532,12 +613,12 @@ export default function TrainModelZone() {
                                   />
                                   <Label
                                     htmlFor="man"
-                                    className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                                    className="scale-75 md:scale-100 w-28 h-28 peer-data-[state=checked]:scale-100 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                                   >
                                     <Image 
                                       src="/man.png"
-                                      width={56}
-                                      height={56}
+                                      width={46}
+                                      height={46}
                                       alt="Man icon"
                                       className="mb-3"
                                     />
@@ -554,7 +635,7 @@ export default function TrainModelZone() {
                                   />
                                   <Label
                                     htmlFor="woman"
-                                    className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                                    className="scale-75 md:scale-100 w-28 h-28 peer-data-[state=checked]:scale-100 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                                   >
                                     <Image 
                                       src="/woman.png"
@@ -566,27 +647,7 @@ export default function TrainModelZone() {
                                     Woman
                                   </Label>
                                 </div>
-                                <div className="col-span-3">
-                                  <RadioGroupItem
-                                    value="boy"
-                                    id="boy"
-                                    className="peer sr-only"
-                                    aria-label="boy"
-                                  />
-                                  <Label
-                                    htmlFor="boy"
-                                    className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
-                                  >
-                                    <Image 
-                                      src="/boy.png"
-                                      width={56}
-                                      height={56}
-                                      alt="Man icon"
-                                      className="mb-3"
-                                    />
-                                    Boy
-                                  </Label>
-                                </div>
+
                                 <div className="col-span-3">
                                   <RadioGroupItem
                                     value="girl"
@@ -596,18 +657,43 @@ export default function TrainModelZone() {
                                   />
                                   <Label
                                     htmlFor="girl"
-                                    className="w-32 h-32 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                                    className="scale-75 md:scale-100 w-28 h-28 peer-data-[state=checked]:scale-100 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
                                   >
                                     <Image 
                                       src="/girl.png"
                                       width={56}
                                       height={56}
-                                      alt="Man icon"
+                                      alt="girl icon"
                                       className="mb-3"
                                     />
                                     Girl
                                   </Label>
                                 </div>
+
+                                <div className="col-span-3">
+                                  <RadioGroupItem
+                                    value="boy"
+                                    id="boy"
+                                    className="peer sr-only"
+                                    aria-label="boy"
+                                  />
+                                  <Label
+                                    htmlFor="boy"
+                                    className="scale-75 md:scale-100 w-28 h-28 peer-data-[state=checked]:scale-100 transition-all flex flex-col items-center justify-center rounded-full border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
+                                  >
+                                    <Image 
+                                      src="/boy.png"
+                                      width={56}
+                                      height={56}
+                                      alt="boy icon"
+                                      className="mb-3"
+                                    />
+                                    Boy
+                                  </Label>
+                                </div>
+
+
+
                 </RadioGroup>
               </div>
             )}
@@ -616,7 +702,7 @@ export default function TrainModelZone() {
             {currentStep === 4 && (
               <>
                 <div {...getRootProps()} className="relative justify-center align-middle cursor-pointer flex flex-col gap-4 mx-auto w-full p-6">
-                  <FormDescription className="pb-4 text-center text-3xl font-thin text-stone-700 tracking-tighter italic">
+                  <FormDescription className="p-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
                     Upload 6-10 pictures
                     <p className="text-sm tracking-normal font-normal max-w-[480px] mx-auto">in which your face is clearly visible and no other person is on it. <span className="font-bold">The key is variety:</span> different background, clothing, lighting in each photo. <span className="font-bold text-red-400">Don't use</span> filters and don't make grimaces in the pictures.</p>
                   </FormDescription>
