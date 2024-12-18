@@ -46,7 +46,7 @@ interface TimelineStep {
 
 const steps: TimelineStep[] = [
   {
-    title: "Upload Photos",
+    title: "Upload Your Photos",
     description: "Upload 6-10 photos of yourself in different settings",
     completed: true,
     icon: <Camera className="w-6 h-6" />,
@@ -59,35 +59,7 @@ const steps: TimelineStep[] = [
       <div className="relative">
         <Sparkles className="w-6 h-6" />
         <motion.div
-          className="absolute -inset-2 rounded-full"
-          animate={{
-            background: [
-              "radial-gradient(circle, rgba(28,25,23,0.2) 0%, rgba(0,0,0,0) 50%)",
-              "radial-gradient(circle, rgba(28,25,23,0.4) 50%, rgba(0,0,0,0) 100%)",
-            ],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-    ),
-  },
-  {
-    title: "AI Magic",
-    description: "Our AI learns your unique features and creates personalized photos",
-    completed: false,
-    icon: (
-      <div className="relative">
-        <Loader2 className="w-8 h-8 animate-spin text-stone-600" />
-        <motion.div
-          className="absolute inset-0 rounded-full border-2 border-stone-400/50"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.5, 0.2, 0.5],
-          }}
+          className="absolute rounded-full"  
           transition={{
             duration: 2,
             repeat: Infinity,
@@ -152,7 +124,7 @@ export default function VerticalTimeline() {
                 className={cn(
                   "flex items-center justify-center z-10",
                   "w-16 h-16 mb-6",
-                  index === 2 ? "w-24 h-24 scale-150" : "",
+                  index === 2 ? "w-12 h-12 scale-100" : "",
                   step.completed ? "text-stone-800" : "text-stone-600"
                 )}
                 whileInView={{
@@ -200,15 +172,15 @@ export default function VerticalTimeline() {
                 </div>
               </motion.div>
 
-              {/* Content with directional slide */}
+              {/* Updated Content Container */}
               <motion.div 
                 className={cn(
-                  "w-full max-w-lg",
-                  index % 2 === 1 ? "self-end" : "self-start"
+                  "w-full flex",
+                  index % 2 === 0 ? "justify-end pl-4 md:pl-0 md:pr-[50%]" : "justify-start pr-4 md:pr-0 md:pl-[50%]"
                 )}
                 initial={{ 
                   opacity: 0, 
-                  x: index % 2 === 0 ? -50 : 50,
+                  x: index % 2 === 0 ? 50 : -50,
                   filter: "blur(10px)"
                 }}
                 whileInView={{
@@ -226,9 +198,9 @@ export default function VerticalTimeline() {
                 <motion.div
                   className={cn(
                     "bg-white/0 backdrop-blur-sm rounded-2xl px-12 py-8",
-                    "border border-stone-200 shadow-sm",
-                    "group cursor-default",
-                    index % 2 === 1 ? "text-right" : "text-left"
+                    "border-b border-stone-200",
+                    "group cursor-default w-full md:max-w-[400px]",
+                    index % 2 === 0 ? "text-right" : "text-left"
                   )}
                   whileHover={{
                     scale: 1.02,
@@ -272,7 +244,7 @@ export default function VerticalTimeline() {
                             className={cn(
                               "bg-stone-100/80 hover:bg-stone-200/80",
                               "text-stone-600 border-stone-200",
-                              "px-3 py-1.5 text-xs font-normal"
+                              "px-3 py-1.5 text-[11px] font-normal"
                             )}
                           >
                             {badge}
@@ -345,7 +317,7 @@ export default function VerticalTimeline() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.4 }}
-                      className="flex items-center mt-4"
+                      className="flex items-center justify-end mt-4"
                     >
                       {avatars.map((avatar, i) => (
                         <motion.div
@@ -389,7 +361,7 @@ export default function VerticalTimeline() {
                   )}
 
                   {/* Add image carousel for the last step */}
-                  {index === 3 && (
+                  {index === 2 && ( // Changed from index === 3 to index === 2
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
