@@ -13,7 +13,7 @@ export default function HelloWorldPage() {
 
     return (
     <div className="w-full ">
-	    <div className="w-full mx-auto z-30 bg-transparent">
+	    <div className="w-full mx-auto z-30 bg-transparent mt-32">
           
           <div className="text-center px-4 mx-auto mb-32 md:mb-0">
 

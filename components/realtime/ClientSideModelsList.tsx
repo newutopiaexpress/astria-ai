@@ -11,6 +11,7 @@ import ModelsTable from "../ModelsTable";
 import Image from "next/image";
 import { SparkleIcon } from "../SparkleIcon";
 import StripePricingTable from "@/components/stripe/StripeTable";
+import { Loader2 } from "lucide-react";
 
 export const revalidate = 0;
 
@@ -30,6 +31,7 @@ export default function ClientSideModelsList({
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
   );
   const [models, setModels] = useState<modelRowWithSamples[]>(serverModels);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const channel = supabase
@@ -67,9 +69,26 @@ export default function ClientSideModelsList({
       {models && models.length > 0 && (
         <div className="flex flex-col gap-4 rounded-2xl relative">
           <div className="flex flex-row gap-4 min-w-full mb-6 w-full items-center text-center">
-            <Link href="/overview/models/train" className="w-full mx-auto">
-              <Button className="rounded-full bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200 px-6 py-6">
-                Create New Series<SparkleIcon/>
+            <Link 
+              href="/overview/models/train" 
+              className="w-full mx-auto"
+              onClick={() => setIsLoading(true)}
+            >
+              <Button 
+                className="rounded-full bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200 px-6 py-6"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Please wait
+                  </>
+                ) : (
+                  <>
+                    Create New Series
+                    <SparkleIcon/>
+                  </>
+                )}
               </Button>
             </Link>
           </div>

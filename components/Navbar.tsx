@@ -28,7 +28,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { NavIcon } from "@/components/ui/navicon";
-import { FolderCheck, Coins } from 'lucide-react';
+import { FolderCheck, Plus } from 'lucide-react';
 
 export const dynamic = "force-dynamic";
 
@@ -55,29 +55,6 @@ export default async function Navbar() {
           <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
         </Link>
       </div>
-      {user && (
-        <div className="flex flex-row gap-1 md:gap-4 ml-0 md:ml-6">
-          {stripeIsConfigured && (
-            <div className="flex gap-2">
-              <Link href="/overview">
-                <Button variant={"navbar"} size={"navbar"}>
-                  <FolderCheck/>
-                  <span className="hidden md:block ml-2 font-normal">Your Models</span>
-                </Button>
-              </Link>
-              
-              {(!credits || credits.credits === 0) && (
-                <Link href="/overview">
-                  <Button variant={"default"} size={"navbar"}>
-                    <Coins/>
-                    <span className="ml-2 font-normal">Buy Credits</span>
-                  </Button>
-                </Link>
-              )}
-            </div>
-          )}
-        </div>
-      )}
 
       <div className="flex gap-4 lg:ml-auto mr-2 ">
         {!user && (
@@ -105,7 +82,15 @@ export default async function Navbar() {
         </div>
         )}
         {user && (
-          <div className="flex flex-row gap-4 text-center align-middle justify-center">
+          <div className="flex flex-row gap-2 text-center align-middle justify-center">
+            
+            <Link href="/overview">
+                <Button className="text-xs mt-1 bg-transparentrounded-full text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full shadow-none">
+                  <FolderCheck/>
+                  <span className="hidden md:block ml-2 font-normal">Your Models</span>
+                </Button>
+            </Link>
+            
             {stripeIsConfigured && (
               <ClientSideCredits 
               creditsRow={credits ? credits : null} 
@@ -113,6 +98,12 @@ export default async function Navbar() {
               />
             )}
 
+            <Link href="/get-credits">
+                <Button className="text-xs mt-1 bg-transparentrounded-full text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full shadow-none">
+                    <Plus/>
+                    <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
+                </Button>
+            </Link>
 
             <Sheet>
                   <SheetTrigger className="ml-4">

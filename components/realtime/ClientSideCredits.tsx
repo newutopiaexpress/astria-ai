@@ -69,11 +69,10 @@ export default function ClientSideCredits({
                 
             ) : (
               <div className="flex gap-0 items-center">
-              <CoinIcon/>
-              <Badge className={`ml-2 rounded-full h-8 w-8 flex items-center justify-center bg-emerald-300/0 border border-emerald-300 text-stone-800 shadow-sm ${className}`}>
+              <Badge className={`text-xs ml-2 rounded-full h-8 w-auto py-4 px-4 flex items-center justify-center bg-emerald-300/0 border border-emerald-300 text-stone-800 shadow-sm ${className}`}>
+                <span className="mr-2"><CoinIcon/></span>
                 {credits.credits}
               </Badge>
-              <Link href="/get-credits" className="text-xs ml-8 border border-stone-300 px-4 py-1 rounded-full hover:bg-stone-100 hover:shadow-sm">Buy Credits</Link>
               </div>
             )}
           </TooltipTrigger>

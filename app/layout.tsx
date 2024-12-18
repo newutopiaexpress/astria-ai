@@ -33,7 +33,7 @@ return (
                   <Navbar/>
                 </Suspense>
               </section>
-                  <main className="mx-auto w-full mt-40"> {/* max-w-[1500px] */}
+                  <main className="mx-auto w-full"> {/* max-w-[1500px] */}
                     {children}
                   </main>
               <section>

@@ -20,7 +20,7 @@ const buttonVariants = cva(
         google:
           "font-medium bg-gradient-to-b from-white to-white/0 rounded-full text-stone-800 outline outline-8 hover:outline-0 outline-offset-2 hover:outline-offset-0 outline-stone-300/20 hover:bg-gradient-to-b hover:from-white hover:to-neutral-200 hover:text-stone-800 hover:shadow-sm transition-all",
         navbar:
-          "bg-transparent text-stone-800",
+          "bg-transparent text-stone-800 border-stone-300 rounded-full",
         default:
           "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive:

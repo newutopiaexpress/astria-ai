@@ -42,20 +42,22 @@ import {
   
   export default function FaqAccordion() {
     return (
-      <section className="w-full max-w-3xl mx-auto pb-12 px-4  sm:px-6 lg:px-8">
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left font-thin text-2xl">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-md">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-
+      <section className="relative w-full pb-12 px-4  sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto mb-28">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-left font-thin text-2xl">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-md">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+        <div className="absolute left-4 bottom-4 text-xs text-stone-300">Utopia Express 2024.</div>
       </section>
     )
   }

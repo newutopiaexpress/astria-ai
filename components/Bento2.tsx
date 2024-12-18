@@ -173,7 +173,7 @@ export function Bento2() {
         
 	</div>
 
-  <div className="max-w-[1200px] mx-auto pt-20">
+  <div className="max-w-[1200px] mx-auto">
     <VerticalTimeline/>
   </div>
 
@@ -186,7 +186,7 @@ export function Bento2() {
       transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
   >
     <div className="w-full grid grid-cols-12 mx-auto min-h-96 relative z-50">
-      <div className="col-span-12 mx-auto text-center mt-24">
+      <div className="col-span-12 mx-auto text-center mt-18">
           <p className="mb-4 mx auto text-center border border-stone-300 bg-stone-100 text-stone-400 rounded-full max-w-fit uppercase tracking-wider mx-auto text-xs px-6 py-2">No studio, no stress.</p>
           <h1 className="pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
           Picture This: <span className="font-thin bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">You, But Even Better </span>
@@ -208,9 +208,9 @@ export function Bento2() {
 <PriceTable2/>
 </div>
 
-  <div className="max-w-[1200px] mx-auto pt-24">
+  <div className="max-w-[1200px] mx-auto pt-24 px-6">
   <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit uppercase tracking-wider mx-auto text-xs px-6 py-2 shadow-md">No studio, no stress.</p>
-      <h1 className="pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
+      <h1 className="px-6 pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
       Real Stories, <span className="font-thin bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">Real Magic</span>
       </h1>
       <TestimonialGrid2/> 
@@ -219,7 +219,7 @@ export function Bento2() {
 
 
     
-  <div className="w-full mx-auto gap-6 md:pt-24 pb-32 md:pb-16 bg-repeat-x bg-contain bg-bottom bg-[url('/bg.png')] ">   
+  <div className="w-full mx-auto gap-6 md:pt-24 pb-32 md:pb-16 md:bg-repeat-x md:bg-contain md:bg-bottom md:bg-[url('/bg.png')] ">   
             <div className="grid md:grid-cols-12 mx-auto text-center  min-h-[400px] ">
                 <div className="col-span-12 md:col-span-5 relative min-h-[300px]">
                     <InView
@@ -274,8 +274,8 @@ export function Bento2() {
             </div>
   </div>
 
-  <div id="FAQ" className="w-full bg-white">
-    <div className="max-w-[2xl] mx-auto">
+  <div id="FAQ" className="w-full px-12 md:px-0 bg-transparent">
+    <div className="max-w-[2xl] mx-auto bg-white">
       <FaqAccordion/>
     </div>
   </div> 
