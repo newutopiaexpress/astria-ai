@@ -16,7 +16,7 @@ interface VerticalNavProps {
 const navItems = [
   { name: "FAQ", href: "/faq", icon: List },
   { name: "Contact Us", href: "/contact", icon: Send },
-  { name: "Pricing", href: "/pricing", icon: Coins },
+  { name: "Pricing", href: "/get-credits", icon: Coins },
   { name: "Privacy Policy", href: "/privacy", icon: ShieldCheck },
 ]
 
