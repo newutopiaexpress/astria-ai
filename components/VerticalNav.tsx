@@ -12,7 +12,7 @@ import { User } from "@supabase/auth-helpers-nextjs";
 const navItems = [
   { name: "FAQ", href: "/analytics", icon: BarChart2 },
   { name: "Contact Us", href: "/customers", icon: Users },
-  { name: "Pricing", href: "#pricing", icon: Settings },
+  { name: "Pricing", href: "#PriceTable", icon: Settings },
   { name: "Privacy Policy", href: "/privacy", icon: HelpCircle },
 ]
 

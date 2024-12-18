@@ -20,9 +20,9 @@ export function PriceTable2() {
                 <p className="text-lg">0.5<span className="font-normal text-sm">€/photo</span></p>
             </div>*/}
             <div className="p-9">  
-                <p><StarIcon/></p><br/>
-                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
-                Studio Starter
+                <p className="mx-auto rounded-full h-10 w-10 bg-stone-800 text-stone-200 flex items-center justify-center text-xl">1</p><br/>
+                <h1 className="mt-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
+                One Session
                 </h1>
                 <p className="text-sm leading-tight">
                 Beyond what a camera can capture. Your first step into next-gen photography!
@@ -32,7 +32,7 @@ export function PriceTable2() {
                     <li className="border-b border-neutral-400/50 py-2"><FileIcon/>1x24 generated images</li>
                 </ul> 
                 <p className="font-normal text-5xl">
-                    11<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /24pcs</span>
+                    9<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /24pcs</span>
                     <br/>
                     <Link href="/login" className="w-full">
                         <Button variant="buy">Select <PlusIcon2/></Button>
@@ -45,18 +45,18 @@ export function PriceTable2() {
     <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
         <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 text-stone-800 rounded-3xl relative">
             <div className="p-9">  
-                <p className="text-stone-300"><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/><StarIconLight/></p><br/>
-                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.4rem]">
-                Complete Revolution</h1>
+                <p className="mx-auto rounded-full h-10 w-10 bg-stone-800 text-stone-200 flex items-center justify-center text-xl">2</p><br/>
+                <h1 className="mt-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.4rem]">
+                Three Session</h1>
                 <p className="text-sm mt-4 leading-tight">
                 Your entire year's photo needs solved! Unlimited styles, impossible shots, zero hassle
                 </p>
                 <ul className="mb-4 mt-4 leading-relaxed text-xs text-left">
-                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>10 AI model creation</li>
-                    <li className="border-b border-neutral-400/50 py-2"><FileIcon/>10x24 generated images</li>
+                    <li className="border-b border-t border-neutral-400/50 py-2"><User2Icon/>3 AI model creation</li>
+                    <li className="border-b border-neutral-400/50 py-2"><FileIcon/>3x24 generated images</li>
                 </ul>   
                 <p className="font-normal text-5xl">
-                    99<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /240pcs</span>
+                    27<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /72pcs</span>
                     <br/>
                     <Link href="/login" className="w-full">
                         <Button variant="buy">Select <PlusIcon2/></Button>
@@ -69,9 +69,9 @@ export function PriceTable2() {
     <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
         <div className="mb-6 shadow-xl bg-stone-100/20 hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
             <div className="p-9"> 
-                {/*<p><StarIcon/><StarIcon/><StarIcon/></p><br/>*/}
-                <h1 className="mt-6 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
-                Portfolio Plus</h1>
+                <p className="mx-auto rounded-full h-10 w-10 bg-stone-800 text-stone-200 flex items-center justify-center text-xl">3</p><br/>
+                <h1 className="mt-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
+                Five Section</h1>
                 <p className="text-sm leading-tight">
                 Great for building a varied professional presence or creating seasonal content.
                 </p>
@@ -80,7 +80,7 @@ export function PriceTable2() {
                 <li className="border-b border-neutral-400/50 py-2"><FileIcon/>5x24 generated images</li>
                 </ul> 
                 <p className="font-normal text-5xl ">
-                    54<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /120pcs</span>
+                    45<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /120pcs</span>
                     <br/>
                     <Link href="/login" className="w-full">
                         <Button variant="buy">Select <PlusIcon2/></Button>

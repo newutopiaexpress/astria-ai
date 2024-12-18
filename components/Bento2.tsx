@@ -184,7 +184,7 @@ export function Bento2() {
       viewOptions={{ margin: '0px 0px 0px 0px' }}
       transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
   >
-    <div className="w-full grid grid-cols-12 mt-12 mx-auto min-h-96 relative z-50">
+    <div className="w-full grid grid-cols-12 mx-auto min-h-96 relative z-50">
       <div className="col-span-12 mx-auto text-center mt-24">
           <p className="mb-4 mx auto text-center border border-stone-300 bg-stone-100 text-stone-400 rounded-full max-w-fit uppercase tracking-wider mx-auto text-xs px-6 py-2">No studio, no stress.</p>
           <h1 className="pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
@@ -203,7 +203,7 @@ export function Bento2() {
 
 
 
- <div className="max-w-[1200px] mx-auto pt-24">
+<div id="PriceTable" className="max-w-[1200px] mx-auto pt-24">
 <PriceTable2/>
 </div>
 

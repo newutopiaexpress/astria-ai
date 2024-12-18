@@ -29,7 +29,7 @@ return (
                     <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
                   }
                 >
-                  <Navbar />
+                  <Navbar/>
                 </Suspense>
               </section>
               <main className="mx-auto w-full"> {/* max-w-[1500px] */}
