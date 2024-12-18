@@ -50,6 +50,7 @@ import { HowToSteps, type Step } from "./HowToSteps";
 import ImageCarousel from "./ImageCarousel";
 import { UtopiaFaq } from "./utopia-faq";
 import { UtopiaSecond2 } from "./utopia-second2";
+import FaqAccordion from "./FaqAccordion";
 
 
 
@@ -75,7 +76,7 @@ export function Bento2() {
 	<div className="w-full mx-auto z-30 bg-contain bg-center bg-no-repeat bg-[url('/bgwhite.png')]">
         <div className="text-left md:text-center md:pt-0 mb-12 md:mb-0">
 
-          <h1 className="pt-24 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
+          <h1 className="pt-48 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
             <TextEffect
               per='char'
               delay={0}
@@ -215,6 +216,11 @@ export function Bento2() {
       <TestimonialGrid2/> 
   </div>
 
+
+  <div className="max-w-[2xl] mx-auto mt-24">
+      <FaqAccordion/>
+  </div> 
+
     
   <div className="w-full mx-auto gap-6 md:pt-24 pb-32 md:pb-16 bg-repeat-x bg-contain bg-bottom bg-[url('/bg.png')] ">   
             <div className="grid md:grid-cols-12 mx-auto text-center  min-h-[400px] ">
@@ -242,7 +248,7 @@ export function Bento2() {
                     <h1 className="text-center md:text-left text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-5xl md:leading-[3rem]">
                     Remember When You 
                     <br/>
-                    <span className="bg-gradient-to-r from-stone-800  to-fuchsia-700 inline-block text-transparent bg-clip-text pb-2">Could Be Anything?</span>
+                    <span className="font-bold bg-gradient-to-r from-stone-800  to-fuchsia-700 inline-block text-transparent bg-clip-text pb-2">Could Be Anything?</span>
                     </h1>
                     </InView>
                     <InView
@@ -268,7 +274,7 @@ export function Bento2() {
 
                     </InView>
                 </div>  
-            </div>     
+            </div>
   </div>
 
 </div>
