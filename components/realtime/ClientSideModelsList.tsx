@@ -83,20 +83,18 @@ export default function ClientSideModelsList({
             {userName ? `Welcome ${userName}, Your story starts here!` : 'Your story starts here!'}
             </h1>
             <div className="mx-auto text-center mt-4 flex flex-row gap-4">
-              {userCredits === 0 ? (
                 <Link href="/get-credits">
                   <Button className="animate-jump-in animate-delay-300 p-5 transition-colors w-auto h-6 rounded-full text-center border-none bg-green-300 hover:bg-green-300/60 text-xs font-medium text-green-700" size={"lg"}>
                     Buy Credits
                   </Button>
                 </Link>
-              ) : (
                 <Link href="/overview/models/train">
                   <Button className="rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100" size={"lg"}>
                     Start Creating
                     <SparkleIcon/>
                   </Button>
                 </Link>
-              )}
+
             </div>
           </div>
         </div>

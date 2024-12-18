@@ -21,8 +21,8 @@ export default function HelloWorldPage() {
               <ElfSlider/>
             </div>
 
-            <h1 className="max-w-[870px] mx-auto text-center text-pretty py-8 text-stone-800 font-thin tracking-tight drop-shadow-sm text-6xl leading-[3.6rem] md:text-7xl md:leading-[4rem]">
-              <span className="bg-gradient-to-r from-green-600  to-rose-600 inline-block text-transparent bg-clip-text pb-2">
+            <h1 className="max-w-[870px] mx-auto text-center text-pretty py-8 text-stone-800 font-thin tracking-tight drop-shadow-sm text-5xl leading-[3.6rem] md:text-6xl md:leading-[4rem]">
+              <span className="bg-gradient-to-r from-green-500  to-red-500 inline-block text-transparent bg-clip-text pb-2">
                 {/*<TextEffect per='char' preset='fade' delay={1.5}>
                 Turn Your Little One into a Real Christmas Elf!
                 </TextEffect>  */}
