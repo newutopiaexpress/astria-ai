@@ -28,6 +28,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { NavIcon } from "@/components/ui/navicon";
+import { FolderCheck, Coins } from 'lucide-react';
 
 export const dynamic = "force-dynamic";
 
@@ -56,24 +57,24 @@ export default async function Navbar() {
       </div>
       {user && (
         <div className="flex flex-row gap-1 md:gap-4 ml-0 md:ml-6">
-          {/*}
           {stripeIsConfigured && (
-            <Link href="/get-credits" className="flex items-center justify-cente text-sm">
-              <span className="ml-4 mr-4 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
-                <CoinIcon/>   
-              </span>
-              Buy Credits
-            </Link>
-          )}
-            */}
-
-          {stripeIsConfigured && (
-            <Link href="/overview">
-              <Button variant={"navbar"} size={"navbar"}>
-                <ModelsIcon/>
-                <span className="hidden md:block ml-2">Your Photos</span>
-              </Button>
-            </Link>
+            <div className="flex gap-2">
+              <Link href="/overview">
+                <Button variant={"navbar"} size={"navbar"}>
+                  <FolderCheck/>
+                  <span className="hidden md:block ml-2 font-normal">Your Models</span>
+                </Button>
+              </Link>
+              
+              {(!credits || credits.credits === 0) && (
+                <Link href="/overview">
+                  <Button variant={"default"} size={"navbar"}>
+                    <Coins/>
+                    <span className="ml-2 font-normal">Buy Credits</span>
+                  </Button>
+                </Link>
+              )}
+            </div>
           )}
         </div>
       )}
@@ -117,11 +118,11 @@ export default async function Navbar() {
                   <SheetTrigger className="ml-4">
                     <NavIcon />
                   </SheetTrigger>
-                  <SheetContent className="w-[440px] sm:w-[540px]">
+                  <SheetContent className="w-[200px]">
                     <SheetHeader>
                       <SheetDescription className="pt-10 px-0">
-                        <div className="flex items-center justify-start">
-                          <div className="float-left mb-2 mr-2 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
+                        <div className="flex-col">
+                          <div className="mb-2 mr-2 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
                             <FiUser />
                           </div>
                           <p className="text-md">{user.email}</p>

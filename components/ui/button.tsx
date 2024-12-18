@@ -20,7 +20,7 @@ const buttonVariants = cva(
         google:
           "font-medium bg-gradient-to-b from-white to-white/0 rounded-full text-stone-800 outline outline-8 hover:outline-0 outline-offset-2 hover:outline-offset-0 outline-stone-300/20 hover:bg-gradient-to-b hover:from-white hover:to-neutral-200 hover:text-stone-800 hover:shadow-sm transition-all",
         navbar:
-          "bg-transparent text-stone-800 hover:shadow-lg",
+          "bg-transparent text-stone-800",
         default:
           "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive:
@@ -35,7 +35,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        navbar: "h-9 pl-5 pr-3 py-2",
+        navbar: "h-9 px-4 py-2",
         login: "h-8 w-8",
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",

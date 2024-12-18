@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Home, BarChart2, Users, Settings, HelpCircle, Menu } from 'lucide-react';
+import { List, Send, Coins, ShieldCheck,} from 'lucide-react';
 import { User } from "@supabase/auth-helpers-nextjs";
 
 interface VerticalNavProps {
@@ -14,10 +14,10 @@ interface VerticalNavProps {
 }
 
 const navItems = [
-  { name: "FAQ", href: "/faq", icon: BarChart2 },
-  { name: "Contact Us", href: "/contact", icon: Users },
-  { name: "Pricing", href: "/pricing", icon: Settings },
-  { name: "Privacy Policy", href: "/privacy", icon: HelpCircle },
+  { name: "FAQ", href: "/faq", icon: List },
+  { name: "Contact Us", href: "/contact", icon: Send },
+  { name: "Pricing", href: "/pricing", icon: Coins },
+  { name: "Privacy Policy", href: "/privacy", icon: ShieldCheck },
 ]
 
 export function VerticalNav({ onClose }: VerticalNavProps) {
@@ -46,7 +46,7 @@ export function VerticalNav({ onClose }: VerticalNavProps) {
                         href={item.href}
                         onClick={handleClick}
                         className={cn(
-                        "flex items-center py-4 border-b border-stone-300 text-gray-900 transition-all hover:bg-stone-100/40 dark:text-gray-100 dark:hover:bg-gray-800",
+                        "flex items-center py-4 border-b text-sm border-stone-300 text-gray-900 transition-all hover:bg-stone-100/40 dark:text-gray-100 dark:hover:bg-gray-800",
                         pathname === item.href ? "bg-gray-100 dark:bg-gray-800" : ""
                         )}
                     >
