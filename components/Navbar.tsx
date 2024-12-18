@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/sheet";
 import { NavIcon } from "@/components/ui/navicon";
 import { FolderCheck, Plus } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export const dynamic = "force-dynamic";
 
@@ -82,7 +83,7 @@ export default async function Navbar() {
         </div>
         )}
         {user && (
-          <div className="flex flex-row gap-2 text-center align-middle justify-center">
+          <div className="flex flex-row gap-2s md:gap-8 text-center align-middle justify-center">
             
             <Link href="/overview">
                 <Button className="text-xs mt-1 bg-transparentrounded-full text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full shadow-none">
@@ -99,7 +100,7 @@ export default async function Navbar() {
             )}
 
             <Link href="/get-credits">
-                <Button className="text-xs mt-1 bg-transparentrounded-full text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full shadow-none">
+                <Button className="text-[10px] uppercase mt-1 bg-transparentrounded-full text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full shadow-none">
                     <Plus/>
                     <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
                 </Button>
@@ -113,8 +114,13 @@ export default async function Navbar() {
                     <SheetHeader>
                       <SheetDescription className="pt-10 px-0">
                         <div className="flex-col">
-                          <div className="mb-2 mr-2 transition-all flex items-center justify-center w-8 h-8 bg-transparent hover:bg-stone-100 rounded-full border border-stone-500">
-                            <FiUser />
+                          <div className="mb-2 mr-2 transition-all flex items-center justify-start">
+                            <Avatar className="h-12 w-12">
+                              <AvatarImage src={user.user_metadata?.avatar_url} />
+                              <AvatarFallback>
+                                {user.email?.charAt(0).toUpperCase()}
+                              </AvatarFallback>
+                            </Avatar>
                           </div>
                           <p className="text-md">{user.email}</p>
                         </div>

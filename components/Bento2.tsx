@@ -204,8 +204,13 @@ export function Bento2() {
 
 
 
-<div id="PriceTable" className="max-w-[1200px] mx-auto pt-24">
-<PriceTable2/>
+<div id="PriceTable" className="max-w-[1200px] mx-auto pt-24 px-6">
+      <div className="col-span-12">
+        <h1 className="pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
+        Studio Quality, <span className="font-thin bg-gradient-to-r from-stone-800 via-red-800  to-fuchsia-800 inline-block text-transparent bg-clip-text pb-2"> Minus the Studio Costs</span><br/>
+        </h1>
+    </div>
+    <PriceTable2/>
 </div>
 
   <div className="max-w-[1200px] mx-auto pt-24 px-6">

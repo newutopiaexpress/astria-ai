@@ -7,12 +7,6 @@ export function PriceTable2() {
     return (
 <div className="grid grid-cols-12 gap-0 md:gap-14 mx-auto px-6">
 
-    <div className="col-span-12">
-        <h1 className="pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
-        Studio Quality, <span className="font-thin bg-gradient-to-r from-stone-800 via-red-800  to-fuchsia-800 inline-block text-transparent bg-clip-text pb-2"> Minus the Studio Costs</span><br/>
-        </h1>
-    </div>
-
     <div className="col-span-12 md:col-span-4 rounded-3xl bg-rose-200/0 text-stone-800 py-2 px-auto text-center ">
         <div className="mb-6 transition-all duration-50 bg-sky-200/0 shadow-xl hover:bg-stone-100/40 rounded-3xl relative backdrop-blur-md">
             
