@@ -56,7 +56,7 @@ export function PriceTable2() {
                     <li className="border-b border-neutral-400/50 py-2"><FileIcon/>3x24 generated images</li>
                 </ul>   
                 <p className="font-normal text-5xl">
-                    27<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /72pcs</span>
+                    26<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /72pcs</span>
                     <br/>
                     <Link href="/login" className="w-full">
                         <Button variant="buy">Select <PlusIcon2/></Button>
@@ -71,7 +71,7 @@ export function PriceTable2() {
             <div className="p-9"> 
                 <p className="mx-auto rounded-full h-10 w-10 bg-stone-800 text-stone-200 flex items-center justify-center text-xl">3</p><br/>
                 <h1 className="mt-2 text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-4xl leading-[2.5rem] md:text-4xl md:leading-[2.7rem] pb-4">
-                Five Section</h1>
+                Five Session</h1>
                 <p className="text-sm leading-tight">
                 Great for building a varied professional presence or creating seasonal content.
                 </p>
@@ -80,7 +80,7 @@ export function PriceTable2() {
                 <li className="border-b border-neutral-400/50 py-2"><FileIcon/>5x24 generated images</li>
                 </ul> 
                 <p className="font-normal text-5xl ">
-                    45<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /120pcs</span>
+                    43<span className="text-xl align-top border-b border-stone-800">99</span><span className="font-normal text-sm">€ /120pcs</span>
                     <br/>
                     <Link href="/login" className="w-full">
                         <Button variant="buy">Select <PlusIcon2/></Button>
