@@ -22,7 +22,7 @@ children: React.ReactNode;
 return (
     <html lang="en" className="overflow-x-hidden">
       <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden"> 
-              <section className="">
+              <section className="fixed w-full z-50 top-0">
               <ChristmasBanner/>
                 <Suspense
                   fallback={
