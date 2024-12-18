@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -151,84 +152,158 @@ export default function ImageCarousel() {
     api?.scrollTo(index);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.4 }
+    }
+  };
+
+  const navVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.2,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, margin: "-100px" }}
+      variants={containerVariants}
       className="mx-auto w-full rounded-[0px] md:rounded-[30px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      
-      <nav className=" md:justify-center overflow-x-auto ">
-        <div className="flex space-x-0 ">
+      <motion.nav 
+        variants={navVariants}
+        className="md:flex md:justify-center overflow-x-auto hidden"
+      >
+        <div className="flex space-x-0">
           {slides.map((slide, index) => (
-            <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={cn(
-              "relative px-4 py-2 text-xs md:text-sm leading-tight font-normal md:leading-relaxed rounded-tr-xl rounded-tl-xl transition-colors",
-              current === index
-                ? "text-stone-100"
-                : "text-muted-foreground hover:bg-muted"
-            )}
-            style={{
-              backgroundColor: current === index ? slide.backgroundColor : 'transparent',
-            }}
-            aria-current={current === index ? "true" : "false"}
-          >
-            {slide.linkText}
-            {slide.isNew && (
-              <span className="mt-0 ml-1 border border-black/20 shadow-sm bg-white/30 text-stone-800 text-[0.7em] font-normal px-2 py-1 rounded-full">
-                New
-              </span>
-            )}
-          </button>
+            <motion.button
+              key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => goToSlide(index)}
+              className={cn(
+                "relative px-4 py-2 text-sm leading-tight md:text-sm font-normal md:leading-relaxed rounded-lg mb-2 transition-all duration-300",
+                current === index
+                  ? "text-stone-100"
+                  : "text-muted-foreground hover:bg-muted"
+              )}
+              style={{
+                backgroundColor: current === index ? slide.backgroundColor : 'transparent',
+              }}
+            >
+              {slide.linkText}
+              {slide.isNew && (
+                <motion.span
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="mt-0 ml-1 border border-black/20 shadow-sm bg-white/30 text-stone-800 text-[0.7em] font-normal px-2 py-1 rounded-full"
+                >
+                  New
+                </motion.span>
+              )}
+            </motion.button>
           ))}
         </div>
-      </nav>
+      </motion.nav>
 
-      <div className="px-0 max-w-[1440px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40  md:rounded-[0px] md:rounded-bl-[30px] md:rounded-br-[30px]">
-        <Carousel className="bg-transparent border-none p-0  md:rounded-[0px] md:rounded-bl-[30px] md:rounded-br-[30px]" setApi={setApi}>
-          <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab ">
-            {slides.map((slide, index) => (
-              <CarouselItem key={index}>
-                <Card className="max-w-md md:min-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
-                  <div className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center">
-                    <p className="text-lg md:text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
-                      {slide.description}
-                    </p>
-                    <p className="text-right flex flex-col md:flex-row items-center justify-center">
-                      {/*<span className="opacity-100 text-stone-800/40 tracking-wide text-xs font-thin">
-                        {slide.additionalText}
-                      </span>*/}
-                      <Link href="/login" className="flex  items-center justify-center text-xs md:text-sm tracking-normal font-normal bg-stone-100/10 hover:bg-stone-100/20 text-stone-300 rounded-full px-4 py-1">
-                        Select <SparkleIcon/>
-                      </Link>
-                    </p>
-                  </div>
-                  <CardContent className="p-0 relative">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-2 px-6 md:px-12 py-6">
-                      {slide.images.map((image, imageIndex) => (
-                        <div key={imageIndex} className="relative aspect-[7/9] w-full">
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            className="object-cover rounded-lg shadow-md"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
+      <motion.div 
+        variants={containerVariants}
+        className="px-0 max-w-[1440px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40 rounded-[0px] md:rounded-[30px]"
+      >
+        <Carousel className="bg-transparent border-none p-0 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
+          <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab">
+            <AnimatePresence mode="wait">
+              {slides.map((slide, index) => (
+                <CarouselItem key={index}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Card className="max-w-md md:min-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center"
+                      >
+                        <p className="text-lg md:text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
+                          {slide.description}
+                        </p>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Link href="/login" className="flex items-center justify-center text-xs md:text-sm tracking-normal font-normal bg-stone-100/10 hover:bg-stone-100/20 text-stone-300 rounded-full px-4 py-1">
+                            Select <SparkleIcon/>
+                          </Link>
+                        </motion.div>
+                      </motion.div>
+                      <CardContent className="p-0 relative">
+                        <motion.div
+                          variants={containerVariants}
+                          className="grid grid-cols-2 md:grid-cols-4 gap-6 p-2 px-6 md:px-12 py-6"
+                        >
+                          {slide.images.map((image, imageIndex) => (
+                            <motion.div
+                              key={imageIndex}
+                              variants={itemVariants}
+                              whileHover={{ scale: 1.05 }}
+                              className="relative aspect-[7/9] w-full"
+                            >
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                fill
+                                className="object-cover rounded-lg shadow-md"
+                              />
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </AnimatePresence>
           </CarouselContent>
-          <CarouselPrevious className="left-5 bg-stone-100/20" />
-          <CarouselNext className="right-5 bg-stone-100/20" />
+          <motion.div whileHover={{ scale: 1.1 }}>
+            <CarouselPrevious className="left-5 bg-stone-100/20" />
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.1 }}>
+            <CarouselNext className="right-5 bg-stone-100/20" />
+          </motion.div>
         </Carousel>
-      </div>
-        
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 
