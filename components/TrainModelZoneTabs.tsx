@@ -296,7 +296,7 @@ export default function TrainModelZone() {
                   {index < steps.length - 1 && (
                     <div
                       className={`flex-1 h-[2px] ml-4 ${
-                        currentStep > step.number ? "bg-green-400" : "bg-stone-300"
+                        currentStep > step.number ? "bg-green-500" : "bg-stone-200"
                       }`}
                     />
                   )}
