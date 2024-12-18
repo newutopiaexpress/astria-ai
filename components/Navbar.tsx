@@ -48,7 +48,7 @@ export default async function Navbar() {
   
 
   return (
-    <div className="absolute top-14 left-0 right-0 flex w-full py-4 px-4 items-center justify-between z-50"> {/*backdrop-blur-md*/}
+    <div className="flex w-full py-4 px-4 items-center justify-between z-50"> {/*backdrop-blur-md*/}
       <div className="flex h-full">
         <Link href="/">
           <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
@@ -85,10 +85,10 @@ export default async function Navbar() {
                   <SheetTrigger className="ml-4">
                     <NavIcon />
                   </SheetTrigger>
-                  <SheetContent className="md:w-[440px] sm:w-[80%]">
+                  <SheetContent className="w-[200px]">
                     <SheetHeader>
                       <SheetDescription className="pt-16">
-                        <Link href="/auth/sign-in">
+                        <Link href="/login">
                           <Button
                             className="w-min text-left bg-stone-800 rounded-full text-white"
                             variant={"ghost"}

@@ -9,12 +9,13 @@ import { ChristmasBanner } from "@/components/ChristmasBanner";
 import Script from "next/script";
 import IntercomClientComponent from "@/components/IntercomClientComponent";
 
+
 export const metadata = {
   title: "The AI Photographer",
   description: "Take photos in the modern way",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
 children: React.ReactNode;
@@ -23,19 +24,18 @@ return (
     <html lang="en" className="overflow-x-hidden">
       <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
-              <ChristmasBanner/>
-                <Suspense
-                  fallback={
-                    <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
-                  }
-                >
+                <ChristmasBanner/>
+                  <Suspense
+                    fallback={
+                      <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
+                    }
+                  >
                   <Navbar/>
                 </Suspense>
               </section>
-              <main className="mx-auto w-full"> {/* max-w-[1500px] */}
-                {children}
-              </main>
-              <CookieConsent /> 
+                  <main className="mx-auto w-full"> {/* max-w-[1500px] */}
+                    {children}
+                  </main>
               <section>
                 <FooterV2/>
               </section>

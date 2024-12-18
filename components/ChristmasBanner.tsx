@@ -17,7 +17,7 @@ export function ChristmasBanner() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
-      className=" bg-stone-200 border-b border-stone-300 text-stone-600 py-2 px-4 flex justify-between items-center z-40"
+      className=" bg-stone-200/70 hover:bg-stone-200/100 backdrop-blur-sm border-b border-stone-300 text-stone-600 py-2 px-4 flex justify-between items-center z-40"
     >
       <div className="flex  md:flex-1 text-center items-center justify-center">
         <p className="text-[12px] ml-3 md:ml-0">
