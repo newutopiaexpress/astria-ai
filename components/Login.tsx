@@ -153,8 +153,8 @@ export const Login = ({
   }
 
   return (
-    <div className="flex h-full w-full items-center justify-center z-30">
-      <div className="px-4 flex flex-col gap-4 bg-transparent w-full">
+    <div className="flex h-full  items-center justify-center z-30 mt-[29%]">
+      <div className="px-4 flex flex-col gap-4 bg-transparent ">
         <Button
           onClick={signInWithFacebook}
           disabled={isSubmitting}
