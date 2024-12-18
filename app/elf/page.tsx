@@ -7,7 +7,7 @@ import { TextEffect } from '@/components/core/text-effect';
 import Spline from '@splinetool/react-spline/next';
 import { SparkleIcon } from '@/components/SparkleIcon';
 import ImageCarousel from "@/components/ImageCarousel";
-import { PriceTable } from "@/components/PriceTable";
+import { PriceTable2 } from "@/components/PriceTable2";
 
 export default function HelloWorldPage() {
 
@@ -90,7 +90,7 @@ export default function HelloWorldPage() {
           </p>
       </div>
       <div className="py-12 col-span-12 max-w-full mx-auto bg-black/0">
-        <PriceTable/>
+        <PriceTable2/>
         {/*<StyleSlider/>*/}
       </div>
       <div className="col-span-12 max-w-full mx-auto py-16">
