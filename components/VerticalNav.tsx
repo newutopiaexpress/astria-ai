@@ -9,16 +9,26 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Home, BarChart2, Users, Settings, HelpCircle, Menu } from 'lucide-react';
 import { User } from "@supabase/auth-helpers-nextjs";
 
+interface VerticalNavProps {
+  onClose?: () => void;
+}
+
 const navItems = [
-  { name: "FAQ", href: "/analytics", icon: BarChart2 },
-  { name: "Contact Us", href: "/customers", icon: Users },
-  { name: "Pricing", href: "#PriceTable", icon: Settings },
+  { name: "FAQ", href: "/faq", icon: BarChart2 },
+  { name: "Contact Us", href: "/contact", icon: Users },
+  { name: "Pricing", href: "/pricing", icon: Settings },
   { name: "Privacy Policy", href: "/privacy", icon: HelpCircle },
 ]
 
-export function VerticalNav() {
+export function VerticalNav({ onClose }: VerticalNavProps) {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+
+  const handleClick = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
 
   return (
         <nav
@@ -34,6 +44,7 @@ export function VerticalNav() {
                     <Link
                         key={item.name}
                         href={item.href}
+                        onClick={handleClick}
                         className={cn(
                         "flex items-center py-4 border-b border-stone-300 text-gray-900 transition-all hover:bg-stone-100/40 dark:text-gray-100 dark:hover:bg-gray-800",
                         pathname === item.href ? "bg-gray-100 dark:bg-gray-800" : ""

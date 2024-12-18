@@ -217,9 +217,6 @@ export function Bento2() {
   </div>
 
 
-  <div className="max-w-[2xl] mx-auto mt-24">
-      <FaqAccordion/>
-  </div> 
 
     
   <div className="w-full mx-auto gap-6 md:pt-24 pb-32 md:pb-16 bg-repeat-x bg-contain bg-bottom bg-[url('/bg.png')] ">   
@@ -276,6 +273,13 @@ export function Bento2() {
                 </div>  
             </div>
   </div>
+
+  <div id="FAQ" className="w-full bg-white">
+    <div className="max-w-[2xl] mx-auto">
+      <FaqAccordion/>
+    </div>
+  </div> 
+
 
 </div>
   )

@@ -7,43 +7,55 @@ import {
   
   const faqs = [
     {
-      question: "What is your return policy?",
-      answer: "We offer a 30-day return policy for all unused items in their original packaging. Please contact our customer service team to initiate a return."
-    },
-    {
-      question: "How long does shipping take?",
-      answer: "Shipping times vary depending on your location. Typically, domestic orders are delivered within 3-5 business days, while international orders may take 7-14 business days."
-    },
-    {
-      question: "Do you offer international shipping?",
-      answer: "Yes, we ship to most countries worldwide. Shipping costs and delivery times may vary depending on the destination."
-    },
-    {
-      question: "How can I track my order?",
-      answer: "Once your order has been shipped, you will receive a confirmation email with a tracking number. You can use this number to track your package on our website or the carrier's site."
-    },
-    {
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and Apple Pay."
-    }
+        question: "How does the AI photo generation process work?",
+        answer: "We train an AI model with your photos and generate 24 new, unique images in your style. The entire process takes about 10-15 minutes."
+      },
+      {
+        question: "What kind of photos should I upload?",
+        answer: "Upload 15-20 high-quality photos including a mix of portraits (face), half-body, and full-body shots. Photos should be well-lit, clear, and without heavy filters."
+      },
+      {
+        question: "What will I receive?",
+        answer: "You'll receive 24 AI-generated photos in high-resolution (1792x2304px) printable JPG format."
+      },
+      {
+        question: "Is there a refund policy?",
+        answer: "We don't offer refunds as we incur computing costs for each training session, regardless of the outcome."
+      },
+      {
+        question: "How long do you store my photos and the AI model?",
+        answer: "Uploaded photos are automatically deleted within 24 hours, and the trained AI model is stored for 30 days."
+      },
+      {
+        question: "Can I use the generated images commercially?",
+        answer: "Yes, you receive full usage rights for both personal and commercial purposes."
+      },
+      {
+        question: "What affects the quality of the results?",
+        answer: "Results largely depend on the quality and variety of your uploaded photos. Better input photos lead to better results."
+      },
+      {
+        question: "Do you accept custom projects?",
+        answer: "Yes, we're happy to discuss custom projects and special requirements via chat."
+      }
   ]
   
   export default function FaqAccordion() {
     return (
-      <section className="w-full max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <section className="w-full max-w-3xl mx-auto pb-12 px-4  sm:px-6 lg:px-8">
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-left font-thin text-2xl">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-md">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
+
       </section>
     )
   }
