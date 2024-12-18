@@ -48,6 +48,16 @@ export default async function Navbar() {
     data: credits,
   } = await supabase.from("credits").select("*").eq("user_id", user?.id ?? '').single()
   
+  // Get username from user metadata or email
+  const username = user?.user_metadata?.preferred_username || 
+                  user?.user_metadata?.user_name || 
+                  user?.user_metadata?.name || 
+                  user?.user_metadata?.full_name || 
+                  user?.email?.split('@')[0] || 
+                  'User';
+
+  // Display name is first part of email before @ if no other name is available
+  const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
     <div className="flex w-full py-4 px-4 items-center justify-between z-50"> {/*backdrop-blur-md*/}
@@ -118,11 +128,12 @@ export default async function Navbar() {
                             <Avatar className="h-12 w-12">
                               <AvatarImage src={user.user_metadata?.avatar_url} />
                               <AvatarFallback>
-                                {user.email?.charAt(0).toUpperCase()}
+                                {username.charAt(0).toUpperCase()}
                               </AvatarFallback>
                             </Avatar>
                           </div>
-                          <p className="text-md">{user.email}</p>
+                          <p className="text-md font-medium">Welcome, {displayName}</p>
+                          <p className="text-sm text-stone-500">{user.email}</p>
                         </div>
                         <div className="w-full mt-4">
                           <form action="/auth/sign-out" method="post">

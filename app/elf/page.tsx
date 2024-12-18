@@ -22,11 +22,11 @@ export default function HelloWorldPage() {
             </div>
 
             <h1 className="max-w-[870px] mx-auto text-center text-pretty py-8 text-stone-800 font-thin tracking-tight drop-shadow-sm text-6xl leading-[3.6rem] md:text-7xl md:leading-[4rem]">
-              <span className="bg-gradient-to-r from-emerald-600  to-red-500 inline-block text-transparent bg-clip-text pb-2">
+              <span className="bg-gradient-to-r from-green-600  to-rose-600 inline-block text-transparent bg-clip-text pb-2">
                 {/*<TextEffect per='char' preset='fade' delay={1.5}>
                 Turn Your Little One into a Real Christmas Elf!
                 </TextEffect>  */}
-                Turn Your Little One into a Real Christmas Elf!       
+                Turn Your Little One into a <span className="font-bold">Real Christmas Elf!</span>      
               </span>
             </h1>
             <InView
@@ -58,7 +58,7 @@ export default function HelloWorldPage() {
                 {/*<span className="md:mr-4 rounded-full border border-stone-300 px-4 py-4">24pcs Printable Photo</span>*/}
                       <Link href="/login">
                       <Button className="rounded-full outline outline-green-500/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-r from-fuchsia-950 to-neutral-950 hover:bg-gradient-to-br hover:from-fuchsia-900 hover:to-neutral-900 py-6 px-8 font-normal text-sm text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
-                      <span className="font-bold mr-1 border-r border-stone-100/20 pr-2 text-lg">€13.99</span>
+                      <span className="font-bold mr-1 border-r border-stone-100/20 pr-2 text-lg">€9.99</span>
                       Activate Elf Magic<SparkleIcon/>
                       </Button>
                       </Link>

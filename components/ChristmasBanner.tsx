@@ -20,13 +20,13 @@ export function ChristmasBanner() {
       className=" bg-stone-200/70 hover:bg-stone-200/100 backdrop-blur-sm border-b border-stone-300 text-stone-600 py-2 px-4 flex justify-between items-center z-40"
     >
       <div className="flex  md:flex-1 text-center items-center justify-center">
-        <p className="text-[12px] ml-3 md:ml-0">
+        <p className="text-[11px] tracking-tight ml-2 md:ml-0">
             <span className="font-semibold italic mr-2 flex-row items-center justify-center">
               <Image src="/elf/elf1.png" width={100} height={100} alt="elf" className="float-left w-10 h-10 rounded-full mr-4" /> 
               Turn Your Child into a Real Christmas Elf!
             </span><span className="font-normal italic opacity-75"></span> 
-            <Link href="/login" className="ml-1">
-              <Button className="text-xs font-bold border scale-75 bg-white/0 text-stone-500 hover:text-stone-300 border-stone-300 rounded-lg">CREATE NOW </Button>
+            <Link href="/login" className="ml-0">
+              <Button className="text-[11px] font-bold border scale-75 bg-white/0 text-stone-500 hover:text-stone-300 border-stone-300 rounded-lg">CREATE NOW </Button>
             </Link>
          </p>
       </div>
@@ -35,7 +35,7 @@ export function ChristmasBanner() {
         className="text-stone-600 hover:text-stone-800 transition-colors"
         aria-label="Close banner"
       >
-        <X className="h-4 w-4 mr-5" />
+        <X className="h-4 w-4 mr-0" />
       </button>
     </motion.div>
   )
