@@ -60,7 +60,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="flex w-full py-4 px-4 items-center justify-between z-50">
+    <div className="flex w-full px-4 py-2 items-center justify-between z-50">
       {/* Logo section */}
       <div className="flex h-full">
         <Link href="/">
@@ -69,11 +69,11 @@ export default async function Navbar() {
       </div>
 
       {/* Center section with navigation items */}
-      <div className="shadow-sm flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min rounded-full md:-ml-[47px] px-3">
+      <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min  rounded-full shadow-md md:-ml-[47px] px-4 py-1">
         {user && (
           <div className="flex items-center gap-4">
             <Link href="/overview">
-              <Button className="text-xs bg-transparent shadow-sm text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+              <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                 <FolderCheck/>
                 <span className="hidden md:block ml-2 font-normal">Your Models</span>
               </Button>
