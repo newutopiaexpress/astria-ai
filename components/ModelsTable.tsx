@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { CheckCircle } from 'lucide-react'
 
 import { Database } from "@/types/supabase";
 import { Icons } from "./icons";
@@ -24,6 +25,40 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
   const handleRedirect = (id: number) => {
     router.push(`/overview/models/${id}`);
   };
+
+  const StatusIndicator = ({ status }: { status: string }) => {
+    if (status === "finished") {
+      return (
+        <Badge
+          className="flex gap-2 items-center justify-center w-min"
+          variant="finished"
+        >
+          <CheckCircle className="h-4 w-4" />
+        </Badge>
+      )
+    }
+
+    if (status === "processing") {
+      return (
+        <Badge
+          className="flex gap-2 items-center w-auto"
+          variant="secondary"
+        >
+          processing..
+          <Icons.spinner className="h-4 w-4 animate-spin" />
+        </Badge>
+      )
+    }
+
+    return (
+      <Badge
+        className="flex gap-2 items-center w-[100px]"
+        variant="secondary"
+      >
+        {status}
+      </Badge>
+    )
+  }
 
   return (
     <div className="rounded-sm border-none shadow-none">
@@ -45,17 +80,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
             >
               <TableCell className="font-medium pl-4 md:pl-6 w-[33%]">{model.name}</TableCell>
               <TableCell className="w-[130px]">
-                <div>
-                <Badge
-                  className="flex gap-2 items-center w-max"
-                  variant={model.status === "finished" ? "finished" : "secondary"}
-                >
-                  {model.status === "finished" ? "Finished" : model.status === "processing" ? "training process.." : model.status}
-                  {model.status === "processing" && (
-                    <Icons.spinner className="h-4 w-4 animate-spin" />
-                  )}
-                </Badge>
-                </div>
+                <StatusIndicator status={model.status} />
               </TableCell>
               <TableCell className="text-sm w-[130px]">{model.type}</TableCell>
               <TableCell>

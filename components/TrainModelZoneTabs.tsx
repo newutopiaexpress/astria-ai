@@ -276,7 +276,7 @@ export default function TrainModelZone() {
                       ${currentStep === step.number
                         ? "border-green-400 bg-green-400/10 text-green-600"
                         : currentStep > step.number
-                        ? "border-green-400 bg-green-400 text-white"
+                        ? "border-green-400 bg-green-400 text-stone-800"
                         : "border-stone-300 text-stone-500"
                       }`}
                   >
@@ -750,7 +750,7 @@ export default function TrainModelZone() {
                   type="button"
                   onClick={prevStep}
                   variant="outline"
-                  className="rounded-full px-8"
+                  className="rounded-full px-8 border-stone-400 text-stone-600 hover:bg-stone-100"
                 >
                   Previous
                 </Button>
@@ -761,14 +761,14 @@ export default function TrainModelZone() {
                   type="button"
                   onClick={nextStep}
                   disabled={!isStepValid()}
-                  className="rounded-full px-8 bg-green-300/50 hover:bg-green-300"
+                  className="rounded-full px-8 bg-green-600 hover:bg-green-700 text-white shadow-sm"
                 >
                   Next
                 </Button>
               ) : (
                 <Button 
                   type="submit" 
-                  className="rounded-full transition-all px-8 bg-green-300/50 hover:bg-green-300 text-stone-800"
+                  className="rounded-full transition-all px-8 bg-green-600 hover:bg-green-700 text-white shadow-sm"
                   disabled={isLoading || !isStepValid()}
                 >
                   {isLoading ? "Creating..." : `Create Photos ${stripeIsConfigured ? "(1 Credit)" : ""}`}
