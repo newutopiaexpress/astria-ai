@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { List, Send, Coins, ShieldCheck,} from 'lucide-react';
 import { User } from "@supabase/auth-helpers-nextjs";
+import { StripeLogo } from "@/components/StripeLogo";
 
 interface VerticalNavProps {
   onClose?: () => void;
@@ -54,6 +55,11 @@ export function VerticalNav({ onClose }: VerticalNavProps) {
                         {item.name}
                     </Link>
                     ))}
+
+                    <div className="relative text-xs opacity-75 text-left mt-4">
+                    Secured with 
+                    <span className="float-left -ml-10 -mz-2"><StripeLogo/></span>
+                    </div>
                 </div>
                 </ScrollArea>
             </div>
