@@ -24,7 +24,7 @@ return (
     <html lang="en" className="overflow-x-hidden">
       <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
-                <ChristmasBanner/>
+                {/*<ChristmasBanner/>*/}
                   <Suspense
                     fallback={
                       <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
