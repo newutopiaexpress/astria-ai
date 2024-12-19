@@ -69,8 +69,9 @@ export default async function Navbar() {
       </div>
 
       {/* Center section with navigation items */}
-      <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min  rounded-full shadow-md md:-ml-[47px] px-4 py-1">
+      <div>
         {user && (
+        <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min  rounded-full shadow-md md:-ml-[47px] px-4 py-1">
           <div className="flex items-center gap-4">
             <Link href="/overview">
               <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
@@ -93,6 +94,7 @@ export default async function Navbar() {
               </Button>
             </Link>
           </div>
+        </div>
         )}
       </div>
 
