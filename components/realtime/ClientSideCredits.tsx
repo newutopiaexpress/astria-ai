@@ -57,20 +57,20 @@ export default function ClientSideCredits({
   if (!credits) return null;
 
   return (
-    <p className="text-xs text-stone-500 align-middle mt-[6px] mr-1">
+    <div className="text-xs text-stone-500 align-middle p-1">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
             {credits.credits === 0 ? (
-                <Badge className={`ml-2 animate-pulse rounded-full bg-red-400 hover:bg-red-500 transition-colors cursor-pointer ${className}`}>
+                <Badge className={`text-xs rounded-full h-10 w-10 flex items-center justify-center bg-rose-400 border border-rose-400 text-white shadow-sm ${className}`}>
                   {credits.credits}
                 </Badge>
 
                 
             ) : (
               <div className="flex gap-0 items-center">
-              <Badge className={`text-xs ml-2 rounded-full h-8 w-auto py-4 px-4 flex items-center justify-center bg-emerald-300/0 border border-emerald-300 text-stone-800 shadow-sm ${className}`}>
-                <span className="mr-2"><CoinIcon/></span>
+              <Badge className={`shadow-sm text-xs rounded-full h-10 w-10 flex items-center justify-center bg-green-400 border border-emerald-400 text-white ${className}`}>
+                <span className="mr-0"><CoinIcon/></span>
                 {credits.credits}
               </Badge>
               </div>
@@ -81,7 +81,7 @@ export default function ClientSideCredits({
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-    </p>
+    </div>
   );
 }
 

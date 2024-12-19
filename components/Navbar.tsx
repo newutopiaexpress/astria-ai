@@ -60,19 +60,49 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="flex w-full py-4 px-4 items-center justify-between z-50"> {/*backdrop-blur-md*/}
+    <div className="flex w-full py-4 px-4 items-center justify-between z-50">
+      {/* Logo section */}
       <div className="flex h-full">
         <Link href="/">
           <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
         </Link>
       </div>
 
-      <div className="flex gap-4 lg:ml-auto mr-2 ">
-        {!user && (
+      {/* Center section with navigation items */}
+      <div className="shadow-sm flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min rounded-full md:-ml-[47px] px-3">
+        {user && (
+          <div className="flex items-center gap-4">
+            <Link href="/overview">
+              <Button className="text-xs bg-transparent shadow-sm text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                <FolderCheck/>
+                <span className="hidden md:block ml-2 font-normal">Your Models</span>
+              </Button>
+            </Link>
+            
+            {stripeIsConfigured && (
+              <ClientSideCredits 
+                creditsRow={credits ? credits : null} 
+                className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
+              />
+            )}
+
+            <Link href="/get-credits">
+              <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                <Plus/>
+                <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
+              </Button>
+            </Link>
+          </div>
+        )}
+      </div>
+
+      {/* Right section with menu */}
+      <div className="flex items-center">
+        {!user ? (
           <div className="flex items-center justify-center">
             <Sheet>
-                  <SheetTrigger className="ml-4">
-                    <NavIcon />
+                  <SheetTrigger className="mr-3">
+                      <NavIcon />   
                   </SheetTrigger>
                   <SheetContent className="w-[200px]">
                     <SheetHeader>
@@ -91,34 +121,10 @@ export default async function Navbar() {
                   </SheetContent>
             </Sheet>
         </div>
-        )}
-        {user && (
-          <div className="flex flex-row gap-2s md:gap-8 text-center align-middle justify-center">
-            
-            <Link href="/overview">
-                <Button className="text-xs mt-1 bg-transparentrounded-full text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full shadow-none">
-                  <FolderCheck/>
-                  <span className="hidden md:block ml-2 font-normal">Your Models</span>
-                </Button>
-            </Link>
-            
-            {stripeIsConfigured && (
-              <ClientSideCredits 
-              creditsRow={credits ? credits : null} 
-              className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
-              />
-            )}
-
-            <Link href="/get-credits">
-                <Button className="text-[10px] uppercase mt-1 bg-transparentrounded-full text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full shadow-none">
-                    <Plus/>
-                    <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
-                </Button>
-            </Link>
-
-            <Sheet>
-                  <SheetTrigger className="ml-4">
-                    <NavIcon />
+        ) : (
+          <Sheet>
+                  <SheetTrigger className="mr-3">
+                      <NavIcon /> 
                   </SheetTrigger>
                   <SheetContent className="w-[200px]">
                     <SheetHeader>
@@ -151,10 +157,6 @@ export default async function Navbar() {
                     </SheetHeader>
                   </SheetContent>
             </Sheet>
-            
-
-
-          </div>
         )}
       </div>
     </div>
