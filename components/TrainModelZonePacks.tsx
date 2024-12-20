@@ -119,8 +119,8 @@ const packOptions: PackOption[] = [
   {
     id: "dating-pack",
     value: "dating-pack",
-    title: "Swipe Right Material",
-    description: "Professional dating profile photos that capture the real you - but better.",
+    title: "Dating Profile",
+    description: "To let the love of your life find you easier",
     previewImage: "/date/01.jpg",
     exampleImage: "/date/date.png",
     pieces: 24,
