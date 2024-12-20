@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-center">Contact Us</h1>
-      <p>We are a small digital agency</p>
+      <p className="text-center pb-4 text-2xl font-thin">We are a small AI-focused digital agency from Hungary</p>
       <div className="grid gap-8 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -18,7 +18,7 @@ export default function ContactPage() {
           </CardHeader>
           <CardContent>
             <p className="text-lg">
-              <a href="mailto:contact@example.com" className="hover:underline">
+              <a href="mailto:info@utopia.express" className="hover:underline">
                 info@utopia.express
               </a>
             </p>
@@ -44,7 +44,7 @@ export default function ContactPage() {
         </Card>
       </div>
 
-      <Card className="mt-8">
+      <Card className="mt-8 bg-transparent border-none shadow-none">
   <CardHeader>
     <div className="flex items-center gap-4">
       <Avatar className="h-14 w-14">
@@ -56,9 +56,8 @@ export default function ContactPage() {
           AI Chat Support
         </CardTitle>
         <CardDescription>
-          Get instant answers to your questions with our AI-powered chat support.<br/>
-          Click on the circle icon on the bottom right to start chatting.
-          (You should login first)
+          Get instant answers to your questions.<br/>
+          After login, click on the circle icon on the bottom right to start chatting.
         </CardDescription>
       </div>
     </div>
