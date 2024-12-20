@@ -101,7 +101,7 @@ export default async function Navbar() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center gap-2 text-[11px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
+            <div className="hidden md:flex items-center gap-2 text-[11px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
               <span>Powered by <span className="font-extrabold">Flux AI</span> by Black Forest Lab</span>
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
