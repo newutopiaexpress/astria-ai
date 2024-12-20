@@ -81,10 +81,12 @@ export default async function Navbar() {
             </Link>
             
             {stripeIsConfigured && (
-              <ClientSideCredits 
-                creditsRow={credits ? credits : null} 
-                className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
-              />
+              <Link href="/overview/models/train">
+                <ClientSideCredits 
+                  creditsRow={credits ? credits : null} 
+                  className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
+                />
+              </Link>
             )}
 
             <Link href="/get-credits">
