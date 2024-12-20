@@ -370,72 +370,42 @@ export default function TrainModelZone() {
                 </FormDescription>
                 <RadioGroup
                   defaultValue={modelType}
-                  className="grid grid-cols-12 gap-10 md:gap-16 mt-4 mx-auto"
+                  className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto px-4"
                   value={modelType}
                   onValueChange={(value) => {
                     form.setValue("type", value);
                   }}
                 >
-                                <div className="col-span-6 md:cols-span-3">
-                                  <RadioGroupItem
-                                    value="man"
-                                    id="man"
-                                    className="peer sr-only"
-                                    aria-label="man"
-                                  />
-                                  <Label
-                                    htmlFor="man"
-                                    className="w-auto h-28 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-3xl border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
-                                  >
-                                    Man
-                                  </Label>
-                                </div>
-                  
-                                <div className="col-span-6 md:cols-span-3">
-                                  <RadioGroupItem
-                                    value="woman"
-                                    id="woman"
-                                    className="peer sr-only"
-                                    aria-label="woman"
-                                  />
-                                  <Label
-                                    htmlFor="woman"
-                                    className="w-auto h-28 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-3xl border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
-                                  >
-                                    Woman
-                                  </Label>
-                                </div>
-
-                                <div className="col-span-6 md:cols-span-3">
-                                  <RadioGroupItem
-                                    value="girl"
-                                    id="girl"
-                                    className="peer sr-only"
-                                    aria-label="girl"
-                                  />
-                                  <Label
-                                    htmlFor="girl"
-                                    className="w-auto h-28 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-3xl border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
-                                  >
-                                    Girl
-                                  </Label>
-                                </div>
-
-                                <div className="col-span-6 md:cols-span-3">
-                                  <RadioGroupItem
-                                    value="boy"
-                                    id="boy"
-                                    className="peer sr-only"
-                                    aria-label="boy"
-                                  />
-                                  <Label
-                                    htmlFor="boy"
-                                    className="w-auto h-28 peer-data-[state=checked]:scale-110 transition-all flex flex-col items-center justify-center rounded-3xl border border-stone-300 outline outline-8 outline-stone-300/50 outline-offset-4 bg-transparent hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-2 peer-data-[state=checked]:border-green-400 [&:has([data-state=checked])]:border-stone-400 hover:outline hover:outline-8 hover:outline-stone-400/20 peer-data-[state=checked]:outline peer-data-[state=checked]:outline-8 peer-data-[state=checked]:outline-stone-400/10 peer-data-[state=checked]:outline-offset-1 peer-data-[state=checked]:shadow-lg"
-                                  >
-                                    Boy
-                                  </Label>
-                                </div>
-
+                  {[
+                    { value: "man", label: "Man", icon: "👨" },
+                    { value: "woman", label: "Woman", icon: "👩" },
+                    { value: "boy", label: "Boy", icon: "👦" },
+                    { value: "girl", label: "Girl", icon: "👧" }
+                  ].map((item) => (
+                    <div key={item.value} className="relative">
+                      <RadioGroupItem
+                        value={item.value}
+                        id={item.value}
+                        className="peer sr-only"
+                        aria-label={item.value}
+                      />
+                      <Label
+                        htmlFor={item.value}
+                        className="flex flex-col items-center justify-center h-32 w-32 rounded-2xl border-2 border-stone-200 
+                          bg-white transition-all cursor-pointer
+                          hover:border-green-400/50 hover:bg-green-50/50
+                          peer-data-[state=checked]:border-green-400 
+                          peer-data-[state=checked]:bg-green-50/50
+                          peer-data-[state=checked]:scale-[1.02]
+                          peer-data-[state=checked]:shadow-sm"
+                      >
+                        <span className="text-3xl mb-2 saturate-0 hover:saturate-100">{item.icon}</span>
+                        <span className="text-sm font-medium text-stone-600">
+                          {item.label}
+                        </span>
+                      </Label>
+                    </div>
+                  ))}
                 </RadioGroup>
               </div>
             )}

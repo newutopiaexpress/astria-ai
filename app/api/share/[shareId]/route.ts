@@ -8,15 +8,24 @@ export async function GET(
 ) {
   const supabase = createRouteHandlerClient({ cookies });
 
+  console.log('API Route - Share ID:', params.shareId);
+
+  // First, let's check if the image exists without any conditions
   const { data: image, error } = await supabase
     .from('images')
     .select('*')
     .eq('share_id', params.shareId)
-    .eq('is_public', true)
     .single();
 
+  console.log('Query result:', { image, error });
+
   if (error || !image) {
-    return NextResponse.json({ error: 'Image not found' }, { status: 404 });
+    return NextResponse.json({ 
+      error: 'Image not found', 
+      details: error,
+      shareId: params.shareId,
+      timestamp: new Date().toISOString()
+    }, { status: 404 });
   }
 
   return NextResponse.json(image);

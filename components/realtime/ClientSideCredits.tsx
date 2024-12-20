@@ -27,7 +27,9 @@ export default function ClientSideCredits({
 
   if (!creditsRow) return (
     <div className="flex gap-2 items-center">
-      <p className="pt-1 text-stone-500 text-sm">Credits: 0</p>    
+      <Badge className={`text-xs rounded-full h-10 w-10 flex items-center justify-center text-red-800 bg-red-400/0 hover:bg-green-500 border border-red-200 shadow-sm ${className}`}>
+                <span className="mr-0"><CoinIcon/></span>0
+      </Badge>   
     </div>
   )
 

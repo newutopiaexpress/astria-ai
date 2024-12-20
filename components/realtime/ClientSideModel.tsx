@@ -63,8 +63,18 @@ export default function ClientSideModel({
   };
 
   const getShareUrl = (shareId: string) => {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://utopia.photos';
-    return `${baseUrl}/share/${shareId}`;
+    // Add logging to debug
+    console.log('Share ID:', shareId);
+    console.log('ENV URL:', process.env.NEXT_PUBLIC_APP_URL);
+    
+    // Use window.location.origin as fallback
+    const baseUrl = typeof window !== 'undefined' 
+      ? window.location.origin 
+      : process.env.NEXT_PUBLIC_APP_URL || 'https://utopia.photos';
+    
+    const url = `${baseUrl}/share/${shareId}`;
+    console.log('Generated URL:', url);
+    return url;
   };
 
   const downloadAllImages = async () => {
@@ -105,7 +115,6 @@ export default function ClientSideModel({
           {samples && (
             <div className="grid grid-cols-1 gap-2">
               <div className="col-span-1">
-                {/*<h2 className="text-xs mb-2">Uploaded photos</h2>*/}
                 <div className="flex flex-row flex-wrap">
                   {samples.map((sample, index) => (
                     <div 
@@ -129,42 +138,36 @@ export default function ClientSideModel({
           )}
           
           <div className="col-span-1 w-full mb-32">
-                  <div className="absolute top-0 right-3">
-                    {/*<h1 className="text-xs">Results</h1>*/}
-                    <button
-                      onClick={downloadAllImages}
-                      className="flex items-center gap-2 px-3 py-2 text-xs bg-stone-800/0 border border-stone-300 rounded-full text-stone-800"
-                    >
-                      <Icons.spinner className="w-4 h-4" />
-                      Download All
-                    </button>
-                  </div>
+            <div className="absolute top-0 right-3">
+              <button
+                onClick={downloadAllImages}
+                className="flex items-center gap-2 px-3 py-2 text-xs bg-stone-800/0 border border-stone-300 rounded-full text-stone-800"
+              >
+                <Icons.spinner className="w-4 h-4" />
+                Download All
+              </button>
+            </div>
 
             {model.status === "finished" && (
-              <>
-                <div className="flex flex-1 flex-col gap-2 mt-9 relative">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
-                    {serverImages?.map((image) => (
-                      <div key={image.id} className="relative group">
-                        <img
-                          src={image.uri}
-                          alt="Generated result"
-                          className="transition-all rounded-sm shadow-sm hover:shadow-md shadow-stone-800/60 w-full h-auto object-cover"
+              <div className="flex flex-1 flex-col gap-2 mt-9 relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
+                  {serverImages?.map((image) => (
+                    <div key={image.id} className="relative group">
+                      <img
+                        src={image.uri}
+                        alt="Generated result"
+                        className="transition-all rounded-sm shadow-sm hover:shadow-md shadow-stone-800/60 w-full h-auto object-cover"
+                      />
+                      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ShareDialog 
+                          imageUrl={image.uri}
+                          shareUrl={getShareUrl(image.share_id)}
                         />
-{/*}
-                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <ShareDialog 
-                            imageUrl={image.uri}
-                            shareUrl={getShareUrl(image.share_id)}
-                          />
-                        </div>*/}
-
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-
-              </>
+              </div>
             )}
           </div>
         </div>

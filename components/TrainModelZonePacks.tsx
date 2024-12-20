@@ -143,7 +143,7 @@ const packOptions: PackOption[] = [
 
 export default function TrainModelZonePacks() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 lg:gap-12 mx-auto pt-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6 lg:gap-12 mx-auto pt-4">
       {packOptions.map((pack) => (
         <div key={pack.id}>
           <RadioGroupItem
@@ -198,7 +198,7 @@ export default function TrainModelZonePacks() {
             {/* Subject Labels */}
             <div className="flex flex-wrap justify-center mt-2">
               {pack.subjects.map((subject, index) => (
-                <Badge key={index} variant="secondary" className="text-stone-400 text-[11px] px-2 mr-1 mb-1">
+                <Badge key={index} variant="secondary" className="text-stone-400 text-[10px]  md:text-[11px] px-1 md:px-2 mr-1 mb-1">
                   {subject}
                 </Badge>
               ))}

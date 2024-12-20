@@ -1,34 +1,35 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
-import { notFound } from 'next/navigation';
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { notFound } from "next/navigation";
+import { Database } from "@/types/supabase";
+
+export const dynamic = "force-dynamic";
 
 export default async function SharePage({ params }: { params: { shareId: string } }) {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient<Database>({ cookies });
+
+  console.log('Attempting to fetch image with share_id:', params.shareId);
 
   const { data: image, error } = await supabase
-    .from('images')
-    .select('*')
-    .eq('share_id', params.shareId)
-    .eq('is_public', true)
+    .from("images")
+    .select("*")
+    .eq("share_id", params.shareId)
     .single();
 
-  if (error) {
-    console.error('Error fetching shared image:', error);
-    notFound();
-  }
+  console.log('Query result:', { image, error });
 
   if (!image) {
-    console.error('No image found with share_id:', params.shareId);
+    console.log('Image not found, redirecting to 404');
     notFound();
   }
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="max-w-2xl mx-auto">
-        <img 
-          src={image.uri} 
-          alt="Shared AI generated image"
-          className="rounded-lg shadow-lg w-full"
+      <div className="max-w-4xl mx-auto">
+        <img
+          src={image.uri}
+          alt="Shared image"
+          className="w-full h-auto rounded-lg shadow-lg"
         />
       </div>
     </div>
