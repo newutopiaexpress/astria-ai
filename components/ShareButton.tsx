@@ -27,7 +27,7 @@ export function ShareButton({ imageId, shareId, imageUri }: ShareButtonProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="bg-white/80 hover:bg-white">
+        <Button variant="default" size="icon" className="bg-white/80 hover:bg-white">
           <Share2 className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>

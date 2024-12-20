@@ -10,14 +10,15 @@ import IntercomClientComponent from "@/components/IntercomClientComponent";
 import { ChristmasBanner } from "@/components/ChristmasBanner";
 import metaThemeSwap from 'meta-theme-swap';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata = {
   title: "The AI Photographer",
   description: "Take photos in the modern way",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#e7e5e4' }, // stone-200
     { media: '(prefers-color-scheme: dark)', color: '#1c1917' }, // stone-900

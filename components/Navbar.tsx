@@ -62,7 +62,7 @@ export default async function Navbar() {
 
   return (
     <div className="w-full h-auto">
-      <div className="flex w-full px-4 py-5 items-center justify-between z-50">
+      <div className="flex w-full px-4 py-5 md:py-3 items-center justify-between z-50">
 
         {/* Logo section */}
         <div className="flex h-full">
