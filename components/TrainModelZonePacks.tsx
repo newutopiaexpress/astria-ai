@@ -130,7 +130,7 @@ const packOptions: PackOption[] = [
   {
     id: "realtor-v2",
     value: "realtor-v2",
-    title: "Estate Elite",
+    title: "Real Estate Profile",
     description: "Your Key to Looking Like a Top-Selling Agent!",
     previewImage: "/real/8.jpg",
     exampleImage: "/real/realB.png",
