@@ -5,14 +5,23 @@ import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
 import CookieConsent from "@/components/CookieConsent";
-import { ChristmasBanner } from "@/components/ChristmasBanner";
 import Script from "next/script";
 import IntercomClientComponent from "@/components/IntercomClientComponent";
-
+import { ChristmasBanner } from "@/components/ChristmasBanner";
+import metaThemeSwap from 'meta-theme-swap';
 
 export const metadata = {
   title: "The AI Photographer",
   description: "Take photos in the modern way",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#e7e5e4' }, // stone-200
+    { media: '(prefers-color-scheme: dark)', color: '#1c1917' }, // stone-900
+  ],
 };
 
 export default async function RootLayout({
@@ -22,9 +31,12 @@ children: React.ReactNode;
 }>) {
 return (
     <html lang="en" className="overflow-x-hidden">
-      <body className="flex flex-col bg-stone-200 h-screen overflow-x-hidden"> 
+      <head>
+        <meta name="theme-color" content="#e7e5e4" data-meta-theme-swap />
+      </head>
+      <body className="flex flex-col bg-stone-200 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
-                {/*<ChristmasBanner/>*/}
+                <ChristmasBanner/>
                   <Suspense
                     fallback={
                       <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
@@ -42,18 +54,18 @@ return (
               <Toaster />
               <Analytics />
               <Script
-            strategy="afterInteractive"
-            id="intercom-settings"
-            dangerouslySetInnerHTML={{
-                __html: `
-                        window.intercomSettings = {
-                            api_base: "https://api-iam.intercom.io",
-                            app_id: "opfhxwa2", 
-                        };
-                    `
-            }}
-        />
-        <IntercomClientComponent/>
+                strategy="afterInteractive"
+                id="intercom-settings"
+                dangerouslySetInnerHTML={{
+                    __html: `
+                            window.intercomSettings = {
+                                api_base: "https://api-iam.intercom.io",
+                                app_id: "opfhxwa2", 
+                            };
+                        `
+                    }}
+                />
+                <IntercomClientComponent/>
       </body>
     </html>
   );

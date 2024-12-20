@@ -60,108 +60,111 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="flex w-full px-4 py-2 items-center justify-between z-50">
-      {/* Logo section */}
-      <div className="flex h-full">
-        <Link href="/">
-          <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
-        </Link>
-      </div>
+    <div className="w-full h-auto">
+      <div className="flex w-full px-4 py-2 items-center justify-between z-50">
 
-      {/* Center section with navigation items */}
-      <div>
-        {user && (
-        <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min  rounded-full shadow-md md:-ml-[47px] px-4 py-1">
-          <div className="flex items-center gap-4">
-            <Link href="/overview">
-              <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                <FolderCheck/>
-                <span className="hidden md:block ml-2 font-normal">Your Models</span>
-              </Button>
-            </Link>
-            
-            {stripeIsConfigured && (
-              <Link href="/overview/models/train">
-                <ClientSideCredits 
-                  creditsRow={credits ? credits : null} 
-                  className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
-                />
+        {/* Logo section */}
+        <div className="flex h-full">
+          <Link href="/">
+            <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
+          </Link>
+        </div>
+
+        {/* Center section with navigation items */}
+        <div>
+          {user && (
+          <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min  rounded-full shadow-md md:-ml-[47px] px-4 py-1">
+            <div className="flex items-center gap-4">
+              <Link href="/overview">
+                <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <FolderCheck/>
+                  <span className="hidden md:block ml-2 font-normal">Your Models</span>
+                </Button>
               </Link>
-            )}
+              
+              {stripeIsConfigured && (
+                <Link href="/overview/models/train">
+                  <ClientSideCredits 
+                    creditsRow={credits ? credits : null} 
+                    className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
+                  />
+                </Link>
+              )}
 
-            <Link href="/get-credits">
-              <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                <Plus/>
-                <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
-              </Button>
-            </Link>
+              <Link href="/get-credits">
+                <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <Plus/>
+                  <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
+                </Button>
+              </Link>
+            </div>
           </div>
+          )}
         </div>
-        )}
-      </div>
 
-      {/* Right section with menu */}
-      <div className="flex items-center">
-        {!user ? (
-          <div className="flex items-center justify-center">
-            <Sheet>
-                  <SheetTrigger className="mr-3">
-                      <NavIcon />   
-                  </SheetTrigger>
-                  <SheetContent className="w-[200px]">
-                    <SheetHeader>
-                      <SheetDescription className="pt-16">
-                        <Link href="/login">
-                          <Button
-                            className="w-min text-left bg-stone-800 rounded-full text-white"
-                            variant={"ghost"}
-                          >
-                            Log in
-                          </Button>
-                        </Link>
-                        <VerticalNav/>
-                      </SheetDescription>
-                    </SheetHeader>
-                  </SheetContent>
-            </Sheet>
-        </div>
-        ) : (
-          <Sheet>
-                  <SheetTrigger className="mr-3">
-                      <NavIcon /> 
-                  </SheetTrigger>
-                  <SheetContent className="w-[200px]">
-                    <SheetHeader>
-                      <SheetDescription className="pt-10 px-0">
-                        <div className="flex-col">
-                          <div className="mb-2 mr-2 transition-all flex items-center justify-start">
-                            <Avatar className="h-12 w-12">
-                              <AvatarImage src={user.user_metadata?.avatar_url} />
-                              <AvatarFallback>
-                                {username.charAt(0).toUpperCase()}
-                              </AvatarFallback>
-                            </Avatar>
-                          </div>
-                          <p className="text-md font-medium">Welcome, {displayName}</p>
-                          <p className="text-sm text-stone-500">{user.email}</p>
-                        </div>
-                        <div className="w-full mt-4">
-                          <form action="/auth/sign-out" method="post">
+        {/* Right section with menu */}
+        <div className="flex items-center">
+          {!user ? (
+            <div className="flex items-center justify-center">
+              <Sheet>
+                    <SheetTrigger className="mr-3">
+                        <NavIcon />   
+                    </SheetTrigger>
+                    <SheetContent className="w-[200px]">
+                      <SheetHeader>
+                        <SheetDescription className="pt-16">
+                          <Link href="/login">
                             <Button
-                              type="submit"
                               className="w-min text-left bg-stone-800 rounded-full text-white"
                               variant={"ghost"}
-                              >
-                              Log out
+                            >
+                              Log in
                             </Button>
-                          </form>
-                        </div>
-                        <VerticalNav/>
-                      </SheetDescription>
-                    </SheetHeader>
-                  </SheetContent>
-            </Sheet>
-        )}
+                          </Link>
+                          <VerticalNav/>
+                        </SheetDescription>
+                      </SheetHeader>
+                    </SheetContent>
+              </Sheet>
+          </div>
+          ) : (
+            <Sheet>
+                    <SheetTrigger className="mr-3">
+                        <NavIcon /> 
+                    </SheetTrigger>
+                    <SheetContent className="w-[200px]">
+                      <SheetHeader>
+                        <SheetDescription className="pt-10 px-0">
+                          <div className="flex-col">
+                            <div className="mb-2 mr-2 transition-all flex items-center justify-start">
+                              <Avatar className="h-12 w-12">
+                                <AvatarImage src={user.user_metadata?.avatar_url} />
+                                <AvatarFallback>
+                                  {username.charAt(0).toUpperCase()}
+                                </AvatarFallback>
+                              </Avatar>
+                            </div>
+                            <p className="text-md font-medium">Welcome, {displayName}</p>
+                            <p className="text-sm text-stone-500">{user.email}</p>
+                          </div>
+                          <div className="w-full mt-4">
+                            <form action="/auth/sign-out" method="post">
+                              <Button
+                                type="submit"
+                                className="w-min text-left bg-stone-800 rounded-full text-white"
+                                variant={"ghost"}
+                                >
+                                Log out
+                              </Button>
+                            </form>
+                          </div>
+                          <VerticalNav/>
+                        </SheetDescription>
+                      </SheetHeader>
+                    </SheetContent>
+              </Sheet>
+          )}
+        </div>
       </div>
     </div>
   );

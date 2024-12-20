@@ -6,12 +6,17 @@ import Link from "next/link";
 import { Badge } from "./ui/badge";
 import Image from "next/image";
 import { UtopiaLogo } from "./ui/utopia-logo";
+import { StripeLogo } from "@/components/StripeLogo";
 
 
 export function FooterV2() {
   return (
     <footer className="z-100">
 
+<div className="absolute max-w-max h-[30px] left-4 bottom-4 text-[10px] text-left flex flex-col justify-start opacity-50">
+   Secured With
+
+</div>
 
 {/*
         <div className="z-[99999] fixed bottom-0 right-0 w-full bg-stone-200 text-stone-800 py-6">
