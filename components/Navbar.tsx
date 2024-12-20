@@ -62,7 +62,7 @@ export default async function Navbar() {
 
   return (
     <div className="w-full h-auto">
-      <div className="flex w-full px-4 py-2 items-center justify-between z-50">
+      <div className="flex w-full px-4 py-5 items-center justify-between z-50">
 
         {/* Logo section */}
         <div className="flex h-full">
@@ -74,7 +74,7 @@ export default async function Navbar() {
         {/* Center section with navigation items */}
         <div>
           {user ? (
-            <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min rounded-full shadow-md md:-ml-[47px] px-4 py-1">
+            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/100 outline outline-8 outline-offset-2 outline-stone-300/20 hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-stone-300/80 bg-stone-200 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
               <div className="flex items-center gap-4">
                 <Link href="/overview">
                   <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
@@ -101,7 +101,7 @@ export default async function Navbar() {
               </div>
             </div>
           ) : (
-            <div className="hidden md:flex items-center gap-2 text-[11px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
+            <div className="hidden md:flex items-center gap-2 text-[10px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
               <span>Powered by <span className="font-extrabold">Flux AI</span> by Black Forest Lab</span>
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>

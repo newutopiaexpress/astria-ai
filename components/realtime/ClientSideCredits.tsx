@@ -69,7 +69,7 @@ export default function ClientSideCredits({
                 
             ) : (
               <div className="flex gap-0 items-center">
-              <Badge className={`shadow-sm text-xs rounded-full h-10 w-10 flex items-center justify-center bg-green-400 border border-emerald-400 text-white ${className}`}>
+              <Badge className={`text-xs rounded-full h-10 w-10 flex items-center justify-center text-white bg-green-400 hover:bg-green-500 border border-stone-300 shadow-sm ${className}`}>
                 <span className="mr-0"><CoinIcon/></span>
                 {credits.credits}
               </Badge>
@@ -77,7 +77,7 @@ export default function ClientSideCredits({
             )}
           </TooltipTrigger>
           <TooltipContent>
-            <p>{credits.credits === 0 ? 'Buy Credits' : 'Your credits'}</p>
+            <p>{credits.credits === 0 ? 'Buy Credits' : 'Create Photos'}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

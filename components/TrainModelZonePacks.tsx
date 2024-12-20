@@ -127,12 +127,23 @@ const packOptions: PackOption[] = [
     subjects: ["Woman"], // Add subjects
     isNew: true,
   },
+  {
+    id: "realtor-v2",
+    value: "realtor-v2",
+    title: "Estate Elite",
+    description: "Your Key to Looking Like a Top-Selling Agent!",
+    previewImage: "/real/8.jpg",
+    exampleImage: "/real/realB.png",
+    pieces: 24,
+    subjects: ["Woman", "Man"], // Add subjects
+    isNew: true,
+  },
 
 ];
 
 export default function TrainModelZonePacks() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-12 mx-auto pt-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 lg:gap-12 mx-auto pt-4">
       {packOptions.map((pack) => (
         <div key={pack.id}>
           <RadioGroupItem

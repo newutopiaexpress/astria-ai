@@ -85,10 +85,10 @@ export default function TrainModelZone() {
     trainModel();
   };
 
-  const onDrop = useCallback(
+  const onDrop: any = useCallback(
     async (acceptedFiles: File[]) => {
       const newFiles: File[] = [];
-  
+
       for (const file of acceptedFiles) {
         if (!files.some((f) => f.name === file.name)) {
           try {
@@ -103,7 +103,7 @@ export default function TrainModelZone() {
           }
         }
       }
-  
+
       // if user tries to upload more than 10 files, display a toast
       if (newFiles.length + files.length > 10) {
         toast({
@@ -114,7 +114,7 @@ export default function TrainModelZone() {
         });
         return;
       }
-  
+
       // Add the new files to the existing files array
       setFiles((prevFiles) => [...prevFiles, ...newFiles]);
     },
@@ -266,42 +266,38 @@ export default function TrainModelZone() {
   return (
     <div className="grid grid-cols-12 w-full rounded-3xl relative">
       <div className="col-span-12 md:col-span-12 bg-stone-100/0 z-10">
-        {/* Add Step Indicator */}
-        <div className="sm:hidden xs:hidden md:block w-full md:max-w-2xl mx-auto flex items-center justify-center mb-8">
-          <div className="flex items-center space-x-4 w-full px-4 justify-center">
+        {/* Step Indicator */}
+        <div className="hidden md:block w-full md:max-w-xl mx-auto mb-12">
+          <div className="relative flex justify-between">
+            {/* Connecting Line */}
+            <div className="absolute top-1/3 left-0 right-0 h-[1px] bg-gradient-to-r from-stone-200 from-1% via-stone-300 via-50% to-stone-200 to-99% -translate-y-1/3" />
+            
+            {/* Steps */}
             {steps.map((step, index) => (
-              <div key={step.number} className="flex-1">
-                <div className="flex items-center justify-center">
-                  <div
-                    className={`flex-shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center
-                      ${currentStep === step.number
-                        ? "border-green-400 bg-green-400/10 text-green-600"
-                        : currentStep > step.number
-                        ? "border-green-400 bg-green-400 text-stone-800"
-                        : "border-stone-300 text-stone-500"
-                      }`}
-                  >
-                    {currentStep > step.number ? (
-                      "✓"
-                    ) : (
-                      <span className="text-xs opacity-45">{step.number}</span>
-                    )}
-                  </div>
-                  <div
-                    className={`hidden sm:flex flex-col ml-4 ${
-                      currentStep === step.number ? "text-stone-800" : "text-stone-500"
+              <div key={step.number} className="relative flex flex-col items-center">
+                <div
+                  className={`w-8 h-8 rounded-full border-2 flex items-center justify-center bg-stone-200 z-10
+                    ${currentStep === step.number
+                      ? "border-green-400  text-green-600"
+                      : currentStep > step.number
+                      ? "border-green-400  text-green-500"
+                      : "border-stone-300 text-stone-500"
                     }`}
-                  >
-                    <span className="text-xs font-normal opacity-50">{step.title}</span>
-                  </div>
-                  {index < steps.length - 1 && (
-                    <div
-                      className={`flex-1 h-[1px] ml-4 ${
-                        currentStep > step.number ? "bg-green-500" : "bg-stone-200"
-                      }`}
-                    />
+                >
+                  {currentStep > step.number ? (
+                    <span className="text-green-500">✓</span>
+                  ) : (
+                    <span className="text-xs">{step.number}</span>
                   )}
                 </div>
+                <span 
+                  className={`mt-2 text-xs whitespace-nowrap
+                    ${currentStep === step.number 
+                      ? "text-stone-700 font-normal" 
+                      : "text-stone-500 font-thin"}`}
+                >
+                  {step.title}
+                </span>
               </div>
             ))}
           </div>
@@ -440,8 +436,6 @@ export default function TrainModelZone() {
                                   </Label>
                                 </div>
 
-
-
                 </RadioGroup>
               </div>
             )}
@@ -449,8 +443,8 @@ export default function TrainModelZone() {
             {/* Step 4 - Upload Images */}
             {currentStep === 4 && (
               <>
-                <div {...getRootProps()} className="relative justify-center align-middle cursor-pointer flex flex-col gap-4 mx-auto w-full p-6">
-                  <FormDescription className="p-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
+                <div {...getRootProps()} className="relative justify-center align-middle cursor-pointer flex flex-col gap-4 mx-auto w-full">
+                  <FormDescription className="px-6 pb-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
                     Upload 6-10 pictures
                     <p className="text-sm tracking-normal font-normal max-w-[480px] mx-auto">in which your face is clearly visible and no other person is on it. <span className="font-bold">The key is variety:</span> different background, clothing, lighting in each photo. <span className="font-bold text-red-400">Don't use</span> filters and don't make grimaces in the pictures.</p>
                   </FormDescription>
