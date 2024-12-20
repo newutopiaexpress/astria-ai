@@ -56,10 +56,10 @@ export function VerticalNav({ onClose }: VerticalNavProps) {
                     </Link>
                     ))}
 
-                    <div className="relative text-[10px] opacity-75 text-left mt-10 mb-0">
+                    {/*<div className="relative text-[10px] opacity-75 text-left mt-10 mb-0">
                     Secured payment with: 
                     <span className="float-left -ml-10 -mt-4 opacity-40"><StripeLogo/></span>
-                    </div>
+                    </div>*/}
                 </div>
                 </ScrollArea>
             </div>

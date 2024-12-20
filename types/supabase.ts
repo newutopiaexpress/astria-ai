@@ -43,18 +43,24 @@ export interface Database {
           id: number
           modelId: number
           uri: string
+          share_id: string
+          is_public: boolean
         }
         Insert: {
           created_at?: string
           id?: number
           modelId: number
           uri: string
+          share_id?: string
+          is_public?: boolean
         }
         Update: {
           created_at?: string
           id?: number
           modelId?: number
           uri?: string
+          share_id?: string
+          is_public?: boolean
         }
         Relationships: [
           {

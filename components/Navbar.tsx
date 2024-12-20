@@ -30,6 +30,7 @@ import {
 import { NavIcon } from "@/components/ui/navicon";
 import { FolderCheck, Plus } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { AiOutlineSafetyCertificate } from "react-icons/ai";
 
 export const dynamic = "force-dynamic";
 
@@ -72,33 +73,39 @@ export default async function Navbar() {
 
         {/* Center section with navigation items */}
         <div>
-          {user && (
-          <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min  rounded-full shadow-md md:-ml-[47px] px-4 py-1">
-            <div className="flex items-center gap-4">
-              <Link href="/overview">
-                <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                  <FolderCheck/>
-                  <span className="hidden md:block ml-2 font-normal">Your Models</span>
-                </Button>
-              </Link>
-              
-              {stripeIsConfigured && (
-                <Link href="/overview/models/train">
-                  <ClientSideCredits 
-                    creditsRow={credits ? credits : null} 
-                    className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
-                  />
+          {user ? (
+            <div className="flex-1 flex justify-center items-center border border-stone-300 bg-stone-200 max-w-min rounded-full shadow-md md:-ml-[47px] px-4 py-1">
+              <div className="flex items-center gap-4">
+                <Link href="/overview">
+                  <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                    <FolderCheck/>
+                    <span className="hidden md:block ml-2 font-normal">Your Models</span>
+                  </Button>
                 </Link>
-              )}
+                
+                {stripeIsConfigured && (
+                  <Link href="/overview/models/train">
+                    <ClientSideCredits 
+                      creditsRow={credits ? credits : null} 
+                      className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
+                    />
+                  </Link>
+                )}
 
-              <Link href="/get-credits">
-                <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                  <Plus/>
-                  <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
-                </Button>
-              </Link>
+                <Link href="/get-credits">
+                  <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                    <Plus/>
+                    <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
+                  </Button>
+                </Link>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex items-center gap-2 text-[11px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
+              <span>Powered by <span className="font-extrabold">Flux AI</span> by Black Forest Lab</span>
+              <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
+              <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
+            </div>
           )}
         </div>
 
@@ -134,7 +141,7 @@ export default async function Navbar() {
                     </SheetTrigger>
                     <SheetContent className="w-[200px]">
                       <SheetHeader>
-                        <SheetDescription className="pt-10 px-0">
+                        <SheetDescription className="pt-0 px-0">
                           <div className="flex-col">
                             <div className="mb-2 mr-2 transition-all flex items-center justify-start">
                               <Avatar className="h-12 w-12">
@@ -196,7 +203,6 @@ export function SparkleIcon() {
 </svg>
 )
 }
-
 
 
 

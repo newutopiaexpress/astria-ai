@@ -44,7 +44,7 @@ export default async function Index({ params }: { params: { id: string } }) {
   return (
     <div id="train-model-container" className="px-6 w-full bg-transparent rounded-sm shadow-none relative z-30">
         <div className="flex flex-row align-left text-left items-center pb-4">
-          <h1 className="text-xl">{model.name}</h1>
+          <h1 className="text-3xl font-bold">{model.name}</h1>
           <div className="ml-2">
             <Badge
                   className="flex gap-2 items-center w-max"
