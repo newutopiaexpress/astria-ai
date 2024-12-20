@@ -380,7 +380,7 @@ export default function TrainModelZone() {
                     form.setValue("type", value);
                   }}
                 >
-                                <div className="col-span-3">
+                                <div className="col-span-6 md:cols-span-3">
                                   <RadioGroupItem
                                     value="man"
                                     id="man"
@@ -395,7 +395,7 @@ export default function TrainModelZone() {
                                   </Label>
                                 </div>
                   
-                                <div className="col-span-3">
+                                <div className="col-span-6 md:cols-span-3">
                                   <RadioGroupItem
                                     value="woman"
                                     id="woman"
@@ -410,7 +410,7 @@ export default function TrainModelZone() {
                                   </Label>
                                 </div>
 
-                                <div className="col-span-3">
+                                <div className="col-span-6 md:cols-span-3">
                                   <RadioGroupItem
                                     value="girl"
                                     id="girl"
@@ -425,7 +425,7 @@ export default function TrainModelZone() {
                                   </Label>
                                 </div>
 
-                                <div className="col-span-3">
+                                <div className="col-span-6 md:cols-span-3">
                                   <RadioGroupItem
                                     value="boy"
                                     id="boy"
