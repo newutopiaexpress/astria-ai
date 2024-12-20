@@ -15,9 +15,14 @@ export function ShareDialog({ imageUrl, shareUrl }: ShareDialogProps) {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = async () => {
+    // Copy to clipboard
     await navigator.clipboard.writeText(shareUrl);
     setCopied(true);
-    toast({ description: "Gift link copied! Share it with your friends." });
+    toast({ description: "Link copied! Opening preview..." });
+    
+    // Open in new tab
+    window.open(shareUrl, '_blank');
+    
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -95,7 +100,7 @@ export function ShareDialog({ imageUrl, shareUrl }: ShareDialogProps) {
                 ) : (
                   <>
                     <Gift className="h-4 w-4" />
-                    Send as Gift
+                    Send as Link
                   </>
                 )}
               </Button>

@@ -22,16 +22,16 @@ export default async function SharePage({ params }: { params: { shareId: string 
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-stone-100/50 to-white">
+    <div className="min-h-screen flex flex-col bg-stone-950">
       {/* Minimal Header */}
-      <header className="border-b border-stone-200 bg-white/80 backdrop-blur-sm fixed top-0 w-full z-50">
-        <div className="container mx-auto px-4 h-16 flex justify-between items-center">
+      <header className=" bg-stone-950 fixed top-0 w-full z-50">
+        <div className="mx-auto px-8 h-20 flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <UtopiaLogo />
           </Link>
           <Link 
             href="/overview/models/train"
-            className="flex items-center gap-2 text-sm px-4 py-2 bg-black text-white rounded-full hover:bg-stone-800 transition-colors"
+            className="flex items-center gap-2 text-sm px-4 py-2 bg-stone-950 text-white rounded-full hover:bg-stone-800 transition-colors"
           >
             <HiOutlineSparkles className="w-4 h-4" />
             <span>Create Your Own</span>
@@ -40,24 +40,24 @@ export default async function SharePage({ params }: { params: { shareId: string 
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 container mx-auto px-4 pt-24 pb-12">
-        <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden bg-white shadow-xl">
+      <main className="flex-1 container mx-auto px-4">
+        <div className="max-w-5xl mx-auto mt-4">
+          <div className="relative w-full h-full overflow-hidden bg-transparent">
             <img
               src={image.uri}
               alt="AI generated photo"
-              className="w-full h-auto"
+              className="w-auto rounded-md lg:max-h-[700px] mx-auto"
             />
-            <div className="absolute top-4 right-4">
+            {/*<div className="absolute top-4 right-4">
               <ShareDialog 
                 imageUrl={image.uri}
                 shareUrl={`${process.env.NEXT_PUBLIC_APP_URL}/share/${params.shareId}`}
               />
-            </div>
+            </div>*/}
           </div>
 
           {/* Info Bar */}
-          <div className="mt-6 flex justify-between items-center">
+          <div className="max-w-xl mx-auto mt-6 flex justify-between items-center">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
               <span className="text-sm text-stone-600">Generated with Utopia Photos AI</span>
