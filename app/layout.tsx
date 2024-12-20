@@ -10,11 +10,13 @@ import IntercomClientComponent from "@/components/IntercomClientComponent";
 import { ChristmasBanner } from "@/components/ChristmasBanner";
 import metaThemeSwap from 'meta-theme-swap';
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-};
+export function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  }
+}
 
 export const metadata = {
   title: "The AI Photographer",
