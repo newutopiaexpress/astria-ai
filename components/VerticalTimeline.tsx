@@ -49,23 +49,19 @@ const steps: TimelineStep[] = [
     title: "Upload Your Photos",
     description: "Upload 6-10 photos of yourself in different settings",
     completed: true,
-    icon: <Camera className="w-6 h-6" />,
+    icon: (
+      <div className="bg-stone-800 w-10 h-10 rounded-full flex items-center justify-center">
+        <span className="text-white font-bold">1</span>
+      </div>
+    ),
   },
   {
     title: "Select a Style",
     description: "Choose from our curated collection of premium styles",
     completed: true,
     icon: (
-      <div className="relative">
-        <Sparkles className="w-6 h-6" />
-        <motion.div
-          className="absolute rounded-full"  
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+      <div className="bg-stone-800 w-10 h-10 rounded-full flex items-center justify-center">
+        <span className="text-white font-bold">2</span>
       </div>
     ),
   },
@@ -73,7 +69,11 @@ const steps: TimelineStep[] = [
     title: "Get Your Breathtaking Photos",
     description: "Receive your high-quality photos within 30 minutes",
     completed: false,
-    icon: <CheckCircle2 className="w-6 h-6" />,
+    icon: (
+      <div className="bg-stone-800 w-10 h-10 rounded-full flex items-center justify-center">
+        <span className="text-white font-bold">3</span>
+      </div>
+    ),
   },
 ]
 
@@ -123,7 +123,7 @@ export default function VerticalTimeline() {
               <motion.div 
                 className={cn(
                   "flex items-center justify-center z-10",
-                  "w-16 h-16 mb-6",
+                  "w-10 h-10 mb-6",
                   index === 2 ? "w-12 h-12 scale-100" : "",
                   step.completed ? "text-stone-800" : "text-stone-600"
                 )}
@@ -197,7 +197,7 @@ export default function VerticalTimeline() {
               >
                 <motion.div
                   className={cn(
-                    "bg-white/0 backdrop-blur-sm rounded-2xl px-12 py-8",
+                    "bg-white/100 backdrop-blur-sm rounded-2xl px-12 py-8",
                     "border-b border-stone-200",
                     "group cursor-default w-full md:max-w-[400px]",
                     index % 2 === 0 ? "text-right" : "text-left"

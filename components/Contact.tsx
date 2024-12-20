@@ -58,6 +58,7 @@ export default function ContactPage() {
         <CardDescription>
           Get instant answers to your questions with our AI-powered chat support.<br/>
           Click on the circle icon on the bottom right to start chatting.
+          (You should login first)
         </CardDescription>
       </div>
     </div>

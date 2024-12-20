@@ -173,7 +173,7 @@ export function Bento2() {
         
 	</div>
 
-  <div className="max-w-[1200px] mx-auto">
+  <div className="max-w-[1200px] mx-auto py-16">
     <VerticalTimeline/>
   </div>
 

@@ -235,62 +235,41 @@ export default function ImageCarousel() {
 
       <motion.div 
         variants={containerVariants}
-        className="px-0 max-w-[1440px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40 rounded-[0px] md:rounded-[30px]"
-      >
-        <Carousel className="bg-transparent border-none p-0 rounded-[0px] md:rounded-[30px]" setApi={setApi}>
+        className="px-0 w-full md:max-w-[1440px] bg-transparent mx-auto md:shadow-2xl md:shadow-slate-900/40 rounded-[0px] md:rounded-[30px]">
+        <Carousel className="bg-transparent border-none rounded-[0px] md:rounded-[30px]" setApi={setApi}>
           <CarouselContent className="rounded-0 md:rounded-3xl cursor-grab">
             <AnimatePresence mode="wait">
               {slides.map((slide, index) => (
                 <CarouselItem key={index}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <Card className="max-w-md md:min-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center"
-                      >
-                        <p className="text-lg md:text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
-                          {slide.description}
-                        </p>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Link href="/login" className="flex items-center justify-center text-xs md:text-sm tracking-normal font-normal bg-stone-100/10 hover:bg-stone-100/20 text-stone-300 rounded-full px-4 py-1">
-                            Select <SparkleIcon/>
-                          </Link>
-                        </motion.div>
+                  <Card className="max-w-md md:min-w-full border-none bg-transparent relative rounded-3xl shadow-inner" style={{ backgroundColor: slide.backgroundColor }}>
+                    {/* Static description section */}
+                    <div className="px-6 md:px-12 pt-6 bg-transparent rounded-b-lg flex justify-between items-center">
+                      <p className="text-lg md:text-2xl tracking-tight font-thin leading-tight text-left text-stone-100/60">
+                        {slide.description}
+                      </p>
+                      {/* Keep select button animation */}
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Link href="/login" className="flex items-center justify-center text-xs md:text-sm tracking-normal font-normal bg-stone-100/10 hover:bg-stone-100/20 text-stone-300 rounded-full px-4 py-1">
+                          Select <SparkleIcon/>
+                        </Link>
                       </motion.div>
-                      <CardContent className="p-0 relative">
-                        <motion.div
-                          variants={containerVariants}
-                          className="grid grid-cols-2 md:grid-cols-4 gap-6 p-2 px-6 md:px-12 py-6"
-                        >
-                          {slide.images.map((image, imageIndex) => (
-                            <motion.div
-                              key={imageIndex}
-                              variants={itemVariants}
-                              whileHover={{ scale: 1.05 }}
-                              className="relative aspect-[7/9] w-full"
-                            >
-                              <Image
-                                src={image.src}
-                                alt={image.alt}
-                                fill
-                                className="object-cover rounded-lg shadow-md"
-                              />
-                            </motion.div>
-                          ))}
-                        </motion.div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
+                    </div>
+                    <CardContent className="p-0 relative">
+                      {/* Static image grid */}
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 px-6 md:px-12 py-12">
+                        {slide.images.map((image, imageIndex) => (
+                          <div key={imageIndex} className="relative aspect-[7/9] w-full">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              fill
+                              className="object-cover rounded-lg shadow-md"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
                 </CarouselItem>
               ))}
             </AnimatePresence>
