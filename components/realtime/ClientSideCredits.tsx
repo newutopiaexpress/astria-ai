@@ -1,5 +1,8 @@
 "use client";
 
+// Add these imports at the top
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import { Database } from "@/types/supabase";
 import { creditsRow } from "@/types/utils";
 import { createClient } from "@supabase/supabase-js";
@@ -27,9 +30,25 @@ export default function ClientSideCredits({
 
   if (!creditsRow) return (
     <div className="flex gap-4 items-center justify-center">
-      <Badge className={`text-xs rounded-full h-10 min-w-max flex items-center justify-center text-red-800 bg-red-400/0 hover:bg-green-500 border border-red-200 shadow-sm ${className}`}>
-                <span className="mr-0"><CoinIcon/></span>0 Credits
-      </Badge>   
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        transition={{
+          type: "spring",
+          stiffness: 200,
+          damping: 15,
+          delay: 0.1,
+          opacity: { duration: 0.2 }
+        }}
+      >
+        <Badge className={cn(
+          "text-xs rounded-full h-10 min-w-max flex items-center justify-center text-red-800 bg-red-400/0 hover:bg-green-500 border border-red-200 shadow-sm",
+          className
+        )}>
+          <span className="mr-0"><CoinIcon/></span>0 Credits
+        </Badge>
+      </motion.div>
     </div>
   )
 
@@ -64,18 +83,46 @@ export default function ClientSideCredits({
         <Tooltip>
           <TooltipTrigger>
             {credits.credits === 0 ? (
-                <Badge className={`text-xs rounded-full h-10 w-10 flex items-center justify-center bg-rose-400 border border-rose-400 text-white shadow-sm ${className}`}>
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 15,
+                  delay: 0.1,
+                  opacity: { duration: 0.2 }
+                }}
+              >
+                <Badge className={cn(
+                  "text-xs rounded-full h-10 w-10 flex items-center justify-center bg-rose-400 border border-rose-400 text-white shadow-sm",
+                  className
+                )}>
                   {credits.credits}
                 </Badge>
-
-                
+              </motion.div>
             ) : (
-              <div className="flex gap-0 items-center">
-              <Badge className={`text-xs rounded-full h-9 w-12 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300 shadow-sm ${className}`}>
-                <span className="mr-0"><CoinIcon/></span>
-                {credits.credits}
-              </Badge>
-              </div>
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 15,
+                  delay: 0.6,
+                  opacity: { duration: 0.1 }
+                }}
+              >
+                <Badge className={cn(
+                  "shadow-inner text-xs rounded-full h-9 w-12 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300",
+                  className
+                )}>
+                  <span className="mr-0"><CoinIcon/></span>
+                  {credits.credits}
+                </Badge>
+              </motion.div>
             )}
           </TooltipTrigger>
           <TooltipContent>
