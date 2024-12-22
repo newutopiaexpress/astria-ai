@@ -61,47 +61,51 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="w-full h-auto bg-black">
-      <div className="flex w-full px-4 py-4 items-center justify-between z-50">
+    <div className="w-full h-auto bg-stone-200/80 backdrop-blur-sm">
+      <div className="flex w-full px-4 py-5 md:py-3 items-center justify-between z-50">
 
         {/* Logo section */}
-        <div className="flex h-full">
+        <div className="flex h-full items-center justify-center gap-4">
           <Link href="/">
             <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
           </Link>
+          {user && (
+            <Link href="/overview">
+              <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                <FolderCheck/>
+                <span className="hidden md:block ml-2 font-normal">Your Models</span>
+              </Button>
+            </Link>
+          )}
         </div>
 
         {/* Center section with navigation items */}
         <div>
           {user ? (
-            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/100 outline outline-8 outline-offset-2 outline-stone-300/20 hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-stone-300/80 bg-stone-200 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
-              <div className="flex items-center gap-4">
-                <Link href="/overview">
-                  <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                    <FolderCheck/>
-                    <span className="hidden md:block ml-2 font-normal">Your Models</span>
-                  </Button>
-                </Link>
+            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/0 outline outline-8 outline-offset-2 outline-stone-300/0 hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-stone-300/0 bg-stone-200 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
+              <div className="flex items-center">
                 
                 {stripeIsConfigured && (
+                  <div className="flex items-center gap-2">
                   <Link href="/overview/models/train">
                     <ClientSideCredits 
                       creditsRow={credits ? credits : null} 
                       className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
                     />
                   </Link>
-                )}
-
-                <Link href="/get-credits">
-                  <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                    <Plus/>
-                    <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
+                  <Link href="/overview">
+                  <Button className="text-[10px] uppercase bg-stone-800 text-stone-100 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                    <span className="hidden md:block ml-2 font-normal">Create Photos</span>
+                    <span className="scale-75"><SparkleIcon/></span>
                   </Button>
                 </Link>
+                </div>
+                )}
+
               </div>
             </div>
           ) : (
-            <div className="hidden md:flex items-center gap-2 text-[10px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
+            <div className="flex items-center gap-2 text-[10px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
               <span>Powered by <span className="font-extrabold">Flux AI</span> by Black Forest Lab</span>
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
@@ -110,7 +114,7 @@ export default async function Navbar() {
         </div>
 
         {/* Right section with menu */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
           {!user ? (
             <div className="flex items-center justify-center">
               <Sheet>
@@ -135,6 +139,13 @@ export default async function Navbar() {
               </Sheet>
           </div>
           ) : (
+            <div className="flex items-center gap-4 justify-center">
+            <Link href="/get-credits">
+                  <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                    <Plus/>
+                    <span className="ml-2 font-normal">Buy Credits</span>
+                  </Button>
+            </Link>
             <Sheet>
                     <SheetTrigger className="mr-3">
                         <NavIcon /> 
@@ -170,6 +181,7 @@ export default async function Navbar() {
                       </SheetHeader>
                     </SheetContent>
               </Sheet>
+            </div>
           )}
         </div>
       </div>
@@ -198,12 +210,11 @@ export function ModelsIcon() {
 
 export function SparkleIcon() {
   return (
-<svg className="animate-ping w-4 h-4 ml-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+<svg className="animate-ping w-3 h-3 ml-1 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
 </svg>
 )
 }
-
 
 
 

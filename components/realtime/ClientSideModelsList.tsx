@@ -63,16 +63,9 @@ export default function ClientSideModelsList({
   }, [supabase, models, setModels]);
 
   return (
-    <div id="train-model-container" className="mx-auto max-w-[840px] w-full z-30 px-2">
+    <div id="train-model-container" className="bg-stone-100/0 mx-auto max-w-[840px] w-full z-30">
       {models && models.length > 0 && (
-        <div className="flex flex-col gap-4 rounded-2xl relative">
-          <div className="flex flex-row gap-4 min-w-full mb-6 w-full items-center text-center">
-            <Link href="/overview/models/train" className="w-full mx-auto">
-              <Button className="rounded-full bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-200 px-6 py-6">
-                Create New Series<SparkleIcon/>
-              </Button>
-            </Link>
-          </div>
+        <div className="flex flex-col gap-0 rounded-2xl relative">
           <ModelsTable models={models} />
         </div>
       )}

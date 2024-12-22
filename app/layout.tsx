@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar2 from "@/components/Navbar2";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { Suspense } from "react";
@@ -9,22 +9,18 @@ import Script from "next/script";
 import IntercomClientComponent from "@/components/IntercomClientComponent";
 import { ChristmasBanner } from "@/components/ChristmasBanner";
 import metaThemeSwap from 'meta-theme-swap';
+import type { Viewport } from 'next';
 
-export function generateViewport() {
-  return {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  }
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#EAE8E7' },
+    { media: '(prefers-color-scheme: dark)', color: '#EAE8E7' },
+  ],
 }
 
 export const metadata = {
   title: "The AI Photographer",
   description: "Take photos in the modern way",
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#e7e5e4' }, // stone-200
-    { media: '(prefers-color-scheme: dark)', color: '#1c1917' }, // stone-900
-  ],
 };
 
 export default async function RootLayout({
@@ -35,20 +31,20 @@ children: React.ReactNode;
 return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <meta name="theme-color" content="#e7e5e4" data-meta-theme-swap />
+        <meta name="theme-color" content="#EAE8E7"/>
       </head>
-      <body className="flex flex-col bg-stone-200 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-stone-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense
                     fallback={
-                      <div className="pb-9 items-center text-center gap-8 justify-between h-[69px] z-10" />
+                      <div className="items-center text-center gap-8 justify-between h-[69px] z-10" />
                     }
                   >
-                  <Navbar/>
+                  <Navbar2/>
                 </Suspense>
               </section>
-                  <main className="mx-auto w-full"> {/* max-w-[1500px] */}
+                  <main className="mx-auto w-full mt-12"> {/* max-w-[1500px] */}
                     {children}
                   </main>
               <section>

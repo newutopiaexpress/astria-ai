@@ -26,9 +26,9 @@ export default function ClientSideCredits({
 }: ClientSideCreditsProps) {
 
   if (!creditsRow) return (
-    <div className="flex gap-2 items-center">
-      <Badge className={`text-xs rounded-full h-10 w-10 flex items-center justify-center text-red-800 bg-red-400/0 hover:bg-green-500 border border-red-200 shadow-sm ${className}`}>
-                <span className="mr-0"><CoinIcon/></span>0
+    <div className="flex gap-4 items-center justify-center">
+      <Badge className={`text-xs rounded-full h-10 min-w-max flex items-center justify-center text-red-800 bg-red-400/0 hover:bg-green-500 border border-red-200 shadow-sm ${className}`}>
+                <span className="mr-0"><CoinIcon/></span>0 Credits
       </Badge>   
     </div>
   )
@@ -95,4 +95,3 @@ export function CoinIcon() {
 
   )
 }
-
