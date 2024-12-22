@@ -143,7 +143,7 @@ export default async function Navbar() {
             <Link href="/get-credits">
                   <Button className="text-[10px] uppercase bg-transparent text-stone-300 border border-stone-600 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                     <Plus/>
-                    <span className="ml-2 font-normal">Buy Credits</span>
+                    <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
                   </Button>
             </Link>
             <Sheet>
