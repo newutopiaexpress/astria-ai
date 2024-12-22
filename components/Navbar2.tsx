@@ -61,7 +61,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="w-full h-auto bg-stone-200/80 backdrop-blur-sm">
+    <div className="w-full h-auto bg-neutral-800 backdrop-blur-sm">
       <div className="flex w-full px-4 py-5 md:py-3 items-center justify-between z-50">
 
         {/* Logo section */}
@@ -71,7 +71,7 @@ export default async function Navbar() {
           </Link>
           {user && (
             <Link href="/overview">
-              <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+              <Button className="text-[10px] uppercase bg-transparent text-stone-300 border border-stone-600 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                 <FolderCheck/>
                 <span className="hidden md:block ml-2 font-normal">Your Models</span>
               </Button>
@@ -82,7 +82,7 @@ export default async function Navbar() {
         {/* Center section with navigation items */}
         <div>
           {user ? (
-            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/0 outline outline-8 outline-offset-2 outline-stone-300/0 hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-stone-300/0 bg-stone-200 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
+            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/0 outline outline-8 outline-offset-2 outline-stone-300/0 hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-stone-300/0 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
@@ -94,7 +94,7 @@ export default async function Navbar() {
                     />
                   </Link>
                   <Link href="/overview">
-                  <Button className="text-[10px] uppercase bg-stone-800 text-stone-100 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <Button className="text-[10px] uppercase bg-transparent text-stone-300 border border-stone-600 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                     <span className="hidden md:block ml-2 font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
                   </Button>
@@ -105,7 +105,7 @@ export default async function Navbar() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center gap-2 text-[10px] tracking-wide	font-thin text-stone-500 md:-ml-[46px]">
+            <div className="flex items-center gap-2 text-[10px] tracking-wide	font-thin text-stone-400 md:-ml-[46px]">
               <span>Powered by <span className="font-extrabold">Flux AI</span> by Black Forest Lab</span>
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
@@ -141,7 +141,7 @@ export default async function Navbar() {
           ) : (
             <div className="flex items-center gap-4 justify-center">
             <Link href="/get-credits">
-                  <Button className="text-[10px] uppercase bg-transparent text-stone-800 border border-stone-300 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <Button className="text-[10px] uppercase bg-transparent text-stone-300 border border-stone-600 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                     <Plus/>
                     <span className="ml-2 font-normal">Buy Credits</span>
                   </Button>
