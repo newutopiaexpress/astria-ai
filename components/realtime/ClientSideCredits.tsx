@@ -71,7 +71,7 @@ export default function ClientSideCredits({
                 
             ) : (
               <div className="flex gap-0 items-center">
-              <Badge className={`text-xs rounded-full h-10 w-10 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300 shadow-sm ${className}`}>
+              <Badge className={`text-xs rounded-full h-9 w-12 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300 shadow-sm ${className}`}>
                 <span className="mr-0"><CoinIcon/></span>
                 {credits.credits}
               </Badge>

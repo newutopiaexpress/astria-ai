@@ -86,7 +86,7 @@ export default async function Navbar() {
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-0 border border-stone-600 rounded-full">
                   <Link href="/overview/models/train">
                     <ClientSideCredits 
                       creditsRow={credits ? credits : null} 
@@ -94,8 +94,8 @@ export default async function Navbar() {
                     />
                   </Link>
                   <Link href="/overview/models/train">
-                  <Button className="text-[10px] uppercase bg-transparent text-stone-300 border border-stone-600 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                    <span className="hidden md:block ml-2 font-normal">Create Photos</span>
+                  <Button className="text-[10px] uppercase bg-transparent text-stone-300 ">
+                    <span className="hidden md:block font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
                   </Button>
                 </Link>
