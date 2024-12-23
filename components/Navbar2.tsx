@@ -61,7 +61,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="w-full h-24 md:h-20 bg-lime-600 backdrop-blur-sm">
+    <div className="w-full h-24 md:h-20 bg-pink-500 backdrop-blur-sm">
       <div className="flex w-full px-4 py-7 md:py-3 items-center justify-between z-50">
 
         {/* Logo section */}
@@ -71,7 +71,7 @@ export default async function Navbar() {
           </Link>
           {user && (
             <Link href="/overview">
-              <Button className="text-[10px] uppercase bg-transparent text-stone-300 border border-stone-600 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+              <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-100  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                 <FolderCheck/>
                 <span className="hidden md:block ml-2 font-normal">Your Models</span>
               </Button>
@@ -82,11 +82,11 @@ export default async function Navbar() {
         {/* Center section with navigation items */}
         <div>
           {user ? (
-            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/0 outline outline-8 outline-offset-2 outline-stone-300/0 hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-stone-300/0 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
+            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/0 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
-                  <div className="flex items-center gap-0 border border-stone-600 rounded-full">
+                  <div className="flex items-center gap-0 border border-neutral-100/40 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full hover:border-neutral-100/80">
                   <Link href="/overview/models/train">
                     <ClientSideCredits 
                       creditsRow={credits ? credits : null} 
@@ -94,7 +94,7 @@ export default async function Navbar() {
                     />
                   </Link>
                   <Link href="/overview/models/train">
-                  <Button className="text-[10px] uppercase bg-transparent text-stone-300 ">
+                  <Button className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-800">
                     <span className="hidden md:block font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
                   </Button>
@@ -141,7 +141,7 @@ export default async function Navbar() {
           ) : (
             <div className="flex items-center gap-4 justify-center">
             <Link href="/get-credits">
-                  <Button className="text-[10px] uppercase bg-transparent text-stone-300 border border-stone-600 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <Button className="text-[10px] uppercase bg-transparent text-neutral-100  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                     <Plus/>
                     <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
                   </Button>

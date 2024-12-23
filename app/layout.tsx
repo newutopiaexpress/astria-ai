@@ -13,8 +13,8 @@ import type { Viewport } from 'next';
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#65A30D' },
-    { media: '(prefers-color-scheme: dark)', color: '#65A30D' },
+    { media: '(prefers-color-scheme: light)', color: '#262626' },
+    { media: '(prefers-color-scheme: dark)', color: '#262626' },
   ],
 }
 
@@ -31,9 +31,9 @@ children: React.ReactNode;
 return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <meta name="theme-color" content="#65A30D"/>
+        <meta name="theme-color" content="#262626"/>
       </head>
-      <body className="flex flex-col bg-stone-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-neutral-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense

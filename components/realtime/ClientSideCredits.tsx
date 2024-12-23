@@ -78,7 +78,7 @@ export default function ClientSideCredits({
   if (!credits) return null;
 
   return (
-    <div className="text-xs text-stone-500 align-middle p-1">
+    <div className="text-xs text-neutral-100 align-middle p-1">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
@@ -116,7 +116,7 @@ export default function ClientSideCredits({
                 }}
               >
                 <Badge className={cn(
-                  "shadow-inner text-xs rounded-full h-9 w-12 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300",
+                  "border-none shadow-md text-xs rounded-full h-9 w-12 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300",
                   className
                 )}>
                   <span className="mr-0"><CoinIcon/></span>
