@@ -34,7 +34,7 @@ return (
       <head>
         <meta name="theme-color" content="#FEF3C7"/>
       </head>
-      <body className="flex flex-col bg-amber-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-indigo-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense

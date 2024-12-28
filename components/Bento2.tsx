@@ -78,7 +78,7 @@ export function Bento2() {
      
         <div className="text-left md:text-center md:pt-0 mb-12 md:mb-0">
 
-          <h1 className="pt-16 md:pt-48 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4rem]">
+          <h1 className="pt-16 md:pt-32 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4rem]">
             <TextEffect
               per='char'
               delay={0}
@@ -131,7 +131,7 @@ export function Bento2() {
                 viewOptions={{ margin: '0px 0px 0px 0px' }}
                 transition={{ duration: 0.6, ease: 'easeIn', delay: 2 }}
               >
-            <p className="px-12 pt-6 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">Drop your photos, Select a Style Pack, and Watch the Magic Unfold</p>
+            <p className="px-12 py-2 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">Drop your photos, Select a Style Pack, and Watch the Magic Unfold</p>
             </InView>
             <InView
               variants={{
@@ -141,7 +141,7 @@ export function Bento2() {
               viewOptions={{ margin: '0px 0px 0px 0px' }}
               transition={{ duration: 0.6, ease: 'easeIn', delay: 0.6 }}
             >
-            <div className="mx-auto text-center bg-stone-800/0 py-12 w-full flex justify-center items-center">
+            <div className="mx-auto text-center bg-stone-800/0 pt-6 w-full flex justify-center items-center">
                 {/*<Link href="/login">
                 <Button className="flex items-center justify-center rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
                 <span className="font-normal text-sm opacity-50">from</span>
@@ -153,7 +153,7 @@ export function Bento2() {
                 </Link>*/}
 
                 <Link href="/login">
-                <Button className="flex items-center justify-center rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
+                <Button className="min-w-full flex items-center justify-center rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
                      <span className="font-semibold">Start Creating</span><SparkleIcon/>
                 </Button>
                 </Link>
