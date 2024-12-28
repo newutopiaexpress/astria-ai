@@ -61,7 +61,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="w-full h-24 md:h-20 bg-pink-500 backdrop-blur-sm">
+    <div className="w-full h-24 md:h-20 bg-transparent">
       <div className="flex w-full px-4 py-7 md:py-3 items-center justify-between z-50">
 
         {/* Logo section */}
@@ -94,7 +94,7 @@ export default async function Navbar() {
                     />
                   </Link>
                   <Link href="/overview/models/train">
-                  <Button className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-800">
+                  <Button className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-600">
                     <span className="hidden md:block font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
                   </Button>
@@ -105,7 +105,7 @@ export default async function Navbar() {
               </div>
             </div>
           ) : (
-            <div className="px-12 flex items-center gap-2 text-[12px] tracking-wide	font-thin text-neutral-100 md:-ml-[46px]">
+            <div className="px-12 flex items-center gap-1 text-[10px] 	font-thin text-neutral-600 md:-ml-[46px]">
               <span>Powered by <span className="font-extrabold">Flux AI</span> by Black Forest Lab</span>
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
@@ -126,7 +126,7 @@ export default async function Navbar() {
                         <SheetDescription className="pt-16">
                           <Link href="/login">
                             <Button
-                              className="w-min text-left bg-stone-800 rounded-full text-white"
+                              className="w-full text-left bg-stone-800 rounded-full text-white"
                               variant={"ghost"}
                             >
                               Log in

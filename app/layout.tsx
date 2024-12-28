@@ -13,8 +13,8 @@ import type { Viewport } from 'next';
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#EC4899' },
-    { media: '(prefers-color-scheme: dark)', color: '#EC4899' },
+    { media: '(prefers-color-scheme: light)', color: '#E5E5E5' },
+    { media: '(prefers-color-scheme: dark)', color: '#E5E5E5' },
   ],
 }
 
@@ -31,9 +31,9 @@ children: React.ReactNode;
 return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <meta name="theme-color" content="#EC4899"/>
+        <meta name="theme-color" content="#E5E5E5"/>
       </head>
-      <body className="flex flex-col bg-neutral-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-neutral-200 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense
@@ -44,9 +44,11 @@ return (
                   <Navbar2/>
                 </Suspense>
               </section>
-                  <main className="mx-auto w-full mt-12"> {/* max-w-[1500px] */}
-                    {children}
-                  </main>
+              <main className="w-full h-full mt-24 md:mt-16 px-4 md:px-6"> {/* max-w-[1500px] */}
+                <div className="w-full h-full bg-white shadow-xl rounded-2xl">
+                      {children}
+                </div>
+              </main>
               <section>
                 <FooterV2/>
               </section>

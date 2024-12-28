@@ -119,7 +119,17 @@ module.exports = {
   				'60%': {
   					transform: 'translateY(-15px)'
   				}
-  			}
+  			},
+        ping: {
+          '0%, 100%': { 
+            transform: 'scale(1) translate(-50%, -50%)', 
+            opacity: 1 
+          },
+          '50%': { 
+            transform: 'scale(1.1) translate(-45%, -45%)', 
+            opacity: 0.5 
+          }
+        }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
