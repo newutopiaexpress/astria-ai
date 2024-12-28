@@ -61,7 +61,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="w-full h-auto bg-black">
+    <div className="w-full h-auto">
       <div className="flex w-full px-4 py-4 items-center justify-between z-50">
 
         {/* Logo section */}

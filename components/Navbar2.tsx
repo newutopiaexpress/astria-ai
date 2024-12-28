@@ -61,8 +61,8 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="w-full h-24 md:h-20 bg-transparent bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
-      <div className="flex w-full px-4 py-7 md:py-3 items-center justify-between z-50">
+    <div className="h-24 md:h-20 bg-transparent bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
+      <div className="flex px-4 py-7 md:py-5 items-center justify-between z-50">
 
         {/* Logo section */}
         <div className="flex h-full items-center justify-center gap-4">
@@ -105,7 +105,7 @@ export default async function Navbar() {
               </div>
             </div>
           ) : (
-            <div className="px-12 flex items-center gap-1 text-[10px] 	font-thin text-neutral-600 md:-ml-[46px]">
+            <div className="px-0 flex items-center gap-2 text-[10px] 	font-thin text-neutral-400 md:-ml-[46px]">
               <span>Powered by <span className="font-extrabold">Flux AI</span></span>
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>

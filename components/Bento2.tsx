@@ -153,7 +153,7 @@ export function Bento2() {
                 </Link>*/}
 
                 <Link href="/login">
-                <Button className="min-w-full flex items-center justify-center rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
+                <Button className="min-w-full flex items-center justify-center rounded-full outline outline-teal-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-teal-950 to-neutral-950 hover:bg-gradient-to-br hover:from-teal-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-teal-600/10">
                      <span className="font-semibold">Start Creating</span><SparkleIcon/>
                 </Button>
                 </Link>

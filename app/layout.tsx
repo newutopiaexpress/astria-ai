@@ -34,7 +34,7 @@ return (
       <head>
         <meta name="theme-color" content="#5EEAD4"/>
       </head>
-      <body className="flex flex-col bg-teal-300 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-stone-800 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense
@@ -45,7 +45,7 @@ return (
                   <Navbar2/>
                 </Suspense>
               </section>
-              <main className="w-full h-full mt-24 md:mt-20 px-4 md:px-6"> {/* max-w-[1500px] */}
+              <main className="w-full h-full mt-24 md:mt-20 px-2 md:px-2"> {/* max-w-[1500px] */}
                 <InView
                   variants={{
                                   hidden: { opacity: 0, y: 20,  },
