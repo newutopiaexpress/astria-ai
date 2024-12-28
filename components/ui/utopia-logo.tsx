@@ -10,16 +10,16 @@ export function UtopiaLogo() {
     return (
         <div className="flex items-center">
             {/* Show PNG logo on mobile */}
-            <div className="hidden">
-                <div className="rounded-full w-7 h-7 border-[6px] border-neutral-100 flex items-center justify-center">
-                    <span className="w-2 h-2 rounded-full bg-neutral-100"></span>
+            <div className="block md:hidden">
+                <div className="rounded-full w-7 h-7 border-[6px] border-neutral-800 flex items-center justify-center">
+                    <span className="w-2 h-2 rounded-full bg-neutral-800"></span>
                 </div>
             </div>
             
             {/* Show SVG logo on larger screens */}
-            <div className="block">
+            <div className="hidden md:block">
                 <svg 
-                    className="fill-neutral-500"
+                    className="fill-neutral-800"
                     role="img" 
                     viewBox="0 0 1366 240" 
                     width="93"

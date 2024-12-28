@@ -34,7 +34,7 @@ return (
       <head>
         <meta name="theme-color" content="#5EEAD4"/>
       </head>
-      <body className="flex flex-col bg-stone-800 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-stone-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense
@@ -54,7 +54,7 @@ return (
                                 viewOptions={{ margin: '0px 0px 0px 0px' }}
                                 transition={{ duration: 0.4, ease: 'easeIn', delay: 0 }}
                   >
-                <div className="w-full h-full bg-white shadow-xl rounded-2xl">
+                <div className="w-full min-h-screen ">
                       {children}
                 </div>
                 </InView>
