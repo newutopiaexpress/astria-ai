@@ -10,11 +10,12 @@ import IntercomClientComponent from "@/components/IntercomClientComponent";
 import { ChristmasBanner } from "@/components/ChristmasBanner";
 import metaThemeSwap from 'meta-theme-swap';
 import type { Viewport } from 'next';
+import { InView } from "@/components/core/in-view";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#E5E5E5' },
-    { media: '(prefers-color-scheme: dark)', color: '#E5E5E5' },
+    { media: '(prefers-color-scheme: light)', color: '#FEF3C7' },
+    { media: '(prefers-color-scheme: dark)', color: '#FEF3C7' },
   ],
 }
 
@@ -31,9 +32,9 @@ children: React.ReactNode;
 return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <meta name="theme-color" content="#E5E5E5"/>
+        <meta name="theme-color" content="#FEF3C7"/>
       </head>
-      <body className="flex flex-col bg-neutral-200 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-amber-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense
@@ -45,9 +46,18 @@ return (
                 </Suspense>
               </section>
               <main className="w-full h-full mt-24 md:mt-16 px-4 md:px-6"> {/* max-w-[1500px] */}
+                <InView
+                  variants={{
+                                  hidden: { opacity: 0, y: 20,  },
+                                  visible: { opacity: 1, y: 0, },
+                                }}
+                                viewOptions={{ margin: '0px 0px 0px 0px' }}
+                                transition={{ duration: 0.4, ease: 'easeIn', delay: 0 }}
+                  >
                 <div className="w-full h-full bg-white shadow-xl rounded-2xl">
                       {children}
                 </div>
+                </InView>
               </main>
               <section>
                 <FooterV2/>

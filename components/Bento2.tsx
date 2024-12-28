@@ -73,11 +73,12 @@ export function Bento2() {
 
 <div className="w-full">
 
-  
+
 	<div className="w-full mx-auto z-30 bg-contain bg-center bg-no-repeat bg-[url('/bgwhite.png')]">
+     
         <div className="text-left md:text-center md:pt-0 mb-12 md:mb-0">
 
-          <h1 className="pt-32 md:pt-48 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4rem]">
+          <h1 className="pt-16 md:pt-48 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4rem]">
             <TextEffect
               per='char'
               delay={0}
@@ -160,14 +161,8 @@ export function Bento2() {
             </div>
             </InView>
         </div> 
-        <InView
-            variants={{
-              hidden: { opacity: 0, x: 0, filter: 'blur(4px)' },
-              visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
-            }}
-            viewOptions={{ margin: '0px 0px 0px 0px' }}
-            transition={{ duration: 0.6, ease: 'easeIn', delay:0 }}
-          >
+       
+        
         <div className="w-full backdrop-blur-md flex justify-center mt-16 md:mt-16  mx-auto bg-transparent  relative">
 
             {/*} <SpinningText
@@ -179,9 +174,7 @@ export function Bento2() {
               </SpinningText>*/}
 
           <Slider/>
-        </div> 
-        </InView>  
-        
+        </div>       
 	</div>
 
   <div className="max-w-[1200px] mx-auto py-16">
