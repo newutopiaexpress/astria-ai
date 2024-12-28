@@ -14,8 +14,8 @@ import { InView } from "@/components/core/in-view";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FEFBE0' },
-    { media: '(prefers-color-scheme: dark)', color: '#FEFBE0' },
+    { media: '(prefers-color-scheme: light)', color: '#2DD4BF' },
+    { media: '(prefers-color-scheme: dark)', color: '#2DD4BF' },
   ],
 }
 
@@ -32,9 +32,9 @@ children: React.ReactNode;
 return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <meta name="theme-color" content="#FEFBE0"/>
+        <meta name="theme-color" content="#2DD4BF"/>
       </head>
-      <body className="flex flex-col bg-yellow-100/50 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-teal-400 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="fixed w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense
@@ -45,7 +45,7 @@ return (
                   <Navbar2/>
                 </Suspense>
               </section>
-              <main className="w-full h-full mt-24 md:mt-16 px-4 md:px-6"> {/* max-w-[1500px] */}
+              <main className="w-full h-full mt-24 md:mt-20 px-4 md:px-6"> {/* max-w-[1500px] */}
                 <InView
                   variants={{
                                   hidden: { opacity: 0, y: 20,  },
