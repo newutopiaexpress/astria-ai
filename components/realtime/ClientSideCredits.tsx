@@ -43,10 +43,10 @@ export default function ClientSideCredits({
         }}
       >
         <Badge className={cn(
-          "text-xs rounded-full h-10 min-w-max flex items-center justify-center text-red-800 bg-red-400/0 hover:bg-green-500 border border-red-200 shadow-sm",
+          "animate-pulse text-xs rounded-full h-10 min-w-max flex items-center border justify-center border-rose-300 text-stone-800 shadow-sm",
           className
         )}>
-          <span className="mr-0"><CoinIcon/></span>0 Credits
+          <span className="mr-0"><CoinIcon/></span>0
         </Badge>
       </motion.div>
     </div>

@@ -30,6 +30,7 @@ export default function ClientSideModelsList({
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
   );
   const [models, setModels] = useState<modelRowWithSamples[]>(serverModels);
+  const displayName = userName || 'User';
 
   useEffect(() => {
     const channel = supabase
@@ -79,7 +80,9 @@ export default function ClientSideModelsList({
         <div className="animate-in h-full fade-in zoom-in flex flex-col gap-4 items-center justify-center relative">
           <div className="z-30 md:mt-[17%]">
             <h1 className="text-2xl text-center mx-auto">
-            {userName ? `Welcome ${userName}, Your story starts here!` : 'Your story starts here!'}
+              {displayName === 'User'
+                ? 'Your story starts here!'
+                : `Welcome ${displayName}, Your story starts here!`}
             </h1>
             <div className="mx-auto text-center mt-4 flex flex-row gap-4 items-center">
               <Link href="/get-credits">

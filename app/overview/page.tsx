@@ -3,7 +3,6 @@ import { Database } from "@/types/supabase";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
-
 export const dynamic = "force-dynamic";
 
 export default async function Index() {
@@ -12,6 +11,14 @@ export default async function Index() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  const username =
+    user?.user_metadata?.preferred_username ||
+    user?.user_metadata?.user_name ||
+    user?.user_metadata?.name ||
+    user?.user_metadata?.full_name ||
+    user?.email?.split("@")[0] ||
+    "User";
 
   if (!user) {
     return <div>User not found</div>;
@@ -26,5 +33,5 @@ export default async function Index() {
     )
     .eq("user_id", user.id);
 
-  return <ClientSideModelsList serverModels={models ?? []} />;
+  return <ClientSideModelsList serverModels={models ?? []} userName={username} />;
 }
