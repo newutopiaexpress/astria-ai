@@ -30,7 +30,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
     if (status === "finished") {
       return (
         <Badge
-          className="flex gap-2 items-center justify-center w-min"
+          className="flex gap-2 items-center justify-center w-min shadow-none border-none"
           variant="finished"
         >
           <CheckCircle className="h-4 w-4" />
@@ -64,7 +64,7 @@ export default async function ModelsTable({ models }: ModelsTableProps) {
     <div className="rounded-sm border-none shadow-none">
       <Table className="w-full">
         <TableHeader>
-          <TableRow className="text-xs opacity-40 border border-b">
+          <TableRow className="text-xs opacity-40 border-b">
             <TableHead className="pl-4 md:pl-6">Name</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Type</TableHead>
