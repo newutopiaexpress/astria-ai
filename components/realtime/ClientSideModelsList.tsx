@@ -6,12 +6,11 @@ import { modelRowWithSamples } from "@/types/utils";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-//import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
 import Image from "next/image";
 import { SparkleIcon } from "../SparkleIcon";
 import StyleSlider from "../StyleSlider";
-//import StripePricingTable from "@/components/stripe/StripeTable";
+import { CoinIcon } from "./ClientSideCredits";
 
 export const revalidate = 0;
 
@@ -63,6 +62,12 @@ export default function ClientSideModelsList({
     };
   }, [supabase, models, setModels]);
 
+  const avatars = [
+    "/s2.png",
+    "/t2.png",
+    "/s1.png",
+  ];
+
   return (
     <div id="train-model-container" className="bg-stone-100/0 mx-auto max-w-[840px] w-full z-30">
       {models && models.length > 0 && (
@@ -72,22 +77,36 @@ export default function ClientSideModelsList({
       )}
       {models && models.length === 0 && (
         <div className="animate-in h-full fade-in zoom-in flex flex-col gap-4 items-center justify-center relative">
-          <div className="z-30 md:mt-[27%]">
+          <div className="z-30 md:mt-[17%]">
             <h1 className="text-2xl text-center mx-auto">
             {userName ? `Welcome ${userName}, Your story starts here!` : 'Your story starts here!'}
             </h1>
-            <div className="mx-auto text-center mt-4 flex flex-row gap-4">
-                <Link href="/get-credits">
-                  <Button className="animate-jump-in animate-delay-300 p-5 transition-colors w-auto h-6 rounded-full text-center border-none bg-green-300 hover:bg-green-300/60 text-xs font-medium text-green-700" size={"lg"}>
-                    Buy Credits
-                  </Button>
-                </Link>
-                <Link href="/overview/models/train">
-                  <Button className="rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100" size={"lg"}>
-                    Start Creating
-                    <SparkleIcon/>
-                  </Button>
-                </Link>
+            <div className="mx-auto text-center mt-4 flex flex-row gap-4 items-center">
+              <Link href="/get-credits">
+                <Button className="animate-jump-in animate-delay-300 transition-colors w-auto h-6 rounded-full text-center border-none bg-green-300 hover:bg-green-300/60 text-xs font-medium text-green-700 p-7">
+                  <CoinIcon/>
+                  Buy Credits
+                </Button>
+              </Link>
+              <Link href="/overview/models/train">
+                <Button className="p-7 rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100">
+                <span className="flex -space-x-6 float-left">
+                  {avatars.map((src, index) => (
+                  <span key={index} className="relative z-10">
+                    <Image
+                      src={src}
+                      alt={`Avatar ${index + 1}`}
+                      width={40}
+                      height={40}
+                      className="rounded-full border-0 border-white mr-4"
+                    />
+                  </span>
+                    ))}
+                  </span>
+                  Start Creating
+                  <SparkleIcon/>
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="mt-12">

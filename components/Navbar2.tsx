@@ -86,7 +86,7 @@ export default async function Navbar() {
         {/* Center section with navigation items */}
         <div>
           {user ? (
-            <div className="transition-all flex-1 flex justify-center items-center border shadow-sm border-stone-300/30 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
+            <div className="transition-all flex-1 flex justify-center items-center border shadow-sm hover:bg-stone-300 hover:text-stone-100 border-stone-300/30 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-1 py-1">
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
