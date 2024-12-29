@@ -128,7 +128,7 @@ export default function ClientSideModel({
                       <img
                         src={sample.uri}
                         alt="Training sample"
-                        className="rounded-full w-16 h-16 object-cover border-2 border-white saturate-0 hover:saturate-100 transition-all"
+                        className="rounded-full w-16 h-16 object-cover border-2 border-white transition-all"
                       />
                     </div>
                   ))}

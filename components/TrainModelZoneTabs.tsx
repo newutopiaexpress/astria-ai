@@ -433,9 +433,9 @@ export default function TrainModelZone() {
                   </div>
                 </div>
                 {files.length > 0 && (
-                  <div className="flex flex-row gap-4 flex-wrap mx-auto">
+                  <div className="flex flex-row gap-4 flex-wrap mx-auto mt-12 md:mb-6">
                     {files.map((file) => (
-                      <div key={file.name} className="flex flex-col gap-1">
+                      <div key={file.name} className="flex flex-col gap-1 mx-auto">
                         <img
                           src={URL.createObjectURL(file)}
                           className="rounded-md w-20 h-20 object-cover"
@@ -462,7 +462,7 @@ export default function TrainModelZone() {
                   type="button"
                   onClick={prevStep}
                   variant="outline"
-                  className="rounded-full px-8 border-stone-400 text-stone-600 hover:bg-stone-100"
+                  className="rounded-full px-8 py-6 border-stone-400 text-stone-600 hover:bg-stone-100"
                 >
                   Previous
                 </Button>
@@ -473,14 +473,14 @@ export default function TrainModelZone() {
                   type="button"
                   onClick={nextStep}
                   disabled={!isStepValid()}
-                  className="rounded-full px-8 bg-green-600 hover:bg-green-700 text-white shadow-sm"
+                  className="rounded-full px-8 py-6 bg-green-600 hover:bg-green-700 text-white shadow-sm"
                 >
                   Next
                 </Button>
               ) : (
                 <Button 
                   type="submit" 
-                  className="rounded-full transition-all px-8 bg-green-600 hover:bg-green-700 text-white shadow-sm"
+                  className="rounded-full transition-all px-8 py-6 bg-green-600 hover:bg-green-700 text-white shadow-sm"
                   disabled={isLoading || !isStepValid()}
                 >
                   {isLoading ? "Creating..." : `Create Photos ${stripeIsConfigured ? "(1 Credit)" : ""}`}

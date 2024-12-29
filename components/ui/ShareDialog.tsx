@@ -15,15 +15,14 @@ export function ShareDialog({ imageUrl, shareUrl }: ShareDialogProps) {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = async () => {
-    // Copy to clipboard
     await navigator.clipboard.writeText(shareUrl);
     setCopied(true);
-    toast({ description: "Link copied! Opening preview..." });
-    
-    // Open in new tab
-    window.open(shareUrl, '_blank');
-    
+    toast({ description: "Link copied to clipboard!" });
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const openInNewTab = () => {
+    window.open(shareUrl, '_blank');
   };
 
   const shareToSocial = (platform: string) => {
@@ -87,7 +86,7 @@ export function ShareDialog({ imageUrl, shareUrl }: ShareDialogProps) {
               </Button>
             </div>
             
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col gap-2">
               <Button 
                 onClick={copyToClipboard} 
                 className="flex-1 flex items-center gap-2 bg-green-600 hover:bg-green-700"
@@ -100,10 +99,19 @@ export function ShareDialog({ imageUrl, shareUrl }: ShareDialogProps) {
                 ) : (
                   <>
                     <Gift className="h-4 w-4" />
-                    Send as Link
+                    Copy Link
                   </>
                 )}
               </Button>
+              {copied && (
+                <Button 
+                  onClick={openInNewTab}
+                  variant="outline" 
+                  className="flex-1 flex items-center gap-2"
+                >
+                  Open in new tab
+                </Button>
+              )}
             </div>
           </div>
         </div>
