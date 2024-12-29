@@ -1,7 +1,7 @@
 export function SparkleIcon() {
   return (
     <svg 
-      className="w-6 h-6 ml-2 fill-white" 
+      className="w-8 h-8 ml-2 fill-white" 
       viewBox="0 0 24 24" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"

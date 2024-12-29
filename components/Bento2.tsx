@@ -43,7 +43,7 @@ import {
     CarouselNext,
     CarouselPrevious,
   } from "@/components/ui/carousel";
-  import { StyleSlider } from "./StyleSlider";
+//import { StyleSlider } from "./StyleSlider";
 import { UtopiaFeatures } from "./utopia-features";
 import HoverSlideshow from "./HoverSlideshow";
 import { HowToSteps, type Step } from "./HowToSteps";
@@ -163,7 +163,7 @@ export function Bento2() {
         </div> 
        
         
-        <div className="w-full backdrop-blur-md flex justify-center mt-16 md:mt-16  mx-auto bg-transparent  relative">
+        <div className="w-full backdrop-blur-md flex justify-center mt-16 md:mt-16 lg:mt-28  mx-auto bg-transparent  relative">
 
             {/*} <SpinningText
               radius={5}

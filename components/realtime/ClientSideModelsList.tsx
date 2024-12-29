@@ -6,11 +6,12 @@ import { modelRowWithSamples } from "@/types/utils";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import UploadIcon from "../UploadIcon";
+//import UploadIcon from "../UploadIcon";
 import ModelsTable from "../ModelsTable";
 import Image from "next/image";
 import { SparkleIcon } from "../SparkleIcon";
-import StripePricingTable from "@/components/stripe/StripeTable";
+import StyleSlider from "../StyleSlider";
+//import StripePricingTable from "@/components/stripe/StripeTable";
 
 export const revalidate = 0;
 
@@ -71,7 +72,7 @@ export default function ClientSideModelsList({
       )}
       {models && models.length === 0 && (
         <div className="animate-in h-full fade-in zoom-in flex flex-col gap-4 items-center justify-center relative">
-          <div className="z-30 mt-[27%]">
+          <div className="z-30 md:mt-[27%]">
             <h1 className="text-2xl text-center mx-auto">
             {userName ? `Welcome ${userName}, Your story starts here!` : 'Your story starts here!'}
             </h1>
@@ -87,8 +88,10 @@ export default function ClientSideModelsList({
                     <SparkleIcon/>
                   </Button>
                 </Link>
-
             </div>
+          </div>
+          <div className="mt-12">
+              <StyleSlider/>
           </div>
         </div>
       )}

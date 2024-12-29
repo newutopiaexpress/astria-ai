@@ -96,7 +96,7 @@ export default function ClientSideCredits({
                 }}
               >
                 <Badge className={cn(
-                  "text-xs rounded-full h-10 w-10 flex items-center justify-center bg-rose-400 border border-rose-400 text-white shadow-sm",
+                  "text-xs rounded-full h-6 w-6 flex items-center justify-center bg-rose-400 border border-rose-400 text-white shadow-sm",
                   className
                 )}>
                   {credits.credits}
@@ -116,7 +116,7 @@ export default function ClientSideCredits({
                 }}
               >
                 <Badge className={cn(
-                  "border-none shadow-md text-xs rounded-full h-9 w-12 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300",
+                  "border-none shadow-sm text-xs rounded-full h-6 w-8 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300",
                   className
                 )}>
                   <span className="mr-0"><CoinIcon/></span>

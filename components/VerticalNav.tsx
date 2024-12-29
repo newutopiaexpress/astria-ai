@@ -40,14 +40,14 @@ export function VerticalNav({ onClose }: VerticalNavProps) {
             >
             <div className="flex h-full flex-col">
                 <ScrollArea className="flex-1">
-                <div className="mt-16 flex-col items-center justify-between">
+                <div className="mt-8 flex-col items-center justify-between">
                     {navItems.map((item) => (
                     <Link
                         key={item.name}
                         href={item.href}
                         onClick={handleClick}
                         className={cn(
-                        "flex items-center px-4 py-4 border-b text-sm border-stone-300 text-gray-900 transition-all hover:bg-stone-100/20 dark:text-gray-100 dark:hover:bg-gray-800",
+                        "flex items-center rounded-xl px-4 py-6 text-sm  bg-white/40 mb-2 text-gray-900 transition-all hover:bg-white/90 dark:text-gray-100 dark:hover:bg-gray-800",
                         pathname === item.href ? "bg-gray-100 dark:bg-gray-800" : ""
                         )}
                     >

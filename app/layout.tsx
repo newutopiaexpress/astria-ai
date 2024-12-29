@@ -4,11 +4,11 @@ import "./globals.css";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { FooterV2 } from "@/components/FooterV2";
-import CookieConsent from "@/components/CookieConsent";
-import Script from "next/script";
-import IntercomClientComponent from "@/components/IntercomClientComponent";
-import { ChristmasBanner } from "@/components/ChristmasBanner";
-import metaThemeSwap from 'meta-theme-swap';
+//import CookieConsent from "@/components/CookieConsent";
+//import Script from "next/script";
+//import IntercomClientComponent from "@/components/IntercomClientComponent";
+//import { ChristmasBanner } from "@/components/ChristmasBanner";
+//import metaThemeSwap from 'meta-theme-swap';
 import type { Viewport } from 'next';
 import { InView } from "@/components/core/in-view";
 
@@ -35,7 +35,7 @@ return (
         <meta name="theme-color" content="#5EEAD4"/>
       </head>
       <body className="flex flex-col bg-stone-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
-              <section className="fixed w-full z-50 top-0">
+              <section className="w-full z-50 top-0">
                 {/*<ChristmasBanner/>*/}
                   <Suspense
                     fallback={
@@ -64,6 +64,8 @@ return (
               </section>
               <Toaster />
               <Analytics />
+              
+              {/*}
               <Script
                 strategy="afterInteractive"
                 id="intercom-settings"
@@ -77,6 +79,7 @@ return (
                     }}
                 />
                 <IntercomClientComponent/>
+*/}
       </body>
     </html>
   );

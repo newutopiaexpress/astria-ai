@@ -129,13 +129,24 @@ module.exports = {
             transform: 'scale(1.1) translate(-45%, -45%)', 
             opacity: 0.5 
           }
+        },
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(-5px)' },
+          '75%': { transform: 'translateX(5px)' },
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
         }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'infinite-scroll': 'infinite-scroll 35s linear infinite',
-  			'bounce-in': 'bounceIn 1s ease-in-out 5s forwards'
+  			'bounce-in': 'bounceIn 1s ease-in-out 5s forwards',
+        shake: 'shake 0.5s ease-in-out',
+        slideIn: 'slideIn 0.3s ease-out'
   		}
   	}
   },

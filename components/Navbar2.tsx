@@ -31,6 +31,8 @@ import { NavIcon } from "@/components/ui/navicon";
 import { FolderCheck, Plus } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
+import { ToastTest } from "./ui/ToastTest";
+import { SparkleIcon } from "@/components/SparkleIcon";
 
 export const dynamic = "force-dynamic";
 
@@ -61,7 +63,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="h-24 md:h-20 bg-transparent bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
+    <div className="fixed w-full top-0 h-24 md:h-20 bg-white/70 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
       <div className="flex px-4 py-7 md:py-5 items-center justify-between z-50">
 
         {/* Logo section */}
@@ -69,9 +71,11 @@ export default async function Navbar() {
           <Link href="/">
             <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
           </Link>
+
+          {/*<ToastTest />  Add the test component here */}
           {user && (
             <Link href="/overview">
-              <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-100  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+              <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                 <FolderCheck/>
                 <span className="hidden md:block ml-2 font-normal">Your Models</span>
               </Button>
@@ -82,7 +86,7 @@ export default async function Navbar() {
         {/* Center section with navigation items */}
         <div>
           {user ? (
-            <div className="transition-all flex-1 flex justify-center items-center border border-stone-300/0 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
+            <div className="transition-all flex-1 flex justify-center items-center border shadow-sm border-stone-300/30 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-3 py-1">
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
@@ -95,7 +99,7 @@ export default async function Navbar() {
                   </Link>
                   <Link href="/overview/models/train">
                   <Button className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-600">
-                    <span className="hidden md:block font-normal">Create Photos</span>
+                    <span className="font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
                   </Button>
                 </Link>
@@ -141,7 +145,7 @@ export default async function Navbar() {
           ) : (
             <div className="flex items-center gap-4 justify-center">
             <Link href="/get-credits">
-                  <Button className="text-[10px] uppercase bg-transparent text-neutral-100  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <Button className="text-[10px] uppercase bg-transparent text-neutral-800  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                     <Plus/>
                     <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
                   </Button>
@@ -163,7 +167,7 @@ export default async function Navbar() {
                               </Avatar>
                             </div>
                             <p className="text-md font-medium">Welcome, {displayName}</p>
-                            <p className="text-sm text-stone-500">{user.email}</p>
+                            <p className="text-sm text-stone-800">{user.email}</p>
                           </div>
                           <div className="w-full mt-4">
                             <form action="/auth/sign-out" method="post">
@@ -205,14 +209,6 @@ export function ModelsIcon() {
   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
 </svg>
  
-)
-}
-
-export function SparkleIcon() {
-  return (
-<svg className="animate-ping w-3 h-3 ml-1 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
-<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-</svg>
 )
 }
 
