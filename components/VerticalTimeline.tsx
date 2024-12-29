@@ -128,6 +128,22 @@ export default function VerticalTimeline() {
                     {step.description}
                   </p>
 
+                  {/* Add this block after the description in the first step */}
+                  {index === 0 && (
+                    <div className="flex -space-x-4 mt-4">
+                      {avatars.map((avatar, i) => (
+                        <Image
+                          key={i}
+                          src={avatar.src}
+                          alt={avatar.alt}
+                          width={60}
+                          height={60}
+                          className="rounded-full border-2 border-white"
+                        />
+                      ))}
+                    </div>
+                  )}
+
                   {/* Static badges */}
                   {index === 1 && (
                     <div className="flex flex-wrap gap-2 mt-4 mb-2 items-center">

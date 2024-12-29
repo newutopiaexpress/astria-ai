@@ -79,20 +79,22 @@ export default function ClientSideModelsList({
       {models && models.length === 0 && (
         <div className="animate-in h-full fade-in zoom-in flex flex-col gap-4 items-center justify-center relative">
           <div className="z-30 md:mt-[17%]">
-            <h1 className="text-2xl text-center mx-auto">
+            <h1 className="text-2xl text-center mx-auto px-12 pt-[23%] md:pt-[10%]">
               {displayName === 'User'
                 ? 'Your story starts here!'
                 : `Welcome ${displayName}, Your story starts here!`}
             </h1>
             <div className="mx-auto text-center mt-4 flex flex-row gap-4 items-center">
+              {/*
               <Link href="/get-credits">
                 <Button className="animate-jump-in animate-delay-300 transition-colors w-auto h-6 rounded-full text-center border-none bg-green-300 hover:bg-green-300/60 text-xs font-medium text-green-700 p-7">
                   <CoinIcon/>
                   Buy Credits
                 </Button>
-              </Link>
-              <Link href="/overview/models/train">
-                <Button className="p-7 rounded-full text-xs border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100">
+              </Link>*/}
+
+              <Link href="/overview/models/train" className="mx-auto">
+                <Button className="p-7 rounded-full text-sm border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100">
                 <span className="flex -space-x-6 float-left">
                   {avatars.map((src, index) => (
                   <span key={index} className="relative z-10">
@@ -107,7 +109,7 @@ export default function ClientSideModelsList({
                     ))}
                   </span>
                   Start Creating
-                  <SparkleIcon/>
+                  <Image className="rounded-full w-8 h-8 ml-4" src="/pixels2.gif" width={50} height={50} alt="Camera Icon" />
                 </Button>
               </Link>
             </div>

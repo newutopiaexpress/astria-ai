@@ -62,17 +62,6 @@ interface PackOption {
 // Pack options data
 const packOptions: PackOption[] = [
   {
-    id: "photoshoot",
-    value: "",
-    title: "",
-    description: "Look like a CEO, in just one click",
-    previewImage: "/corporate.jpg",
-    exampleImage: "/model-corp.png",
-    pieces: 24,
-    subjects: ["Woman", "Man"], // Add subjects
-    isNew: true,
-  },
-  {
     id: "corporate-headshots",
     value: "corporate-headshots",
     title: "Corporate Portraits",

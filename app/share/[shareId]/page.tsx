@@ -30,8 +30,8 @@ export default async function SharePage({ params }: { params: { shareId: string 
             <UtopiaLogo />
           </Link>
           <Link 
-            href="/overview/models/train"
-            className="flex items-center gap-2 text-sm px-4 py-2 bg-stone-950 text-white rounded-full hover:bg-stone-800 transition-colors"
+            href="/overview/"
+            className="py-4 flex items-center gap-2 text-sm px-4  bg-stone-950 text-white rounded-full hover:bg-stone-800 transition-colors"
           >
             <HiOutlineSparkles className="w-4 h-4" />
             <span>Create Your Own</span>
@@ -60,7 +60,7 @@ export default async function SharePage({ params }: { params: { shareId: string 
           <div className="max-w-xl mx-auto mt-6 flex justify-between items-center">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              <span className="text-sm text-stone-600">Generated with Utopia Photos AI</span>
+              <span className="text-xs text-stone-600">Generated with Utopia Photos AI</span>
             </div>
             <div className="text-sm text-stone-500">
               {image.models?.name && `Model: ${image.models.name}`}

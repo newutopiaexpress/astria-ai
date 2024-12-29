@@ -116,7 +116,7 @@ export default function ClientSideCredits({
                 }}
               >
                 <Badge className={cn(
-                  "border-none shadow-sm text-xs rounded-full h-6 w-8 flex items-center justify-center text-stone-900 bg-green-300 hover:bg-green-300",
+                  "border-none shadow-md text-sm font-bold rounded-full h-8 w-8 flex items-center justify-center text-stone-8000 bg-gradient-to-b from-lime-500 to-green-400 hover:bg-green-300",
                   className
                 )}>
                   <span className="mr-0"><CoinIcon/></span>

@@ -198,8 +198,12 @@ export function Bento2() {
           <Slider/>
         </div>       
 	</div>
-
-
+{/*}
+<div className="w-full min-h-full">
+<Spline
+        scene="https://prod.spline.design/3xYfdWW5FA-xKvOP/scene.splinecode" 
+      />
+</div>*/}
 
   <div className="max-w-[1200px] mx-auto py-16">
     <VerticalTimeline/>

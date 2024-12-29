@@ -20,7 +20,7 @@ export default async function RootLayout({
   }
 
   return <div className="relative w-full h-full">
-            <div className="mt-28 md:mt-20 px-2">
+            <div className="mt-8 md:mt-8 px-2">
             {children}
             </div>
           </div>;

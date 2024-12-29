@@ -138,7 +138,7 @@ export default function ClientSideModel({
           )}
           
           <div className="col-span-1 w-full mb-32">
-            <div className="absolute top-3 md:top-24 right-3">
+            <div className="absolute bottom-6 md:top-24 right-3">
               <button
                 onClick={downloadAllImages}
                 className="flex items-center gap-2 px-3 py-1 text-xs bg-stone-800/0 border border-stone-300 rounded-full text-stone-800"

@@ -28,7 +28,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { NavIcon } from "@/components/ui/navicon";
-import { FolderCheck, Plus } from 'lucide-react';
+import { List, Plus } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { ToastTest } from "./ui/ToastTest";
@@ -63,34 +63,29 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="fixed w-full top-0 h-24 md:h-20 bg-white/70 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
-      <div className="flex px-4 py-7 md:py-5 items-center justify-between z-50">
+    <div className="fixed w-full top-0 h-24 md:h-20 bg-white/70 shadow-xl shadow-teal-500/5 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
+      <div className="flex px-4 md:px-10 py-7 md:py-5 items-center justify-between z-50">
 
-        {/* Logo section */}
-        <div className="flex h-full items-center justify-center gap-4">
+        {/* Logo section - remove Your Models from here */}
+        <div className="flex h-full items-center justify-center">
           <Link href="/">
             <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
           </Link>
-
-          {/*<ToastTest />  Add the test component here */}
-          {user && (
-            <Link href="/overview">
-              <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                <FolderCheck/>
-                <span className="hidden md:block ml-2 font-normal">Your Models</span>
-              </Button>
-            </Link>
-          )}
         </div>
 
         {/* Center section with navigation items */}
-        <div>
+        <div className="md:-ml-[46px]">
           {user ? (
-            <div className="transition-all flex-1 flex justify-center items-center border shadow-sm hover:bg-stone-300 hover:text-stone-100 border-stone-300/30 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-1 py-1">
-              <div className="flex items-center">
-                
-                {stripeIsConfigured && (
-                  <div className="flex items-center gap-0 border border-neutral-100/40 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full hover:border-neutral-100/80">
+            <div className="transition-all flex-1 flex justify-center items-center gap-6">
+              <Link href="/overview">
+                <Button className="text-[10px] uppercase bg-transparent text-neutral-800 shadow-none hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <span className="hidden md:block ml-2 font-normal">Your Models</span>
+                  <List className="h-4 w-4"/>
+                </Button>
+              </Link>
+
+              {stripeIsConfigured && (
+                <div className="flex items-center gap-0 border border-neutral-100/40 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full hover:border-neutral-100/80">
                   <Link href="/overview/models/train">
                     <ClientSideCredits 
                       creditsRow={credits ? credits : null} 
@@ -104,9 +99,15 @@ export default async function Navbar() {
                   </Button>
                 </Link>
                 </div>
-                )}
+              )}
+              
+              <Link href="/get-credits">
+                <Button className="text-[10px] uppercase bg-transparent text-neutral-800 shadow-none hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <CoinIcon/>
+                  <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
+                </Button>
+              </Link>
 
-              </div>
             </div>
           ) : (
             <div className="px-0 flex items-center gap-2 text-[10px] 	font-thin text-neutral-400 md:-ml-[46px]">
@@ -144,12 +145,6 @@ export default async function Navbar() {
           </div>
           ) : (
             <div className="flex items-center gap-4 justify-center">
-            <Link href="/get-credits">
-                  <Button className="text-[10px] uppercase bg-transparent text-neutral-800  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
-                    <Plus/>
-                    <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
-                  </Button>
-            </Link>
             <Sheet>
                     <SheetTrigger className="mr-3">
                         <NavIcon /> 
@@ -193,6 +188,14 @@ export default async function Navbar() {
   );
 }
 
+export function ModelsIcon() {
+  return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+</svg>
+ 
+)
+}
 
 export function CoinIcon() {
   return (
@@ -201,15 +204,6 @@ export function CoinIcon() {
 </svg>
 
   )
-}
-
-export function ModelsIcon() {
-  return (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-</svg>
- 
-)
 }
 
 
