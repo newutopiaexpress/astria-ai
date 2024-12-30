@@ -10,7 +10,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 
 // Add avatar data
 const avatars = [
@@ -56,7 +56,7 @@ const steps: TimelineStep[] = [
     ),
   },
   {
-    title: "Select a Style",
+    title: "Select a Style Pack",
     description: "Choose from our curated collection of premium styles",
     completed: true,
     icon: (
@@ -79,7 +79,7 @@ const steps: TimelineStep[] = [
 
 export default function VerticalTimeline() {
   return (
-    <div className="max-w-4xl mx-auto px-4">
+    <div className="max-w-4xl mx-auto px-4 relative">
       <AnimatePresence>
         <div className="relative flex flex-col items-center">
           <motion.div 
@@ -93,25 +93,54 @@ export default function VerticalTimeline() {
             <motion.div
               key={index}
               className="mb-12 sm:mb-16 relative w-full flex flex-col items-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ 
+                opacity: 1, 
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  delay: index * 0.2 // Stagger the animations
+                }
+              }}
+              viewport={{ once: false, margin: "-100px" }} // Changed once to false
             >
-              {/* Timeline number with simpler animation */}
+              {/* Timeline number with bounce animation */}
               <motion.div 
                 className={cn(
                   "flex items-center justify-center z-10",
                   "w-10 h-10 mb-6"
                 )}
+                whileInView={{
+                  scale: [0.5, 1.2, 1],
+                  transition: {
+                    duration: 0.5,
+                    delay: index * 0.2 + 0.3
+                  }
+                }}
+                viewport={{ once: false }} // Changed once to false
               >
-                <div className="relative flex items-center justify-center w-full h-full">
-                  {step.icon}
-                </div>
+                {step.icon}
               </motion.div>
 
-              {/* Content Container - removed animations */}
-              <div 
+              {/* Content Container with slide and fade */}
+              <motion.div 
                 className={cn(
                   "w-full flex",
                   index % 2 === 0 ? "justify-end pl-4 md:pl-0 md:pr-[50%]" : "justify-start pr-4 md:pr-0 md:pl-[50%]"
                 )}
+                initial={{ 
+                  opacity: 0, 
+                  x: index % 2 === 0 ? 50 : -50 
+                }}
+                whileInView={{ 
+                  opacity: 1, 
+                  x: 0,
+                  transition: {
+                    duration: 0.5,
+                    delay: index * 0.2 + 0.2
+                  }
+                }}
+                viewport={{ once: false }} // Changed once to false
               >
                 <div
                   className={cn(
@@ -147,10 +176,13 @@ export default function VerticalTimeline() {
                   {/* Static badges */}
                   {index === 1 && (
                     <div className="flex flex-wrap gap-2 mt-4 mb-2 items-center">
-                      {["Corporate Photos", "Realtor Photoshoots", "Elf Magic"].map((badge) => (
+                      {["Corporate Photos", "Realtor Photoshoots", "Elf Magic", "Dating Photos"].map((badge) => (
                         <Badge
                           key={badge}
-                          className="bg-stone-100/80 hover:bg-stone-200/80 text-stone-600 border-stone-200 px-3 py-1.5 text-[11px] font-normal"
+                          className={cn(
+                            "bg-stone-100/80 hover:bg-stone-200/80 text-stone-600 border-stone-200 px-3 py-1.5 text-[11px] font-normal",
+                            badge === "Corporate Photos" && "bg-stone-800 hover:bg-teal-500 text-stone-100 border-teal-400"
+                          )}
                         >
                           {badge}
                         </Badge>
@@ -190,7 +222,7 @@ export default function VerticalTimeline() {
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

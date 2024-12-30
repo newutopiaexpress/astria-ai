@@ -3,7 +3,8 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-  } from "@/components/ui/accordion"
+  } from "@/components/ui/accordion";
+  import { AiOutlineSafetyCertificate } from "react-icons/ai";
   
   const faqs = [
     {
@@ -57,7 +58,12 @@ import {
             ))}
           </Accordion>
         </div>
-        <div className="absolute left-4 bottom-4 text-xs text-stone-300">Utopia Express 2024.</div>
+        <div className="absolute left-4 bottom-4 text-xs text-stone-300 w-full flex flex-row gap-12">
+          <span>Utopia Express 2024. </span>
+          <span>Powered by <span className="font-extrabold">Flux AI</span></span>
+          <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
+          <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
+        </div>
       </section>
     )
   }

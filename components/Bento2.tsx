@@ -219,7 +219,9 @@ export function Bento2() {
   >
     <div className="w-full grid grid-cols-12 mx-auto min-h-96 relative z-50">
       <div className="col-span-12 mx-auto text-center mt-18">
-          <p className="mb-4 mx auto text-center border border-stone-300 bg-stone-100 text-stone-400 rounded-full max-w-fit uppercase tracking-wider mx-auto text-xs px-6 py-2">No studio, no stress.</p>
+          <p className="mb-4 mx auto text-center border border-stone-300 bg-stone-100 text-stone-400 rounded-full max-w-fit uppercase tracking-wider mx-auto text-xs px-6 py-2">
+            No studio, no stress.
+          </p>
           <h1 className="pt-8 pb-4 text-center text-stone-800 font-bold tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4.25rem]">
           Picture This: <span className="font-thin bg-gradient-to-r from-stone-800  to-neutral-600 inline-block text-transparent bg-clip-text pb-2">You, But Even Better </span>
           </h1>
