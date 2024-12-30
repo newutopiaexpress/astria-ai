@@ -33,6 +33,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { ToastTest } from "./ui/ToastTest";
 import { SparkleIcon } from "@/components/SparkleIcon";
+import { ChristmasBanner } from "@/components/ChristmasBanner";
 
 export const dynamic = "force-dynamic";
 
@@ -63,6 +64,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
+    <div>
     <div className="fixed w-full top-0 h-24 md:h-20 bg-white/70 shadow-xl shadow-teal-500/5 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
       <div className="flex px-4 md:px-10 py-7 md:py-5 items-center justify-between z-50">
 
@@ -115,6 +117,7 @@ export default async function Navbar() {
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
             </div>
+            
           )}
         </div>
 
@@ -184,6 +187,8 @@ export default async function Navbar() {
           )}
         </div>
       </div>
+    </div>
+    <ChristmasBanner/>
     </div>
   );
 }

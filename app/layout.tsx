@@ -36,7 +36,6 @@ return (
       </head>
       <body className="flex flex-col bg-stone-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="w-full z-50 top-0">
-                {/*<ChristmasBanner/>*/}
                   <Suspense
                     fallback={
                       <div className="items-center text-center gap-8 justify-between h-[69px] z-10" />

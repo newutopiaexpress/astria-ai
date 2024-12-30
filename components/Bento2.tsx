@@ -55,6 +55,7 @@ import FaqAccordion from "./FaqAccordion";
 import { SparkleIcon } from "./SparkleIcon";
 import Spline from '@splinetool/react-spline/next';
 import { useState } from 'react';
+import { AiOutlineSafetyCertificate } from "react-icons/ai";
 
 
 
@@ -83,12 +84,15 @@ export function Bento2() {
 <div className="w-full">
 
 
-	<div className="w-full mx-auto z-30 bg-contain bg-center bg-no-repeat bg-[url('/bgwhite.png')]">
-  {/* Add this new span for vertical text */}
-  <span className="fixed left-4 top-1/2 -translate-y-1/2 -rotate-90 transform text-stone-400 text-[10px] tracking-wider whitespace-nowrap origin-left">
-    Powered by Flux AI
-  </span>
-
+	<div className="w-full mx-auto z-30 bg-contain bg-center bg-no-repeat bg-[url('/bgwhite.png')] relative">
+  {/* Add this new span for vertical text 
+  <div className="absolute left-4 top-1/2 -translate-y-1/2 -rotate-90 transform text-stone-400 text-[10px] tracking-wider whitespace-nowrap origin-left">
+   Powered by 
+      <span className="font-extrabold mr-4">Flux AI</span>
+      Secured by 
+      <span className="font-extrabold italic">Stripe</span>
+  </div>
+*/}
   {/* Remove or comment out the original text */}
   {/* <span>Powered by Flux AI</span> */}
      
