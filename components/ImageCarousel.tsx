@@ -46,7 +46,7 @@ const slides: Slide[] = [
     backgroundColor: "#0F121C", 
     additionalText: "24pcs | Female | Male", 
     maleImage: "/t2.png?height=128&width=128",
-    isNew: true,
+    isNew: false,
   },
   {
     images: [
@@ -102,7 +102,7 @@ const slides: Slide[] = [
     backgroundColor: "#4D3F4F", 
     additionalText: "24pcs  | Female | Male", 
     maleImage: "/corporate.jpg?height=1152&width=896",
-    isNew: true,
+    isNew: false,
   },
   {
     images: [
