@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils"
 import { Badge } from './ui/badge'
 import Link from 'next/link'
 import { PlusIcon } from 'lucide-react'
+import { SparkleIcon } from './SparkleIcon'
 
 // Define the structure for our slide data
 interface Slide {
@@ -49,15 +50,29 @@ const slides: Slide[] = [
   },
   {
     images: [
-      { src: "/xmas2.png?height=1152&width=896", alt: "ddd" },
-      { src: "/hotxmas.jpg?height=1152&width=896", alt: "Image 2" },
-      { src: "/xmasb.jpg?height=1152&width=896", alt: "Image 3" },
-      { src: "/xmasg.jpg?height=1152&width=896", alt: "Image 4" },
+      { src: "/happy2025.jpg?height=1152&width=896", alt: "ddd" },
+      { src: "/20253.jpg?height=1152&width=896", alt: "Image 2" },
+      { src: "/20251.jpg?height=1152&width=896", alt: "Image 3" },
+      { src: "/20254.jpg?height=1152&width=896", alt: "Image 4" },
     ],
-    description: "Santa got an upgrade - your holidays just got cooler!",
-    linkText: "Cool Christmas 2024",
-    backgroundColor: "#5A8C7D", 
-    additionalText: "24pcs  | Female | Male | Boy | Girl", 
+    description: "New Year 2025 in a Classic Style",
+    linkText: "Classic New Year 2025",
+    backgroundColor: "#301C27", 
+    additionalText: "24pcs  | Female | Male", 
+    maleImage: "/corporate.jpg?height=1152&width=896",
+    isNew: true,
+  },
+  {
+    images: [
+      { src: "/20255.jpg?height=1152&width=896", alt: "ddd" },
+      { src: "/20256.jpg?height=1152&width=896", alt: "Image 2" },
+      { src: "/20257.jpg?height=1152&width=896", alt: "Image 3" },
+      { src: "/20258.jpg?height=1152&width=896", alt: "Image 4" },
+    ],
+    description: "New Year 2025 in Funny Style",
+    linkText: "Funny New Year 2025",
+    backgroundColor: "#FA6672", 
+    additionalText: "24pcs  | Female | Male", 
     maleImage: "/corporate.jpg?height=1152&width=896",
     isNew: true,
   },
@@ -198,7 +213,7 @@ export default function ImageCarousel() {
     >
       <motion.nav 
         variants={navVariants}
-        className="md:flex md:justify-center overflow-x-auto hidden"
+        className="md:flex md:justify-center overflow-x-auto overflow-y-hidden hidden"
       >
         <div className="flex space-x-0">
           {slides.map((slide, index) => (
@@ -284,13 +299,5 @@ export default function ImageCarousel() {
       </motion.div>
     </motion.div>
   )
-}
-
-export function SparkleIcon() {
-  return (
-<svg className="animate-ping inline-block w-3 h-3 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
-<path stroke-linecap="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-</svg>
-)
 }
 
