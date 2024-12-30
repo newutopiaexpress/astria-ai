@@ -7,12 +7,15 @@ import { Badge } from "./ui/badge";
 import Image from "next/image";
 import { UtopiaLogo } from "./ui/utopia-logo";
 import { StripeLogo } from "@/components/StripeLogo";
+import { ChristmasBanner } from "./ChristmasBanner";
 
 
 export function FooterV2() {
   return (
     <footer className="z-100">
-
+<div className="">
+<ChristmasBanner/>
+</div>
 {/*
         <div className="z-[99999] fixed bottom-0 right-0 w-full bg-stone-200 text-stone-800 py-6">
           <div className="mb-4 md:mb-0">
