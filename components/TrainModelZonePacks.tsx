@@ -45,6 +45,13 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "./ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 // Define pack data structure
 interface PackOption {
@@ -53,34 +60,45 @@ interface PackOption {
   title: string;
   description: string;
   previewImage: string;
-  exampleImage: string;
+  exampleImages: string[]; // Change from single exampleImage to array
   pieces: number;
   subjects: string[]; // Add this new field
   isNew?: boolean;
 }
 
-// Pack options data
+// Pack options data /2025BigMan.png
 const packOptions: PackOption[] = [
+  {
+    id: "New Year 2025 - Funny style",
+    value: "happy-2025",
+    title: "Funny New Year 2025",
+    description: "New Year 2025 in a funny style",
+    previewImage: "/happy2025.jpg",
+    exampleImages: ["/2025BigMan.png"], // Add multiple images
+    pieces: 24,
+    subjects: ["Woman", "Man"], // Add subjects
+    isNew: true,
+  },
+  {
+    id: "New Year 2025 - Classic",
+    value: "classic-2025",
+    title: "New Year 2025 - Classic",
+    description: "New Year 2025 - in Classical Style",
+    previewImage: "/2025class.jpg",
+    exampleImages: ["/2025BigClass.png"], // Add multiple images
+    pieces: 24,
+    subjects: ["Woman", "Man"], // Add subjects
+    isNew: true,
+  },
   {
     id: "corporate-headshots",
     value: "corporate-headshots",
     title: "Corporate Portraits",
     description: "Look like a CEO, in just one click",
     previewImage: "/corporate.jpg",
-    exampleImage: "/model-corp.png",
+    exampleImages: ["/model-corp.png"], // Add multiple images
     pieces: 24,
     subjects: ["Woman", "Man"], // Add subjects
-    isNew: true,
-  },
-  {
-    id: "cool-christmas",
-    value: "cool-christmas",
-    title: "Cool Christmas",
-    description: "Santa got an upgrade - your holidays just got cooler!",
-    previewImage: "/xmasx.jpg",
-    exampleImage: "/cool.png",
-    pieces: 24,
-    subjects: ["Woman", "Man","Girl", "Boy"], // Add subjects
     isNew: true,
   },
   {
@@ -89,7 +107,7 @@ const packOptions: PackOption[] = [
     title: "Christmas Elf",
     description: "Warning: May cause pointy ears and excessive joy!",
     previewImage: "/elf3.jpg",
-    exampleImage: "/elfprev.png",
+    exampleImages: ["/elfprev.png"], // Add multiple images
     pieces: 24,
     subjects: ["Girl", "Boy"], // Add subjects
     isNew: true,
@@ -100,7 +118,7 @@ const packOptions: PackOption[] = [
     title: "Peak You",
     description: "See it, believe it, achieve it!",
     previewImage: "/m1.jpg",
-    exampleImage: "/insp.png",
+    exampleImages: ["/insp.png"], // Add multiple images
     pieces: 24,
     subjects: ["Woman", "Man"], // Add subjects
     isNew: true,
@@ -111,7 +129,7 @@ const packOptions: PackOption[] = [
     title: "Holiday Glamour",
     description: "Holiday Glamour - Unwrap your inner goddess",
     previewImage: "/bud/05.jpg",
-    exampleImage: "/bud/bud.png",
+    exampleImages: ["/bud/bud.png"], // Add multiple images
     pieces: 24,
     subjects: ["Woman"], // Add subjects
     isNew: true,
@@ -122,7 +140,7 @@ const packOptions: PackOption[] = [
     title: "Dating Profile",
     description: "To let the love of your life find you easier",
     previewImage: "/date/01.jpg",
-    exampleImage: "/date/date.png",
+    exampleImages: ["/date/date.png"], // Add multiple images
     pieces: 24,
     subjects: ["Woman"], // Add subjects
     isNew: true,
@@ -133,7 +151,7 @@ const packOptions: PackOption[] = [
     title: "Real Estate Profile",
     description: "Your Key to Looking Like a Top-Selling Agent!",
     previewImage: "/real/8.jpg",
-    exampleImage: "/real/realB.png",
+    exampleImages: ["/real/realB.png"], // Add multiple images
     pieces: 24,
     subjects: ["Woman", "Man"], // Add subjects
     isNew: true,
@@ -143,7 +161,7 @@ const packOptions: PackOption[] = [
 
 export default function TrainModelZonePacks() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6 lg:gap-12 mx-auto pt-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-4 lg:gap-6 mx-auto pt-4">
       {packOptions.map((pack) => (
         <div key={pack.id}>
           <RadioGroupItem
@@ -161,17 +179,31 @@ export default function TrainModelZonePacks() {
                 <DialogTrigger className="absolute top-2 left-2 text-stone-300 invisible group-hover:visible">
                   <Badge variant="examples">Examples</Badge>
                 </DialogTrigger>
-                <DialogContent>
+                <DialogContent className="max-w-[90vw] h-[90vh] flex flex-col">
                   <DialogHeader>
                     <DialogTitle>{pack.description}</DialogTitle>
-                    <DialogDescription>
-                      <Image
-                        src={pack.exampleImage}
-                        width={1198}
-                        height={1000}
-                        alt={pack.title}
-                        className="w-full h-auto mb-2 rounded-md shadow-md"
-                      />
+                    <DialogDescription className="flex-1 overflow-hidden">
+                      <Carousel className="w-full h-full">
+                        <CarouselContent className="h-full">
+                          {pack.exampleImages.map((image, index) => (
+                            <CarouselItem key={index} className="h-[calc(90vh-120px)]">
+                              <div className="relative w-full h-full">
+                                <Image
+                                  src={image}
+                                  fill
+                                  alt={`${pack.title} example ${index + 1}`}
+                                  className="object-contain"
+                                  priority
+                                />
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <div className="flex justify-center gap-2 mt-4">
+                          <CarouselPrevious />
+                          <CarouselNext />
+                        </div>
+                      </Carousel>
                     </DialogDescription>
                   </DialogHeader>
                 </DialogContent>
