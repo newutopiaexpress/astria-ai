@@ -57,7 +57,6 @@ import Spline from '@splinetool/react-spline/next';
 import { useState } from 'react';
 
 
-
 export function Bento2() {
   const [isLoading, setIsLoading] = useState(false);
   const steps: Step[] = [
