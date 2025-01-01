@@ -76,11 +76,7 @@ export default async function Navbar() {
           {/*<ToastTest />  Add the test component here */}
           {user && (
             <Link href="/overview">
-              <Button 
-              onClick={() => {
-                track('YourModels');
-              }}
-              className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+              <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                 <FolderCheck/>
                 <span className="hidden md:block ml-2 font-normal">Your Models</span>
               </Button>
@@ -103,11 +99,7 @@ export default async function Navbar() {
                     />
                   </Link>
                   <Link href="/overview/models/train">
-                  <Button 
-                  onClick={() => {
-                    track('CreatePhotos');
-                  }}
-                  className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-600">
+                  <Button className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-600">
                     <span className="font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
                   </Button>
@@ -154,11 +146,7 @@ export default async function Navbar() {
           ) : (
             <div className="flex items-center gap-4 justify-center">
             <Link href="/get-credits">
-                  <Button 
-                  onClick={() => {
-                    track('BuyCredits');
-                  }}
-                  className="text-[10px] uppercase bg-transparent text-neutral-800  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                  <Button className="text-[10px] uppercase bg-transparent text-neutral-800  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                     <Plus/>
                     <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
                   </Button>
