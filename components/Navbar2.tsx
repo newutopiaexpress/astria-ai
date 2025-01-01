@@ -33,6 +33,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { ToastTest } from "./ui/ToastTest";
 import { SparkleIcon } from "@/components/SparkleIcon";
+import { track } from '@vercel/analytics';
 
 export const dynamic = "force-dynamic";
 
@@ -102,7 +103,11 @@ export default async function Navbar() {
               )}
               
               <Link href="/get-credits">
-                <Button className="text-[10px] uppercase bg-transparent text-neutral-800 shadow-none hover:bg-stone-100 hover:text-stone-800 rounded-full">
+                <Button 
+                  onClick={() => {
+                  track('BuyCredits');
+                  }}
+                className="text-[10px] uppercase bg-transparent text-neutral-800 shadow-none hover:bg-stone-100 hover:text-stone-800 rounded-full">
                   <CoinIcon/>
                   <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
                 </Button>
@@ -110,12 +115,11 @@ export default async function Navbar() {
 
             </div>
           ) : (
-            <div className="px-0 flex items-center gap-2 text-[12px] 	font-thin text-neutral-400 md:-ml-[46px]">
+            <div className="px-0 flex items-center gap-2 text-[10px] 	font-thin text-neutral-400 md:-ml-[46px]">
               <span>Powered by <span className="font-extrabold">Flux AI</span></span>
               <span className="text-[15px]"><AiOutlineSafetyCertificate /></span>
               <span>Secured by <span className="font-extrabold italic">Stripe</span></span>
             </div>
-            
           )}
         </div>
 
