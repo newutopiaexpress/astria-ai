@@ -64,7 +64,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="fixed w-full top-0 h-auto bg-white/70 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
+    <div className="fixed w-full top-0 h-auto bg-white/0 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
       <div className="flex px-4 md:px-10 py-7 md:py-5 items-center justify-between z-50">
 
         {/* Logo section */}
@@ -98,7 +98,7 @@ export default async function Navbar() {
                       className={credits?.credits === 0 ? "animate-pulse bg-red-800 text-stone-800" : ""} 
                     />
                   </Link>
-                  <Link href="/overview/models/train" className="border border-neutral-100/40 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full hover:border-neutral-100/80">
+                  <Link href="/overview/models/train" className="shadow-sm hover:shadow-md border border-neutral-100/80 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full hover:border-neutral-100/80">
                   <Button className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-600">
                     <span className="font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
