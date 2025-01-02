@@ -64,7 +64,7 @@ export default async function Navbar() {
   const displayName = username === 'User' ? user?.email?.split('@')[0] : username;
 
   return (
-    <div className="fixed w-full top-0 h-24 md:h-20 bg-white/70 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
+    <div className="fixed w-full top-0 h-auto bg-white/70 border border-px border-neutral-400/0 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm">
       <div className="flex px-4 md:px-10 py-7 md:py-5 items-center justify-between z-50">
 
         {/* Logo section */}
@@ -73,7 +73,7 @@ export default async function Navbar() {
             <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
           </Link>
 
-          {/*<ToastTest />  Add the test component here */}
+          {/*<ToastTest />  Add the test component here 
           {user && (
             <Link href="/overview">
               <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-100 hover:text-stone-800 rounded-full">
@@ -81,24 +81,24 @@ export default async function Navbar() {
                 <span className="hidden md:block ml-2 font-normal">Your Models</span>
               </Button>
             </Link>
-          )}
+          )}*/}
         </div>
 
         {/* Center section with navigation items */}
         <div>
           {user ? (
-            <div className="transition-all flex-1 flex justify-center items-center border shadow-sm hover:bg-stone-300 hover:text-stone-100 border-stone-300/30 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-1 py-1">
+            <div className="transition-all flex-1 flex justify-center items-center border shadow-sm hover:bg-white hover:text-stone-100 border-stone-300/30 bg-stone-200/0 max-w-min rounded-full md:-ml-[47px] px-1 py-1">
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
-                  <div className="flex items-center gap-0 border border-neutral-100/40 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full hover:border-neutral-100/80">
+                  <div className="flex items-center gap-0">
                   <Link href="/overview/models/train">
                     <ClientSideCredits 
                       creditsRow={credits ? credits : null} 
-                      className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
+                      className={credits?.credits === 0 ? "animate-pulse bg-red-800 text-stone-800" : ""} 
                     />
                   </Link>
-                  <Link href="/overview/models/train">
+                  <Link href="/overview/models/train" className="border border-neutral-100/40 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full hover:border-neutral-100/80">
                   <Button className="text-[11px] uppercase bg-transparent shadow-none hover:bg-transparent text-neutral-600">
                     <span className="font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
@@ -145,12 +145,20 @@ export default async function Navbar() {
           </div>
           ) : (
             <div className="flex items-center gap-4 justify-center">
+            {/*}
             <Link href="/get-credits">
                   <Button className="text-[10px] uppercase bg-transparent text-neutral-800  border border-neutral-100/40 hover:bg-stone-100 hover:text-stone-800 rounded-full">
                     <Plus/>
                     <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
                   </Button>
             </Link>
+            */}
+            <Avatar className="h-10 w-10 hidden md:block">
+                <AvatarImage src={user.user_metadata?.avatar_url} />
+                    <AvatarFallback>
+                    {username.charAt(0).toUpperCase()}
+                </AvatarFallback>
+            </Avatar>
             <Sheet>
                     <SheetTrigger className="mr-3">
                         <NavIcon /> 
@@ -181,6 +189,23 @@ export default async function Navbar() {
                               </Button>
                             </form>
                           </div>
+
+                          <div className="pt-6 flex flex-col gap-4 border-b pb-4 border-stone-300"> 
+                            <Link href="/overview">
+                              <Button className="text-neutral-800 rounded-none hover:bg-transparent bg-transparent shadow-none">
+                                <FolderCheck/>
+                                <span className="hidden md:block ml-2 font-normal">Your Models</span>
+                              </Button>
+                            </Link>
+
+                            <Link href="/get-credits">
+                                  <Button className="text-neutral-800 hover:bg-transparent bg-transparent shadow-none">
+                                    <Plus/>
+                                    <span className="ml-2 font-normal hidden md:block">Buy Credits</span>
+                                  </Button>
+                            </Link>
+                          </div>             
+
                           <VerticalNav/>
                         </SheetDescription>
                       </SheetHeader>

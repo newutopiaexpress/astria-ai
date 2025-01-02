@@ -267,7 +267,7 @@ export default function TrainModelZone() {
     <div className="grid grid-cols-12 w-full rounded-3xl relative">
       <div className="col-span-12 md:col-span-12 bg-stone-100/0 z-10">
         {/* Step Indicator */}
-        <div className="hidden md:block w-full md:max-w-xl mx-auto mb-12">
+        <div className="hidden w-full md:max-w-xl mx-auto mb-12">
           <div className="relative flex justify-between">
             {/* Connecting Line */}
             <div className="absolute top-1/3 left-0 right-0 h-[1px] bg-gradient-to-r from-stone-200 from-1% via-stone-300 via-50% to-stone-200 to-99% -translate-y-1/3" />
@@ -316,7 +316,7 @@ export default function TrainModelZone() {
                 render={({ field }) => (
                   <div>
                     <FormItem className="relative w-full mx-auto pb-12">
-                      <FormDescription className="z-10 pb-6 text-center text-2xl font-thin text-stone-700 tracking-tight">
+                      <FormDescription className="z-10 pb-6 pt-12 md:pt-24 text-center text-2xl font-thin text-stone-700 tracking-tight">
                         Give your model a name
                       </FormDescription>
                       <FormControl>
@@ -341,7 +341,7 @@ export default function TrainModelZone() {
                 name="pack"
                 render={({ field }) => (
                   <FormItem className="relative w-full lg:max-w-[1400px] mx-auto rounded-tr-2xl rounded-br-3xl bg-transparent rounded-bl-3xl pb-9 transition-all">
-                    <FormDescription className="text-center text-2xl font-thin text-stone-700 tracking-tight">
+                    <FormDescription className="pt-12 md:pt-24 text-center text-2xl font-thin text-stone-700 tracking-tight">
                     Choose a Style Pack
                     </FormDescription>
                     <FormControl>

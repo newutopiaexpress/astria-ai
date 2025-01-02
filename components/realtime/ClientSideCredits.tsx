@@ -30,25 +30,34 @@ export default function ClientSideCredits({
 
   if (!creditsRow) return (
     <div className="flex gap-4 items-center justify-center">
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        whileHover={{ scale: 1.1 }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 15,
-          delay: 0.1,
-          opacity: { duration: 0.2 }
-        }}
-      >
-        <Badge className={cn(
-          "animate-pulse text-xs rounded-full h-10 min-w-max flex items-center border justify-center border-rose-300 text-stone-800 shadow-sm",
-          className
-        )}>
-          <span className="mr-0"><CoinIcon/></span>0
-        </Badge>
-      </motion.div>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+                delay: 0.1,
+                opacity: { duration: 0.2 }
+              }}
+            >
+              <Badge className={cn(
+                "animate-pulse text-xs rounded-full h-10 min-w-max flex items-center border-0 justify-center bg-rose-200 text-stone-800 shadow-sm",
+                className
+              )}>
+                <span className="mr-0"><CoinIcon/></span>0
+              </Badge>
+            </motion.div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Buy Credits</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </div>
   )
 
