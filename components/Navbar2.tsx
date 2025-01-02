@@ -182,7 +182,7 @@ export default async function Navbar() {
                             <form action="/auth/sign-out" method="post">
                               <Button
                                 type="submit"
-                                className="w-min text-left bg-stone-800 rounded-full text-white"
+                                className="w-full text-left bg-stone-800 rounded-full text-white"
                                 variant={"ghost"}
                                 >
                                 Log out
