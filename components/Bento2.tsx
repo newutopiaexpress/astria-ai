@@ -76,6 +76,14 @@ export function Bento2() {
     // The Link component will handle navigation
   };
 
+  // Define the users' data for OverlappingAvatars
+  const users = [
+    { id: '1', name: 'Alice', avatar: '/t1.png' },
+    { id: '2', name: 'Bob', avatar: '/t2.png' },
+    { id: '3', name: 'Charlie', avatar: '/t3.png' },
+    { id: '4', name: 'Dave', avatar: '/t1.png' },
+  ];
+
   return (
 
 
@@ -119,7 +127,7 @@ export function Bento2() {
                 },
               }}
             >
-            Stunning First Impression with 
+            Enhance Yourself with 
             </TextEffect>
             <span className="font-bold bg-gradient-to-r from-stone-700 via-stone-600 to-stone-800 inline-block text-transparent bg-clip-text pb-2">
               <TextEffect per='char' preset='fade' delay={1.2}>
@@ -172,7 +180,7 @@ export function Bento2() {
                     </span>
                   ) : (
                     <>
-                      <span className="font-semibold">Start Creating</span>
+                      <span className="font-semibold">Create Photos</span>
                       <Image className="rounded-full w-8 h-8 ml-4" src="/pixels2.gif" width={50} height={50} alt="Camera Icon" />
                     </>
                   )}

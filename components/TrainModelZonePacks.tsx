@@ -69,17 +69,6 @@ interface PackOption {
 // Pack options data /2025BigMan.png
 const packOptions: PackOption[] = [
   {
-    id: "New Year 2025 - Funny style",
-    value: "happy-2025",
-    title: "Funny New Year 2025",
-    description: "New Year 2025 in a funny style",
-    previewImage: "/happy2025.jpg",
-    exampleImages: ["/2025BigMan.png"], // Add multiple images
-    pieces: 24,
-    subjects: ["Woman", "Man"], // Add subjects
-    isNew: true,
-  },
-  {
     id: "New Year 2025 - Classic",
     value: "classic-2025",
     title: "New Year 2025 - Classic",
