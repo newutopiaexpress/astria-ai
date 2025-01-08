@@ -93,7 +93,7 @@ export default async function Navbar() {
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
-                  <div className="p-2 flex items-center gap-6 outline outline-4 outline-offset-4 outline-neutral-400/0 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full">
+                  <div className="p-2 flex items-center gap-6 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full">
                   <Link href="/overview">
                     <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-700 hover:text-stone-100 rounded-full">
                       <FolderCheck/>
@@ -102,7 +102,7 @@ export default async function Navbar() {
                   </Link>
 
                   <Link href="/overview/models/train">
-                  <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-700 hover:text-stone-100 rounded-full">
+                  <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-green-300 hover:text-stone-800 rounded-full">
                     <span className="font-normal">Create Photos</span>
                     <span className="scale-75"><SparkleIcon/></span>
                   </Button>
