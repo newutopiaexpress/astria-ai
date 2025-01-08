@@ -44,7 +44,7 @@ return (
                   <Navbar2/>
                 </Suspense>
               </section>
-              <main className="w-full h-full mt-24 md:mt-20 px-2 md:px-2"> {/* max-w-[1500px] */}
+              <main className="w-full h-full mt-4 md:mt-20 px-2 md:px-2"> {/* max-w-[1500px] */}
                 <InView
                   variants={{
                                   hidden: { opacity: 0, y: 20,  },
