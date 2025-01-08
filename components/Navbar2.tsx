@@ -65,7 +65,7 @@ export default async function Navbar() {
 
   return (
     <div className="fixed w-full top-0 h-24 md:h-20 bg-white/70 bg-backdrop-blur-sm backdrop-filter backdrop-blur-sm shadow-2xl shadow-white">
-      <ChristmasBanner />
+      {/*<ChristmasBanner />*/}
       <div className="flex px-4 md:px-10 py-7 md:py-5 items-center justify-between z-50">
 
         {/* Logo section */}
