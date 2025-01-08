@@ -71,7 +71,7 @@ export default async function Navbar() {
         {/* Logo section */}
         <div className="flex h-full items-center justify-center gap-4">
           <Link href="/">
-            <span className="font-bold ml-2 flex items-center justify-between"><UtopiaLogo/></span>
+            <span className="font-bold flex items-center justify-between"><UtopiaLogo/></span>
           </Link>
 
           {/* 
