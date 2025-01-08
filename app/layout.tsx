@@ -14,8 +14,8 @@ import { InView } from "@/components/core/in-view";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#E7E5E4' },
-    { media: '(prefers-color-scheme: dark)', color: '#E7E5E4' },
+    { media: '(prefers-color-scheme: light)', color: '#F5F5F4' },
+    { media: '(prefers-color-scheme: dark)', color: '#F5F5F4' },
   ],
 }
 
@@ -32,9 +32,9 @@ children: React.ReactNode;
 return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <meta name="theme-color" content="#E7E5E4"/>
+        <meta name="theme-color" content="#F5F5F4"/>
       </head>
-      <body className="flex flex-col bg-stone-200 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-stone-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="w-full z-50 top-0">
                   <Suspense
                     fallback={
