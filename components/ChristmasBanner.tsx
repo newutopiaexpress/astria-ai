@@ -17,7 +17,7 @@ export function ChristmasBanner() {
       initial={{ opacity: 0, x: -600 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.6 }}
-      className="w-full h-32 bg-teal-300 text-stone-800 border-b border-stone-300 py-4 px-4 flex justify-between items-center z-40"
+      className="w-full h-32 bg-white text-stone-800 border-b border-stone-300 py-4 px-4 flex justify-between items-center z-40"
     >
       <div className="flex text-center items-center justify-center px-2 mx-auto">
         <div className="text-[12px] tracking-tight ml-6 text-center mx-auto">
