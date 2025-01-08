@@ -86,7 +86,7 @@ export function Bento2() {
 <div className="w-full">
 
 
-	<div className="w-full mx-auto z-30 bg-contain bg-center bg-no-repeat bg-[url('/bgwhite.png')]">
+	<div className="w-full mx-auto z-30 bg-contain bg-center bg-no-repeat bg-[url('/bgwhite.png')] mt-16 md:mt-0">
      
         <div className="text-left md:text-center md:pt-0 mb-12 md:mb-0">
 
