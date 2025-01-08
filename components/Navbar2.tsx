@@ -93,7 +93,7 @@ export default async function Navbar() {
               <div className="flex items-center">
                 
                 {stripeIsConfigured && (
-                  <div className="p-2 flex items-center gap-6 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full">
+                  <div className="p-2 flex items-center gap-2 md:gap-6 inset-shadow-sm inset-shadow-black bg-neutral-100 text-stone-800 rounded-full">
                   <Link href="/overview">
                     <Button className="text-[10px] shadow-sm uppercase bg-transparent text-neutral-800  border border-neutral-800/10 hover:bg-stone-700 hover:text-stone-100 rounded-full">
                       <FolderCheck/>
@@ -108,7 +108,7 @@ export default async function Navbar() {
                   </Button>
                 </Link>
                 <Link href="/get-credits" className="relative">
-                  <div className="absolute -top-4 -right-4">
+                  <div className="absolute -top-6 -right-6">
                   <ClientSideCredits 
                       creditsRow={credits ? credits : null} 
                       className={credits?.credits === 0 ? "animate-pulse bg-red-50 text-stone-800" : ""} 
