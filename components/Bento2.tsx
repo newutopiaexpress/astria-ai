@@ -59,11 +59,7 @@ import { useState } from 'react';
 
 export function Bento2() {
   const [isLoading, setIsLoading] = useState(false);
-  const steps: Step[] = [
-    { number: 1, title: "Set Your Stage", description: "Upload photos and select from our style library - business to christmas" },
-    { number: 2, title: "AI Magic Begins", description: "We build your personal AI and generate your professional photo collection" },
-    { number: 3, title: "Time to Shine", description: "Your perfect photo collection is ready to share" },
-  ];
+
 
   const localImages = [
     '/xmas1.jpg',
@@ -95,39 +91,8 @@ export function Bento2() {
         <div className="text-left md:text-center md:pt-0 mb-12 md:mb-0">
 
           <h1 className="pt-16 md:pt-32 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4rem]">
-            <TextEffect
-              per='char'
-              delay={0}
-              variants={{
-                container: {
-                  hidden: {
-                    opacity: 0,
-                  },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      staggerChildren: 0.05,
-                    },
-                  },
-                },
-                item: {
-                  hidden: {
-                    opacity: 0,
-                    rotateX: 90,
-                    y: 10,
-                  },
-                  visible: {
-                    opacity: 1,
-                    rotateX: 0,
-                    y: 0,
-                    transition: {
-                      duration: 0.1,
-                    },
-                  },
-                },
-              }}
-            >
-            Enhance Yourself with 
+          <TextEffect per='char' preset='fade' delay={0}>
+            Stunning First Impression with 
             </TextEffect>
             <span className="font-bold bg-gradient-to-r from-stone-700 via-stone-600 to-stone-800 inline-block text-transparent bg-clip-text pb-2">
               <TextEffect per='char' preset='fade' delay={1.2}>
@@ -167,7 +132,26 @@ export function Bento2() {
                      <span className="font-semibold">Start Creating</span><SparkleIcon/>
                 </Button>
                 </Link>*/}
-
+{/*}
+                <Link href="/login">
+                <Button 
+                  onClick={handleCreateClick}
+                  disabled={isLoading}
+                  className="min-w-full flex items-center justify-center rounded-full outline outline-teal-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-teal-950 to-neutral-950 hover:bg-gradient-to-br hover:from-teal-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-teal-600/10"
+                >
+                  {isLoading ? (
+                    <span className="flex items-center gap-2">
+                      <span className="animate-pulse">Login in progress...</span>
+                    </span>
+                  ) : (
+                    <>
+                      <span className="font-semibold">Create Photos</span>
+                      <Image className="rounded-full w-8 h-8 ml-4" src="/pixels2.gif" width={50} height={50} alt="Camera Icon" />
+                    </>
+                  )}
+                </Button>
+                </Link>
+*/}
                 <Link href="/login">
                 <Button 
                   onClick={handleCreateClick}
