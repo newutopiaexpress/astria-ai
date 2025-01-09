@@ -81,7 +81,7 @@ export default function ClientSideModelsList({
           <div className="z-30 md:mt-[17%]">
             <h1 className="text-2xl text-center mx-auto px-12 pt-[23%] md:pt-[10%]">
               {displayName === 'User'
-                ? 'Your story starts here!'
+                ? 'Your journey starts here!'
                 : `Welcome ${displayName}, Your story starts here!`}
             </h1>
             <div className="mx-auto text-center mt-4 flex flex-row gap-4 items-center">
@@ -96,17 +96,6 @@ export default function ClientSideModelsList({
               <Link href="/overview/models/train" className="mx-auto">
                 <Button className="p-7 rounded-full text-sm border-stone-100 bg-stone-800 hover:bg-stone-600 text-stone-100">
                 <span className="flex -space-x-6 float-left">
-                  {avatars.map((src, index) => (
-                  <span key={index} className="relative z-10">
-                    <Image
-                      src={src}
-                      alt={`Avatar ${index + 1}`}
-                      width={40}
-                      height={40}
-                      className="rounded-full border-0 border-white mr-4"
-                    />
-                  </span>
-                    ))}
                   </span>
                   Start Creating
                   <Image className="rounded-full w-8 h-8 ml-4" src="/pixels2.gif" width={50} height={50} alt="Camera Icon" />

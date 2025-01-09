@@ -34,7 +34,7 @@ return (
       <head>
         <meta name="theme-color" content="#E7E5E4"/>
       </head>
-      <body className="flex flex-col bg-stone-100 dark:bg-stone-900 h-screen overflow-x-hidden"> 
+      <body className="flex flex-col bg-stone-200 dark:bg-stone-900 h-screen overflow-x-hidden"> 
               <section className="w-full z-50 top-0">
                   <Suspense
                     fallback={

@@ -46,7 +46,7 @@ export default function ClientSideCredits({
               }}
             >
               <Badge className={cn(
-                "animate-pulse text-xs rounded-full h-10 min-w-max flex items-center border-0 justify-center bg-rose-200 text-stone-800 shadow-sm",
+                "animate-pulse text-xs rounded-full h-8 min-w-max flex items-center border-0 justify-center bg-rose-200 text-stone-800 shadow-sm",
                 className
               )}>
                 <span className="mr-0"><CoinIcon/></span>0

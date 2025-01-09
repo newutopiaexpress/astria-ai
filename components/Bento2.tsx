@@ -90,30 +90,18 @@ export function Bento2() {
      
         <div className="text-left md:text-center md:pt-0 mb-12 md:mb-0">
 
-          <h1 className="pt-16 md:pt-32 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4rem]">
-          <TextEffect per='char' preset='fade' delay={0}>
+          <h1 className="max-w-3xl mx-auto pt-16 md:pt-32 pb-0 text-center text-stone-800 font-thin tracking-tight drop-shadow-sm [text-wrap:balance] text-5xl leading-[3rem] md:text-6xl md:leading-[4rem]">  
             Stunning First Impression with 
-            </TextEffect>
             <span className="font-bold bg-gradient-to-r from-stone-700 via-stone-600 to-stone-800 inline-block text-transparent bg-clip-text pb-2">
-              <TextEffect per='char' preset='fade' delay={1.2}>
-              Ai-powered Photography
-              </TextEffect>         
+              Ai-powered Photography      
             </span>
           </h1>
           {/*}
           <p className="mb-4 mx auto text-center border border-stone-300 rounded-full max-w-fit mx-auto text-sm px-4 py-1">Three Easy Steps</p>
           */} 
           
-            <InView
-                variants={{
-                  hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
-                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-                }}
-                viewOptions={{ margin: '0px 0px 0px 0px' }}
-                transition={{ duration: 0.6, ease: 'easeIn', delay: 2 }}
-              >
-            <p className="px-12 py-2 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">Drop your photos, Select a Style Pack, and Watch the Magic Unfold</p>
-            </InView>
+            {/*<p className="px-12 py-2 text-center mx-auto md:px-0 text-xl font-thin text-stone-700 leading-tight">Drop your photos, Select a Style Pack, and Watch the Magic Unfold</p>*/}
+
             <InView
               variants={{
                 hidden: { opacity: 0, y: 10, filter: 'blur(4px)' },
@@ -122,7 +110,7 @@ export function Bento2() {
               viewOptions={{ margin: '0px 0px 0px 0px' }}
               transition={{ duration: 0.6, ease: 'easeIn', delay: 0.6 }}
             >
-            <div className="mx-auto text-center bg-stone-800/0 pt-6 w-full flex justify-center items-center">
+            <div className="mx-auto text-center bg-stone-800/0 pt-6 max-w-min flex flex-col md:flex-row justify-center items-center gap-4">
                 {/*<Link href="/login">
                 <Button className="flex items-center justify-center rounded-full outline outline-rose-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-rose-950 to-neutral-950 hover:bg-gradient-to-br hover:from-rose-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-fuchsia-600/10">
                 <span className="font-normal text-sm opacity-50">from</span>
@@ -156,7 +144,7 @@ export function Bento2() {
                 <Button 
                   onClick={handleCreateClick}
                   disabled={isLoading}
-                  className="min-w-full flex items-center justify-center rounded-full outline outline-teal-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-teal-950 to-neutral-950 hover:bg-gradient-to-br hover:from-teal-900 hover:to-neutral-900 py-8 px-12 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-teal-600/10"
+                  className="px-10 min-w-full flex items-center justify-center rounded-full outline outline-teal-300/20 outline-7 outline-offset-4 hover:outline hover:outline-stone-300/30 hover:outline-2 hover:outline-offset-0  bg-gradient-to-l from-teal-950 to-neutral-950 hover:bg-gradient-to-br hover:from-teal-900 hover:to-neutral-900 py-6 font-normal text-lg tracking-wide text-stone-100 shadow-xl hover:shadow-lg transition-all duration-100 hover:scale-105 shadow-teal-600/10"
                 >
                   {isLoading ? (
                     <span className="flex items-center gap-2">
@@ -170,6 +158,8 @@ export function Bento2() {
                   )}
                 </Button>
                 </Link>
+
+
                 
             </div>
             </InView>
