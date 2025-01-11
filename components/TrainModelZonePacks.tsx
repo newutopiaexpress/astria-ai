@@ -69,36 +69,14 @@ interface PackOption {
 // Pack options data /2025BigMan.png
 const packOptions: PackOption[] = [
   {
-    id: "New Year 2025 - Classic",
-    value: "classic-2025",
-    title: "New Year 2025 - Classic",
-    description: "New Year 2025 - in Classical Style",
-    previewImage: "/2025class.jpg",
-    exampleImages: ["/2025BigClass.png"], // Add multiple images
-    pieces: 24,
-    subjects: ["Woman", "Man"], // Add subjects
-    isNew: true,
-  },
-  {
-    id: "corporate-headshots",
-    value: "corporate-headshots",
+    id: "corporate-portraits-v2",
+    value: "corporate-portraits-v2",
     title: "Corporate Portraits",
     description: "Look like a CEO, in just one click",
     previewImage: "/corporate.jpg",
     exampleImages: ["/model-corp.png"], // Add multiple images
     pieces: 24,
     subjects: ["Woman", "Man"], // Add subjects
-    isNew: true,
-  },
-  {
-    id: "christmas-elf",
-    value: "christmas-elf",
-    title: "Christmas Elf",
-    description: "Warning: May cause pointy ears and excessive joy!",
-    previewImage: "/elf3.jpg",
-    exampleImages: ["/elfprev.png"], // Add multiple images
-    pieces: 24,
-    subjects: ["Girl", "Boy"], // Add subjects
     isNew: true,
   },
   {

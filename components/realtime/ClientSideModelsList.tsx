@@ -11,6 +11,7 @@ import Image from "next/image";
 import { SparkleIcon } from "../SparkleIcon";
 import StyleSlider from "../StyleSlider";
 import { CoinIcon } from "./ClientSideCredits";
+import CardCarousel from "../CardCarousel";
 
 export const revalidate = 0;
 
@@ -104,7 +105,7 @@ export default function ClientSideModelsList({
             </div>
           </div>
           <div className="mt-12">
-              <StyleSlider/>
+              <CardCarousel/>
           </div>
         </div>
       )}

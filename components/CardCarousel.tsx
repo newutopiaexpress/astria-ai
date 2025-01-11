@@ -16,51 +16,33 @@ interface CardData {
 const cards: CardData[] = [
   {
     id: 1,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/model-corp.png?height=1180&width=1000",
     headline: "Exciting Adventure",
     description: "Embark on a thrilling journey through uncharted territories."
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=200&width=300",
-    headline: "Serene Relaxation",
-    description: "Unwind in tranquil settings surrounded by nature's beauty."
+    image: "/model-corp.png?height=1180&width=1000",
+    headline: "Corporate photos vol. 01",
+    description: "Your perfect corporate photoshoot"
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=200&width=300",
-    headline: "Cultural Experience",
-    description: "Immerse yourself in rich traditions and diverse cultures."
+    image: "/real/realB.png?height=1180&width=1000",
+    headline: "Realtor Photos",
+    description: "Showcase your property with stunning realtor photos"
   },
   {
     id: 4,
-    image: "/placeholder.svg?height=200&width=300",
-    headline: "Culinary Delights",
-    description: "Savor exquisite flavors from around the world."
+    image: "/date/date.png?height=1180&width=1000",
+    headline: "Dating Profile",
+    description: "Find your perfect match with a standout dating profile."
   },
   {
     id: 5,
-    image: "/placeholder.svg?height=200&width=300",
-    headline: "Urban Exploration",
+    image: "/bud/bud.png?height=1180&width=1000",
+    headline: "Budoir Photos",
     description: "Discover hidden gems in bustling city landscapes."
-  },
-  {
-    id: 6,
-    image: "/placeholder.svg?height=200&width=300",
-    headline: "Nature Retreat",
-    description: "Connect with the great outdoors in pristine natural settings."
-  },
-  {
-    id: 7,
-    image: "/placeholder.svg?height=200&width=300",
-    headline: "Historical Journey",
-    description: "Step back in time and explore fascinating historical sites."
-  },
-  {
-    id: 8,
-    image: "/placeholder.svg?height=200&width=300",
-    headline: "Artistic Inspiration",
-    description: "Immerse yourself in the world of art and creativity."
   }
 ]
 

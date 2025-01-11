@@ -55,6 +55,7 @@ import FaqAccordion from "./FaqAccordion";
 import { SparkleIcon } from "./SparkleIcon";
 import Spline from '@splinetool/react-spline/next';
 import { useState } from 'react';
+import CardCarousel from '@/components/CardCarousel'
 
 
 export function Bento2() {
